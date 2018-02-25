@@ -1,0 +1,9 @@
+.bg-color{
+	background: orangered;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: orangered;
+}
+.bg-color-bg{
+	background: rgba(233,233,233,0.3);
+}
