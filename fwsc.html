@@ -25,7 +25,7 @@
 		.ziruser{font-size: 12px;margin-left: 10px;}
 		.zirubaojie{margin-top: 10px;border: 1px solid #DDDDDD;width: 72px;line-height: 26px;background-color:#DDDDDD;}
 		.zirubaojie span{font-size: 12px;text-align: center;display: block;}
-		.diyigeclass{width:250px;height:100%;display: flex;position: relative;padding-left: 20px;display: inline-block;}
+		.diyigeclass{width:250px;height:100%;display: flex;position: relative;padding-left: 60px;display: inline-block;}
 		.diyigeclass ul{list-style-type:none;}
 		.xiaorenimg{width: 59px;display:inline-flex;height: 59px;}
 	</style>
@@ -129,7 +129,7 @@
 		    			<li class="zirubaojie">
 		    				<span>自如保洁</span>
 		    			</li>
-		    			<li class="ziriyoushi" style="white-space: initial;">
+		    			<li class="ziriyoushi" style="white-space: initial;" id="fuqu">
 		    				<span style="word-wrap: break-word;">幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮幼狮</span>
 		    			</li>
 		    			<li class="ziriyoushi">
@@ -146,6 +146,13 @@
 		</div>
 		<script type="text/javascript">
 			mui.init()
+			document.getElementById('fuqu').addEventListener('tap', function() {
+			  //打开关于页面
+			  mui.openWindow({
+			    url: 'https://www.baidu.com/', 
+			    id:'info'
+			  });
+			});
 		</script>
 	</body>
 
