@@ -88,7 +88,7 @@
 	    	font-size: 0.333333rem;
 			color: #666666;
 			overflow: hidden;
-		    text-overflow: ellipsis;
+		    /*text-overflow: ellipsis;*/
 		    white-space: nowrap;
 	    }
 	    .grab li{
@@ -97,6 +97,10 @@
 	    	height: 3.6rem;
 	    	border: 1px solid red;
 			display: inline-block;
+	    }
+	    .grab li a{
+	    	height: 100%;
+	    	display: inline-block;
 	    }
 	    .fypic{
 	    	display: flex;
@@ -176,7 +180,7 @@
 				<div class="tit">幼狮头条</div>
 				<div>
 					<ul class="grab">
-				    	<li>
+				    	<li id="as">
 				    		<a href="#">
 				    			<div class="img">
 				    				<img src="http://placehold.it/400x300" alt="">
@@ -185,7 +189,7 @@
 				    		</a>
 				    	</li>
 				    	<li>
-				    		<a href="#">
+				    		<a href="http://omc.urskongjian.com/wanx/#/">
 				    			<div class="img">
 				    				<img src="http://placehold.it/400x300" alt="">
 				    			</div>
@@ -193,7 +197,7 @@
 				    		</a>
 				    	</li>
 				    	<li>
-				    		<a href="#">
+				    		<a href="https://m.mogujie.com/">
 				    			<div class="img">
 				    				<img src="http://placehold.it/400x300" alt="">
 				    			</div>
@@ -201,7 +205,7 @@
 				    		</a>
 				    	</li>
 				    	<li>
-				    		<a href="#">
+				    		<a href="http://omc.urskongjian.com/wanx/#/">
 				    			<div class="img">
 				    				<img src="http://placehold.it/400x300" alt="">
 				    			</div>
@@ -252,7 +256,14 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			document.getElementById('as').addEventListener('tap', function() {
+			  //打开关于页面
+			  mui.openWindow({
+			    url: 'https://m.mogujie.com/', 
+			    id:'info'
+			  });
+			});
 		</script>
 	</body>
 
