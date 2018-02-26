@@ -74,7 +74,7 @@
 			overflow-x: auto;
 			white-space: nowrap;
 			padding-bottom: 0.133333rem;
-			padding-left: 0.266666rem;
+			padding: 0 0.266666rem;
 		}
 	    .grab .img{
 	    	width: 100%;
@@ -220,7 +220,6 @@
 				    			<div class="title">123</div>
 				    		</a>
 				    	</li>
-				    	<li style="visibility: hidden;width: 0;margin: 0.133333rem;"></li>
 				    </ul>
 				</div>
 			</div>
@@ -255,6 +254,17 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript" src="js/lib/castapp.js" ></script>
+		<script type="text/javascript">
+			ca.init();
+			castapp.pictureScroll({
+			    callback:function(pictureNumber){
+				    console.log(pictureNumber);
+			    },
+			    isAutoScroll:true,
+			    scrollTime:3
+			});
+		</script>
 		<script type="text/javascript">
 			mui.init();
 			document.getElementById('as').addEventListener('tap', function() {
