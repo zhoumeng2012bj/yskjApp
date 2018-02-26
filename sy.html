@@ -168,12 +168,12 @@
 			      </a>
 			    </div>
 			  </div>
-			  <div class="mui-slider-indicator">
+			  <!--<div class="mui-slider-indicator">
 			    <div class="mui-indicator mui-active"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
-			  </div>
+			  </div>-->
 			</div>
 			<!--幼狮头条-->
 			<div class="ystt_box">
@@ -259,10 +259,10 @@
 			ca.init();
 			castapp.pictureScroll({
 			    callback:function(pictureNumber){
-				    console.log(pictureNumber);
+//				    console.log(pictureNumber);
 			    },
 			    isAutoScroll:true,
-			    scrollTime:3
+			    scrollTime:2
 			});
 		</script>
 		<script type="text/javascript">
@@ -274,12 +274,6 @@
 			    id:'info'
 			  });
 			});
-			
-			var oldback = mui.back;
-			mui.back = function() {
-			    mui.currentWebview.opener().show('none');
-			    oldback();
-			}
 		</script>
 	</body>
 

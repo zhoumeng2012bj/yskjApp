@@ -202,7 +202,8 @@
 					"js/lib/flexible.js",
 					"fonts/mui.ttf",
 					"sy.html",
-					"css/style.css"
+					"css/style.css",
+					"css/iconfont.css"
 				],
 				"refer": [
 					"wd.html",
@@ -228,7 +229,8 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"css/style.css",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"js/lib/castapp.js"
 				],
 				"refer": [
 					"jxfy.html"
