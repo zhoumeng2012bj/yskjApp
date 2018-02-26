@@ -230,7 +230,9 @@
 					"css/style.css",
 					"js/lib/flexible.js"
 				],
-				"refer": [],
+				"refer": [
+					"jxfy.html"
+				],
 				"priority": 0
 			},
 			"jxfy.html": {
@@ -241,7 +243,9 @@
 					"css/style.css",
 					"js/lib/flexible.js"
 				],
-				"refer": [],
+				"refer": [
+					"wd.html"
+				],
 				"priority": 0
 			},
 			"fwsc.html": {

@@ -1,58 +1,64 @@
 {
-  "index.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "fonts/mui.ttf",
-      "sy.html",
-      "css/style.css"
-    ],
-    "refer": [
-      "sy.html",
-      "wd.html",
-      "jxfy.html",
-      "fwsc.html"
-    ]
-  },
-  "wd.html": {
-    "resources": [
-      "css/style.css",
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js"
-    ]
-  },
-  "sy.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible.js"
-    ]
-  },
-  "jxfy.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible.js"
-    ]
-  },
-  "fwsc.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible.js",
-      "img/1.jpg",
-      "img/4.jpg",
-      "img/3.jpg"
-    ]
-  }
+	"index.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"fonts/mui.ttf",
+			"sy.html",
+			"css/style.css"
+		],
+		"refer": [
+			"sy.html",
+			"wd.html",
+			"jxfy.html",
+			"fwsc.html"
+		]
+	},
+	"wd.html": {
+		"resources": [
+			"css/style.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
+		]
+	},
+	"sy.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"jxfy.html"
+		]
+	},
+	"jxfy.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"wd.html"
+		]
+	},
+	"fwsc.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js",
+			"img/1.jpg",
+			"img/4.jpg",
+			"img/3.jpg"
+		]
+	}
 }

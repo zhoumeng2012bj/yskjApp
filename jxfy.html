@@ -17,10 +17,17 @@
 		    <h1 class="mui-title">精选房源</h1>
 		</header>
 		<div class="mui-content">
-		    精选房源
+		    <div id="wd">精选房源</div>
 		</div>
 		<script type="text/javascript">
 			mui.init()
+			document.getElementById('wd').addEventListener('tap', function() {
+			  //打开关于页面
+			  mui.openWindow({
+			    url: './wd.html', 
+			    id:'info1'
+			  });
+			});
 		</script>
 	</body>
 

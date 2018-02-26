@@ -260,10 +260,16 @@
 			document.getElementById('as').addEventListener('tap', function() {
 			  //打开关于页面
 			  mui.openWindow({
-			    url: 'https://m.mogujie.com/', 
+			    url: './jxfy.html', 
 			    id:'info'
 			  });
 			});
+			
+			var oldback = mui.back;
+			mui.back = function() {
+			    mui.currentWebview.opener().show('none');
+			    oldback();
+			}
 		</script>
 	</body>
 
