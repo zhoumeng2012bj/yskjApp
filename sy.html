@@ -68,6 +68,44 @@
 			<!--最新数据-->
 			<div class="zxsj_box">
 				<div class="tit">最新数据</div>
+				<ul class="nav_list">
+					<li>
+						<p class="mj">
+							<img src="img/mj_icon.png" alt="" />
+						</p>
+						<p class="meu_txt">
+							<span>面积</span>
+							<span>25万m2</span>
+						</p>
+					</li>
+					<li>
+						<p class="mj">
+							<img src="img/qy_icon.png" alt="" />
+						</p>
+						<p class="meu_txt">
+							<span>面积</span>
+							<span>25万m2</span>
+						</p>
+					</li>
+					<li>
+						<p class="mj">
+							<img src="img/jjr_icon.png" alt="" />
+						</p>
+						<p class="meu_txt">
+							<span>面积</span>
+							<span>25万m2</span>
+						</p>
+					</li>
+					<li>
+						<p class="mj">
+							<img src="img/gj_icon.png" alt="" />
+						</p>
+						<p class="meu_txt">
+							<span>面积</span>
+							<span>25万m2</span>
+						</p>
+					</li>
+				</ul>
 			</div>
 			<!--幼狮头条-->
 			<div class="tt_box">
@@ -84,6 +122,42 @@
 						<p>穿梭无限空间！幼狮空间首发“3D全景房源”!111</p>
 					</li>
 				</ul>
+			</div>
+			<!--Tab切换-->
+			<div class="tab_main">
+				<!--切换选项-->
+				<p class="tab_nav">
+					<span class="sp_ac">我要找房</span>
+					<span>业主委托</span>
+				</p>
+			</div>
+			<!--切换选项-->
+			<div class="box_qh">
+				<div class="box_q rmfy_box" style="display: block;">
+					<!--热门房源-->
+					<div class="tit">热门房源</div>
+					<ul class="fypic">
+						<li>
+							<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
+							<p class="fy_title">三里屯</p>
+						</li>
+						<li>
+							<img src="http://47.92.145.21:81/upload/2017-09-07/a2f4efd1c7f34808b23d718a465b1d93.png" alt="" />
+							<p class="fy_title">三里屯</p>
+						</li>
+						<li>
+							<img src="http://47.92.145.21:81/upload/2017-09-07/65fc9eec2699652210b4872c3dd008c5.png" alt="" />
+							<p class="fy_title">三里屯</p>
+						</li>
+						<li>
+							<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
+							<p class="fy_title">三里屯</p>
+						</li>
+					</ul>
+				</div>
+				<div class="box_q">
+					业主委托
+				</div>				
 			</div>
 			<!--daiceshishiyong-->
 			<div class="ystt_box">
@@ -133,29 +207,7 @@
 				    </ul>
 				</div>
 			</div>
-			<!--tab切换-->
-			<div class="tab_box">
-			   <p>我要找房</p>
-			   <p style="margin-left: 0.4rem;">业主委托</p>
-			</div>
-			<div class="rmfy_box">
-				<!--热门房源-->
-				<div class="tit">热门房源</div>
-				<ul class="fypic">
-					<li>
-						<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
-					</li>
-					<li>
-						<img src="http://47.92.145.21:81/upload/2017-09-07/a2f4efd1c7f34808b23d718a465b1d93.png" alt="" />
-					</li>
-					<li>
-						<img src="http://47.92.145.21:81/upload/2017-09-07/65fc9eec2699652210b4872c3dd008c5.png" alt="" />
-					</li>
-					<li>
-						<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
-					</li>
-				</ul>
-			</div>
+			
 			<div class="zxsj">
 				<!--最新数据-->
 				<div class="tit">最新数据</div>
@@ -174,6 +226,23 @@
 			    isAutoScroll:true,
 			    scrollTime:3
 			});
+			
+			//tab切换
+			var tabNav = $('.tab_nav');
+			var tabSp = $('.tab_nav span');
+			var boxq = $('.box_q');
+			for (var i=0; i<tabSp.length; i++) {
+				(function(index){
+					tabSp[i].onclick = function(){
+						for (var j=0; j<boxq.length; j++) {
+							tabSp[j].className = '';
+							boxq[j].style.display = 'none';
+						}
+						tabSp[index].className = 'sp_ac';
+						boxq[index].style.display = 'block';
+					}
+				})(i)
+			}
 		</script>
 		<script type="text/javascript">
 			mui.init();

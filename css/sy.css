@@ -3,7 +3,7 @@
 }
 .zxsj_box{
 	/*最新数据*/
-	height: 4.866666rem;
+	height: 4rem;
 	background: #fff;
 }
 .tt_box{
@@ -47,7 +47,7 @@
 }
 .rmfy_box{
 	/*热门房源*/
-	background: #f0f0f0;
+	background: #ffffff;
 	padding-bottom: 0.533333rem;
 }
 .zxsj{
@@ -61,7 +61,6 @@
 	line-height: 1.133333rem;
 	font-size: 0.453333rem;
 	padding-left: 0.533333rem;
-	border: 1px solid pink;
 }
 .tit::before{
 	position: absolute;
@@ -134,17 +133,79 @@
 	align-items: center;
 	justify-content: center;
 	height: 6.3rem;
-	border: 1px solid #6641E2;
 }
 .fypic li{
+	position: relative;
 	width: 4.466666rem;
 	height: 3rem;
 	overflow: hidden;
 	margin-bottom: 0.266666rem;
+}
+.fypic li p{
+	width: 100%;
+	height: 0.533333rem;
+	line-height: 0.533333rem;
+	position: absolute;
+	bottom: 0;
+	background: rgba(0,0,0,0.4);
+	color: #fff;
+	font-size: 0.346666rem;
+	padding-left: 0.346666rem;
 }
 .fypic li img{
 	width: 100%;
 }
 .fypic li:nth-child(odd){
 	margin-right: 0.266666rem;
+}
+.nav_list{
+	display: flex;
+	display: -webkit-flex;
+	height: 3.333333rem;
+}
+.nav_list li{
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	align-items: center;
+	-webkit-align-items: center;
+	width: 25%;
+	height: 3.333333rem;
+}
+.nav_list .mj{
+	width: 1.146666rem;
+	height: 1.146666rem;
+	margin-bottom: 0.2rem;
+}
+.nav_list .mj img{
+	width: 100%;
+}
+.meu_txt span{
+	width: 100%;
+	display: block;
+	font-size: 0.346666rem!important;
+	text-align: center;
+	color: #000;
+}
+.tab_main{
+	height: 1.333333rem;
+	background: #f8f8f8;
+}
+.tab_nav{
+	height: 0.133333rem;
+}
+.tab_nav span{
+	width: 2.826666rem;
+	display: inline-block;
+	line-height: 1.333333rem;
+	font-size: 0.373333rem;
+	color: #000;
+	border: 1px solid red;
+	text-align: center;
+}
+.box_q{
+	display: none;
+}
+.sp_ac{
+	background: #fff;
 }

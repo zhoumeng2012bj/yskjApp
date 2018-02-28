@@ -38,7 +38,11 @@
 			"css/sy.css",
 			"img/2.png",
 			"img/tt_icon.png",
-			"js/lib/jquery-1.10.2.min.js"
+			"js/lib/jquery-1.10.2.min.js",
+			"img/mj_icon.png",
+			"img/qy_icon.png",
+			"img/jjr_icon.png",
+			"img/gj_icon.png"
 		],
 		"refer": [
 			"jxfy.html"
