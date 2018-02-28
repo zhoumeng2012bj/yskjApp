@@ -208,7 +208,8 @@
 				"refer": [
 					"wd.html",
 					"jxfy.html",
-					"fwsc.html"
+					"fwsc.html",
+					"qyhl.html"
 				],
 				"priority": 0
 			},
@@ -230,7 +231,11 @@
 					"css/mui.min.css",
 					"css/style.css",
 					"js/lib/flexible.js",
-					"js/lib/castapp.js"
+					"js/lib/castapp.js",
+					"css/sy.css",
+					"img/2.png",
+					"img/tt_icon.png",
+					"js/lib/jquery-1.10.2.min.js"
 				],
 				"refer": [
 					"jxfy.html"
@@ -260,6 +265,14 @@
 					"img/1.jpg",
 					"img/4.jpg",
 					"img/3.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"qyhl.html": {
+				"resources": [
+					"css/mui.min.css",
+					"css/style.css"
 				],
 				"refer": [],
 				"priority": 0
