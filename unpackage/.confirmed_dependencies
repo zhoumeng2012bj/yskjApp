@@ -42,7 +42,13 @@
 			"img/mj_icon.png",
 			"img/qy_icon.png",
 			"img/jjr_icon.png",
-			"img/gj_icon.png"
+			"img/gj_icon.png",
+			"img/tab_bg1.png",
+			"img/tab_bg.png",
+			"img/yzwt.png",
+			"fonts/mui.ttf",
+			"img/fypic.png",
+			"img/sjfw.png"
 		],
 		"refer": [
 			"jxfy.html"
@@ -75,7 +81,11 @@
 	"qyhl.html": {
 		"resources": [
 			"css/mui.min.css",
-			"css/style.css"
+			"css/style.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"fonts/mui.ttf"
 		]
 	}
 }

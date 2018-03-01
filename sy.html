@@ -127,15 +127,15 @@
 			<div class="tab_main">
 				<!--切换选项-->
 				<p class="tab_nav">
-					<span class="sp_ac">我要找房</span>
-					<span>业主委托</span>
+					<span class="sp_ac" style="float: left;">我要找房</span>
+					<span style="float: right;width: 7.2rem;text-align: inherit;text-indent: 0.666666rem;">业主委托</span>
 				</p>
 			</div>
 			<!--切换选项-->
 			<div class="box_qh">
 				<div class="box_q rmfy_box" style="display: block;">
 					<!--热门房源-->
-					<div class="tit">热门房源</div>
+					<div class="tit">热门楼盘</div>
 					<ul class="fypic">
 						<li>
 							<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
@@ -156,65 +156,90 @@
 					</ul>
 				</div>
 				<div class="box_q">
-					业主委托
+					<div class="yzwt_pic">
+						<img src="img/yzwt.png" alt="" />
+					</div>
+					<p class="yzwt_tip">请留下您的联系方式，我们会及时与您联系，为您提供专属服务</p>
+					<form class="mui-input-group">
+					    <div class="mui-input-row">
+					        <input type="text" class="mui-input-clear" placeholder="请输入手机号">
+					    </div>
+					    <div class="mui-input-row">
+					        <input type="text" class="mui-input-clear" placeholder="请输入验证码">
+					    </div>
+					    <div class="btn_box">
+					    	<div class="hqyzm">获取验证码</div>
+						    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined btn">提交</button>
+					    </div>
+					</form>
+					
 				</div>				
+			</div>
+			<!--特价房源-->
+			<div class="tjfy">
+				<div class="tit">特价房源</div>
+				 <ul class="fy_list">
+				 	<li>
+				 		<div class="fy_pic">
+				 			<img src="img/fypic.png" alt="" />
+				 		</div>
+				 		<div class="fy_xx">
+				 			<p class="lp">建外SOHO</p>
+				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
+				 			<p class="jzjf">精装交付</p>
+				 			<p class="dj">
+				 				<s>7.5<i>元/m2/天</i></s>
+				 				<span>6.5<i>元/m2/天</i></span>
+				 			</p>
+				 		</div>
+				 	</li>
+				 	<li class="zx"></li>
+				 	<li>
+				 		<div class="fy_pic">
+				 			<img src="img/fypic.png" alt="" />
+				 		</div>
+				 		<div class="fy_xx">
+				 			<p class="lp">建外SOHO</p>
+				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
+				 			<p class="jzjf">精装交付</p>
+				 			<p class="dj">
+				 				<s>7.5<i>元/m2/天</i></s>
+				 				<span>6.5<i>元/m2/天</i></span>
+				 			</p>
+				 		</div>
+				 	</li>
+				 </ul>
 			</div>
 			<!--daiceshishiyong-->
 			<div class="ystt_box">
-				<div class="tit">幼狮头条</div>
+				<div class="tit">升级服务</div>
 				<div>
 					<ul class="grab">
 				    	<li id="as">
 				    		<a href="#">
 				    			<div class="img">
-				    				<img src="http://placehold.it/400x300" alt="">
+				    				<img src="img/sjfw.png" alt="">
 				    			</div>
-				    			<div class="title">123</div>
-				    		</a>
-				    	</li>
-				    	<li>
-				    		<a href="http://omc.urskongjian.com/wanx/#/">
-				    			<div class="img">
-				    				<img src="http://placehold.it/400x300" alt="">
-				    			</div>
-				    			<div class="title">123</div>
-				    		</a>
-				    	</li>
-				    	<li>
-				    		<a href="https://m.mogujie.com/">
-				    			<div class="img">
-				    				<img src="http://placehold.it/400x300" alt="">
-				    			</div>
-				    			<div class="title">123</div>
-				    		</a>
-				    	</li>
-				    	<li>
-				    		<a href="http://omc.urskongjian.com/wanx/#/">
-				    			<div class="img">
-				    				<img src="http://placehold.it/400x300" alt="">
-				    			</div>
-				    			<div class="title">123</div>
 				    		</a>
 				    	</li>
 				    	<li>
 				    		<a href="#">
 				    			<div class="img">
-				    				<img src="http://placehold.it/400x300" alt="">
+				    				<img src="img/sjfw.png" alt="">
 				    			</div>
-				    			<div class="title">123</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<div class="img">
+				    				<img src="img/sjfw.png" alt="">
+				    			</div>
 				    		</a>
 				    	</li>
 				    </ul>
 				</div>
 			</div>
-			
-			<div class="zxsj">
-				<!--最新数据-->
-				<div class="tit">最新数据</div>
-				<div style="height: 2.733333rem;">
-					
-				</div>
-			</div>
+
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
 		<script type="text/javascript">
@@ -238,7 +263,11 @@
 							tabSp[j].className = '';
 							boxq[j].style.display = 'none';
 						}
-						tabSp[index].className = 'sp_ac';
+						if(index == 0){
+							tabSp[index].className = 'sp_ac';							
+						}else{
+							tabSp[index].className = 'sp_ac1';
+						}
 						boxq[index].style.display = 'block';
 					}
 				})(i)
