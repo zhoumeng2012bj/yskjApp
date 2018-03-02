@@ -247,7 +247,8 @@
 	color: #c8c8c8;
 }
 .tjfy{
-	height: 7.666666rem;
+	min-height: 7.666666rem;
+	height: auto;
 	background: #fff;
 	margin-top: 0.266666rem;
 }
