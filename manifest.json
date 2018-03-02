@@ -258,7 +258,10 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"css/style.css",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"jxfyList.html",
+					"css/jxfy.css",
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"wd.html"
@@ -286,6 +289,14 @@
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jxfyList.html": {
+				"resources": [
+					"css/mui.min.css",
 					"fonts/mui.ttf"
 				],
 				"refer": [],
