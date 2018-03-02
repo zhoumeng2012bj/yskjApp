@@ -9,3 +9,11 @@
 	background: rgba(233,233,233,0.3);
 	padding-top: 0.133333rem;
 }
+.bg-color1{
+	/*我的*/
+	height: 5.733333rem;
+	box-shadow: initial;
+	background: url(../img/wd_bg.png) no-repeat center;
+	background-size: 100% 120%;
+	padding: 0;
+}

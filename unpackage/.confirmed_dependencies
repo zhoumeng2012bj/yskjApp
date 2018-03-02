@@ -24,7 +24,10 @@
 			"js/lib/flexible_css.js",
 			"js/mui.min.js",
 			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"css/wd.css",
+			"img/wd_bg.png",
+			"img/head_img.png"
 		]
 	},
 	"sy.html": {
@@ -63,7 +66,8 @@
 			"js/lib/flexible.js",
 			"jxfyList.html",
 			"css/jxfy.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/lib/jquery-1.10.2.min.js"
 		],
 		"refer": [
 			"wd.html",
@@ -95,7 +99,8 @@
 	"jxfyList.html": {
 		"resources": [
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/jxfyList.css"
 		]
 	}
 }
