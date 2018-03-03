@@ -1,4 +1,13 @@
 .circle{background-color: #2b70d8;border:1px solid red;}
-.jxfy-bg-color{background:#2a70d9;padding-top:27px;height:65px;}
+.jxfy-bg-color{background:#2a70d9;padding-top:26px;height:65px;padding-left: 0px;}
 .fanhui{border: 1px solid red;}
-.mui-pull-top-pocket{margin-top:25px;}
+.mui-pull-top-pocket{margin-top:0px;}
+.sousu{height: 26px;width: 7.066666rem !important;margin-left: 1.413333rem;background-color: #ffffff;border-radius: 0.066666rem;}
+.sousudubiao{color: #2b70d7;padding-top: 0px !important;margin-left:0px !important;margin-right: 0px !important;top:0.04rem;}
+.sousuwenzi{color: #bababa;font-size: 0.306666rem;}
+.jxfytjxz{position: absolute;top: 65px;width: 100%;border-bottom: 1px solid #e5e5e5;height:0.6rem;background-color: #ffffff;}
+.jxfytjweizhi{position: absolute;top:0rem;height: 100%;width: 100%;}
+.jxfytjweizhi li{width: 25%;font-size: 0.346666rem;display: flex;align-items: center;justify-content: center;position: relative;color: #333333;}
+.jxfytjweizhi ul{display: flex;height: 100%;}
+.jxfytjweizhi li:after{content: "";display: block;width: 1px;height: 0.4rem;background-color: #e5e5e5;position: absolute;top: 50%;right: 0px;margin-top: -0.2rem;}
+.jxfyzxtubiao{color: #b9b9b9;}
