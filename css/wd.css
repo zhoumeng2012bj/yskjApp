@@ -1,14 +1,24 @@
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #f0f0f0;
+}
 .wd_zt{
 	width: 100%;
 	position: absolute;
 	top: 5.733333rem;
 	padding-top: 0!important;
+	background: #f0f0f0!important;
 }
 .wd_h{
 	display: flex!important;
-	width: 9.2rem;
+	width: 7.6rem!important;
 	height: 3.133333rem;
 	margin-top: 2rem!important;
+	/*border: 1px solid red;*/
 }
 .head_img{
 	display: flex;
@@ -19,7 +29,6 @@
 	overflow: hidden;
 	background: #fff;
 	border-radius: 50%;
-	margin-left: 1.066666rem;
 }
 .head_img img{
 	width: 100%;
@@ -48,16 +57,47 @@
 	font-size: 0.346666rem;
 	color: #fff;
 }
-.wd_list{
-	height: 100%;
-	border: 1px solid #red;
-}
 .wd_list li{
+	position: relative;
+	display: flex;
+	align-items: center;
 	height: 1.493333rem;
-	line-height: 1.493333rem;
 	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	margin-bottom: 0.266666rem;
+	padding: 0 0.4rem;
 }
 .wd_list li p{
+	line-height: 1.493333rem;
 	font-size: 0.426666rem;
 	color: #000!important;
+}
+.wd_icon{
+	width: 0.666666rem;
+	height: 0.6rem;
+	margin-right: 0.266666rem;
+}
+.wd_icon img{
+	height: 100%;
+}
+.wd_con{
+	position: absolute;
+	right: 0;
+	font-size: 0.48rem;
+	top: 50%;
+	margin-top: -0.24rem;
+	color: #bababa;
+}
+.wd_tip{
+	font-size: 0.346666rem;
+	color: #999999;
+	text-align: center;
+	margin-top: 0.533333rem;
+}
+.wd_tel{
+	font-size: 0.346666rem;
+	color: #2b70d8;
+	text-align: center;
+	margin-top: 0.266666rem;
 }

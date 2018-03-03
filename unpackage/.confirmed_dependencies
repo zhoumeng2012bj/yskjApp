@@ -27,7 +27,15 @@
 			"js/lib/flexible.js",
 			"css/wd.css",
 			"img/wd_bg.png",
-			"img/head_img.png"
+			"img/head_img.png",
+			"fonts/mui.ttf",
+			"img/per.png",
+			"img/sz.png",
+			"img/fav.png",
+			"js/lib/jquery-1.10.2.min.js"
+		],
+		"refer": [
+			"page/person.html"
 		]
 	},
 	"sy.html": {
@@ -101,6 +109,11 @@
 			"css/mui.min.css",
 			"fonts/mui.ttf",
 			"css/jxfyList.css"
+		]
+	},
+	"page/person.html": {
+		"resources": [
+			"css/mui.min.css"
 		]
 	}
 }
