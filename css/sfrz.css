@@ -1,0 +1,62 @@
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+}
+.per_zt{
+	background: #fff;
+}
+.save{
+	position: absolute;
+    right: 0;
+    height: 44px;
+    line-height: 44px;
+	font-size: 0.453333rem;
+	color: #666666;
+	padding-right: 0.4rem;
+}
+.card_zm,.card_bm{
+	position: relative;
+	width: 9.2rem;
+	height: 5.4rem;
+	margin: 1.066666rem auto 0;
+}
+.card_t{
+	font-size: 0.4rem;
+	color: #333333;
+	text-align: center;
+}
+.mp{
+	width: 8.133333rem;
+	height: 4.533333rem;
+	margin: 0 auto;
+	border: 2px solid #eaeaea;
+	border-radius: 0.08rem;
+	margin-top: 0.4rem;
+}
+.mp img{
+	width: 100%;
+}
+.card_zm .mp{
+	background: url(../img/mp_zm.png) no-repeat center;
+	background-size: 85% auto;
+}
+.card_bm .mp{
+	background: url(../img/mp_bm.png) no-repeat center;
+	background-size: 85% auto;
+}
+.pz_btn{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -0.8rem;
+	margin-left: -1.146666rem;
+	width: 2.293333rem;
+	height: 2.293333rem;
+	border-radius: 50%;
+	background: url(../img/pz_icon.png)no-repeat center;
+	background-size: 100% auto;
+}

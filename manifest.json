@@ -309,14 +309,77 @@
 				"resources": [
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"css/jxfyList.css"
+					"css/jxfyList.css",
+					"js/lib/flexible_css.js",
+					"js/mui.min.js",
+					"css/sy.css",
+					"img/fypic.png",
+					"js/lib/flexible.js",
+					"css/style.css"
 				],
 				"refer": [],
 				"priority": 0
 			},
 			"page/person.html": {
 				"resources": [
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/person.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/lib/flexible.js",
+					"img/head_img.png"
+				],
+				"refer": [
+					"page/add_name.html",
+					"page/gh_tel.html",
+					"page/sfrz.html",
+					"page/add_sfz.html",
+					"page/qdgs.html",
+					"page/ssxm.html"
+				],
+				"priority": 0
+			},
+			"page/add_name.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"css/person.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/gh_tel.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/person.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/sfrz.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"css/person.css",
+					"fonts/mui.ttf",
+					"css/sfrz.css",
+					"img/mp_zm.png",
+					"img/mp_bm.png",
+					"img/pz_icon.png"
 				],
 				"refer": [],
 				"priority": 0
