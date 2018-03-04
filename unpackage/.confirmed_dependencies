@@ -35,7 +35,8 @@
 			"js/lib/jquery-1.10.2.min.js"
 		],
 		"refer": [
-			"page/person.html"
+			"page/person.html",
+			"page/myset.html"
 		]
 	},
 	"sy.html": {
@@ -79,7 +80,8 @@
 		],
 		"refer": [
 			"wd.html",
-			"jxfyList.html"
+			"jxfyList.html",
+			"page/person.html"
 		]
 	},
 	"fwsc.html": {
@@ -172,6 +174,32 @@
 			"img/mp_zm.png",
 			"img/mp_bm.png",
 			"img/pz_icon.png"
+		]
+	},
+	"page/myset.html": {
+		"resources": [
+			"css/myset.css",
+			"css/person.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"page/setpwd.html"
+		]
+	},
+	"page/setpwd.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
 		]
 	}
 }

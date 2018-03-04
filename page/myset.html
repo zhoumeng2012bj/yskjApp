@@ -5,64 +5,64 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="css/mui.min.css" rel="stylesheet" />
-		<script src="js/mui.min.js"></script>
-		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="js/lib/flexible.js"></script>
-		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/wd.css"/>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/lib/flexible.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js" ></script>
+		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../css/person.css"/>
 	</head>
+	<style>
+		.per_news{
+			padding-left: 0;
+			background: none;
+			border: none;
+		}
+		.per_news li{
+			padding-left: 0.4rem;
+			margin-bottom: 0.266666rem;
+			background: #fff;
+			border-bottom: 1px solid #e5e5e5;
+			border-top: 1px solid #e5e5e5;
+		}
+	</style>
 
 	<body>
-		<header class="mui-bar mui-bar-nav bg-color1">
-		    <h1 class="mui-title wd_h">
-		    	<p class="head_img">
-		    		<img src="img/head_img.png"/>
-		    	</p>
-		    	<p class="user_news">
-					<span class="ljdl">立即登陆</span>
-					<span class="dlcz">登陆后可进行更多操作</span>
-		    	</p>
-		    </h1>
+		<header class="mui-bar mui-bar-nav wd-header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">设置</h1>
+		    <span class="save">保存</span>
 		</header>
-		<div class="mui-content wd_zt">
-		    <ul class="wd_list">
-		    	<li id="grxx" class="tolink">
-		    		<span class="wd_icon">
-		    			<img src="img/per.png" alt="" />
-		    		</span>
-		    		<p>个人信息</p>
-		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+		<div class="mui-content per_zt">
+			<ul class="per_news">
+		    	<li class="tolink">
+		    		<span class="p_nane">修改密码</span>
+		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
-		    	<li id="wdsc" class="tolink">
-		    		<span class="wd_icon">
-		    			<img src="img/fav.png" alt="" />
-		    		</span>
-		    		<p>我的收藏</p>
-		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+		    	<li>
+		    		<span class="p_nane">1.0版本</span>
+		    		<!--<span class="mui-icon mui-icon-arrowright p_con"></span>-->
 		    	</li>
-		    	<li id="sz" class="tolink">
-		    		<span class="wd_icon">
-		    			<img src="img/sz.png" alt="" />
-		    		</span>
-		    		<p>设置</p>
-		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+		    	<li class="tolink">
+		    		<span class="p_nane">免责声明</span>
+		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
+		    	</li>
+		    	<li class="tolink">
+		    		<span class="p_nane">退出登录</span>
+		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
 		    </ul>
-		    <p class="wd_tip">如有任何疑问请拨打咨询电话</p>
-		    <p class="wd_tel"><a href="tel:400-078-8800">400-078-8800</a></p>
 		</div>
 		<script type="text/javascript">
 			mui.init()
 			//跳转页面地址
-			var toUrl = ['page/person.html','page/mycollection.html','page/myset.html'];
+			var toUrl = ['./setpwd.html','./disclaimer.html','./userexit.html'];
 			for(var i=0; i<$('.tolink').length; i++){
 				(function(index){
 					$('.tolink').eq(index).click(function(){
 						mui.openWindow({ 
 						url:toUrl[index], //需要打开页面的url地址 
-						id:'person'+index,  //需要打开页面的url页面id
+						id:'setperson'+index,  //需要打开页面的url页面id
 						styles:{ 
 							top:'0px',//新页面顶部位置 
 							bottom:'0px',//新页面底部位置 

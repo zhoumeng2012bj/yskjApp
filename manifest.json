@@ -230,7 +230,8 @@
 					"js/lib/jquery-1.10.2.min.js"
 				],
 				"refer": [
-					"page/person.html"
+					"page/person.html",
+					"page/myset.html"
 				],
 				"priority": 0
 			},
@@ -275,7 +276,8 @@
 					"js/lib/jquery-1.10.2.min.js"
 				],
 				"refer": [
-					"wd.html"
+					"wd.html",
+					"page/person.html"
 				],
 				"priority": 0
 			},
@@ -380,6 +382,35 @@
 					"img/mp_zm.png",
 					"img/mp_bm.png",
 					"img/pz_icon.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/myset.html": {
+				"resources": [
+					"css/myset.css",
+					"css/person.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js"
+				],
+				"refer": [
+					"page/setpwd.html"
+				],
+				"priority": 0
+			},
+			"page/setpwd.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/person.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js"
 				],
 				"refer": [],
 				"priority": 0
