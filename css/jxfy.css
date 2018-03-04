@@ -11,3 +11,5 @@
 .jxfytjweizhi ul{display: flex;height: 100%;}
 .jxfytjweizhi li:after{content: "";display: block;width: 1px;height: 0.4rem;background-color: #e5e5e5;position: absolute;top: 50%;right: 0px;margin-top: -0.2rem;}
 .jxfyzxtubiao{color: #b9b9b9;}
+.jiage{color: #2c6fd7 !important;}
+.muiJiage{color: #2c6fd7;}
