@@ -44,14 +44,14 @@
 	    		</div>
 	    		<div class="mui-input-row inp">
 	    		    <input type="password" class="mui-input-clear" placeholder="请输入密码" id="yinc">
-	    		    <span class="ycmm"></span>
+	    		    <span class="ycmm" id="ycmm"></span>
 	    		</div>
-	    		<p class="wj_pwd">忘记密码？</p>
+	    		<p class="wj_pwd" id="wj_mm">忘记密码？</p>
 	    	</div>
 	    	<div class="btn_box">
 	    		<button class="btn">登陆</button>	    	
 	    	</div>
-	    	<div class="fast_zc" id="wj_pwd">快速注册</div>
+	    	<div class="fast_zc" id="fast_zc">快速注册</div>
 		</div>
 		<script type="text/javascript">
 			mui.init()
@@ -71,22 +71,27 @@
 					}
 				})(i)
 			}
-			$('.ycmm').click(function(){
+			$('#ycmm').click(function(){
+				//显示隐藏密码
 				if($('#yinc').attr('type') == 'password'){
-					$('.inp span').removeClass('ycmm');
-					$('.inp span').addClass('ycmm1');
+					$('#ycmm').removeClass('ycmm');
+					$('#ycmm').addClass('ycmm1');
 					$('#yinc').attr('type','text');
 				}else{
-					$('.inp span').removeClass('ycmm1');
-					$('.inp span').addClass('ycmm');
+					$('#ycmm').removeClass('ycmm1');
+					$('#ycmm').addClass('ycmm');
 					$('#yinc').attr('type','password');
 				}
-				
 			})
-			
 			//立即注册
-			document.getElementById('wj_pwd').addEventListener('tap', function() {
-			  //打开关于页面
+			document.getElementById('fast_zc').addEventListener('tap', function() {
+			  mui.openWindow({
+			    url: 'fast_zc.html', 
+			    id:'fast_zc'
+			  });
+			});
+			//忘记密码
+			document.getElementById('wj_mm').addEventListener('tap', function() {
 			  mui.openWindow({
 			    url: 'wj_pwd.html', 
 			    id:'wj_pwd'

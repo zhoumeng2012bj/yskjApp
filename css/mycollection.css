@@ -32,7 +32,11 @@ body{
 	position: absolute;
     right: 0.4rem;
     background: url(../img/bj.png) no-repeat center;
-    background-size: 90% auto;
+    background-size: auto 90%;
+    font-size: 0.4rem;
+    color: #666666;
+    width: 0.933333rem;
+    line-height: 0.6rem;
 }
 .serach{
 	position: absolute;

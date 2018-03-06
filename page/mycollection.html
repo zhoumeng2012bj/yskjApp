@@ -28,7 +28,7 @@
 		    </ul>
 		</header>
 		<div class="mui-content">
-		    <div class="dibu">
+		    <div class="dibu" style="visibility: hidden;">
 		    	<div class="mui-input-row mui-checkbox mui-left del">
 		    	  <label>全选</label>
 		    	  <input name="checkbox1" type="checkbox" style="position: absolute;top:18px;">
@@ -54,7 +54,7 @@
 						}
 						tabSps[index].className = 'active';	
 						var main = plus.webview.getWebviewById('mysc_list');
-						mui.fire(main, "pageflowrefresh",{
+						mui.fire(main, "tabqc",{
 						    idx:index
 						})
 					}
@@ -71,8 +71,27 @@
 			      extras:{}//额外扩展参数
 			    }]
 		  });
+		  var tags = 0;
 		  $('.bj').click(function(){
-			
+		  	tags ++;
+		  	if(tags == 1){
+		  		$('.bj').css({
+		  			'background':'none',
+		  		});
+		  		$('.bj').html('完成');
+//		  		background: url(../img/bj.png) no-repeat center
+		  		$('.dibu').css('visibility','initial');
+		  	}else{
+		  		$('.bj').css('background','url(../img/bj.png) no-repeat center');
+		  		$('.bj').css('background-size','auto 90%');
+		  		$('.bj').html('');
+		  		$('.dibu').css('visibility','hidden');
+		  		tags = 0;
+		  	}
+			var main = plus.webview.getWebviewById('mysc_list');
+			mui.fire(main, "bianji",{
+			    bjshow: tags
+			})
 		  })
 		
 		//控制子页面刷新(ceshi)

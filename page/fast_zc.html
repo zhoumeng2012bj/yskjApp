@@ -16,27 +16,35 @@
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">找回密码</h1>
+		    <h1 class="mui-title">注册</h1>
 		    <span class="save"></span>
 		</header>
 		<div class="mui-content content">
-			<div class="box_i">
+		    <div class="box_i" style="display: none;">
+		    	<div class="mui-input-row inp">
+	    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc">
+	    		    <span class="ycmm" id="ycmm"></span>
+	    		</div>
+	    		<div class="mui-input-row inp">
+	    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1">
+	    		    <span class="ycmm" id="ycmm1"></span>
+	    		</div>
+			    <div class="btn_box">
+			    	<button class="btn" id="btn">注册并登录</button>
+			    </div>
+		    </div>
+		    <div class="box_i1">
 		    	<div class="mui-input-row inp">
 	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号">
-			    	<span class="hqyzm">获取验证码</span>
+    		    	<span class="hqyzm">获取验证码</span>
 	    		</div>
 	    		<div class="mui-input-row inp">
 	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码">
 	    		</div>
+	    		<div class="btn_box">
+			    	<button class="btn" id="btn1">下一步</button>
+			    </div>
 		    </div>
-		    <div class="mui-input-row inp">
-    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc">
-    		    <span class="ycmm" id="ycmm"></span>
-    		</div>
-    		<div class="mui-input-row inp">
-    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1">
-    		    <span class="ycmm" id="ycmm1"></span>
-    		</div>
 		</div>
 		<script type="text/javascript">
 			mui.init()
@@ -63,6 +71,11 @@
 					$('#ycmm1').addClass('ycmm');
 					$('#yinc1').attr('type','password');
 				}
+			})
+			//点击下一步
+			$('#btn1').click(function(){
+				$('.box_i').css('display','block');
+				$('.box_i1').css('display','none');
 			})
 		</script>
 	</body>
