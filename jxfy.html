@@ -35,6 +35,7 @@
 		
 		
 		<script type="text/javascript">
+			var id = 100;
 			mui.init({
 			    subpages:[{
 			      url:'jxfyList.html',//子页面HTML地址，支持本地地址和网络地址
@@ -46,7 +47,7 @@
 			        height:subpage-height,//子页面高度，默认为100%
 			        ......*/
 			      },
-			      extras:{}//额外扩展参数
+			      extras:{id:'100'}//额外扩展参数
 			    }]
 		  	});
 		  	//页面的跳转
@@ -82,28 +83,29 @@
 			var jiage = 1;
 			var area = 1;
 			$('.shaxuandejiage').click(function(){
-				chushiweizhi();
 				if(jiage == 1){
+					chushiweizhi();
 					$('.shaxuandejiage span').removeClass('mui-icon-arrowdown');
 					$('.shaxuandejiage span').addClass('mui-icon-arrowup muiJiage');
 					$('.shaxuandejiage').addClass('jiage');
 					jiage = 2;
 				}else{
+					chushiweizhi();
 					$('.shaxuandejiage span').addClass('mui-icon-arrowdown');
 					$('.shaxuandejiage span').removeClass('mui-icon-arrowup muiJiage');
 					$('.shaxuandejiage').removeClass('jiage');
 					jiage = 1;
 				}
-				
 			});
 			$('.shiaxuanarea').click(function(){
-				chushiweizhi();
 				if(area == 1){
+					chushiweizhi();
 					$('.shiaxuanarea span').removeClass('mui-icon-arrowdown');
 					$('.shiaxuanarea span').addClass('mui-icon-arrowup muiJiage');
 					$('.shiaxuanarea').addClass('jiage');
 					area = 2;
 				}else{
+					chushiweizhi();
 					$('.shiaxuanarea span').addClass('mui-icon-arrowdown');
 					$('.shiaxuanarea span').removeClass('mui-icon-arrowup muiJiage');
 					$('.shiaxuanarea').removeClass('jiage');

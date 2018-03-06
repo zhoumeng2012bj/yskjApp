@@ -149,6 +149,8 @@
 					}
 				}
 			});
+			var self=plus.webview.currentWebview();//获取当前窗体对象
+			var receiveID=self.id;//接收A页面传入的id参数值
 			/**
 			 * 下拉刷新具体业务实现
 			 */
@@ -199,7 +201,7 @@
 			$('.listtail').click(function(){
 				mui.openWindow({ 
 					url:'page/fyTail.html', //需要打开页面的url地址 
-					id:'person',  //需要打开页面的url页面id
+					id:'fyTail',  //需要打开页面的url页面id
 					styles:{ 
 						top:'0px',//新页面顶部位置 
 						bottom:'0px',//新页面底部位置 
