@@ -20,7 +20,7 @@
 		    	<p class="head_img">
 		    		<img src="img/head_img.png"/>
 		    	</p>
-		    	<p class="user_news">
+		    	<p class="user_news" id="login">
 					<span class="ljdl">立即登陆</span>
 					<span class="dlcz">登陆后可进行更多操作</span>
 		    	</p>
@@ -89,6 +89,14 @@
 					})
 				})(i)		
 			}
+			//立即登陆
+			document.getElementById('login').addEventListener('tap', function() {
+			  //打开关于页面
+			  mui.openWindow({
+			    url: './page/login.html', 
+			    id:'login'
+			  });
+			});
 		</script>
 	</body>
 

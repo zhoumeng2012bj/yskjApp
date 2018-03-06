@@ -1,0 +1,134 @@
+.con_zt{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: #fff;
+}
+.login_pic{
+	width: 10rem;
+	height: 7.333333rem;
+	overflow: hidden;
+}
+.login_pic img{
+	width: 100%;
+	height: auto;
+}
+.dl_box{
+	display: flex;
+	align-items: center;
+	height: 1.6rem;
+	width: 10rem;
+	font-size: 0.4rem;
+	color: #343434;
+	background: #fff;
+	margin-top: 1rem;
+}
+.dl_box li{
+	width: 50%;
+	text-align: center;
+}
+.dl_box li span{
+	display: inline-block;
+	padding: 0 0.053333rem;
+	height: 0.666666rem;
+}
+.acti{
+	position: relative;
+	color: #2b70d8;
+}
+.acti:after{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 0.04rem;
+	background: #2b70d8;
+}
+.box_q{
+	display: none;
+}
+.inp{
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 8.866666rem;
+	height: 1.666666rem;
+	margin: 0 auto 0;
+}
+.inp span{
+	display: inline-block;
+	height: 0.666666rem;
+	line-height: 0.666666rem;
+}
+.inp input{
+	border: none;
+	margin-bottom: 0;
+	font-size: 0.4rem;
+	padding-left: 0;
+	padding-right: 2.933333rem;
+}
+.hqyzm{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -0.333333rem;
+	font-size: 0.4rem;
+	color: #c8c8c8;
+}
+.inp:after{
+	content: "";
+	display: block;	
+	width: 8.866666rem;
+	height: 1px;
+	position: absolute;
+	bottom: 1px;
+	background: #dcdcdc;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear{
+	top: 0.533333rem!important;
+	right: 2.133333rem!important;
+}
+.wj_pwd{
+	font-size: 0.4rem;
+	color: #666666;
+	text-align: right;
+	padding-right: 0.4rem;
+	height: 0.666666rem;
+	padding-top: 0.133333rem;
+}
+.btn_box{
+	width: 8.8rem;
+	height: 1.2rem;
+	margin: 0.4rem auto 0;
+}
+.btn{
+	border: none;
+	outline: none;
+	width: 8.8rem;
+	height: 1.2rem;
+	border-radius: 0.106666rem;
+	background: #2b70d8;
+	font-size: 0.4rem;
+	color: #fefefe;
+}
+.fast_zc{
+	width: 2.2rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	text-align: center;
+	border: 1px solid #2b70d8;
+	border-radius: 0.066666rem;
+	margin: 0.4rem auto;
+	font-size: 0.4rem;
+	color: #2b70d8;
+}
+.ycmm{
+	width: 0.48rem;
+	height: 0.213333rem;
+	background: url(../img/ycmm.png) no-repeat center;
+	background-size: 100% auto;
+}

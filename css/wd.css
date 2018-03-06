@@ -74,12 +74,14 @@ body{
 	color: #000!important;
 }
 .wd_icon{
+	display: inline-block;
 	width: 0.666666rem;
 	height: 0.6rem;
 	margin-right: 0.266666rem;
 }
 .wd_icon img{
 	height: 100%;
+	width: auto;
 }
 .wd_con{
 	position: absolute;

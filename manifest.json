@@ -231,7 +231,9 @@
 				],
 				"refer": [
 					"page/person.html",
-					"page/myset.html"
+					"page/myset.html",
+					"page/mycollection.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -277,7 +279,8 @@
 				],
 				"refer": [
 					"wd.html",
-					"page/person.html"
+					"page/person.html",
+					"page/search.html"
 				],
 				"priority": 0
 			},
@@ -317,9 +320,12 @@
 					"css/sy.css",
 					"img/fypic.png",
 					"js/lib/flexible.js",
-					"css/style.css"
+					"css/style.css",
+					"js/lib/jquery-1.10.2.min.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/fyTail.html"
+				],
 				"priority": 0
 			},
 			"page/person.html": {
@@ -407,6 +413,98 @@
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"css/person.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/search.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/search.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"css/style.css",
+					"css/jxfy.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/fyTail.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"css/fyxq.css",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/mycollection.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mycollection.css",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"img/bj.png",
+					"img/search_icon.png",
+					"page/mysc_list.html",
+					"js/lib/jquery-1.10.2.min.js",
+					"page/mysc_list1.html",
+					"img/del_ion.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/mysc_list.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/mui.min.js",
+					"css/mycollection.css",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"fonts/mui.ttf",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/jxfyList.css",
+					"img/fypic.png",
+					"css/sy.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/login.html": {
+				"resources": [
+					"img/login_pic.png",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/login.css",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"fonts/mui.ttf",
+					"img/ycmm.png"
+				],
+				"refer": [
+					"page/wj_pwd.html"
+				],
+				"priority": 0
+			},
+			"page/wj_pwd.html": {
+				"resources": [
+					"css/wj_pwd.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",

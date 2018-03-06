@@ -111,21 +111,21 @@
 	height: 100%;
 	display: inline-block;
 }
-.fypic{
+.fypics{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	height: 6.3rem;
 }
-.fypic li{
+.fypics li{
 	position: relative;
 	width: 4.466666rem;
 	height: 3rem;
 	overflow: hidden;
 	margin-bottom: 0.266666rem;
 }
-.fypic li p{
+.fypics li p{
 	width: 100%;
 	height: 0.533333rem;
 	line-height: 0.533333rem;
@@ -136,10 +136,10 @@
 	font-size: 0.346666rem;
 	padding-left: 0.346666rem;
 }
-.fypic li img{
+.fypics li img{
 	width: 100%;
 }
-.fypic li:nth-child(odd){
+.fypics li:nth-child(odd){
 	margin-right: 0.266666rem;
 }
 .nav_list{
@@ -265,14 +265,15 @@
 	height: 2.666666rem;
 }
 .fy_pic{
-	width: 5rem;
-	height: 2.96rem;
+	width: 2.96rem;
+	height: 1.973333rem;
+	overflow: hidden;
 }
 .fy_pic img{
 	width: 100%;
 }
 .fy_xx{
-	width: 100%;
+	width: 4.8rem;
 	margin-left: 0.6rem;
 }
 .fy_xx .lp{
