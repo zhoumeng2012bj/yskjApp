@@ -72,10 +72,16 @@
 				})(i)
 			}
 			$('.ycmm').click(function(){
-				$('#yinc').attr('type','text');
-				setTimeout(function(){
+				if($('#yinc').attr('type') == 'password'){
+					$('.inp span').removeClass('ycmm');
+					$('.inp span').addClass('ycmm1');
+					$('#yinc').attr('type','text');
+				}else{
+					$('.inp span').removeClass('ycmm1');
+					$('.inp span').addClass('ycmm');
 					$('#yinc').attr('type','password');
-				},30000)
+				}
+				
 			})
 			
 			//立即注册

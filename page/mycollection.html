@@ -20,7 +20,7 @@
 		    	<span class="tit">我的收藏</span>
 		    </h1>
 		    <span class="bj"></span>
-		    <span class="serach" id="sss"></span>
+		    <span class="serach"></span>
 		    <ul class="scmenu">
 		    	<li><span class="active">全部</span></li>
 		    	<li><span>下架房源</span></li>
@@ -53,6 +53,10 @@
 							tabSps[j].className = '';
 						}
 						tabSps[index].className = 'active';	
+						var main = plus.webview.getWebviewById('mysc_list');
+						mui.fire(main, "pageflowrefresh",{
+						    idx:index
+						})
 					}
 				})(i)
 			}
@@ -71,14 +75,16 @@
 			
 		  })
 		
-		//控制子页面刷新
-		document.getElementById('sss').addEventListener('tap',function(){
-			mui.plusReady(function(){
-			var wobj = plus.webview.getWebviewById("mysc_list");
-				wobj.reload(true);
-			})
-		})
-		  
+		//控制子页面刷新(ceshi)
+//		document.getElementById('sss').addEventListener('tap',function(){
+//			mui.plusReady(function(){
+//			var wobj = plus.webview.getWebviewById("mysc_list");
+//				wobj.reload(true);
+//			})
+//		})
+		
+		
+		
 	</script>
 	</body>
 

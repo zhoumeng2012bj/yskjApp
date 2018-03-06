@@ -200,7 +200,17 @@
 			</div> 
 		</div>
 		<script type="text/javascript">
-			alert('刷新');	
+			window.addEventListener("pageflowrefresh", function (e) {
+			    //获得事件参数
+			    var idx = e.detail.idx;
+				//子页面tab切换功能
+				for (var i=0; i<$('.list_xs').length; i++) {
+					$('.list_xs').eq(i).css('display','none');
+				}
+				$('.list_xs').eq(idx).css('display','block');
+			});
+			
+			
 			
 			mui.plusReady(function() {  
 	            var self = plus.webview.currentWebview();  

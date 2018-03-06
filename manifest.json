@@ -493,7 +493,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"fonts/mui.ttf",
-					"img/ycmm.png"
+					"img/ycmm.png",
+					"img/xsmm_ion.png"
 				],
 				"refer": [
 					"page/wj_pwd.html"
