@@ -86,6 +86,7 @@
 	height: 1px;
 	position: absolute;
 	bottom: 1px;
+	left: 0;
 	background: #dcdcdc;
 }
 .mui-input-row .mui-input-clear~.mui-icon-clear{

@@ -96,7 +96,9 @@
 			"js/lib/flexible.js",
 			"img/1.jpg",
 			"img/4.jpg",
-			"img/3.jpg"
+			"img/3.jpg",
+			"js/lib/jquery-1.10.2.min.js",
+			"page/fwsc.css"
 		]
 	},
 	"qyhl.html": {
@@ -295,7 +297,8 @@
 			"css/mui.min.css",
 			"js/lib/flexible.js",
 			"css/fast_zc.css",
-			"img/ycmm.png"
+			"img/ycmm.png",
+			"img/xsmm_ion.png"
 		]
 	},
 	"page/fast_zc.html": {
