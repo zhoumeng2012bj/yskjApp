@@ -2,7 +2,7 @@
 .titlezi{font-size: 0.453333rem;color: #666666;margin-left: 3.04rem;}
 .fyxqfh{padding: 0 0 !important;color: #676767;margin-left: 0.333333rem !important;width:0.28rem;line-height:0.48rem;margin-right: 0 !important;}
 .fyzhuti{position: absolute;top: 1.706666rem;bottom:0;left:0;right:0;padding-top: 0px !important;overflow: auto;}
-.fyxqyi{border: 1px solid red;}
+.fyxqyi{}
 #slider{
 	height: 5.813333rem;
 }
@@ -36,5 +36,14 @@
 .xshgwedi span,.lianxfangs span{font-size: 0.373333rem;}
 .lianxfangs{display: flex;margin-top: 0.386666rem;}
 .lainsier{color: #2b70d8;}
-.shouc{height: 1.426666rem;border-top: 1px solid #dfdfdf;}
-.shouc p{border: 1px solid red;width: 50%;height: 100%;line-height: 100%;}
+.shouc{height: 1.426666rem;border-top: 1px solid #dfdfdf;display: flex;position: relative;}
+.shouc p{width: 50%;height: 100%;line-height: 100%;text-align: center;display: flex;justify-content: center;align-items: center;}
+.xindebg{width: 0.493333rem;display: flex;height: 0.56rem;}
+.xindebgimg{background:url(../img/fav2.png) no-repeat;background-size: 100% 100%;}
+.choucdewezi{height: 0.493333rem;margin-left: 0.266666rem;font-size: 0.373333rem;display: flex;align-items: center;}
+.choucdeweziwidth{width: 0.773333rem;}
+.choucdeweziyiwidth{width: 1.2rem;}
+.shouc p{display: flex;}
+.lainxixingmql{font-size: 0.4rem;color: #2b70d8;text-align:left;width: 100%;text-indent:0.8rem;}
+.xmjxlx{background: url(../img/shoucdianhuobg.png) no-repeat center;background-size:85% 85%;width: 1.146666rem;height: 1.146666rem;-webkit-box-shadow:1px 0px 0.093333rem #333333;box-shadow:1px 0px 0.093333rem #333333;border-radius: 50%;position: absolute;top: -0.133333rem;right: 0.4rem;}
+
