@@ -1,10 +1,11 @@
-.shfw{border:1px solid red;height: 5.813333rem;background: url(../img/shouffwu.png) no-repeat;background-size: 100% 100%;}
+.shoushhead{background-color: rgba(0,0,0,0)!important;}
+.shfw{height: 5.813333rem;background: url(../img/shouffwu.png) no-repeat;background-size: 100% 100%;}
 .fufanhui{margin-top: 0.906666rem;height:0.48rem;text-align: center;}
 .fufanhui a{color: #303433;height: 100%;}
 .fufanhui span{height:0.48rem;font-size: 0.426666rem;color: #333331;}
 .qlxnide{border-bottom: 1px solid #e5e5e5;background-color: #ffffff;line-height:0.533333rem;padding:0.493333rem 0.4rem;font-size: 0.32rem;color: #989898;}
 .zhuaxff{border-bottom: 1px solid #e5e5e5;height: 0.293333rem;}
-.forminp{border: 1px solid red;height: 10.573333rem;background-color: #ffffff;overflow: hidden;}
+.forminp{height: 10.573333rem;background-color: #ffffff;overflow: hidden;}
 .shurpnone{width: 2.733333rem;font-size: 0.386666rem;color: #333333;}
 .shfuimput{margin-left: 0.4rem !important;overflow: initial !important;}
 .shfuimput:after{
@@ -49,7 +50,7 @@
 }
 .xingbei div{width: 2.4rem;}
 .xianshang{font-size: 0.4rem;color: #c8c8c8;}
-.xingbei input{border: 1px solid red;}
+.xingbei input{}
 .xingbei{display: flex; align-items: center;position:relative;height: 1.666666rem;border-bottom: 1px solid #e5e5e5;}
 .mui-checkbox, .mui-radio{left:-1.133333rem;}
 .nvshi{top:0.533333rem !important;}
@@ -57,4 +58,13 @@
 .fangwutop{height: 0.106666rem;background-color: #f0f0f0;}
 .fangwuxinix{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;}
 .fangwuxinix div:after{display: none;}
-.baoxiuxx{height: 0.293333rem;}
+.baoxiuxx{height: 0.293333rem;background-color: #f0f0f0;}
+.baxiuxxx{height: 1.08rem;line-height: 1.08rem;padding-left: 0.4rem;font-size: 0.4rem;color: #333333;}
+.baoxiudebeizhu{height:2.586666rem;padding-left: 0.4rem;padding-right: 0.4rem;position: relative;}
+.texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;text-indent: 2em;}
+.textwenadeshuz{position: absolute;bottom: 9px;right: 30px;color: #c8c8c8;}
+.baoxoiwenzibot{height:0.373333rem;background-color: #ffffff;}
+.tijiaomax{height: 4.28rem;display: flex;flex-direction: column;/*垂直排列*/justify-content: center;align-items: center;}
+.button{width: 8.826666rem;background-color: #2b70d8;height: 1.173333rem;border-radius: 0.066666rem;color: #fefefe;display: flex;justify-content: center;align-items: center;font-size: 0.36rem;}
+.tijiaodewenzi{margin-top: 0.493333rem;height:0.4rem;line-height:0.4rem;width: 6.893333rem;font-size: 0.32rem;color: #;}
+.tijiaodewenzi a{margin-left: 0.28rem;color: #2b70d8;}

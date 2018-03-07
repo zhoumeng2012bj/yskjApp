@@ -11,13 +11,13 @@
 		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
 	</head>
+	<body>
+		<header class="mui-bar mui-bar-transparent shoushhead fufanhui">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">售后服务</h1>
+		</header>
 	<div class="mui-content">
-	    <div class="shfw">
-	    	<div class="fufanhui">
-	    		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	    		<span class="">售后服务</span>
-	    	</div>
-	    </div>
+	    <div class="shfw"></div>
 	    <div class="qlxnide">请留下您的房屋基本信息与联系方式，我们会及时与您联系，为您提供专属服务。</div>
 		<div class="zhuaxff"></div>
 		<div class="forminp">
@@ -49,24 +49,21 @@
 	    			</div>
 	    		</div>
 	    		<div class="baoxiuxx"></div>
-	    		
-	    		
 		    </div>
-		    <div class="box_i">
-		    	<div class="mui-input-row inp">
-	    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc">
-	    		    <span class="ycmm" id="ycmm"></span>
-	    		</div>
-	    		<div class="mui-input-row inp">
-	    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1">
-	    		    <span class="ycmm" id="ycmm1"></span>
-	    		</div>
+		    <div class="baxiuxxx">报修信息</div>
+		    <div class="baoxiudebeizhu">
+		    	<textarea class="texta" maxlength="200" placeholder="请输入详细内容"></textarea>
+		    	<span class='two textwenadeshuz'><span id="textNum">0</span>/200</span>
 		    </div>
 		</div>
-		
+		<div class="baoxoiwenzibot"></div>
+		<div class="tijiaomax">
+			<div class="button">提交</div>
+			<div class="tijiaodewenzi">如有任何疑问请拨打咨询电话<sapn class="wd_tel"><a href="tel:400-078-8800">400-078-8800</a></span></div>
+		</div>
 	</div>
 
-	<body>
+	
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
