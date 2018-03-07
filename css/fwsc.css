@@ -1,0 +1,109 @@
+html{
+	background: #f0f0f0;
+}
+.fw_main{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #f0f0f0;
+}
+.fw_banner{
+	width: 10rem;
+	height: 6.466666rem;
+	background: #fff;
+}
+.fw_banner img{
+	width: 100%;
+	height: auto;
+}
+.fw_ion{
+	width: 1.133333rem;
+	height: 1.133333rem;
+}
+.fw_ion img{
+	width: 100%;
+	height: auto;
+}
+.fw_name{
+	font-size: 0.346666rem;
+	color: #333333;
+	margin-top: 0.2rem;
+}
+.fw{
+	display: flex;
+}
+.fw li{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 25%;
+}
+.fw_box{
+	padding-top: 0.6rem;
+	padding-bottom: 0.733333rem;
+	background: #fff;
+}
+.zxsj_box{
+	/*最新数据*/
+	background: #fff;
+	margin-top: 0.266666rem;
+}
+.tit{
+	position: relative;
+	width: 100%;
+	height: 1.533333rem;
+	line-height: 1.533333rem;
+	font-size: 0.453333rem;
+	padding-left: 0.666666rem;
+}
+.tit::before{
+	position: absolute;
+	top: 50%;
+	/*left: 0.266666rem;*/
+	left: 0.4rem;
+	margin-top: -0.186666rem;
+	content: "";
+	display: block;
+	width: 0.066666rem;
+	height: 0.373333rem;
+	background: #2b70d8;
+}
+.rmtj_pic{
+	width: 9.2rem;
+	margin:  0 auto 0.4rem;
+	border-radius: 0.066666rem;
+	overflow: hidden;
+}
+.rmtj_pic img{
+	width: 100%;
+	height: auto;
+	display: inherit;
+}
+.yiny{
+	-webkit-box-shadow:0px 0px 5px #DEDEDE; 
+	box-shadow:0px 0px 6px #DEDEDE;
+}
+.whysel{
+	display: flex;
+}
+.whysel li{
+	width: 33.333%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.sel_ion{
+	width: 1.133333rem;
+	height: 1.133333rem;
+}
+.sel_ion img{
+	width: 100%;
+	height: auto;
+}
+.sel_name{
+	font-size: 0.346666rem;
+	color: #333333;
+	margin-top: 0.2rem;
+}
