@@ -261,7 +261,9 @@
 					"img/sjfw.png"
 				],
 				"refer": [
-					"jxfy.html"
+					"jxfy.html",
+					"page/saleFuWu.html",
+					"page/loupan_detail.html"
 				],
 				"priority": 0
 			},
@@ -533,6 +535,36 @@
 					"js/lib/flexible.js",
 					"img/ycmm.png",
 					"img/xsmm_ion.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/saleFuWu.html": {
+				"resources": [
+					"css/saleFuWu.css",
+					"img/shouffwu.png",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/loupan_detail.html": {
+				"resources": [
+					"img/fav2.png",
+					"css/fyxq.css",
+					"fonts/mui.ttf",
+					"img/shoucdianhuobg.png",
+					"img/2.png",
+					"js/lib/flexible_css.js",
+					"js/lib/castapp.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"css/loupan_detail.css",
+					"css/jxfyList.css",
+					"css/sy.css",
+					"img/fypic.png"
 				],
 				"refer": [],
 				"priority": 0
