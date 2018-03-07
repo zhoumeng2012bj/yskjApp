@@ -311,3 +311,12 @@
 	margin-top: 0.266666rem;
 	height: 4.266666rem;
 }
+.shouhou{
+	position: fixed;
+	width: 1.333333rem;
+	height: 0.8rem;
+	border: 1px solid red;
+	top: 50%;
+	margin-top: -0.4rem;
+	right: 0;
+}
