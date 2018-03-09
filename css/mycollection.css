@@ -45,9 +45,6 @@ body{
     background-size: 90% auto;
 }
 /*收藏列表*/
-/*.mui-pull-top-pocket{
-	top: 110px!important;
-}*/
 .scmenu{
 	position: absolute;
 	display: flex;
