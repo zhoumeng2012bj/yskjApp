@@ -45,17 +45,19 @@ body{
     background-size: 90% auto;
 }
 /*收藏列表*/
-.mui-pull-top-pocket{
+/*.mui-pull-top-pocket{
 	top: 110px!important;
-}
+}*/
 .scmenu{
 	position: absolute;
 	display: flex;
 	width: 100%;
 	height: 45px;
 	left: 0;
-	bottom: -45px;
+	/*bottom: -45px;*/
+	top: 0;
 	border-bottom: 1px solid #e5e5e5;
+	background: #fff;
 }
 .scmenu li{
 	position: relative;
@@ -129,4 +131,12 @@ body{
 .del_ion img{
 	width: 100%;
 	height: auto;
+}
+.mysc_content{
+	position: absolute;
+	left: 0;
+	top: 65px;
+	right: 0;
+	bottom: 0px;
+	background: #fff;
 }
