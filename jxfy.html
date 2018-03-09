@@ -49,7 +49,11 @@
 			      extras:{}//额外扩展参数
 			    }]
 		  	});
+		  	
 		  	//页面的跳转
+		  	mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
 		  	$('.sousu').click(function(){
 				mui.openWindow({ 
 					url:'page/search.html', //需要打开页面的url地址 
