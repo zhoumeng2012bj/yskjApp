@@ -338,7 +338,9 @@
 					"css/fwsc.css",
 					"js/seturl.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/financial.html"
+				],
 				"priority": 0
 			},
 			"qyhl.html": {
@@ -604,6 +606,24 @@
 					"css/jxfyList.css",
 					"css/sy.css",
 					"img/fypic.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/financial.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"css/financial.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"css/style.css",
+					"img/jt_titbg.png",
+					"img/xq_1.png",
+					"img/xq_2.png",
+					"img/xq_3.png"
 				],
 				"refer": [],
 				"priority": 0

@@ -1,362 +1,380 @@
 {
-  "index.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "fonts/mui.ttf",
-      "sy.html",
-      "css/style.css",
-      "css/iconfont.css"
-    ],
-    "refer": [
-      "sy.html",
-      "wd.html",
-      "jxfy.html",
-      "fwsc.html",
-      "qyhl.html"
-    ]
-  },
-  "wd.html": {
-    "resources": [
-      "css/style.css",
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "css/wd.css",
-      "img/wd_bg.png",
-      "img/head_img.png",
-      "fonts/mui.ttf",
-      "img/per.png",
-      "img/sz.png",
-      "img/fav.png",
-      "js/lib/jquery-1.10.2.min.js"
-    ],
-    "refer": [
-      "page/person.html",
-      "page/myset.html",
-      "page/mycollection.html",
-      "page/login.html"
-    ]
-  },
-  "sy.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible.js",
-      "js/lib/castapp.js",
-      "css/sy.css",
-      "img/2.png",
-      "img/tt_icon.png",
-      "js/lib/jquery-1.10.2.min.js",
-      "img/mj_icon.png",
-      "img/qy_icon.png",
-      "img/jjr_icon.png",
-      "img/gj_icon.png",
-      "img/tab_bg1.png",
-      "img/tab_bg.png",
-      "img/yzwt.png",
-      "fonts/mui.ttf",
-      "img/fypic.png",
-      "img/sjfw.png"
-    ],
-    "refer": [
-      "jxfy.html",
-      "page/saleFuWu.html",
-      "page/loupan_detail.html"
-    ]
-  },
-  "jxfy.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible.js",
-      "jxfyList.html",
-      "css/jxfy.css",
-      "fonts/mui.ttf",
-      "js/lib/jquery-1.10.2.min.js"
-    ],
-    "refer": [
-      "wd.html",
-      "jxfyList.html",
-      "page/person.html",
-      "page/search.html"
-    ]
-  },
-  "fwsc.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible.js",
-      "img/1.jpg",
-      "img/4.jpg",
-      "img/3.jpg",
-      "js/lib/jquery-1.10.2.min.js",
-      "page/fwsc.css",
-      "css/fwsc.css",
-      "js/seturl.js"
-    ],
-    "refer": []
-  },
-  "qyhl.html": {
-    "resources": [
-      "css/mui.min.css",
-      "css/style.css",
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "js/lib/flexible.js",
-      "fonts/mui.ttf"
-    ],
-    "refer": []
-  },
-  "jxfyList.html": {
-    "resources": [
-      "css/mui.min.css",
-      "fonts/mui.ttf",
-      "css/jxfyList.css",
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/sy.css",
-      "img/fypic.png",
-      "js/lib/flexible.js",
-      "css/style.css",
-      "js/lib/jquery-1.10.2.min.js"
-    ],
-    "refer": [
-      "page/fyTail.html"
-    ]
-  },
-  "page/person.html": {
-    "resources": [
-      "css/mui.min.css",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/person.css",
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/lib/flexible.js",
-      "img/head_img.png"
-    ],
-    "refer": [
-      "page/add_name.html",
-      "page/gh_tel.html",
-      "page/sfrz.html",
-      "page/add_sfz.html",
-      "page/qdgs.html",
-      "page/ssxm.html"
-    ]
-  },
-  "page/add_name.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "css/person.css"
-    ],
-    "refer": []
-  },
-  "page/gh_tel.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "css/person.css",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js"
-    ],
-    "refer": []
-  },
-  "page/sfrz.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "css/person.css",
-      "fonts/mui.ttf",
-      "css/sfrz.css",
-      "img/mp_zm.png",
-      "img/mp_bm.png",
-      "img/pz_icon.png"
-    ],
-    "refer": []
-  },
-  "page/myset.html": {
-    "resources": [
-      "css/myset.css",
-      "css/person.css",
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js"
-    ],
-    "refer": [
-      "page/setpwd.html"
-    ]
-  },
-  "page/setpwd.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "css/person.css",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js"
-    ],
-    "refer": []
-  },
-  "page/search.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "css/search.css",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "css/style.css",
-      "css/jxfy.css"
-    ],
-    "refer": []
-  },
-  "page/fyTail.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "css/fyxq.css",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "img/fav2.png",
-      "img/shoucdianhuobg.png"
-    ],
-    "refer": []
-  },
-  "page/mycollection.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mycollection.css",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "img/bj.png",
-      "img/search_icon.png",
-      "page/mysc_list.html",
-      "js/lib/jquery-1.10.2.min.js",
-      "page/mysc_list1.html",
-      "img/del_ion.png"
-    ],
-    "refer": [
-      "page/mysc_list.html",
-      "page/mysc_list1.html"
-    ]
-  },
-  "page/mysc_list.html": {
-    "resources": [
-      "js/lib/flexible_css.js",
-      "js/mui.min.js",
-      "css/mycollection.css",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "fonts/mui.ttf",
-      "js/lib/jquery-1.10.2.min.js",
-      "css/jxfyList.css",
-      "img/fypic.png",
-      "css/sy.css"
-    ],
-    "refer": []
-  },
-  "page/login.html": {
-    "resources": [
-      "img/login_pic.png",
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "css/login.css",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "fonts/mui.ttf",
-      "img/ycmm.png",
-      "img/xsmm_ion.png"
-    ],
-    "refer": [
-      "page/wj_pwd.html",
-      "page/fast_zc.html"
-    ]
-  },
-  "page/wj_pwd.html": {
-    "resources": [
-      "css/wj_pwd.css",
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "css/fast_zc.css",
-      "img/ycmm.png",
-      "img/xsmm_ion.png"
-    ],
-    "refer": []
-  },
-  "page/fast_zc.html": {
-    "resources": [
-      "fonts/mui.ttf",
-      "css/fast_zc.css",
-      "js/lib/flexible_css.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "img/ycmm.png",
-      "img/xsmm_ion.png"
-    ],
-    "refer": []
-  },
-  "page/saleFuWu.html": {
-    "resources": [
-      "css/saleFuWu.css",
-      "img/shouffwu.png",
-      "fonts/mui.ttf"
-    ],
-    "refer": []
-  },
-  "page/loupan_detail.html": {
-    "resources": [
-      "img/fav2.png",
-      "css/fyxq.css",
-      "fonts/mui.ttf",
-      "img/shoucdianhuobg.png",
-      "img/2.png",
-      "js/lib/flexible_css.js",
-      "js/lib/castapp.js",
-      "js/lib/jquery-1.10.2.min.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "js/lib/flexible.js",
-      "css/loupan_detail.css",
-      "css/jxfyList.css",
-      "css/sy.css",
-      "img/fypic.png"
-    ],
-    "refer": []
-  }
+	"index.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"fonts/mui.ttf",
+			"sy.html",
+			"css/style.css",
+			"css/iconfont.css"
+		],
+		"refer": [
+			"sy.html",
+			"wd.html",
+			"jxfy.html",
+			"fwsc.html",
+			"qyhl.html"
+		]
+	},
+	"wd.html": {
+		"resources": [
+			"css/style.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/wd.css",
+			"img/wd_bg.png",
+			"img/head_img.png",
+			"fonts/mui.ttf",
+			"img/per.png",
+			"img/sz.png",
+			"img/fav.png",
+			"js/lib/jquery-1.10.2.min.js"
+		],
+		"refer": [
+			"page/person.html",
+			"page/myset.html",
+			"page/mycollection.html",
+			"page/login.html"
+		]
+	},
+	"sy.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js",
+			"js/lib/castapp.js",
+			"css/sy.css",
+			"img/2.png",
+			"img/tt_icon.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/mj_icon.png",
+			"img/qy_icon.png",
+			"img/jjr_icon.png",
+			"img/gj_icon.png",
+			"img/tab_bg1.png",
+			"img/tab_bg.png",
+			"img/yzwt.png",
+			"fonts/mui.ttf",
+			"img/fypic.png",
+			"img/sjfw.png"
+		],
+		"refer": [
+			"jxfy.html",
+			"page/saleFuWu.html",
+			"page/loupan_detail.html"
+		]
+	},
+	"jxfy.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js",
+			"jxfyList.html",
+			"css/jxfy.css",
+			"fonts/mui.ttf",
+			"js/lib/jquery-1.10.2.min.js"
+		],
+		"refer": [
+			"wd.html",
+			"jxfyList.html",
+			"page/person.html",
+			"page/search.html"
+		]
+	},
+	"fwsc.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js",
+			"img/1.jpg",
+			"img/4.jpg",
+			"img/3.jpg",
+			"js/lib/jquery-1.10.2.min.js",
+			"page/fwsc.css",
+			"css/fwsc.css",
+			"js/seturl.js"
+		],
+		"refer": [
+			"page/financial.html"
+		]
+	},
+	"qyhl.html": {
+		"resources": [
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"jxfyList.html": {
+		"resources": [
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"css/jxfyList.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/sy.css",
+			"img/fypic.png",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"js/lib/jquery-1.10.2.min.js"
+		],
+		"refer": [
+			"page/fyTail.html"
+		]
+	},
+	"page/person.html": {
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/person.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/flexible.js",
+			"img/head_img.png"
+		],
+		"refer": [
+			"page/add_name.html",
+			"page/gh_tel.html",
+			"page/sfrz.html",
+			"page/add_sfz.html",
+			"page/qdgs.html",
+			"page/ssxm.html"
+		]
+	},
+	"page/add_name.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/person.css"
+		],
+		"refer": []
+	},
+	"page/gh_tel.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
+		],
+		"refer": []
+	},
+	"page/sfrz.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/person.css",
+			"fonts/mui.ttf",
+			"css/sfrz.css",
+			"img/mp_zm.png",
+			"img/mp_bm.png",
+			"img/pz_icon.png"
+		],
+		"refer": []
+	},
+	"page/myset.html": {
+		"resources": [
+			"css/myset.css",
+			"css/person.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"page/setpwd.html"
+		]
+	},
+	"page/setpwd.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
+		],
+		"refer": []
+	},
+	"page/search.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/search.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"css/jxfy.css"
+		],
+		"refer": []
+	},
+	"page/fyTail.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"css/fyxq.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"img/fav2.png",
+			"img/shoucdianhuobg.png"
+		],
+		"refer": []
+	},
+	"page/mycollection.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mycollection.css",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"img/bj.png",
+			"img/search_icon.png",
+			"page/mysc_list.html",
+			"js/lib/jquery-1.10.2.min.js",
+			"page/mysc_list1.html",
+			"img/del_ion.png"
+		],
+		"refer": [
+			"page/mysc_list.html",
+			"page/mysc_list1.html"
+		]
+	},
+	"page/mysc_list.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mycollection.css",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"fonts/mui.ttf",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/jxfyList.css",
+			"img/fypic.png",
+			"css/sy.css"
+		],
+		"refer": []
+	},
+	"page/login.html": {
+		"resources": [
+			"img/login_pic.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/login.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"fonts/mui.ttf",
+			"img/ycmm.png",
+			"img/xsmm_ion.png"
+		],
+		"refer": [
+			"page/wj_pwd.html",
+			"page/fast_zc.html"
+		]
+	},
+	"page/wj_pwd.html": {
+		"resources": [
+			"css/wj_pwd.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/fast_zc.css",
+			"img/ycmm.png",
+			"img/xsmm_ion.png"
+		],
+		"refer": []
+	},
+	"page/fast_zc.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"css/fast_zc.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"img/ycmm.png",
+			"img/xsmm_ion.png"
+		],
+		"refer": []
+	},
+	"page/saleFuWu.html": {
+		"resources": [
+			"css/saleFuWu.css",
+			"img/shouffwu.png",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"page/loupan_detail.html": {
+		"resources": [
+			"img/fav2.png",
+			"css/fyxq.css",
+			"fonts/mui.ttf",
+			"img/shoucdianhuobg.png",
+			"img/2.png",
+			"js/lib/flexible_css.js",
+			"js/lib/castapp.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/loupan_detail.css",
+			"css/jxfyList.css",
+			"css/sy.css",
+			"img/fypic.png"
+		],
+		"refer": []
+	},
+	"page/financial.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"css/financial.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"img/jt_titbg.png",
+			"img/xq_1.png",
+			"img/xq_2.png",
+			"img/xq_3.png"
+		]
+	}
 }

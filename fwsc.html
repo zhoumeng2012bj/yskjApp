@@ -85,6 +85,19 @@
 		</div>
 		<script type="text/javascript">
 			mui.init()
+			var toUrl = ['./page/tax.html','./page/fitup.html','./page/financial.html','./page/added.html']
+			var fwli = $('.fw li');
+			for (var i=0; i<fwli.length; i++) {
+				(function(index){
+					fwli[i].addEventListener('tap',function(){
+						//打开关于页面
+						mui.openWindow({
+							url: toUrl[index], 
+							id:'fw'+index
+						});
+					})
+				})(i)
+			}
 		</script>
 	</body>
 
