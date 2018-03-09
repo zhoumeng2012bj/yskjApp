@@ -1,0 +1,70 @@
+.shfw{height: 5.813333rem;background: url(../img/shouffwu.png) no-repeat;background-size: 100% 100%;}
+.fufanhui{text-align: center;height:1.733333rem ;padding-top: 0.813333rem;}
+.fufanhui a{color: #666666;height: 100%;}
+.fufanhui span{height:0.48rem;font-size: 0.426666rem;color: #333333;}
+.mui-bar-nav~.mui-content{position: absolute;top:1.733333rem;bottom: 0px;left:0px;right: 0px;padding-top: 0px !important;}
+.qlxnide{border-bottom: 1px solid #e5e5e5;background-color: #ffffff;line-height:0.533333rem;padding:0.493333rem 0.4rem;font-size: 0.32rem;color: #989898;}
+.zhuaxff{border-bottom: 1px solid #e5e5e5;height: 0.293333rem;}
+.forminp{height: 9.333333rem;background-color: #ffffff;overflow: hidden;}
+.shurpnone{width: 2.733333rem;font-size: 0.386666rem;color: #333333;}
+.shfuimput{margin-left: 0.4rem !important;overflow: initial !important;}
+.shfuimput:after{
+	width: 120% !important;
+}
+::-webkit-input-placeholder{
+	color: #c8c8c8;
+}
+.inp{
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 8.866666rem;
+	height: 1.666666rem;
+	margin: 0 auto 0;
+}
+.inp span{
+	display: inline-block;
+	height: 0.666666rem;
+	line-height: 0.666666rem;
+}
+.inp input{
+	border: none;
+	margin-bottom: 0;
+	font-size: 0.4rem;
+	padding-left: 0;
+/*	padding-right: 2.933333rem;*/
+}
+.inp:after{
+	content: "";
+	display: block;	
+	width: 8.866666rem;
+	height: 1px;
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+	background: #dcdcdc;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear{
+	top: 0.533333rem!important;
+	right: -0.266666rem!important;
+}
+.xingbei div{width: 2.4rem;}
+.xianshang{font-size: 0.4rem;color: #c8c8c8;}
+.xingbei input{}
+.xingbei{display: flex; align-items: center;position:relative;height: 1.666666rem;border-bottom: 1px solid #e5e5e5;}
+.mui-checkbox, .mui-radio{left:-1.133333rem;}
+.nvshi{top:0.533333rem !important;}
+.nan{top:0.16rem !important;}
+.fangwutop{height: 0.106666rem;background-color: #f0f0f0;}
+.fangwuxinix{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;}
+.fangwuxinix div:after{display: none;}
+.baoxiuxx{height: 0.293333rem;background-color: #f0f0f0;}
+.baxiuxxx{height: 1.08rem;line-height: 1.08rem;padding-left: 0.4rem;font-size: 0.4rem;color: #333333;}
+.baoxiudebeizhu{height:2.8rem;padding-left: 0.4rem;padding-right: 0.4rem;position: relative;}
+.texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;text-indent: 2em;}
+.textwenadeshuz{position: absolute;bottom: 9px;right: 30px;color: #c8c8c8;}
+.baoxoiwenzibot{height:0.373333rem;background-color: #ffffff;}
+.tijiaomax{height: 4.28rem;display: flex;flex-direction: column;/*垂直排列*/justify-content: center;align-items: center;}
+.button{width: 8.826666rem;background-color: #2b70d8;height: 1.173333rem;border-radius: 0.066666rem;color: #fefefe;display: flex;justify-content: center;align-items: center;font-size: 0.36rem;}
+.tijiaodewenzi{margin-top: 0.493333rem;height:0.4rem;line-height:0.4rem;width: 6.893333rem;font-size: 0.32rem;color: #999999;}
+.tijiaodewenzi a{margin-left: 0.28rem;color: #2b70d8;}

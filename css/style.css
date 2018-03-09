@@ -29,3 +29,6 @@
 	padding-top: 0px!important;
 	overflow: auto;
 }
+.indexss{position: absolute;bottom:0px;z-index: 99999;height:50px;background-color: rgba(0,0,0,.3);width: 100%;}
+.idnexdisplay{display: none;}
+.idnexdisplayblo{display: block;}
