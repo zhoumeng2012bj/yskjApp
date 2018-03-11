@@ -32,7 +32,8 @@
 			"img/per.png",
 			"img/sz.png",
 			"img/fav.png",
-			"js/lib/jquery-1.10.2.min.js"
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"page/person.html",
@@ -205,10 +206,12 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		],
 		"refer": [
-			"page/setpwd.html"
+			"page/setpwd.html",
+			"wd.html"
 		]
 	},
 	"page/setpwd.html": {
@@ -297,11 +300,15 @@
 			"js/lib/flexible.js",
 			"fonts/mui.ttf",
 			"img/ycmm.png",
-			"img/xsmm_ion.png"
+			"img/xsmm_ion.png",
+			"css/style.css",
+			"js/lib/form_yz.js",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"page/wj_pwd.html",
-			"page/fast_zc.html"
+			"page/fast_zc.html",
+			"wd.html"
 		]
 	},
 	"page/wj_pwd.html": {
@@ -375,6 +382,15 @@
 			"img/xq_1.png",
 			"img/xq_2.png",
 			"img/xq_3.png"
+		],
+		"refer": [
+			"page/liJiShenQing.html"
+		]
+	},
+	"page/liJiShenQing.html": {
+		"resources": [
+			"css/liJiShenQ.css",
+			"css/fast_zc.css"
 		]
 	}
 }

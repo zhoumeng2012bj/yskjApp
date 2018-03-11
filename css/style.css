@@ -17,7 +17,7 @@
 	background-size: 100% 120%;
 	padding: 0;
 }
-.public_h{
+.public_h,.public_h1{
 	height: 1.733333rem;
 }
 .public_con{
@@ -28,6 +28,13 @@
 	top: 1.733333rem;
 	padding-top: 0px!important;
 	overflow: auto;
+}
+.public_h1{
+	padding-top: 0.666666rem;
+}
+.public_h1 h1{
+	font-size: 0.453333rem;
+	color: #fff;
 }
 .indexss{position: absolute;bottom:0px;z-index: 99999;height:50px;background-color: rgba(0,0,0,.3);width: 100%;}
 .idnexdisplay{display: none;}

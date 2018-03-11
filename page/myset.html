@@ -47,12 +47,13 @@
 		    		<span class="p_nane">免责声明</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
-		    	<li class="tolink">
+		    	<li class="signout">
 		    		<span class="p_nane">退出登录</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
 		    </ul>
 		</div>
+		<script type="text/javascript" src="../js/lib/app_config.js" ></script>
 		<script type="text/javascript">
 			mui.init()
 			//跳转页面地址
@@ -89,6 +90,38 @@
 					})
 				})(i)		
 			}
+			//退出登录
+			function signout(){
+				mui.ajax(url + '/yskjApp/appYskj/V1/loginOut.do',{
+					data:{
+						"cookie":JSON.parse(localStorage.getItem('cookxs'))
+					},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){						if(data.success){
+							mui.toast('已退出',{ duration:'3000', type:'div' }) 
+							localStorage.removeItem('cookxs');
+							//退出成功后跳转'我的'页面
+							mui.openWindow({
+								url: '../wd.html', 
+								id:'wd'
+							});
+							return;
+						}else{
+							mui.toast(data.message,{ duration:'2000', type:'div' }) 
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
+			$('.signout').click(function(){
+				signout();//退出登录方法调用
+			});
+			
 		</script>
 	</body>
 
