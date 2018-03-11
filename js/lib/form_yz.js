@@ -277,6 +277,6 @@ function denglu(){
 	});
 }
 $('.btn1').click(function(){
-	check_tel1();
+	check_tel1();//账号密码验证及登陆
 });
 
