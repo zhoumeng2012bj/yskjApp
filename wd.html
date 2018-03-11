@@ -113,7 +113,11 @@
 					success:function(data){
 						if(data.success){
 							var userData = data.data;
-							$('.ljdl').html(userData.name);
+							//将手机号中间加密
+							var phone = userData.phone;
+							var reg = /^(\d{3})\d{4}(\d{4})$/;
+							phone = phone.replace(reg, "$1****$2");
+							$('.ljdl').html(phone);
 							if(userData.status2 == 0){
 								$('.dlcz').css('display','none');
 								$('.yrz').css('display','none');

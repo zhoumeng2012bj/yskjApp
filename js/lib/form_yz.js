@@ -29,7 +29,9 @@ function settime(obj) {
 var yzmobj = $('.hqyzm');//获取验证码对象
 var telnumber = '';//手机号
 var yzm = '';//验证码
-//控制获取验证码字体样式
+var phonenumber = '';
+var pwd = '';
+//验证码登陆时判断及交互
 document.getElementById("tel").addEventListener('input',function(){
 	if(this.value != ''){
 		telnumber = this.value;
@@ -57,6 +59,32 @@ function btnzt(){
 		$('.btn').css({'background':'#d2d2d2'});
 	}
 }
+//密码登录时判断及交互
+document.getElementById("phone").addEventListener('input',function(){
+	if(this.value != ''){
+		phonenumber = this.value;
+		btnzt1();
+	}else{
+		phonenumber = '';
+		btnzt1();
+	}
+});
+document.getElementById("yinc").addEventListener('input',function(){
+	if(this.value != ''){
+		pwd = this.value;
+		btnzt1();
+	}else{
+		pwd = '';
+		btnzt1();
+	}
+});
+function btnzt1(){
+	if(phonenumber != '' && pwd != ''){
+		$('.btn1').css({'background':'#2b70d8'});
+	}else{
+		$('.btn1').css({'background':'#d2d2d2'});
+	}
+}
 //判断系统有无此用户信息
 function check_tel(){
 	telnumber = $('#tel').val();
@@ -75,13 +103,13 @@ function check_tel(){
 				}
 			}else{
 				mui.alert(data.message+'请点击屏幕下方"快速注册"进行注册', '提示', function(){});
+				return;
 			}
 		},
 		error:function(xhr,type,errorThrown){
 			console.log(type);
 		}
 	});	
-
 }
 //发送验证码方法
 function sendyzm(){
@@ -194,3 +222,61 @@ $('.btn').click(function(){
 		}		
 	}
 });
+//密码登陆时判断系统有无此用户信息
+function check_tel1(){
+	phonenumber = $('#phone').val();
+	mui.ajax(url + '/yskjApp/appYskj/V1/compLog.do',{
+		data:{"phone":phonenumber},
+		dataType:'json',
+		type:'post',
+		timeout:10000,
+		headers:{'Content-Type':'application/json'},	              
+		success:function(data){
+			if(data.success){
+				denglu();//账号密码登陆
+			}else{
+				mui.alert(data.message+'请点击屏幕下方"快速注册"进行注册', '提示', function(){});
+				return;
+			}
+		},
+		error:function(xhr,type,errorThrown){
+			console.log(type);
+		}
+	});	
+}
+//账号密码登陆
+function denglu(){
+	createcookie();//重新生成cookie
+	mui.ajax(url + '/yskjApp/appYskj/V1/logAccount.do',{
+		data:{
+			"phone":phonenumber,
+			"pass":pwd,
+			"cookie":JSON.parse(localStorage.getItem('cookxs'))
+		},
+		dataType:'json',
+		type:'post',
+		timeout:10000,
+		headers:{'Content-Type':'application/json'},	              
+		success:function(data){
+			if(data.success){
+				mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
+				console.log(data.message)	
+				//登陆成功后跳转'我的'页面
+				mui.openWindow({
+					url: '../wd.html', 
+					id:'wd'
+				});
+				return;
+			}else{
+				mui.toast(data.message,{ duration:'2000', type:'div' }) 
+			}
+		},
+		error:function(xhr,type,errorThrown){
+			console.log(type);
+		}
+	});
+}
+$('.btn1').click(function(){
+	check_tel1();
+});
+
