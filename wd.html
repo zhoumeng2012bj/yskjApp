@@ -57,7 +57,6 @@
 		<script type="text/javascript" src="js/lib/app_config.js" ></script>
 		<script type="text/javascript">
 			mui.init()
-			alert('我的页面323232');
 			//跳转页面地址
 			var toUrl = ['page/person.html','page/mycollection.html','page/myset.html'];
 			for(var i=0; i<$('.tolink').length; i++){
@@ -145,10 +144,8 @@
 			//获取信息方法
 			function takeuser(){
 				if(JSON.parse(localStorage.getItem('cookxs'))){
-					alert(123)
 					gainUser();
 				}else{
-					alert(456)
 					$('.ljdl').html('立即登陆');
 					$('.dlcz').css('display','block');
 					$('.wrz').css('display','none');
