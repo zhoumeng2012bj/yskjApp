@@ -41,6 +41,10 @@
 	font-size: 0.293333rem;
 	color: #999999;
 }
+.tt_news li p{
+	overflow: hidden;
+    white-space: nowrap;
+}
 .rmfy_box{
 	/*热门房源*/
 	background: #ffffff;
@@ -279,19 +283,24 @@
 .fy_xx .lp{
 	font-size: 0.426666rem;
 	color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .fy_xx .mjwz{
 	font-size: 0.32rem;
 	color: #999;
 }
 .fy_xx .jzjf{
-	width: 1.4rem;
-	padding: 0.026666rem 0;
+    min-width: 1.4rem;
+	/*padding: 0.026666rem 0;*/
 	font-size: 0.32rem;
 	color: #2b70d8;
 	text-align: center;
 	background: #daeefd;
 	border-radius: 0.053333rem;
+    display: inline-block;
+    padding: 0 0.133333rem;
 }
 .fy_xx .dj{
 	font-size: 0.426666rem;
