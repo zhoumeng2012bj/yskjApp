@@ -100,6 +100,19 @@
 				defaultTab.classList.add('mui-active');
 			}
 		});
+/*		监听精选房源中位置点击事件显示遮罩层*/
+		var mask = mui.createMask();//callback为用户点击蒙版时自动执行的回调；
+		window.addEventListener("weizhi1", function (e) {
+		    //获得事件参数
+		    var idxid = e.detail.idxid;
+			if(idxid == 1){
+				mask.show();//显示遮罩
+			}
+			if(idxid == 2){
+				mask.close();//关闭遮罩
+				
+			}
+		});
     </script>
 </body>
 </html>
