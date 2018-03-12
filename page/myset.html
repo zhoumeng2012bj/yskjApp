@@ -100,15 +100,20 @@
 					type:'post',
 					timeout:10000,
 					headers:{'Content-Type':'application/json'},	              
-					success:function(data){						if(data.success){
+					success:function(data){						
+						if(data.success){
 							mui.toast('已退出',{ duration:'3000', type:'div' }) 
 							localStorage.removeItem('cookxs');
-							//退出成功后跳转'我的'页面
-							mui.openWindow({
-								url: '../wd.html', 
-								id:'wd'
-							});
-							return;
+							if(JSON.parse(localStorage.getItem('cookxs'))){
+								localStorage.removeItem('cookxs');
+							}else{
+								//退出成功后跳转'我的'页面
+								mui.openWindow({
+									url: '../wd.html', 
+									id:'wd'
+								});
+								return;
+							}
 						}else{
 							mui.toast(data.message,{ duration:'2000', type:'div' }) 
 						}
@@ -120,8 +125,7 @@
 			}
 			$('.signout').click(function(){
 				signout();//退出登录方法调用
-			});
-			
+			});	
 		</script>
 	</body>
 

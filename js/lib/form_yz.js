@@ -250,7 +250,7 @@ function denglu(){
 	mui.ajax(url + '/yskjApp/appYskj/V1/logAccount.do',{
 		data:{
 			"phone":phonenumber,
-			"pass":pwd,
+			"pass":hex_md5(hex_sha1(pwd)),
 			"cookie":JSON.parse(localStorage.getItem('cookxs'))
 		},
 		dataType:'json',
@@ -279,4 +279,3 @@ function denglu(){
 $('.btn1').click(function(){
 	check_tel1();//账号密码验证及登陆
 });
-

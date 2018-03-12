@@ -303,7 +303,9 @@
 			"img/xsmm_ion.png",
 			"css/style.css",
 			"js/lib/form_yz.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"js/lib/sha1.js",
+			"js/lib/md5.js"
 		],
 		"refer": [
 			"page/wj_pwd.html",
