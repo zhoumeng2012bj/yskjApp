@@ -116,10 +116,10 @@
 							var phone = userData.phone;
 							var reg = /^(\d{3})\d{4}(\d{4})$/;
 							phone = phone.replace(reg, "$1****$2");
-							if(userData.name != ''){
-								$('.ljdl').html(userData.name);
+							if(userData.name == null || userData.name == 'null' || userData.name == ''){
+								$('.ljdl').html(phone);
 							}else{
-								$('.ljdl').html(phone);			
+								$('.ljdl').html(userData.name);
 							}
 							if(userData.status2 == 0){
 								$('.dlcz').css('display','none');

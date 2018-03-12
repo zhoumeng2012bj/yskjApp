@@ -222,9 +222,14 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"js/lib/sha1.js",
+			"js/lib/md5.js",
+			"js/lib/app_config.js"
 		],
-		"refer": []
+		"refer": [
+			"wd.html"
+		]
 	},
 	"page/search.html": {
 		"resources": [
@@ -338,9 +343,16 @@
 			"css/mui.min.css",
 			"js/lib/flexible.js",
 			"img/ycmm.png",
-			"img/xsmm_ion.png"
+			"img/xsmm_ion.png",
+			"js/lib/form_yz.js",
+			"js/lib/app_config.js",
+			"js/lib/fast_zc.js",
+			"js/lib/sha1.js",
+			"js/lib/md5.js"
 		],
-		"refer": []
+		"refer": [
+			"wd.html"
+		]
 	},
 	"page/saleFuWu.html": {
 		"resources": [

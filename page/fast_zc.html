@@ -22,30 +22,34 @@
 		<div class="mui-content content">
 		    <div class="box_i" style="display: none;">
 		    	<div class="mui-input-row inp">
-	    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc">
+	    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc" autocomplete="off">
 	    		    <span class="ycmm" id="ycmm"></span>
 	    		</div>
 	    		<div class="mui-input-row inp">
-	    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1">
+	    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1" autocomplete="off">
 	    		    <span class="ycmm" id="ycmm1"></span>
 	    		</div>
 			    <div class="btn_box">
-			    	<button class="btn" id="btn">注册并登录</button>
+			    	<button class="btn1" id="btn1">注册并登录</button>
 			    </div>
 		    </div>
 		    <div class="box_i1">
 		    	<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" maxlength="11" id="tel">
     		    	<span class="hqyzm">获取验证码</span>
 	    		</div>
 	    		<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" maxlength="6" id="hqyzm">
 	    		</div>
 	    		<div class="btn_box">
-			    	<button class="btn" id="btn1">下一步</button>
+			    	<button class="btn" id="btn">下一步</button>
 			    </div>
 		    </div>
 		</div>
+		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/app_config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/fast_zc.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 			$('#ycmm').click(function(){
@@ -71,11 +75,6 @@
 					$('#ycmm1').addClass('ycmm');
 					$('#yinc1').attr('type','password');
 				}
-			})
-			//点击下一步
-			$('#btn1').click(function(){
-				$('.box_i').css('display','block');
-				$('.box_i1').css('display','none');
 			})
 		</script>
 	</body>

@@ -34,23 +34,86 @@
 		   <ul class="per_news">
 		    	<li  style="position: relative;">
 		    		<div class="mui-input-row">
-				        <input type="text" class="mui-input-clear add_n" placeholder="请输入原密码">
+				        <input type="password" class="mui-input-clear add_n" placeholder="请输入原密码" id="ymm">
 				    </div>
 		    	</li>
 		    	<li>
 		    		<div class="mui-input-row">
-				        <input type="text" class="mui-input-clear add_n" placeholder="请输入新密码">
+				        <input type="password" class="mui-input-clear add_n" placeholder="请输入新密码" id="xmm">
 				    </div>
 		    	</li>
 		    	<li>
 		    		<div class="mui-input-row">
-				        <input type="text" class="mui-input-clear add_n" placeholder="请再次确认密码">
+				        <input type="password" class="mui-input-clear add_n" placeholder="请再次确认密码" id="qrmm">
 				    </div>
 		    	</li>
 		    </ul>
 		</div>
+		<script src="../js/lib/app_config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/md5.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
+			var ymm = '';
+			var xmm = '';
+			var qrmm = '';
+			$('.save').click(function(){
+				ymm = $('#ymm').val();
+				xmm = $('#xmm').val();
+				qrmm = $('#qrmm').val();
+				if(ymm != '' && xmm != '' && qrmm != ''){
+					if(xmm == qrmm){
+						setpwd();
+					}else{
+						mui.toast('两次输入密码不一致',{ duration:'3000', type:'div' });
+						return;
+					}
+				}else{
+					if(ymm == ''){
+						mui.toast('请输入原密码',{ duration:'2000', type:'div' });
+						return;
+					}
+					if(xmm == ''){
+						mui.toast('请输入新密码',{ duration:'2000', type:'div' });
+						return;
+					}
+					if(qrmm == ''){
+						mui.toast('请确认新密码',{ duration:'2000', type:'div' });
+						return;
+					}
+				}
+			});
+			//修改密码接口
+			function setpwd(){
+				mui.ajax(url + '/yskjApp/appYskj/V1/updatePass.do',{
+					data:{
+						"cookie":JSON.parse(localStorage.getItem('cookxs')),
+						"oldpass":hex_md5(hex_sha1(ymm)),
+						"newpass":hex_md5(hex_sha1(qrmm))
+					},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						if(data.success){
+							mui.toast('密码修改成功',{ duration:'3000', type:'div' }) 
+							console.log(data.message)	
+							//登陆成功后跳转'我的'页面
+							mui.openWindow({
+								url: '../wd.html', 
+								id:'wd'
+							});
+							return;
+						}else{
+							
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
 		</script>
 	</body>
 
