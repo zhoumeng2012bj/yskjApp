@@ -18,8 +18,23 @@
 
 	<body>
 		<!--下拉刷新容器-->
-		<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="border: 1px solid red;position: relative;z-index: 12;">
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
+				<div class="zhezhaoce zhezhaocdisplay">
+					<div class="zzcner">
+						<ul class="zzcqy">
+							<li>不限</li>
+							<li>区域</li>
+							<li>地铁</li>
+						</ul>
+						<ul class="zzcdcq">
+							<li>不限</li>
+						</ul>
+						<ul class="zzcdcq">
+							<li>不限</li>
+						</ul>
+					</div>
+				</div>
 				<!--数据列表-->
 				<!--<ul class="mui-table-view mui-table-view-chevron">-->
 					<!--特价房源-->
@@ -197,13 +212,33 @@
 					mui('#pullrefresh').pullRefresh().pullupLoading();
 				});
 			}
+			/*点击位置出现遮罩层*/
 			window.addEventListener("weizhi", function (e) {
 			    //获得事件参数
 			    var idx = e.detail.idx;
-				alert(idx);
-				var mask = mui.createMask();//callback为用户点击蒙版时自动执行的回调；
-				mask.show();//显示遮罩
+				$(".zhezhaoce").removeClass("zhezhaocdisplay");
+				$(".zhezhaoce").addClass("zhezhaocdisbalo");
+				mui('#pullrefresh').pullRefresh().setStopped(true);
+				$(".zhezhaoce").on('touchmove',function(e){
+                    e.preventDefault();  //阻止默认行为
+					return false;
+                })
 			});
+/*			点击遮罩层取消遮罩层*/
+			$('.zhezhaoce').click(function(){
+				$(".zhezhaoce").addClass("zhezhaocdisplay");
+				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
+				mui('#pullrefresh').pullRefresh().setStopped(false);
+				var index = plus.webview.getLaunchWebview();
+				mui.fire(index, "weizhi1",{
+				    idxid:2//1位置
+				})
+			});
+/*			阻止穿透*/
+			$('.zzcner').click(function(){
+				return false;
+			});
+			
 			mui("#ulId").on("tap","li",function(){
 			    // 逻辑代码，例如跳转详情页、ajax
 			 	mui.openWindow({ 

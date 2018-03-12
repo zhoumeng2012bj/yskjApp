@@ -86,15 +86,16 @@
 			});
 			var jiage = 1;
 			var area = 1;
+/*			位置的点击出现遮罩层*/
 			function weizjihanshu(){
-				alert(111111);
-				/*var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('jxfyList');
 				mui.fire(main, "weizhi",{
 				    idx:1//1位置
-				})*/
-				var mask = mui.createMask();//callback为用户点击蒙版时自动执行的回调；
-				mask.show();//显示遮罩
-				
+				})
+				var index = plus.webview.getLaunchWebview();
+				mui.fire(index, "weizhi1",{
+				    idxid:1//1位置
+				})
 			}
 			$('.shaxuandejiage').click(function(){
 				if(jiage == 1){

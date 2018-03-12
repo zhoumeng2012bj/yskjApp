@@ -141,18 +141,7 @@
 							<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
 							<p class="fy_title">三里屯</p>
 						</li>
-						<li>
-							<img src="http://47.92.145.21:81/upload/2017-09-07/a2f4efd1c7f34808b23d718a465b1d93.png" alt="" />
-							<p class="fy_title">三里屯</p>
-						</li>
-						<li>
-							<img src="http://47.92.145.21:81/upload/2017-09-07/65fc9eec2699652210b4872c3dd008c5.png" alt="" />
-							<p class="fy_title">三里屯</p>
-						</li>
-						<li>
-							<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
-							<p class="fy_title">三里屯</p>
-						</li>
+						
 					</ul>
 				</div>
 				<div class="box_q">
@@ -417,6 +406,45 @@
 					})
 				})(a)
 			}
+			// post测试请求地址 http://test.dongyixueyuan.com/link_app/post
+			/*mui.post('http://116.62.68.26:8080/yhcms/web/jcsj/getHotBuilding.do',
+				function(data){ //data为服务器端返回数据
+					
+					//自己的逻辑
+					alert(121212);
+					console.log(555555);
+					console.info(123465);
+				},'json'
+			);*/
+			mui.init();
+			mui.ajax('http://116.62.68.26:8080/yhcms/web/jcsj/getHotBuilding.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					if(data.success){
+						var data = data.data;
+						alert(data.length)
+						var string = '';
+						for(var i=0;i<data.length;i++){
+							alert(11111);
+							string = '<li><img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" /><p class="fy_title">三里屯</p></li>';
+							$('.fypics ul').appendChild(string);
+						}
+
+						
+					}else{
+						mui.alert(data.msg);
+					}
+					console.log(data);
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
 		</script>
 	</body>
 
