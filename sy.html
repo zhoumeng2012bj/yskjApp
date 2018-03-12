@@ -113,14 +113,8 @@
 					<img src="img/tt_icon.png"/>
 				</p>
 				<ul class="tt_news">
-					<li>
-						<p>置身3D  幼狮带你一起漫游全景空间！</p>
-						<p>穿梭无限空间！幼狮空间首发“3D全景房源”!</p>
-					</li>
-					<li>
-						<p>置身3D  幼狮带你一起漫游全景空间！111</p>
-						<p>穿梭无限空间！幼狮空间首发“3D全景房源”!111</p>
-					</li>
+					
+					
 				</ul>
 			</div>
 			<!--Tab切换-->
@@ -148,14 +142,14 @@
 					<p class="yzwt_tip">请留下您的联系方式，我们会及时与您联系，为您提供专属服务</p>
 					<form class="mui-input-group">
 					    <div class="mui-input-row">
-					        <input type="text" class="mui-input-clear" placeholder="请输入手机号">
+					        <input type="text" class="mui-input-clear yzwtPhone" placeholder="请输入手机号">
 					    </div>
 					    <div class="mui-input-row">
-					        <input type="text" class="mui-input-clear" placeholder="请输入验证码">
+					        <input type="text" class="mui-input-clear yazmcode" placeholder="请输入验证码">
 					    </div>
 					    <div class="btn_box">
-					    	<div class="hqyzm">获取验证码</div>
-						    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined btn">提交</button>
+					    	<div class="hqyzm" onclick="huoqvyanzm()">获取验证码</div>
+						    <button type="button" onclick="tijiao()" class="mui-btn mui-btn-primary mui-btn-outlined btn">提交</button>
 					    </div>
 					</form>
 					
@@ -165,8 +159,7 @@
 			<div class="tjfy">
 				<div class="tit">特价房源</div>
 				 <ul class="fy_list">
-				 	
-				 	<li>
+				 	<!--<li>
 				 		<div class="fy_pic">
 				 			<img src="img/fypic.png" alt="" />
 				 		</div>
@@ -180,51 +173,7 @@
 				 			</p>
 				 		</div>
 				 	</li>
-				 	<li class="zx"></li>
-				 	<li>
-				 		<div class="fy_pic">
-				 			<img src="img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jzjf">精装交付</p>
-				 			<p class="dj">
-				 				<s>7.5<i>元/m2/天</i></s>
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
-				 	<li class="zx"></li>
-				 	<li>
-				 		<div class="fy_pic">
-				 			<img src="img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jzjf">精装交付</p>
-				 			<p class="dj">
-				 				<s>7.5<i>元/m2/天</i></s>
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
-				 	<li class="zx"></li>
-				 	<li>
-				 		<div class="fy_pic">
-				 			<img src="img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jzjf">精装交付</p>
-				 			<p class="dj">
-				 				<s>7.5<i>元/m2/天</i></s>
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
+				 	<li class="zx"></li>-->
 				 </ul>
 			</div>
 			<!--daiceshishiyong-->
@@ -292,10 +241,33 @@
 				})(i)
 			}
 		</script>
+		<script src="js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			/*幼狮头条的动态数据*/
+			mui.ajax(url+'/yskjApp/webApp/dataInfo/topNews.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					var data = data.data;
+					console.log(data);
+					var string = '';
+					for(var i=0;i<data.length;i++){
+						string = '<li><p>'+data[i].title+'</p><p>'+data[i].content+'</p></li>';
+						$('.tt_news').append(string);
+					}
+					
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});	
 /*			热门楼盘获取的数据*/
-			mui.ajax('http://116.62.68.26:8080/yhcms/web/jcsj/getHotBuilding.do',{
+			mui.ajax(url+'/yhcms/web/jcsj/getHotBuilding.do',{
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
 				timeout:10000,//超时时间设置为10秒；
@@ -353,8 +325,174 @@
 			});
 			
 /*			特价房源*/
-
+			mui.ajax(url+'/yhcms/web/jcsj/getSpecialHouse.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					if(data.success){
+						console.log(data)
+						var data = data.data;
+						console.log(data)
+						var string = '';
+						for(var i=0;i<data.length;i++){
+							string = '<li><div class="fy_pic"><img src="http://47.92.145.21:81/'+data[i].pic+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].ywqy+'&nbsp;&nbsp;'+data[i].fjmj+'㎡'+'</p><p class="jzjf">'+data[i].fjztate+'</p><p class="dj"><s>'+data[i].oldPrice+'<i>元/m2/天</i></s><span>'+data[i].newPrice+'<i>元/m2/天</i></span></p></div></li><li class="zx"></li>';
+							/*document.querySelector('.fypics').innerHTML=string;*/
+							$('.fy_list').append(string);
+						}
+						for (var a=0; a<$('.fy_list li').length; a++) {
+							(function(idx){
+								$('.fy_list li').eq(a).click(function(){
+									mui.openWindow({ 
+										url:'page/fyTail.html', //需要打开页面的url地址 
+										id:'fyTail',  //需要打开页面的url页面id
+										styles:{ 
+											top:'0px',//新页面顶部位置 
+											bottom:'0px',//新页面底部位置 
+						//					width:newpage-width,//新页面宽度，默认为100% 
+						//					height:newpage-height,//新页面高度，默认为100% ...... 
+										}, 
+										extras:{ 
+						//					.....//自定义扩展参数，可以用来处理页面间传值 
+										},show:{ //控制打开页面的类型
+											autoShow:true,
+						//					//页面loaded事件发生后自动显示，默认为true 
+											aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；  页面出现的方式 左右上下
+											duration:'300'//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒； 
+										}, waiting:{ // 控制 弹出转圈框的信息
+											autoShow:true,//自动显示等待框，默认为true 
+											title:'加载中...',//等待对话框上显示的提示内容 
+											options:{ 
+												width:'100px',//等待框背景区域宽度，默认根据内容自动计算合适宽度 
+												height:'100px',//等待框背景区域高度，默认根据内容自动计算合适高度 ...... 
+											} 
+										}
+									});
+								})
+							})(a)
+						}
+					
+					}else{
+						mui.alert(data.msg);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			//获取验证密码倒计时
+			var tag = true;
+			var countdown=60; 
+			function settime(obj) {
+			    if (countdown == 0) { 
+			    	tag = true;
+			        obj.html("获取验证码");
+			        countdown = 60; 
+			        return;
+			    } else { 
+			    	tag = false;
+			        obj.html("重新发送(" + countdown + ")"); 
+			        countdown--;
+			    } 
+				setTimeout(function() { 
+			    	settime(obj) 
+				},1000)
+			}
+			//生成cookie
+			function createcookie(){
+				var cookyezhi = new Date;
+				localStorage.setItem('cookyezhi', JSON.stringify(cookyezhi));
+				return cookyezhi;
+			}
 			
+			var cookyezhi = createcookie();
+			/*业主委托*/
+			function huoqvyanzm(){
+				/*			发送手机验证码*/
+				if(tag){
+					var phone = $('.yzwtPhone').val();
+					mui.ajax(url+'/yskjApp/appYskj/V1/getServiceCode.do',{
+						data:{
+							'phone':phone,
+							'cookie':cookyezhi
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.success){
+								mui.toast('验证码已发送',{ duration:'2000', type:'div' }) 
+								tag = false;
+								var obg = $('.hqyzm');
+								settime(obg);
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
+						}
+					});
+				}else{
+					
+				}
+			}
+			function tijiao(){
+				var code = $('.yazmcode').val();
+				var phone = $('.yzwtPhone').val();
+				mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
+					data:{
+						'code':code,
+						'cookie':cookyezhi
+					},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.ajax(url+'/yskjApp/webApp/dataInfo/ownerEntrust.do',{
+								data:{
+									'phone':phone
+								},
+								dataType:'json',//服务器返回json格式数据
+								type:'post',//HTTP请求类型
+								timeout:10000,//超时时间设置为10秒；
+								headers:{'Content-Type':'application/json'},	              
+								success:function(data){
+									//服务器返回响应，根据响应结果，分析是否登录成功；
+									if(data.success){
+										$('.yzwtPhone').val('');
+										$('.yazmcode').val('');
+										mui.alert('信息提交成功！');
+									}else{
+										mui.alert(data.message);
+									}
+								},
+								error:function(xhr,type,errorThrown){
+									//异常处理；
+									console.log(type);
+								}
+							});	
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});	
+			}
+
+
 			document.getElementById('as').addEventListener('tap', function() {
 			  //打开关于页面
 			  mui.openWindow({
