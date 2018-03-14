@@ -87,14 +87,13 @@
 			
 			/*筛选点击事件*/
 			function siaxuansy(){
-				alert('筛选');
 				var main = plus.webview.getWebviewById('jxfyList');
 				mui.fire(main, "weizhi",{
-				    idx:1//1位置
+				    idx:3//1位置
 				})
 				var index = plus.webview.getLaunchWebview();
 				mui.fire(index, "weizhi1",{
-				    idxid:1//1位置
+				    idxid:3//1位置
 				})
 			}
 			var jiage = 1;
