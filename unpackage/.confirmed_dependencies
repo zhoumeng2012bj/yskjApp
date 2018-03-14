@@ -63,7 +63,8 @@
 			"img/yzwt.png",
 			"fonts/mui.ttf",
 			"img/fypic.png",
-			"img/sjfw.png"
+			"img/sjfw.png",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"jxfy.html",

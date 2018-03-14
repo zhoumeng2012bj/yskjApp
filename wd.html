@@ -144,8 +144,10 @@
 			//获取信息方法
 			function takeuser(){
 				if(JSON.parse(localStorage.getItem('cookxs'))){
+					alert(JSON.parse(localStorage.getItem('cookxs')));
 					gainUser();
 				}else{
+					alert(JSON.parse(localStorage.getItem('cookxs')));
 					$('.ljdl').html('立即登陆');
 					$('.dlcz').css('display','block');
 					$('.wrz').css('display','none');
