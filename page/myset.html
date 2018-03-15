@@ -94,7 +94,7 @@
 			function signout(){
 				mui.ajax(url + '/yskjApp/appYskj/V1/loginOut.do',{
 					data:{
-						"cookie":JSON.parse(localStorage.getItem('cookxs'))
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
 					},
 					dataType:'json',
 					type:'post',
@@ -103,14 +103,14 @@
 					success:function(data){						
 						if(data.success){
 							mui.toast('已退出',{ duration:'3000', type:'div' }) 
-							localStorage.removeItem('cookxs');
-							if(JSON.parse(localStorage.getItem('cookxs'))){
-								localStorage.removeItem('cookxs');
+							localStorage.removeItem('cookxs_yh');
+							if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+								localStorage.removeItem('cookxs_yh');
 							}else{
 								//退出成功后跳转'我的'页面
 								mui.openWindow({
 									url: '../wd.html', 
-									id:'wd'
+									id:'wd2'
 								});
 								return;
 							}

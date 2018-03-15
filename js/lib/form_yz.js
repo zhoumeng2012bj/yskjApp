@@ -152,6 +152,12 @@ function createcookie(){
 	localStorage.setItem('cookxs', JSON.stringify(cookxs));
 	return cookxs;
 }
+//生成用户注册登录cookie
+function createcookie_yh(){
+	var cookxs_yh = new Date;
+	localStorage.setItem('cookxs_yh', JSON.stringify(cookxs_yh));
+	return cookxs_yh;
+}
 //校验验证码
 function checkoutyzm(code){
 	mui.ajax(url + '/yskjApp/appYskj/V1/compCode.do',{
@@ -179,10 +185,11 @@ function checkoutyzm(code){
 }
 //验证码验证成功后进行'用户登陆'
 function signin(){
+	createcookie_yh();
 	mui.ajax(url + '/yskjApp/appYskj/V1/logPhone.do',{
 		data:{
 			"phone":telnumber,
-			"cookie":JSON.parse(localStorage.getItem('cookxs'))
+			"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
 		},
 		dataType:'json',
 		type:'post',
@@ -195,10 +202,11 @@ function signin(){
 				//登陆成功后跳转'我的'页面
 				mui.openWindow({
 					url: '../wd.html', 
-					id:'wd'
+					id:'wd1',
 				});
 				return;
 			}else{
+				alert(123)
 				mui.toast(data.message,{ duration:'2000', type:'div' }) 
 			}
 		},
@@ -246,12 +254,12 @@ function check_tel1(){
 }
 //账号密码登陆
 function denglu(){
-	createcookie();//重新生成cookie
+	createcookie_yh();//重新生成cookie
 	mui.ajax(url + '/yskjApp/appYskj/V1/logAccount.do',{
 		data:{
 			"phone":phonenumber,
 			"pass":hex_md5(hex_sha1(pwd)),
-			"cookie":JSON.parse(localStorage.getItem('cookxs'))
+			"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
 		},
 		dataType:'json',
 		type:'post',
@@ -262,6 +270,20 @@ function denglu(){
 				mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
+				
+				
+//				detailPage = plus.webview.getLaunchWebview();
+//				    mui.fire(detailPage,'newsId',{
+//				            id:4
+//				      });                                       
+//				    var dqid = plus.webview.currentWebview().id;
+//				    if(dqid != 'sy.html' && dqid != 'jxfy.html' && dqid != 'fwsc.html' && dqid != 'qyhl.html' && dqid != 'wd.html'){
+//				        plus.webview.currentWebview().close()
+//				    }
+//				    plus.webview.currentWebview().hide();
+//				    plus.webview.show('wd.html',"fade-in",300);
+				
+				
 				mui.openWindow({
 					url: '../wd.html', 
 					id:'wd'

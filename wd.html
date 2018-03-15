@@ -93,17 +93,27 @@
 			}
 			//立即登陆
 			document.getElementById('login').addEventListener('tap', function() {
-			  //打开关于页面
-			  mui.openWindow({
-			    url: './page/login.html', 
-			    id:'login'
-			  });
+				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+					//跳转登陆页面
+					mui.openWindow({
+					  url: './page/person.html', 
+					  id:'person1'
+					});		
+					alert('一登录')
+					return
+				}else{
+					//跳转登陆页面
+					mui.openWindow({
+					  url: './page/login.html', 
+					  id:'login'
+					});					
+				}
 			});
 			//登陆成功后获取用户信息
 			function gainUser(){
 				mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
 					data:{
-						"cookie":JSON.parse(localStorage.getItem('cookxs'))
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
 					},
 					dataType:'json',
 					type:'post',
@@ -143,11 +153,9 @@
 			}
 			//获取信息方法
 			function takeuser(){
-				if(JSON.parse(localStorage.getItem('cookxs'))){
-					alert(JSON.parse(localStorage.getItem('cookxs')));
+				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
 					gainUser();
 				}else{
-					alert(JSON.parse(localStorage.getItem('cookxs')));
 					$('.ljdl').html('立即登陆');
 					$('.dlcz').css('display','block');
 					$('.wrz').css('display','none');

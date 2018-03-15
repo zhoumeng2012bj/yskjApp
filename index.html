@@ -112,6 +112,14 @@
 				mask.close();//关闭遮罩
 			}
 		});
+		
+		
+		window.addEventListener("newsId", function (e) {
+		    //获得事件参数
+		    var idx = e.detail.id;
+			alert(idx)
+			activeTab = subpages[idx]
+		});
     </script>
 </body>
 </html>

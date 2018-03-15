@@ -316,7 +316,8 @@
 		"refer": [
 			"page/wj_pwd.html",
 			"page/fast_zc.html",
-			"wd.html"
+			"wd.html",
+			"index.html"
 		]
 	},
 	"page/wj_pwd.html": {
@@ -330,9 +331,15 @@
 			"js/lib/flexible.js",
 			"css/fast_zc.css",
 			"img/ycmm.png",
-			"img/xsmm_ion.png"
+			"img/xsmm_ion.png",
+			"js/lib/sha1.js",
+			"js/lib/wj_pwd.js",
+			"js/lib/md5.js",
+			"js/lib/app_config.js"
 		],
-		"refer": []
+		"refer": [
+			"wd.html"
+		]
 	},
 	"page/fast_zc.html": {
 		"resources": [

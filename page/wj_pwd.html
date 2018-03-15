@@ -22,29 +22,33 @@
 		<div class="mui-content content" style="padding-top: 0!important;">
 			<div class="box_i">
 		    	<div class="mui-input-row inp tip_b">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" maxlength="11" id="tel">
 			    	<span class="hqyzm">获取验证码</span>
-			    	<p class="err_tip">此手机号不存在</p>
+			    	<p class="err_tip tip1"></p>
 	    		</div>
 	    		<div class="mui-input-row inp tip_b">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码">
-	    		    <p class="err_tip">此验证码无效</p>
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" maxlength="6" id="hqyzm">
+	    		    <p class="err_tip tip2"></p>
 	    		</div>
 		    </div>
 		    <div class="mui-input-row inp tip_b">
     		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc">
     		    <span class="ycmm" id="ycmm"></span>
-    		    <p class="err_tip">密码不少于6位</p>
+    		    <p class="err_tip tip3"></p>
     		</div>
     		<div class="mui-input-row inp tip_b">
     		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1">
     		    <span class="ycmm" id="ycmm1"></span>
-    		    <p class="err_tip">密码不一致</p>
+    		    <p class="err_tip tip4"></p>
     		</div>
     		<div class="btn_box">
 		    	<button class="btn wj_btn" id="btn1">提交</button>
 		    </div>
 		</div>
+		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/app_config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/wj_pwd.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 			$('#ycmm').click(function(){

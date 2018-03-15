@@ -87,7 +87,7 @@
 			function setpwd(){
 				mui.ajax(url + '/yskjApp/appYskj/V1/updatePass.do',{
 					data:{
-						"cookie":JSON.parse(localStorage.getItem('cookxs')),
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
 						"oldpass":hex_md5(hex_sha1(ymm)),
 						"newpass":hex_md5(hex_sha1(qrmm))
 					},
@@ -102,7 +102,7 @@
 							//登陆成功后跳转'我的'页面
 							mui.openWindow({
 								url: '../wd.html', 
-								id:'wd'
+								id:'wd_xgmm'
 							});
 							return;
 						}else{
