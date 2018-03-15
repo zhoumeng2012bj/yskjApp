@@ -108,10 +108,11 @@
 								localStorage.removeItem('cookxs_yh');
 							}else{
 								//退出成功后跳转'我的'页面
-								mui.openWindow({
-									url: '../wd.html', 
-									id:'wd2'
-								});
+								mui.back();
+//								mui.openWindow({
+//									url: '../wd.html', 
+//									id:'wd2'
+//								});
 								return;
 							}
 						}else{

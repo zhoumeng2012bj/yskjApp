@@ -270,21 +270,11 @@ function denglu(){
 				mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
-				
-//				detailPage = plus.webview.getLaunchWebview();
-//				    mui.fire(detailPage,'newsId',{
-//				            id:4
-//				      });                                       
-//				    var dqid = plus.webview.currentWebview().id;
-//				    if(dqid != 'sy.html' && dqid != 'jxfy.html' && dqid != 'fwsc.html' && dqid != 'qyhl.html' && dqid != 'wd.html'){
-//				        plus.webview.currentWebview().close()
-//				    }
-//				    plus.webview.currentWebview().hide();
-//				    plus.webview.show('wd.html',"fade-in",300);
-				mui.openWindow({
-					url: '../wd.html', 
-					id:'wd'
-				});
+				mui.back();
+//				mui.openWindow({
+//					url: '../wd.html', 
+//					id:'wd'
+//				});
 				return;
 			}else{
 				mui.toast(data.message,{ duration:'2000', type:'div' }) 
