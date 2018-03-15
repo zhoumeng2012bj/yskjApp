@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>幼师头条详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/lib/flexible.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js" ></script>
+		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../css/person.css"/>
+	</head>
+	<style>
+		 <style>
+            .mui-bar .mui-icon span {
+                font-size: 18px;
+            }
+        </style>
+
+	</style>
+
+	 <body>
+        <header class="mui-bar mui-bar-nav">
+            <div class="mui-icon mui-action-back mui-icon-arrowleft mui-icon-back  mui-badge-inverted"></div>
+            <h1 class="mui-title">头条详情</h1>
+        </header>
+        <div class="mui-content">
+
+        </div>
+
+        <script type="text/javascript">
+			 window.onload = function(){
+			 	 var links="";
+	            //业务数据获取完毕，并已插入当前页面DOM；
+	            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+	            mui.plusReady(function(){
+	               var self=plus.webview.currentWebview();
+	                links = self.topNewsUrl;
+	                //关闭等待框
+	                plus.nativeUI.closeWaiting();
+	                //显示当前页面
+	                mui.currentWebview.show();
+	             
+	                //显示waiting
+					var waitingConfig = $.waitingOptions(links.waiting);
+					if(waitingConfig.autoShow) {
+						nWaiting = plus.nativeUI.showWaiting(waitingConfig.title, waitingConfig.options);
+					}
+                    if(nWaiting) {
+						nWaiting.close();
+					}
+	                //加载url地址
+	                mui.init({
+			            subpages: [{
+		                    url: links,
+		                    id: 'topNewInfo.html',
+		                    styles: {
+		                        top: '45px',
+		                        bottom: '0px',
+		                    }
+		                }]
+			         });
+			         
+			         /* mui.openWindow({
+					    url: links, 
+					    id:'topNewInfo.html',
+					    styles: {
+		                        top: '45px',
+		                        bottom: '0px',
+		                    }
+					});*/
+	            });
+	        }
+            //加载
+            $.waitingOptions = function(options) {
+				return $.extend(true, {}, {
+					autoShow: true,
+					title: '',
+					modal: false
+				}, options);
+			};
+        </script>
+    </body>
+
+</html>

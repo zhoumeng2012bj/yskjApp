@@ -256,7 +256,7 @@
 					console.log(data);
 					var string = '';
 					for(var i=0;i<data.length;i++){
-						string = '<li><p>'+data[i].title+'</p><p>'+data[i].content+'</p></li>';
+						string = '<li onclick=topNewsInfo(\''+data[i].url+'\')><p>'+data[i].title+'</p><p>'+data[i].content+'</p></li>';
 						$('.tt_news').append(string);
 					}
 					
@@ -266,6 +266,16 @@
 					console.log(type);
 				}
 			});	
+			
+			//头条详情
+			function topNewsInfo(url){
+				mui.openWindow({
+					url:'page/topNewsInfo.html', 
+					id:'topNewsInfo',
+					extras:{topNewsUrl:url}
+				});
+			}
+			
 /*			热门楼盘获取的数据*/
 			mui.ajax(url+'/yhcms/web/jcsj/getHotBuilding.do',{
 				dataType:'json',//服务器返回json格式数据
