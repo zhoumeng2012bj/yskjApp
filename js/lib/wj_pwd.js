@@ -42,6 +42,7 @@ var yzm = '';//验证码
 var phonenumber = '';
 var pwd = '';
 var pwd1 = '';
+var user_new = {};
 //用户注册页面交互
 document.getElementById("tel").addEventListener('input',function(){
 	if(this.value != ''){
@@ -192,6 +193,7 @@ function check_tel1(){
 }
 //校验验证码
 function checkoutyzm(code){
+	hqyh_id();//获取用户信息
 	mui.ajax(url + '/yskjApp/appYskj/V1/compCode.do',{
 		data:{
 			"code":code,
@@ -233,7 +235,7 @@ function zhmm(){
 	mui.ajax(url + '/yskjApp/appYskj/V1/remPass.do',{
 		data:{
 			"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
-			"id":telnumber,
+			"id":JSON.stringify(user_new.id),
 			"pass":pwd1
 		},
 		dataType:'json',
@@ -249,6 +251,28 @@ function zhmm(){
 				});
 			}else{
 //				mui.alert(data.message+'请先进行注册', '提示', function(){});
+				return;
+			}
+		},
+		error:function(xhr,type,errorThrown){
+			console.log(type);
+		}
+	});
+}
+function hqyh_id(){
+	mui.ajax(url + '/yskjApp/appYskj/V1/getInfo.do',{
+		data:{
+			"phone":telnumber
+		},
+		dataType:'json',
+		type:'post',
+		timeout:10000,
+		headers:{'Content-Type':'application/json'},	              
+		success:function(data){
+			if(data.success){
+				user_new = data.data;
+				alert(user_new.id)
+			}else{
 				return;
 			}
 		},
