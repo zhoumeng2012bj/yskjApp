@@ -55,7 +55,7 @@
 		</div>
 		<script type="text/javascript" src="../js/lib/app_config.js" ></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
 			//跳转页面地址
 			var toUrl = ['./setpwd.html','./disclaimer.html','./userexit.html'];
 			for(var i=0; i<$('.tolink').length; i++){
@@ -108,13 +108,6 @@
 								localStorage.removeItem('cookxs_yh');
 							}else{
 								//退出成功后跳转'我的'页面
-								/*alert('退出成功！');
-								//退出成功后跳转'我的'页面
-								var taskList = plus.webview.getWebviewById('wd.html');
-							    taskList.reload();
-							    mui.back();
-							    alert('退出成功！6666');*/
-								
 								mui.openWindow({
 									url: '../wd.html', 
 									id:'wd2'
