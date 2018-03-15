@@ -236,7 +236,7 @@ function zhmm(){
 		data:{
 			"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
 			"id":JSON.stringify(user_new.id),
-			"pass":pwd1
+			"pass":hex_md5(hex_sha1(pwd1))
 		},
 		dataType:'json',
 		type:'post',

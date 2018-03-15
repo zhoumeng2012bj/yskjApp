@@ -271,7 +271,6 @@ function denglu(){
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
 				
-				
 //				detailPage = plus.webview.getLaunchWebview();
 //				    mui.fire(detailPage,'newsId',{
 //				            id:4
