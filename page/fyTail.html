@@ -14,7 +14,7 @@
 		<header class="mui-bar mui-bar-nav fytail">
 		    <div class="">
 		    	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left fyxqfh"></a>
-		    	<span class="titlezi">时间国际中心</span>
+		    	<span class="titlezi topic" >时间国际中心</span>
 		    </div>
 		</header>
 		<div class="mui-content fyzhuti">
@@ -63,86 +63,86 @@
 				</div>
 				<div class="fuxqxx">
 					<div class="fyxqxxyiu">
-						<p>时间国际中心</p>
+						<p class="topic">时间国际中心</p>
 					</div>
 					<div class="fyxqxxer">
 						<ul>
 							<li>
-								<p class="danjia">单价</p>
-								<p class="danyuan">6.7元/㎡/天</p>
+								<p class="danjia" >单价</p>
+								<p class="danyuan dj" >6.7元/㎡/天</p>
 							</li>
 							<li>
 								<p class="danjia">月租金</p>
-								<p class="danyuan">6.7元/月</p>
+								<p class="danyuan yzj">6.7元/月</p>
 							</li>
 							<li>
 								<p class="danjia">面积</p>
-								<p class="danyuan">6.7㎡</p>
+								<p class="danyuan fjmj">6.7㎡</p>
 							</li>
 						</ul>
 					</div>
 					<div class="fyxqxxsan">
 						<div class="zhognxiu">
 							<span class="zhognxiuyi">
-								<i>装修中</i>
+								<i class="fjzt">装修中</i>
 							</span>
-							<span class="kezhuce">可注册</span>
+							<span class="kezhuce zc">可注册</span>
 						</div>
 						<ul>
 							<li>
 								<p class="stkrgw">
 									<span class="kognwrgwei">可容工位：</span>
-									<span class="neirong">21-57</span>
+									<span class="neirong krgw">21-57</span>
 								</p>
 								<p class="stkrgw">
 									<span class="kognwrgwei">产权性质:</span>
-									<span class="neirong">写字楼</span>
+									<span class="neirong chqxz">写字楼</span>
 								</p>
 							</li>
 							<li>
 								<p class="stkrgw">
 									<span class="kognwrgwei">房间楼层：</span>
-									<span class="neirong">12</span>
+									<span class="neirong lc">12</span>
 								</p>
 								<p class="stkrgw">
 									<span class="kognwrgwei">房间朝向:</span>
-									<span class="neirong">东北</span>
+									<span class="neirong chx">东北</span>
 								</p>
 							</li>
 							<li>
 								<p class="stkrgw">
 									<span class="kognwrgwei">房间层高：</span>
-									<span class="neirong">29m</span>
+									<span class="neirong fjcg">29m</span>
 								</p>
 								<p class="stkrgw">
 									<span class="kognwrgwei">物业费:</span>
-									<span class="neirong">6元/㎡/月</span>
+									<span class="neirong wyf">6元/㎡/月</span>
 								</p>
 							</li>
 							<li>
 								<p class="stkrgw">
 									<span class="kognwrgwei">建成年代：</span>
-									<span class="neirong">2017-01-01</span>
+									<span class="neirong kprq">2017-01-01</span>
 								</p>
 								<p class="stkrgw">
 									<span class="kognwrgwei">供暖费:</span>
-									<span class="neirong">24元/㎡/季</span>
+									<span class="neirong gnf">24元/㎡/季</span>
 								</p>
 							</li>
 							<li>
 								<p class="stkrgw">
 									<span class="kognwrgwei">网络公司：</span>
-									<span class="neirong">电信</span>
+									<span class="neirong wlgs">电信</span>
 								</p>
 								<p class="stkrgw">
 									<span class="kognwrgwei">停车费:</span>
-									<span class="neirong">800-1000元/月</span>
+									<span class="neirong tcf">800-1000元/月</span>
 								</p>
 							</li>
 							<li>
 								<p class="">
 									<span class="kognwrgwei">物业公司：</span>
-									<span class="neirong">乐康物业管理有限公司</span>
+									<span class="neirong wygs">乐康物业管理有限公司</span>
 								</p>
 							</li>
 							
@@ -153,11 +153,11 @@
 				<div class="xshogwen">
 					<div class="xshgwedi">
 						<span class="xshgwedier kognwrgwei">销售顾问：</span>
-						<span class="neirong">张玉恒</span>
+						<span class="neirong name">张玉恒</span>
 					</div>
 					<div class="lianxfangs">
 						<span class="xshgwedier kognwrgwei">联系方式：</span>
-						<span class="lainsier">13810935037</span>
+						<span class="lainsier phone">13810935037</span>
 					</div>
 				</div>
 				<div class="wuyfsdceng"></div>
@@ -177,6 +177,7 @@
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
 		<script type="text/javascript">
+			var collectId="";
 			/*图片自动轮播*/
 			ca.init();
 			castapp.pictureScroll({
@@ -199,6 +200,147 @@
 			});
 			/*注意:如果ajax获得图片后，需要在写入图片以后，需要从新调用一下*/
 			gallery.slider();
+				mui.init();
+			/*房源数据*/
+			mui.ajax(url+'/yhcms/web/lpjbxx/getWxFyxx.do',{
+				data:{
+							"parameters":{"hourse_id":"66228"},
+							"foreEndType":2,
+							"code":"30000004"
+						},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						var data = data.data;
+							for(var i=0;i<data.length;i++){
+								$(".dj").html(data[i].dj);
+								$(".yzj").html(data[i].yzj);
+								$(".fjmj").html(data[i].fjmj);
+								$(".krgw").html(data[i].krgw);
+								$(".chx").html(data[i].chx);
+								$(".kprq").html(data[i].kprq);
+								$(".fjzt").html(data[i].fjzt);
+								$(".lc").html(data[i].lc);
+								$(".fjcg").html(data[i].fjcg);
+								$(".wyf").html(data[i].wyf);
+								$(".gnf").html(data[i].gnf);
+								$(".tcf").html(data[i].tcf);
+								$(".wygs").html(data[i].wygs);
+								$(".zc").html(data[i].zc);
+								$(".chqxz").html(data[i].chqxz);
+								$(".wlgs").html(data[i].wlgs);
+								$(".topic").html(data[i].topic);
+								$(".name").html(data[i].name);
+								$(".phone").html(data[i].phone);
+								//图片轮播信息
+								
+							}
+						
+					}else{
+						mui.alert(data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			//获取前端登陆时的cookie,如果有则判断  房源是否已被收藏  改变收藏的样式
+			var cookieId=JSON.parse(localStorage.getItem('cookxs'));
+			alert("cookieId"+cookieId);
+			if(cookieId!=""){
+				//判断房源是否被收藏
+				mui.ajax(url+'/yskjApp/appYskj/V1/judgeCollection.do',{
+				data:{
+							"cookie":cookieId,
+							"fyid":""
+						},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						//已被收藏   收藏Id
+						collectId=data.collectId;
+						
+						mui.alert("已被收藏   收藏Id"+data.collectId);
+					}else{
+						mui.alert("房源未被收藏"+data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			}
+			//如果没有获取到登录时的cookie，
+			//点击收藏的时候 跳转到登录页面 进行登陆
+			
+			function  logonJudge{
+				
+				if(cookieId==""){
+					//跳转到登录页面
+				}else{
+					//判断执行的操作是  收藏还是取消
+					
+				}
+				
+			}
+			//取消收藏
+			function cancleCollect(){
+				mui.ajax(url+'/yskjApp/appYskj/V1/cancelCollect.do',{
+				data:{
+							"collectId":collectId
+						},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						mui.alert("取消成功");
+						//判断收藏的状态 改变图标
+					}else{
+						mui.alert("取消失败："+data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+				
+			}
+			//收藏房源
+			function  collectHouse(){
+				mui.ajax(url+'/yskjApp/appYskj/V1/collectHouse.do',{
+				data:{
+							"cookie":"",
+							"fyid":""
+						},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						mui.alert("收藏成功");
+						//判断收藏的状态 改变图标
+					}else{
+						mui.alert("收藏失败："+data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			}
 			
 		</script>
 	</body>

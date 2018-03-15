@@ -35,7 +35,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="zhezhaoceshx zhezhaocdisplayshx">
+				<div class="zhezhaoceshx zhezhaocdisplayshx" style="border: 1px solid red;">
 					<div class="zzcnershx">
 						<div class="mianjilag">
 							<div class="mjqyfm">
@@ -128,8 +128,7 @@
 		<script src="js/lib/app_config.js"></script>
 		<script src="js/mui.min.js"></script>
 		<script>
-			
-			mui.init({
+			mui.init({ 
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
@@ -143,11 +142,15 @@
 					}
 				}
 			});
+			var xial = 1;//上拉加载的次数
 			/**
 			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
 				setTimeout(function() {
+					xial = 1;
+					$('.listUl').html('');
+					dthqdata();
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					//这块是下拉刷新添加数据
@@ -161,20 +164,16 @@
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 				}, 1500);
 			}
-			var count = 0;
+
 			/**
 			 * 上拉加载具体业务实现
 			 */
-			var xial = 1;//上拉加载的次数
+			
 			function pullupRefresh() {
 				setTimeout(function() {
-					alert(xial);
-					dthqdata(xial);
-					xial++;
-					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					dthqdata();
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					
 					/*for (var i = cells.length, len = i + 20; i < len; i++) {
 						var li = document.createElement('li');
 						li.className = 'mui-table-view-cell';
@@ -197,8 +196,7 @@
 			}
 			
 	/*		动态数据*/
-			var listdata = Array();
-			function dthqdata(i){
+			function dthqdata(){
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				data:{
 					"parameters":
@@ -215,7 +213,7 @@
 							"label":"",
 							"chqxz":"",
 							"orderby":"D",
-							"curr_page":i,
+							"curr_page":xial,
 							"items_perpage":10
 						},"foreEndType":2,"code":"30000001"},
 				dataType:'json',//服务器返回json格式数据
@@ -225,21 +223,32 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
-						console.log(data);
+						xial++;
 						var data = data.data;
-						listdata = data.data;
+						console.log('-----------------------------接口内--------------------------------------');
 						console.log(data);
 						var string = '';
 						for(var i=0;i<data.length;i++){
-							if(data[i].district || data[i].district == ''){
-								string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'m2'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/m2/天</i></span></p></div></li><li class="zx"></li>';
+							if(data[i].decoration_level == ''){
+								if(data[i].djbsh == 1){
+									string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}else{
+									string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}
+
 							}else{
-								string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'m2'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/m2/天</i></span></p></div></li><li class="zx"></li>';
+								if(data[i].djbsh == 1){
+									string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}else{
+									string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}
+
 							}
 							
 							/*document.querySelector('.fypics').innerHTML=string;*/
 							$('.listUl').append(string);
 						}
+						mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
 					}else{
 						mui.alert(data.msg);
 					}
@@ -249,12 +258,8 @@
 					console.log(type);
 				}
 				});
-				
-			
 			}
-			
-			
-			
+
 			/*点击位置出现遮罩层*/
 			window.addEventListener("weizhi", function (e) {
 			    //获得事件参数
@@ -273,11 +278,11 @@
 					$(".zhezhaoceshx").removeClass("zhezhaocdisplayshx");
 					$(".zhezhaoceshx").addClass("zhezhaocdisbaloshx");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
-					$(".zhezhaoceshx").on('touchmove',function(e){
+					/*$(".zhezhaoceshx").on('touchmove',function(e){
 	                    e.preventDefault();  //阻止默认行为
 						return false;
 	                })
-				}
+*/				}
 				
 			});
 
@@ -335,6 +340,97 @@
 					}
 				});
 			});
+
+			//价格的监听事件
+			window.addEventListener("jiage", function (e) {
+			    //获得事件参数
+			    var idx = e.detail.idx;
+				if(idx == 5){
+					var jiangejt = 'P1';
+					jiangefangfa(jiangejt);
+				}else{
+					var jiangejt = 'P2';
+					jiangefangfa(jiangejt);
+				}
+			});
+			
+			//面积的监听事件
+			window.addEventListener("area", function (e) {
+			    //获得事件参数
+			    var idx = e.detail.idx;
+				if(idx == 7){
+					var jiangejt = 'A1';
+					jiangefangfa(jiangejt);
+				}else{
+					var jiangejt = 'A2';
+					jiangefangfa(jiangejt);
+				}
+			});
+			
+			function jiangefangfa(jiagesanshu){
+				$('.listUl').html('');
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
+					data:{
+						"parameters":
+							{
+								"search_keywork":"",
+								"district":"",
+								"business":"",
+								"district1":"",
+								"business1":"",
+								"line_id":"",
+								"station_id":"",
+								"area":"",
+								"price_dj":"",
+								"label":"",
+								"chqxz":"",
+								"orderby":jiagesanshu,
+								"curr_page":xial,
+								"items_perpage":10
+							},"foreEndType":2,"code":"30000001"},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							xial++;
+							var data = data.data;
+							console.log('-----------------------------接口内--------------------------------------');
+							console.log(data);
+							var string = '';
+							for(var i=0;i<data.length;i++){
+								if(data[i].decoration_level == ''){
+									if(data[i].djbsh == 1){
+										string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}
+	
+								}else{
+									if(data[i].djbsh == 1){
+										string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}
+	
+								}
+								
+								/*document.querySelector('.fypics').innerHTML=string;*/
+								$('.listUl').append(string);
+							}
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
+						}else{
+							mui.alert(data.msg);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});
+			}
 			/*$('.listtail').click(function(){
 				mui.openWindow({ 
 					url:'page/fyTail.html', //需要打开页面的url地址 
