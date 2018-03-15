@@ -282,8 +282,6 @@ function denglu(){
 //				    }
 //				    plus.webview.currentWebview().hide();
 //				    plus.webview.show('wd.html',"fade-in",300);
-				
-				
 				mui.openWindow({
 					url: '../wd.html', 
 					id:'wd'

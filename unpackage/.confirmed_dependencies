@@ -132,7 +132,8 @@
 			"img/fypic.png",
 			"js/lib/flexible.js",
 			"css/style.css",
-			"js/lib/jquery-1.10.2.min.js"
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"page/fyTail.html"
@@ -311,7 +312,8 @@
 			"js/lib/form_yz.js",
 			"js/lib/app_config.js",
 			"js/lib/sha1.js",
-			"js/lib/md5.js"
+			"js/lib/md5.js",
+			"wd.html"
 		],
 		"refer": [
 			"page/wj_pwd.html",
