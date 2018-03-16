@@ -119,7 +119,7 @@
 .yzh_ion{
 	width: 0.573333rem;
 	height: 0.573333rem;
-	margin-bottom: 0.2rem;
+	margin-bottom: 0.133333rem;
 }
 .yzh_ion img{
 	width: 100%;
@@ -176,4 +176,10 @@
 	position: absolute;
 	bottom: -0.4rem;
 	text-align: center;
+}
+.cynx{
+	padding-left: 0.4rem;
+	font-size: 0.4rem;
+	color: #333;
+	font-weight: bold;
 }

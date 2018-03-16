@@ -304,7 +304,8 @@
 					"page/saleFuWu.html",
 					"page/loupan_detail.html",
 					"page/topNewsInfo.html",
-					"page/fyTail.html"
+					"page/fyTail.html",
+					"page/steward.html"
 				],
 				"priority": 0
 			},
@@ -718,6 +719,25 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/steward.html": {
+				"resources": [
+					"img/gj_h.png",
+					"img/ldd.png",
+					"css/steward.css",
+					"img/qfw.png",
+					"img/qth.png",
+					"img/yzs.png",
+					"css/mui.min.css",
+					"js/lib/flexible_css.js",
+					"fonts/mui.ttf",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js"
 				],
