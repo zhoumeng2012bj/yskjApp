@@ -1,7 +1,7 @@
 //手机号码验证
 function checkPhone(id){
    var phone = document.getElementById(id).value;
-   if(!(/^1[34578]\d{9}$/.test(phone))){
+   if(!(/^1[345678]\d{9}$/.test(phone))){
    		mui.alert('请确认填写手机号是否正确', '提示', function(){});
    		return false;
    }else{

@@ -1,0 +1,99 @@
+.public_h1{
+	height: 1.733333rem;
+	box-shadow: initial;
+	border-bottom: 1px solid #e5e5e5;
+}
+.public_con{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 1.733333rem;
+	padding-top: 0px!important;
+	overflow: auto;
+}
+.public_h1{
+	padding-top: 0.666666rem;
+}
+.public_h1 h1,.public_h1 a{
+	font-size: 0.453333rem;
+	color: #333333;
+}
+.hzqy{
+	background: #fff;
+	padding: 0.666666rem 0.4rem 0.8rem 0.4rem;
+	border-bottom: 1px solid #e5e5e5;
+}
+.miaoshu{
+	font-size: 0.4rem;
+	color: #333333;
+	line-height: 0.6rem;
+}
+.miaoshu i,.his_tit i{
+	font-style: normal;
+	color: #ff4343;
+}
+.hzqy_list{
+	width: 9.2rem;
+	min-height: 6.893333rem;
+	height: auto;
+	margin-top: 0.666666rem;
+	background: url(../img/hzqy.png) no-repeat center;
+	background-size: 100% auto;
+}
+.his_news{
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	margin-top: 0.266666rem;
+}
+.his_tit{
+	height: 1.933333rem;
+	line-height: 1.933333rem;
+	font-size: 0.4rem;
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+}
+.his_tab{
+	padding-bottom: 0.933333rem;
+}
+.his_tab table{
+	width: 9.2rem;
+	border-collapse: collapse;
+	text-align: center;
+	-webkit-box-shadow:0px 0px 6px #d3d3d3; 
+	box-shadow:0px 0px 6px #d3d3d3;
+}
+.his_tabs th{
+	font-size: 0.4rem;
+	color: #333333;
+	text-align: center;
+}
+.his_tabs th span,.his_tabs th i{
+	vertical-align: middle;
+}
+.his_tabs th span{
+	display: inline-block;
+	height: 0.586666rem;
+	width: 0.586666rem;
+	margin-right: 0.2rem;
+}
+.his_tabs th i{
+	font-style: normal;
+}
+.his_tabs th span img{
+	width: 100%;
+}
+.his_tab table tr:first-child{
+	height: 1.333333rem;
+	background-color: #e2e2e2!important;
+}
+.his_tab table tr{
+	height: 1.066666rem;
+	font-size: 0.4rem;
+	color: #666666;
+}
+.his_tab table tr:nth-child(odd){
+	background: #f7f7f7;
+}

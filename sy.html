@@ -75,7 +75,7 @@
 						</p>
 						<p class="meu_txt">
 							<span>面积</span>
-							<span>25万m2</span>
+							<span>25万m²</span>
 						</p>
 					</li>
 					<li>
@@ -83,8 +83,8 @@
 							<img src="img/qy_icon.png" alt="" />
 						</p>
 						<p class="meu_txt">
-							<span>面积</span>
-							<span>25万m2</span>
+							<span>企业</span>
+							<span>1500家</span>
 						</p>
 					</li>
 					<li>
@@ -92,8 +92,8 @@
 							<img src="img/jjr_icon.png" alt="" />
 						</p>
 						<p class="meu_txt">
-							<span>面积</span>
-							<span>25万m2</span>
+							<span>经纪人</span>
+							<span>25000+</span>
 						</p>
 					</li>
 					<li>
@@ -101,8 +101,8 @@
 							<img src="img/gj_icon.png" alt="" />
 						</p>
 						<p class="meu_txt">
-							<span>面积</span>
-							<span>25万m2</span>
+							<span>管家</span>
+							<span>500+</span>
 						</p>
 					</li>
 				</ul>
@@ -577,6 +577,18 @@
 					console.info(123465);
 				},'json'
 			);*/
+			var toLink = ['page/broker.html','page/broker.html','page/broker.html','page/steward.html'];
+			//最新数据
+			for (var b=0; b<$('.nav_list li').length; b++) {
+				(function(ix){
+					$('.nav_list li').eq(b).click(function(){
+						mui.openWindow({ 
+							url:toLink[ix], //需要打开页面的url地址 
+							id:'zxsj'+ix,  //需要打开页面的url页面id
+						})
+					})
+				})(b)
+			}
 		</script>
 	</body>
 
