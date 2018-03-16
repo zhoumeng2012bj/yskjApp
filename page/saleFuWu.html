@@ -58,7 +58,7 @@
 		</div>
 		<div class="baoxoiwenzibot"></div>
 		<div class="tijiaomax">
-			<div class="button" onclick="tijiao()">提交</div>
+			<div class="button" onclick="checkSubmit()">提交</div>
 			<div class="tijiaodewenzi">如有任何疑问请拨打咨询电话<sapn class="wd_tel"><a href="tel:400-078-8800">400-078-8800</a></span></div>
 		</div>
 	</div>
@@ -69,13 +69,47 @@
 		<script type="text/javascript">
 			mui.init()
 			/*售后服务*/
-			function tijiao(){
+			function checkSubmit(){
+				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+						mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
+						data:{
+							"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
+						},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								var userData = data.data;
+								//将手机号中间加密
+								var userId= userData.id;
+								//提交信息
+								tijiao(userId);
+							}else{
+								mui.alert('获取用户信息失败', '提示', function(){});
+								return false;
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});
+					
+				}else{
+					mui.openWindow({
+						url: '../wd.html', 
+						id:'wd'
+					});
+				}
+			}
+			function tijiao(uid){
 				var sex=$("input[name='radio']:checked").val();;
 				var phone=$('.shfwPhone').val();
 				var name=$('.shfwName').val();
 				var repairHouse=$('#repairHouse').val();
 				var memo=$('#memo').val();
-				var userId="";  //当前登录用户Id
+				var userId=null;  //当前登录用户Id
 				if(name==''){
 					mui.alert('请填写姓名', '提示', function(){});
 					return false;
@@ -99,7 +133,7 @@
 						'phone':phone,
 						'repairHouse':repairHouse,
 						'memo':memo,
-						'uid':userId
+						'uid':uid
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型

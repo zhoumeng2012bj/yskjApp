@@ -69,7 +69,9 @@
 		"refer": [
 			"jxfy.html",
 			"page/saleFuWu.html",
-			"page/loupan_detail.html"
+			"page/loupan_detail.html",
+			"page/topNewsInfo.html",
+			"page/fyTail.html"
 		]
 	},
 	"jxfy.html": {
@@ -368,9 +370,18 @@
 		"resources": [
 			"css/saleFuWu.css",
 			"img/shouffwu.png",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"css/mui.min.css"
 		],
-		"refer": []
+		"refer": [
+			"wd.html",
+			"sy.html"
+		]
 	},
 	"page/loupan_detail.html": {
 		"resources": [
@@ -414,7 +425,13 @@
 	"page/liJiShenQing.html": {
 		"resources": [
 			"css/liJiShenQ.css",
-			"css/fast_zc.css"
+			"css/fast_zc.css",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/topNewsInfo.html": {
+		"resources": [
+			"css/person.css"
 		]
 	}
 }
