@@ -56,7 +56,15 @@
 		</div>
 		<script type="text/javascript" src="js/lib/app_config.js" ></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			window.addEventListener('customEvent', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.ttt;
+			    alert(param);
+			    takeuser();
+			    // 执行相应的ajax或者操作DOM等操作
+			});
 			//跳转页面地址
 			var toUrl = ['page/person.html','page/mycollection.html','page/myset.html'];
 			for(var i=0; i<$('.tolink').length; i++){
@@ -99,7 +107,7 @@
 					  url: './page/person.html', 
 					  id:'person1'
 					});		
-					alert('一登录')
+					alert('已登录')
 					return
 				}else{
 					//跳转登陆页面
@@ -153,6 +161,7 @@
 			}
 			//获取信息方法
 			function takeuser(){
+				alert('信息获取')
 				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
 					gainUser();
 				}else{
@@ -162,7 +171,7 @@
 					$('.yrz').css('display','none');
 				}				
 			}
-			takeuser();
+//			takeuser();
 		</script>
 	</body>
 
