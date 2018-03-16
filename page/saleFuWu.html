@@ -24,28 +24,28 @@
 			<div class="box_i1">
 				<div class="mui-input-row inp shfuimput">
 		    		<span class="shurpnone">姓名</span>
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入真实姓名">
+	    		    <input type="text" class="mui-input-clear shfwName" placeholder="请输入真实姓名">
 	    		</div>
 	    		<div class="mui-input-row shfuimput xingbei">
 		    		<span class="shurpnone">性别</span>
 	    		    <div class="mui-input-row mui-radio">
 	    		        <label class="xianshang">先生</label>
-	    		        <input name="radio" type="radio" class="nan">
+	    		        <input name="radio" id='sex' type="radio" class="nan" value="1">
 		    		</div>
 		    		<div class="mui-input-row mui-radio xingbei">
 	    		        <label class="xianshang">女士</label>
-	    		        <input name="radio" type="radio" class="nvshi">
+	    		        <input name="radio" id='sex' type="radio" class="nvshi" value="2">
 	    			</div>
 	    		</div>
 		    	<div class="mui-input-row inp shfuimput">
 		    		<span class="shurpnone">手机号</span>
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号">
+	    		    <input type="text" class="mui-input-clear shfwPhone" placeholder="请输入手机号">
 	    		</div>
 	    		<div class="fangwutop"></div>
 	    		<div class="fangwuxinix">
 	    			<div class="mui-input-row inp shfuimput">
 			    		<span class="shurpnone">房屋信息</span>
-		    		    <input type="text" class="mui-input-clear" placeholder="请输入楼盘、座栋、房间号">
+		    		    <input type="text" class="mui-input-clear" id="repairHouse" placeholder="请输入楼盘、座栋、房间号">
 	    			</div>
 	    		</div>
 	    		<div class="baoxiuxx"></div>
@@ -53,20 +53,125 @@
 		    <div class="baxiuxxx">报修信息</div>
 		    <div class="baoxiudebeizhu">
 		    	<textarea class="texta" maxlength="200" placeholder="请输入详细内容"></textarea>
-		    	<span class='two textwenadeshuz'><span id="textNum">0</span>/200</span>
+		    	<span class='two textwenadeshuz' id="memo"><span id="textNum">0</span>/200</span>
 		    </div>
 		</div>
 		<div class="baoxoiwenzibot"></div>
 		<div class="tijiaomax">
-			<div class="button">提交</div>
+			<div class="button" onclick="checkSubmit()">提交</div>
 			<div class="tijiaodewenzi">如有任何疑问请拨打咨询电话<sapn class="wd_tel"><a href="tel:400-078-8800">400-078-8800</a></span></div>
 		</div>
 	</div>
 
 	
 		<script src="../js/mui.min.js"></script>
+		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init()
+			/*售后服务*/
+			function checkSubmit(){
+				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+						mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
+						data:{
+							"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
+						},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								var userData = data.data;
+								//将手机号中间加密
+								var userId= userData.id;
+								//提交信息
+								tijiao(userId);
+							}else{
+								mui.alert('获取用户信息失败', '提示', function(){});
+								return false;
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});
+					
+				}else{
+					mui.openWindow({
+						url: '../wd.html', 
+						id:'wd'
+					});
+				}
+			}
+			function tijiao(uid){
+				var sex=$("input[name='radio']:checked").val();;
+				var phone=$('.shfwPhone').val();
+				var name=$('.shfwName').val();
+				var repairHouse=$('#repairHouse').val();
+				var memo=$('#memo').val();
+				var userId=null;  //当前登录用户Id
+				if(name==''){
+					mui.alert('请填写姓名', '提示', function(){});
+					return false;
+				}else if(sex=='' || sex==undefined ){
+					mui.alert('请选择性别', '提示', function(){});
+					return false;
+				}else if(phone==''){
+					mui.alert('请填写手机号', '提示', function(){});
+					return false;
+				}else if(!(/^1[34578]\d{9}$/.test(phone))){
+					mui.alert('请正确填写手机号', '提示', function(){});
+   		           return false;
+				}else if(repairHouse==''){
+					mui.alert('请填写房屋信息', '提示', function(){});
+					return false;
+				}
+				mui.ajax(url+'/yskjApp/webApp/dataInfo/customerInfo.do',{
+					data:{
+						'name':name,
+						'sex':sex,
+						'phone':phone,
+						'repairHouse':repairHouse,
+						'memo':memo,
+						'uid':uid
+					},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.alert('提交成功，我们将会与您联系。');
+							//成功后返回至服务商城页面
+							mui.openWindow({
+								url: '../sy.html', 
+								id:'sy'
+							});
+					return;
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});	
+			}
+			
+			function getSexValue(){  
+			    var radio =$("#sex"); 
+			    var sex="";
+			    for (i=0; i<radio.length; i++) {  
+			        if (radio[i].checked) {  
+			            alert(radio[i].value)  
+			            sex=radio[i].value;
+			        }  
+			    }  
+			    return sex;
+			}
+    
 		</script>
 	</body>
 

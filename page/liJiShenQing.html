@@ -24,7 +24,7 @@
 			<div class="box_i1">
 				<div class="mui-input-row inp shfuimput">
 		    		<span class="shurpnone">姓名</span>
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入真实姓名">
+	    		    <input type="text" class="mui-input-clear fwscName" placeholder="请输入真实姓名">
 	    		</div>
 		    	<!--<div class="mui-input-row inp shfuimput">
 		    		<span class="shurpnone">手机号</span>
@@ -33,12 +33,12 @@
 	    		</div>-->
 		    	<div class="mui-input-row inp shfuimput">
 		    		<span class="shurpnone">手机号</span>
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号">
-    		    	<span class="hqyzm">获取验证码</span>
+	    		    <input type="text" class="mui-input-clear fwscPhone" placeholder="请输入手机号">
+    		    	<span class="hqyzm" onclick="huoqvyanzm()">获取验证码</span>
 	    		</div>
 	    		<div class="mui-input-row inp shfuimput">
 	    			<span class="shurpnone">验证码</span>
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码">
+	    		    <input type="text" class="mui-input-clear fwscCode" placeholder="请输入验证码">
 	    		</div>
 	    		<!--<div class="fangwutop"></div>
 	    		<div class="fangwuxinix">
@@ -51,20 +51,193 @@
 		    </div>
 		    <div class="baxiuxxx">其他信息</div>
 		    <div class="baoxiudebeizhu">
-		    	<textarea class="texta" maxlength="200" placeholder="请输入详细内容"></textarea>
+		    	<textarea class="texta" maxlength="200" placeholder="请输入详细内容" id="memo"></textarea>
 		    	<span class='two textwenadeshuz'><span id="textNum">0</span>/200</span>
 		    </div>
 		</div>
 		<div class="tijiaomax">
-			<div class="button">提交</div>
+			<div class="button" onclick="tijiao()">提交</div>
 			<div class="tijiaodewenzi">如有任何疑问请拨打咨询电话<sapn class="wd_tel"><a href="tel:400-078-8800">400-078-8800</a></span></div>
 		</div>
 	</div>
 
 	
 		<script src="../js/mui.min.js"></script>
+	    <script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			var fwscType="";
+			 window.onload = function(){
+	            //业务数据获取完毕，并已插入当前页面DOM；
+	            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+	            mui.plusReady(function(){
+	                var self = plus.webview.currentWebview();
+	                fwscType = self.fwscType;
+	                //关闭等待框
+	                plus.nativeUI.closeWaiting();
+	                //显示当前页面
+	                mui.currentWebview.show();
+	            });
+	        }
+			
+			
+			//获取验证密码倒计时
+			var tag = true;
+			var countdown=60; 
+			function settime(obj) {
+			    if (countdown == 0) { 
+			    	tag = true;
+			        obj.html("获取验证码");
+			        countdown = 60; 
+			        return;
+			    } else { 
+			    	tag = false;
+			        obj.html("重新发送(" + countdown + ")"); 
+			        countdown--;
+			    } 
+				setTimeout(function() { 
+			    	settime(obj) 
+				},1000)
+			}
+			//生成cookie
+			function createcookie(){
+				var cookyezhi = new Date;
+				localStorage.setItem('cookyezhi', JSON.stringify(cookyezhi));
+				return cookyezhi;
+			}
+			
+			var cookyezhi = createcookie();
+			/*服务商城*/
+			function huoqvyanzm(){
+				/*			发送手机验证码*/
+				if($('.fwscPhone').val()==''){
+					mui.alert('请填写手机号码', '提示', function(){});
+					return false;
+				}else if(!(/^1[34578]\d{9}$/.test($('.fwscPhone').val()))){
+					mui.alert('请确认填写手机号是否正确', '提示', function(){});
+   		           return false;
+				}
+				if(tag){
+					var phone = $('.fwscPhone').val();
+					mui.ajax(url+'/yskjApp/appYskj/V1/getServiceCode.do',{
+						data:{
+							'phone':phone,
+							'cookie':cookyezhi
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.success){
+								mui.toast('验证码已发送',{ duration:'2000', type:'div' }) 
+								tag = false;
+								var obg = $('.hqyzm');
+								settime(obg);
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
+						}
+					});
+				}else{
+					
+				}
+			}
+			//1、工商税务，2、增值服务，3、定制装修，4金融服务
+			function tijiao(){
+				var code=$('.fwscCode').val();
+				var phone=$('.fwscPhone').val();
+				var name=$('.fwscName').val();
+				var memo=$('#memo').val();
+				var type=fwscType;
+				if(name==''){
+					mui.alert('请填写姓名', '提示', function(){});
+					return false;
+				}else if(phone==''){
+					mui.alert('请填写手机号', '提示', function(){});
+					return false;
+				}else if(code==''){
+					mui.alert('请填写验证码', '提示', function(){});
+					return false;
+				}else if(type==''){
+					mui.alert('提交参数有误', '提示', function(){});
+					return false;
+				}
+				
+				mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
+					data:{
+						'code':code,
+						'cookie':cookyezhi
+					},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.ajax(url+'/yskjApp/webApp/dataInfo/mallService.do',{
+								data:{
+									'name':name,
+									'phone':phone,
+									'type':type,
+									'memo':memo
+								},
+								dataType:'json',//服务器返回json格式数据
+								type:'post',//HTTP请求类型
+								timeout:10000,//超时时间设置为10秒；
+								headers:{'Content-Type':'application/json'},	              
+								success:function(data){
+									//服务器返回响应，根据响应结果，分析是否登录成功；
+									if(data.success){
+										mui.alert('提交成功，我们将会与您联系。');
+										//成功后返回至服务商城页面
+										mui.openWindow({
+											url: '../fwsc.html', 
+											id:'fwsc'
+										});
+								return;
+									}else{
+										mui.alert(data.message);
+									}
+								},
+								error:function(xhr,type,errorThrown){
+									//异常处理；
+									console.log(type);
+								}
+							});	
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});	
+			}
+			
+			//验证字符长度
+			function getStrByteLen(val) {
+			      var len = 0;
+			      for (var i = 0; i < val.length; i++) {
+			        var a = val.charAt(i);
+			        if (a.match(/[^\x00-\xff]/ig) != null) {
+			          len += 2;
+			        }
+			        else {
+			          len += 1;
+			        }
+			      }
+			      return len;
+			  }
+    
+
 		</script>
 	</body>
 

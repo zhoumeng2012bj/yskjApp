@@ -118,11 +118,13 @@
 		    </div>
 		</div>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			//fwscType 1、工商税务，2、增值服务，3、定制装修，4金融服务
 			$('.fast_sq').click(function(){
 				mui.openWindow({ 
 					url:'liJiShenQing.html', //需要打开页面的url地址 
 					id:'liJiShenQing',  //需要打开页面的url页面id
+					extras:{fwscType:4}
 				})
 			})
 		</script>
