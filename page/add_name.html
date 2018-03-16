@@ -28,7 +28,7 @@
 		<header class="mui-bar mui-bar-nav wd-header">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">添加姓名</h1>
-		    <span class="save">保存</span>
+		    <span class="save" onclick="save()">保存</span>
 		</header>
 		<div class="mui-content per_zt">
 		   <ul class="per_news">
@@ -39,8 +39,122 @@
 		    	</li>
 		    </ul>
 		</div>
+		 <script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
+			(function(){
+				
+			   checkSubmit();
+			})();
+			   var name="";
+				var card="";
+				var gsid="";
+				var gsname="";
+				var xmname="";
+				var phone="";
+				var mptp1=[];
+				var mptp2=[];
 			mui.init()
+			function checkSubmit(){
+				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+						mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
+						data:{
+							"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
+						},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								var userData = data.data;
+								//将手机号中间加密
+								 name=userData.name;
+								 if(name!=null&&name!=""&&name!="null"){
+								 	$(".add_n").val(name);
+								 	$(".mui-title").html("修改姓名");
+								 }
+								 phone=userData.phone;
+								 gsid=userData.gsid;
+								 gsname=userData.gsname;
+								 xmname=userData.xmname;
+								 card=userData.card;
+								 var p1=userData.mp1data;
+								 if(p1!=null&&p1.length>0){
+								 	for(var i=0;i<p1.length;i++){
+								 		mptp1[i].id=p1[i].ID;
+								 		mptp1[i].url=p1[i].URL;
+								 		mptp1[i].isdelete=p1[i].ISDELETE;
+								 	}
+								 }
+								  var p2=userData.mp2data;
+								 if(p2!=null&&p2.length>0){
+								 	for(var i=0;i<p2.length;i++){
+								 		mptp2[i].id=p2[i].ID;
+								 		mptp2[i].url=p2[i].URL;
+								 		mptp2[i].isdelete=p2[i].ISDELETE;
+								 	}
+								 }
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});
+					
+				}else{
+					mui.openWindow({
+						url: 'login.html', 
+						id:'login'
+					});
+				}
+			}
+			function save(){
+				var add_name=$(".add_n").val();
+				if(add_name!=""){
+					name=add_name;
+				mui.ajax(url+'/yhcms/web/qduser/updateAppUser.do',{
+					data:{
+						"parameters":
+						{"card":card,
+						"gsid":gsid,
+						"gsname":gsname,
+						"xmname":xmname,
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
+						"name":name,
+						"phone":phone,
+						"mptp1":mptp1,
+						"mptp2":mptp2},
+						"foreEndType":2,
+						"code":"2"
+						},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.alert(data.message);
+							//成功后返回至服务商城页面
+							mui.openWindow({
+								url: 'person.html', 
+								id:"person"
+							});
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});
+				}else{
+					alert("姓名不能为空");
+				}
+			}
 		</script>
 	</body>
 

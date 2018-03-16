@@ -150,7 +150,8 @@
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"js/lib/flexible.js",
-			"img/head_img.png"
+			"img/head_img.png",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"page/add_name.html",
@@ -169,9 +170,12 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/lib/flexible.js",
-			"css/person.css"
+			"css/person.css",
+			"js/lib/app_config.js"
 		],
-		"refer": []
+		"refer": [
+			"page/person.html"
+		]
 	},
 	"page/gh_tel.html": {
 		"resources": [
@@ -181,9 +185,12 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		],
-		"refer": []
+		"refer": [
+			"page/person.html"
+		]
 	},
 	"page/sfrz.html": {
 		"resources": [
@@ -437,7 +444,28 @@
 	"page/add_sfz.html": {
 		"resources": [
 			"css/person.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/person.html"
+		]
+	},
+	"page/qdgs.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		]
 	}
 }
