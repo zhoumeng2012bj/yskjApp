@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/fyxq.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/loupan_detail.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jxfyList.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/sy.css"/>
+	</head>
+		<header class="mui-bar mui-bar-nav fytail">
+		    <div class="">
+		    	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left fyxqfh"></a>
+		    	<span class="titlezi building_name">企业互联</span>
+		    </div>
+		   
+		    
+		</header>
+		<div class="mui-content fyzhuti" >
+		    <div class="fyxqyi" >
+		    	<div id="slider" class="mui-slider" >
+				  <div class="mui-slider-group mui-slider-loop">
+				    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				   <div class="mui-slider-item">
+		           <img src="../img/1.jpg"  alt="" />
+		          </div>
+				  </div>
+				  <div class="mui-slider-indicator imglunbo"></div>
+				</div>
+		        
+     		 </div>
+     		  <div style="padding-top: 20px;">
+		   <span style="margin-left: 0.4rem;font-size: 0.426rem;"><img src="../img/gj_icon.png" alt="" style="width: 0.6rem;" />会员企业</span>
+		   <div style="border: 1px solid red;height: 155px;margin-top: 0.133rem;" >
+		   	
+		   	
+		   </div>
+		  
+		    </div>
+		     <div style="padding-top: 20px;">
+		   <span class="service" style="margin-left: 0.4rem;font-size: 0.426rem;">企业服务</span> 	 <span class="demand" style="margin-left: 0.8rem;font-size: 0.426rem;">企业需求</span> 
+		    <div style="border: 1px solid red;height: 155px;margin-top: 0.133rem;" >
+		   	
+		   	
+		    </div>
+		    </div>
+		</div>
+	<body>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+		(function(){
+			detailData();
+			enterpriseService();
+			enterpriseDemand();
+			
+		})();
+			//获得slider插件对象
+			var gallery = mui('.mui-slider');
+			gallery.slider({
+			  interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+			});
+			
+			/*注意:如果ajax获得图片后，需要在写入图片以后，需要从新调用一下*/
+			gallery.slider();
+				mui.init();   
+			/*会员企业*/
+			function   detailData(){
+			mui.ajax('http://116.62.68.26:8080/yskjApp/webApp/dataInfo/memberEnterprise.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+					var data=data.data;
+					//[{"logoImg":"http://yskjApp/image", "id":1, "category":"1", "enterpriseName":"北京幼师科技有限公司", "enterpriseDesc":"幼师科技"}]
+					var le=data.length;
+					if(le!=0){
+						//具体数据
+						for(var i=0;i<le;i++){
+						var logoImg=data[i].logoImg
+						var category=data[i].category
+						var enterpriseName=data[i].enterpriseName
+						var enterpriseDesc=data[i].enterpriseDesc
+						}
+					}
+					}else{
+						mui.alert(data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			}
+			
+			
+			
+			//企业服务
+			function enterpriseService(){
+				mui.ajax('http://127.0.0.1:8080/yskjApp/webApp/dataInfo/enterpriseDemand.do',{
+				data:{
+							"demandCategory":1
+						},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						var data=data.data;
+						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
+						//"createTime":"2018-03-06 14:52:03","id":2, 
+						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
+						var le=data.length;
+						if(le!=0){
+							for(var i=0;i<le;i++){
+								var demandType=data[i].demandType;
+								var demandDesc=data[i].demandDesc;
+								var createTime=data[i].createTime.substring(0,10);
+								var butlerPhone=data[i].butlerPhone;
+								var budget=(data[i].budget==null?"":data[i].budget);
+								var budget=(data[i].imgUrl==null?"":data[i].imgUrl);
+							}
+						}
+					}else{
+						mui.alert("取消失败："+data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+				
+			}
+			//企业需求
+			function enterpriseDemand(){
+				mui.ajax('http://127.0.0.1:8080/yskjApp/webApp/dataInfo/enterpriseDemand.do',{
+				data:{
+							"demandCategory":2
+						},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						var data=data.data;
+						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
+						//"createTime":"2018-03-06 14:52:03","id":2, 
+						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
+						var le=data.length;
+						if(le!=0){
+							for(var i=0;i<le;i++){
+								var demandType=data[i].demandType;
+								var demandDesc=data[i].demandDesc;
+								var createTime=data[i].createTime.substring(0,10);
+								var butlerPhone=data[i].butlerPhone;
+							}
+						}
+					}else{
+						mui.alert("取消失败："+data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			}
+		</script>
+	</body>
+
+</html>
