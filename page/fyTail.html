@@ -23,47 +23,13 @@
 				<div id="slider" class="mui-slider" >
 				  <div class="mui-slider-group mui-slider-loop">
 				    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-				    <div class="mui-slider-item mui-slider-item-duplicate">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第一张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第二张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第三张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第四张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-				    <div class="mui-slider-item mui-slider-item-duplicate">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
+				 
 				  </div>
-				  <div class="mui-slider-indicator imglunbo">1/4</div>
+				  <div class="mui-slider-indicator imglunbo"></div>
 				</div>
 				<div class="fuxqxx">
 					<div class="fyxqxxyiu">
-						<p class="topic">时间国际中心</p>
+						<p class="fybh">时间国际中心</p>
 					</div>
 					<div class="fyxqxxer">
 						<ul>
@@ -164,7 +130,7 @@
 				<div class="shouc">
 					<p class="shoucengdianji">
 						<span class="xindebg xindebgimg"></span>
-						<span class="choucdewezi choucdeweziwidth">收藏</span>
+						<span class="choucdewezi choucdeweziwidth" onclick="logonJudge()">未收藏</span>
 					</p>
 					<p class="xmjx">
 						<span class="lainxixingmql">联系项目经理</span>
@@ -177,34 +143,26 @@
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
 		<script type="text/javascript">
+		(function(){
 			var collectId="";
-			/*图片自动轮播*/
-			ca.init();
-			castapp.pictureScroll({
-			    callback:function(pictureNumber){
-//				    console.log(pictureNumber);
-			    },
-			    isAutoScroll:true,
-			    scrollTime:3
-			});
+			var le=0;
+			var fyid="";
+			detailData();
+			jugeHouse();
+		})();
 			//获得slider插件对象
 			var gallery = mui('.mui-slider');
 			gallery.slider({
 			  interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
 			});
-			
-			document.querySelector('.mui-slider').addEventListener('slide', function(event) {
-			  //注意slideNumber是从0开始的；
-			  $('.imglunbo').html(event.detail.slideNumber+1+'/4');
-			  /*alert("你正在看第"+(event.detail.slideNumber+1)+"张图片");*/
-			});
 			/*注意:如果ajax获得图片后，需要在写入图片以后，需要从新调用一下*/
 			gallery.slider();
 				mui.init();
 			/*房源数据*/
-			mui.ajax(url+'/yhcms/web/lpjbxx/getWxFyxx.do',{
+			function   detailData(){
+			mui.ajax('http://116.62.68.26:8080//yhcms/web/lpjbxx/getWxFyxx.do',{
 				data:{
-							"parameters":{"hourse_id":"66228"},
+							"parameters":{"hourse_id":"65372"},
 							"foreEndType":2,
 							"code":"30000004"
 						},
@@ -216,27 +174,85 @@
 					if(data.success){
 						var data = data.data;
 							for(var i=0;i<data.length;i++){
-								$(".dj").html(data[i].dj);
-								$(".yzj").html(data[i].yzj);
-								$(".fjmj").html(data[i].fjmj);
-								$(".krgw").html(data[i].krgw);
-								$(".chx").html(data[i].chx);
-								$(".kprq").html(data[i].kprq);
-								$(".fjzt").html(data[i].fjzt);
-								$(".lc").html(data[i].lc);
-								$(".fjcg").html(data[i].fjcg);
-								$(".wyf").html(data[i].wyf);
-								$(".gnf").html(data[i].gnf);
-								$(".tcf").html(data[i].tcf);
-								$(".wygs").html(data[i].wygs);
-								$(".zc").html(data[i].zc);
-								$(".chqxz").html(data[i].chqxz);
-								$(".wlgs").html(data[i].wlgs);
-								$(".topic").html(data[i].topic);
-								$(".name").html(data[i].name);
-								$(".phone").html(data[i].phone);
+								var housing_icon=data[i].housing_icon;
+								if(housing_icon!=""){
+									le=housing_icon.split(";").length;
+									$(".imglunbo").html("1/"+le);
+								}
+								$(".dj").html(data[i].dj==""?"暂无数据":data[i].dj+"元/㎡/天");
+								$(".yzj").html(data[i].yzj==""?"暂无数据":data[i].yzj+"元/月");
+								$(".fjmj").html(data[i].fjmj==""?"暂无数据":data[i].fjmj+"㎡");
+								$(".krgw").html(data[i].krgw==""?"暂无数据":data[i].krgw);
+								$(".chx").html(data[i].chx==""?"暂无数据":data[i].chx);
+								$(".kprq").html(data[i].kprq==""?"暂无数据":data[i].kprq);
+								$(".fjzt").html(data[i].fjzt==""?"暂无数据":data[i].fjzt);
+								$(".lc").html(data[i].lc==""?"暂无数据":data[i].lc);
+								$(".fjcg").html(data[i].fjcg==""?"暂无数据":data[i].fjcg+"m");
+								$(".wyf").html(data[i].wyf==""?"暂无数据":data[i].wyf+"元/㎡/月");
+								$(".gnf").html(data[i].gnf==""?"暂无数据":data[i].gnf+"元/㎡/季");
+								$(".tcf").html(data[i].tcf==""?"暂无数据":data[i].tcf+"元/月");
+								$(".wygs").html(data[i].wygs==""?"暂无数据":data[i].wygs);
+								if(data[i].zc==1){
+									$(".zc").html("可注册");
+								}else if(data[i].zc==0){
+									$(".zc").html("不可注册");
+								}else{
+									$(".zc").html("暂无数据");
+								}
+								$(".chqxz").html(data[i].chqxz==""?"暂无数据":data[i].chqxz);
+								$(".wlgs").html(data[i].wlgs==""?"暂无数据":data[i].wlgs);
+								$(".topic").html(data[i].topic==""?"暂无数据":data[i].topic);
+								$(".fybh").html(data[i].zdh+"-"+data[i].fybh);
+								$(".name").html(data[i].name==""?"暂无数据":data[i].name);
+								$(".phone").html(data[i].phone==""?"暂无数据":data[i].phone);
 								//图片轮播信息
 								
+								var h_img="";
+								$(".mui-slider-loop").html(h_img);
+								if(housing_icon!=""){
+									var hous_img=housing_icon.split(";");
+									var v1="";
+									var v2="";
+									for(var i=0;i<hous_img.length;i++){
+										var ims=hous_img[i];
+										if(i==0){
+											v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+											v1+='<a href="#">';
+											v1+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+											v1+=' </a> </div>';
+										}else if(i==hous_img.length-1){
+											v2+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+											v2+='<a href="#">';
+											v2+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+											v2+=' </a> </div>';
+										}
+									}
+									for(var i=0;i<hous_img.length;i++){
+											var ims=hous_img[i];
+											if(i==0){
+												h_img+=v2;
+											} 
+											h_img+=' <div class="mui-slider-item">';
+											h_img+='<a href="#">';
+											h_img+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+											h_img+=' </a> </div>';
+											
+											if(i==hous_img.length-1){
+											h_img+=v1;
+										}
+										
+									}
+									$(".mui-slider-loop").html(h_img);
+									/*图片自动轮播*/
+								ca.init();
+								castapp.pictureScroll({
+								    callback:function(pictureNumber){
+					//				    console.log(pictureNumber);
+								    },
+								    isAutoScroll:true,
+								    scrollTime:3
+								});
+								}
 							}
 						
 					}else{
@@ -248,15 +264,18 @@
 					console.log(type);
 				}
 			});
+			}
 			//获取前端登陆时的cookie,如果有则判断  房源是否已被收藏  改变收藏的样式
-			var cookieId=JSON.parse(localStorage.getItem('cookxs'));
+			
+			var cookieId=JSON.parse(localStorage.getItem('cookxs_yh'));
+			function jugeHouse(){
 			alert("cookieId"+cookieId);
-			if(cookieId!=""){
-				//判断房源是否被收藏
+			if(cookieId!=""&&cookieId!=undefined){
+				//判断房源是否被收藏  
 				mui.ajax(url+'/yskjApp/appYskj/V1/judgeCollection.do',{
 				data:{
 							"cookie":cookieId,
-							"fyid":""
+							"fyid":fyid
 						},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
@@ -266,10 +285,14 @@
 					if(data.success){
 						//已被收藏   收藏Id
 						collectId=data.collectId;
-						
+						//图标转换
 						mui.alert("已被收藏   收藏Id"+data.collectId);
+						$(".choucdeweziwidth").html("已收藏");
+						
 					}else{
 						mui.alert("房源未被收藏"+data.message);
+						$(".choucdeweziwidth").html("收藏");
+						
 					}
 				},
 				error:function(xhr,type,errorThrown){
@@ -278,20 +301,27 @@
 				}
 			});
 			}
+			}
 			//如果没有获取到登录时的cookie，
 			//点击收藏的时候 跳转到登录页面 进行登陆
 			
-			function  logonJudge{
-				
-				if(cookieId==""){
+			function  logonJudge(){
+				var hl=	$(".choucdeweziwidth").html();
+				if(hl=="未收藏"){
 					//跳转到登录页面
-				}else{
-					//判断执行的操作是  收藏还是取消
-					
+					alert("跳转到登录页面")
+				}else if(hl=="已收藏"){
+					//取消收藏
+					cancleCollect();
+				}else if(hl=="收藏"){
+					//收藏房源
+					collectHouse();
 				}
 				
+				
+				
 			}
-			//取消收藏
+			//取消收藏 收藏房源Id
 			function cancleCollect(){
 				mui.ajax(url+'/yskjApp/appYskj/V1/cancelCollect.do',{
 				data:{
@@ -305,6 +335,7 @@
 					if(data.success){
 						mui.alert("取消成功");
 						//判断收藏的状态 改变图标
+						$(".choucdeweziwidth").html("收藏");
 					}else{
 						mui.alert("取消失败："+data.message);
 					}
@@ -320,8 +351,8 @@
 			function  collectHouse(){
 				mui.ajax(url+'/yskjApp/appYskj/V1/collectHouse.do',{
 				data:{
-							"cookie":"",
-							"fyid":""
+							"cookie":cookieId,
+							"fyid":fyid
 						},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
@@ -331,6 +362,9 @@
 					if(data.success){
 						mui.alert("收藏成功");
 						//判断收藏的状态 改变图标
+						$(".choucdeweziwidth").html("已收藏");
+						
+						
 					}else{
 						mui.alert("收藏失败："+data.message);
 					}
@@ -341,6 +375,11 @@
 				}
 			});
 			}
+			document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+			  //注意slideNumber是从0开始的；
+			  $('.imglunbo').html(event.detail.slideNumber+1+'/'+le);
+			  /*alert("你正在看第"+(event.detail.slideNumber+1)+"张图片");*/
+			});
 			
 		</script>
 	</body>
