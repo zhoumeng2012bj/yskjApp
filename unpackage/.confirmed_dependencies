@@ -433,5 +433,11 @@
 		"resources": [
 			"css/person.css"
 		]
+	},
+	"page/add_sfz.html": {
+		"resources": [
+			"css/person.css",
+			"css/mui.min.css"
+		]
 	}
 }
