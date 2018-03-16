@@ -26,43 +26,9 @@
 				<div id="slider" class="mui-slider" >
 				  <div class="mui-slider-group mui-slider-loop">
 				    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-				    <div class="mui-slider-item mui-slider-item-duplicate">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第一张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第二张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第三张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 第四张 -->
-				    <div class="mui-slider-item">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
-				    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-				    <div class="mui-slider-item mui-slider-item-duplicate">
-				      <a href="#">
-				        <img src="../img/2.png">
-				      </a>
-				    </div>
+				   
 				  </div>
-				  <div class="mui-slider-indicator imglunbo">1/4</div>
+				  <div class="mui-slider-indicator imglunbo"></div>
 				</div>
 				<!--位置-->
 				<div class="lp_xx">
@@ -71,7 +37,7 @@
 						<span class="wz_text address">【潮阳区-大望路】  北京市朝阳区建国路93号看见分厘卡圣诞节分厘卡电视机礼服款式的</span>
 					</p>
 					<ul class="lp_nav">
-						<li>商场均价<i class="price">9.0</i>元/m²/天</li>
+						<li>市场均价<i class="price">9.0</i>元/m²/天</li>
 						<li><i class="kzfyS">91</i>套房源可租</li>
 					</ul>
 				</div>
@@ -104,7 +70,7 @@
 							<li>
 								<p class="stkrgw">
 									<span class="kognwrgwei n_n">物业费:</span>
-									<span class="neirong m_m wyf">4.3元~24.0/㎡/月</span>
+									<span class="neirong m_m wyf">4.3~24.0元/㎡/月</span>
 								</p>
 								<p class="stkrgw">
 									<span class="kognwrgwei n_n">供暖费:</span>
@@ -133,12 +99,12 @@
 		    </div>
 		    <!--先租房、与租房、写字楼-->
 		    <ul class="scmenu">
-		    	<li><span class="active">现租房</span></li>
-		    	<li><span>预租房</span></li>
-		    	<li><span>写字楼</span></li>
-		    	<li><span>公寓</span></li>
-		    	<li><span>商务楼</span></li>
-		    	<li><span>商业</span></li>
+		    	<li><span class="present_renting active">现租房</span></li>
+		    	<li><span class="prerental_house">预租房</span></li>
+		    	<li><span class="office_building">写字楼</span></li>
+		    	<li><span class="apartment">公寓</span></li>
+		    	<li><span class="business_building">商务楼</span></li>
+		    	<li><span class="business">商业</span></li>
 		    </ul>
 
 		    <div class="qh_q" style="display: block;">
@@ -214,29 +180,49 @@
 				 	</li>
 				 </ul>
 		    </div>
-		    <h1>查看更多</h1>
+		    <h1 style="text-align: center;font-size: 18px;">查看更多</h1>
 		    
 		    <!--楼盘介绍-->
 		    <div class="jieshao">
-		    	<p class="lp_nm desp">楼盘介绍</p>
+		    	<p class="lp_nm ">楼盘介绍</p>
+		    	<p class="lp_nm desp"></p>
 		    </div>
+		     <div class="pt20 mb08 border-tb bg-white" id="kuan">
+        <h2 class="sort-title tc fb mb20" style="text-align: center;font-size: 18px;">周边配套</h2>
+        <div  id="allmap" style="width:100%;height:100%;"></div>
+        <ul class="text-gray6 clearfix ph15" id="map_item_ul">
+          <li class="supporting-item">
+            <i class="supporting-icon sup-ct img12" style="position: relative;left: -0.0em;"></i>
+            <span class="db">餐厅</span>
+          </li>
+          <li class="supporting-item">
+            <i class="supporting-icon sup-jd img13" style="position: relative;left: -0.0em;"></i>
+            <span class="db">酒店</span>
+          </li>
+          <li class="supporting-item">
+            <i class="supporting-icon sup-js img14" style="position: relative;left: -0.0em;"></i>
+            <span class="db">健身</span>
+          </li>
+          <li class="supporting-item">
+            <i class="supporting-icon sup-yh img15" style="position: relative;left: -0.0em;"></i>
+            <span class="db">银行</span>
+          </li>
+        </ul>
+      </div>
 		</div>
 	<body>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?ak=pTHixzeMKbBbtNwycGsv47DuGjqEOgQw&v=2.0"></script>
 		<script type="text/javascript">
 		(function(){
+			var le=0;
+			var   positionData="";
 			detailData();
+			var allmap="";
 		})();
 			/*图片自动轮播*/
-			ca.init();
-			castapp.pictureScroll({
-			    callback:function(pictureNumber){
-//				    console.log(pictureNumber);
-			    },
-			    isAutoScroll:true,
-			    scrollTime:3
-			});
+			
 			//获得slider插件对象
 			var gallery = mui('.mui-slider');
 			gallery.slider({
@@ -245,7 +231,7 @@
 			
 			document.querySelector('.mui-slider').addEventListener('slide', function(event) {
 			  //注意slideNumber是从0开始的；
-			  $('.imglunbo').html(event.detail.slideNumber+1+'/4');
+			  $('.imglunbo').html(event.detail.slideNumber+1+'/'+le);
 			  /*alert("你正在看第"+(event.detail.slideNumber+1)+"张图片");*/
 			});
 			/*注意:如果ajax获得图片后，需要在写入图片以后，需要从新调用一下*/
@@ -272,10 +258,10 @@
 			var data=[];
 			
 			/*楼盘数据*/
-			function  detailData(){
-			mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
+			function  detailDataHouse(){
+			mui.ajax('http://116.62.68.26:8080/yhcms/web/lpjbxx/getZdLpxq.do',{
 				data:{
-					"parameters":{"building_id":"3003","curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
+					"parameters":{"building_id":"3089","curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
 					"foreEndType":2,
 					"code":"30000002"
 					},
@@ -302,54 +288,36 @@
 							for(var i=0;i<data.length;i++){
 								//拼接html 判断是  现租房  还是预租房
 								if(!"".equals(htmlJson)){
-									htmlJson+="<li class="zx"></li>";
+									htmlJson+="<li class='zx'></li>";
 								}
-								htmlJson+='<li class='listtail'>'
-				 		               +=' <div class="fy_pic">'
-				 			           +='<img src="http://47.92.145.21:81/'+data[i].housing_icon+'" alt='" />'
-				 		               +='</div>'
-				 		               +='<div class="fy_xx">'
-				 			           +='<p class="lp">'
-				 			           +=data[i].zdh+" "+data[i].fybh
-				 			           +='</p>'
-				 			+='<p class="mjwz">'
-				 			+=data[i].housing_area
-				 			+='m2</p>'
-				 		    +='<p class="jfList">'
+								htmlJson+='<li class="listtail">';
+				 		             htmlJson  +='<div class="fy_pic">'
+				 			          htmlJson  +='<img src="http://47.92.145.21:81/'+data[i].housing_icon+'" alt="" />'
+				 		              htmlJson  +='</div>'
+				 		              htmlJson  +='<div class="fy_xx">'
+				 			           htmlJson  +='<p class="lp">'
+				 			          htmlJson  +=data[i].zdh+" "+data[i].fybh
+				 			          htmlJson  +='</p>'
+							 		  htmlJson  +='<p class="mjwz">'
+							 		   htmlJson  +=data[i].housing_area
+							 		   htmlJson  +='m2</p>'
+							 		  htmlJson  +='<p class="jfList">'
 				 		    
-				 				+='<span class="jzjf">'
-				 				+=data[i].fjzt
-				 				+='</span>'
-				 				+='<span class="jzdj">'
-				 				+=data[i].workstation
-				 				+='</span>'
-				 			+='</p>'
-				 			+='<p class="dj">'
-				 			+='<span>'
-				 			+=data[i].daily_price
-				 			+='<i>元/m2/天</i></span>'
-				 			+='</p>'
-				 		    +='</div>'
-				 	        +='</li>';
-							}
-						
-						//如果页数 是 1获取楼盘信息     如果页数不是1  则无需赋值
-						var lpdata=data.data1;
-						$(".building_name").html(lpdata.building_name);
-						$(".desp").html(lpdata.desp);
-						$(".gnf").html(lpdata.gnf);
-						$(".kprq").html(lpdata.kprq);
-						$(".kzfyS").html(lpdata.kzfyS);
-						$(".price").html(lpdata.price);
-						$(".tcf").html(lpdata.tcf);
-						$(".tcwsl").html(lpdata.tcwsl);
-						$(".wlgs").html(lpdata.wlgs);
-						$(".wyf").html(lpdata.wyf);
-						$(".wygs").html(lpdata.wygs);
-						$(".zc").html(lpdata.zc);
-						$(".address").html(lpdata.district+" "+lpdata.address);
-						//图片轮播信息building_images
-						//地图   根据经度 纬度
+						 			   htmlJson  +='<span class="jzjf">'
+						 			   htmlJson  +=data[i].fjzt
+						 			   htmlJson  +='</span>'
+						 			   htmlJson  +='<span class="jzdj">'
+						 			   htmlJson  +=data[i].workstation
+						 			   htmlJson  +='</span>'
+				 			           htmlJson  +='</p>'
+				 			           htmlJson  +='<p class="dj">'
+				 			          htmlJson  +='<span>'
+				 			           htmlJson  +=data[i].daily_price
+				 			           htmlJson  +='<i>元/m2/天</i></span>'
+				 			          htmlJson  +='</p>'
+				 		               htmlJson  +='</div>'
+				 	                   htmlJson  +='</li>';
+							}						
 						
 					}else{
 						mui.alert(data.message);
@@ -362,7 +330,154 @@
 				}
 			});
 			}
+			function  detailData(){
+			mui.ajax('http://116.62.68.26:8080/yhcms/web/lpjbxx/getZdLpxq.do',{
+				data:{
+					"parameters":{"building_id":"3003","curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
+					"foreEndType":2,
+					"code":"30000002"
+					},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						//如果页数 是 1获取楼盘信息     如果页数不是1  则无需赋值
+						var lpdata=data.data1;
+						$(".building_name").html(lpdata.building_name);
+						$(".desp").html(lpdata.desp);
+						$(".gnf").html(lpdata.gnf+"元/㎡/季");
+						$(".kprq").html(lpdata.kprq);
+						$(".kzfyS").html(lpdata.kzfyS);
+						$(".price").html(lpdata.price);
+						$(".tcf").html(lpdata.tcf+"元/月");
+						$(".tcwsl").html(lpdata.tcwsl);
+						$(".wlgs").html(lpdata.wlgs);
+						$(".wyf").html(lpdata.wyf+"元/㎡/月");
+						$(".wygs").html(lpdata.wygs);
+						$(".zc").html(lpdata.zc);
+						var ch1=lpdata.chqxz;
+						if(ch1!=""){
+						var ch2=ch1.split("、");
+						var chs="";
+						for(var i=0;i<ch2.length;i++){
+							var t=ch2[i];
+							if(t==1){
+								chs+="写字楼 ";
+							}else if(t==2){
+								chs+="公寓 ";
+							}else if(t==3){
+								chs+="商务楼 ";
+							}else if(t==5){
+								chs+="商业 ";
+							}
+						}
+						$(".chqxz").html(chs);
+						}
+						$(".address").html(lpdata.district+" "+lpdata.address);
+						//图片轮播信息
+						var housing_icon=lpdata.building_images;
+								if(housing_icon!=""){
+									le=housing_icon.split(";").length;
+									$(".imglunbo").html("1/"+le);
+								}
+						var h_img="";
+								$(".mui-slider-loop").html(h_img);
+								if(housing_icon!=""){
+									var hous_img=housing_icon.split(";");
+									var v1="";
+									var v2="";
+									for(var i=0;i<hous_img.length;i++){
+										var ims=hous_img[i];
+										if(i==0){
+											v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+											v1+='<a href="#">';
+											v1+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+											v1+=' </a> </div>';
+										}else if(i==hous_img.length-1){
+											v2+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+											v2+='<a href="#">';
+											v2+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+											v2+=' </a> </div>';
+										}
+									}
+									for(var i=0;i<hous_img.length;i++){
+											var ims=hous_img[i];
+											if(i==0){
+												h_img+=v2;
+											} 
+											h_img+=' <div class="mui-slider-item">';
+											h_img+='<a href="#">';
+											h_img+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+											h_img+=' </a> </div>';
+											
+											if(i==hous_img.length-1){
+											h_img+=v1;
+										}
+										
+									}
+									$(".mui-slider-loop").html(h_img);
+									/*图片自动轮播*/
+								ca.init();
+								castapp.pictureScroll({
+								    callback:function(pictureNumber){
+					//				    console.log(pictureNumber);
+								    },
+								    isAutoScroll:true,
+								    scrollTime:3
+								});
+								}
+						//地图   根据经度 纬度
+						positionData =lpdata.longitude;
+						      positionData+= ',';
+						      positionData+=lpdata.latitude;
+                        bMap(positionData);
+					}else{
+						mui.alert(data.message);
+					}
+					
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			}
 			//搜索查询房源数据
+			
+			
+			  //百度地图
+     function  bMap(pos_data){
+        var posArr = pos_data.split(',');
+        var map = new BMap.Map("allmap");    // 创建Map实例
+         allmap = map;
+        var point = new BMap.Point(posArr[0], posArr[1]);
+        map.centerAndZoom(new BMap.Point(posArr[0], posArr[1]), 15);  // 初始化地图,设置中心点坐标和地图级别
+        map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+        map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        var marker = new BMap.Marker(point);  // 创建标注
+        map.addOverlay(marker);
+        //标签点击
+        $('#map_item_ul li').click(function () {
+          var index = $(this).index() + 1;
+          location.href = "http://m.amap.com/around/?locations=" + pos_data + "&keywords=餐厅,酒店,健身,银行&defaultIndex=" + index + "&defaultView=&searchRadius=1000&key=cc238157d6183b1d54404a704bb86171&defaultView=map";
+
+        });
+          }
+      
+     function   getPoi(keyword, bind){
+          const that = this;
+          var options = {
+              pageCapacity: 100,
+              onSearchComplete: (results)=>{
+                  that[bind] = results.getNumPois();
+              }
+          };
+          var local = new BMap.LocalSearch(this.allmap, options);
+          local.search(keyword);
+      }
 		</script>
 	</body>
 
