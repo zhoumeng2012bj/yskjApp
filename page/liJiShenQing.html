@@ -8,6 +8,7 @@
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link href="../css/liJiShenQ.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/fast_zc.css"/>
+		<script src="../js/lib/sy.js"></script>
 		<script type="text/javascript" src="../js/lib/flexible.js"></script>
 		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
@@ -33,7 +34,8 @@
 	    		</div>-->
 		    	<div class="mui-input-row inp shfuimput">
 		    		<span class="shurpnone">手机号</span>
-	    		    <input type="text" class="mui-input-clear fwscPhone" placeholder="请输入手机号">
+	    		    <input type="text" class="mui-input-clear fwscPhone" placeholder="请输入手机号" maxlength="11" 
+	    		    	onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
     		    	<span class="hqyzm" onclick="huoqvyanzm()">获取验证码</span>
 	    		</div>
 	    		<div class="mui-input-row inp shfuimput">
@@ -78,9 +80,8 @@
 	                //显示当前页面
 	                mui.currentWebview.show();
 	            });
-	        }
-			
-			
+	       }
+
 			//获取验证密码倒计时
 			var tag = true;
 			var countdown=60; 
@@ -142,6 +143,7 @@
 						error:function(xhr,type,errorThrown){
 							//异常处理；
 							console.log(type);
+							networkLink();
 						}
 					});
 				}else{
@@ -209,6 +211,7 @@
 								error:function(xhr,type,errorThrown){
 									//异常处理；
 									console.log(type);
+									networkLink();
 								}
 							});	
 						}else{
@@ -218,6 +221,7 @@
 					error:function(xhr,type,errorThrown){
 						//异常处理；
 						console.log(type);
+						networkLink();
 					}
 				});	
 			}

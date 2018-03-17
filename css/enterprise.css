@@ -1,0 +1,112 @@
+.public_h1{
+	height: 1.733333rem;
+	box-shadow: initial;
+	border-bottom: 1px solid #e5e5e5;
+}
+.public_con{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 1.733333rem;
+	padding-top: 0px!important;
+	overflow: auto;
+	background: #fff;
+	padding-bottom: 1rem;
+}
+.public_h1{
+	padding-top: 0.666666rem;
+}
+.public_h1 h1,.public_h1 a{
+	font-size: 0.453333rem;
+	color: #333333;
+}
+.qy{
+	padding: 0 0.4rem;
+	font-size: 0.4rem;
+	color: #333333;
+	text-align: center;
+	height: 1.8rem;
+	line-height: 1.8rem;
+}
+.qy i{
+	font-style: normal;
+	color: #ff4343;
+}
+.tb_box{
+	width: 9.2rem;
+	margin: 0 auto 0;
+	border-radius: 0.106666rem;
+	overflow: hidden;
+	min-height: 9.066666rem;
+	height: auto;
+	-webkit-box-shadow:0px 0px 8px #ECECEC; 
+	box-shadow:0px 0px 8px #ECECEC;
+}
+.tb_h{
+	height: 1.333333rem;
+	line-height: 1.333333rem;
+	background: #e2e2e2;
+	font-size: 0.4rem;
+	color: #333333;
+	font-weight:bold;
+	padding-left: 0.733333rem;
+}
+#main1{
+	padding-top: 0.48rem;
+}
+.gj_tjt_box{
+	width: 9.2rem;
+	padding-bottom: 1.733333rem;
+	padding-top: 0.4rem;
+}
+.gj_tjt{
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	position: relative;
+	left: 50%;
+	margin-left: -4.133333rem;
+	width: 8.266666rem;
+	height: 8rem;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 0 0.4rem;
+}
+.zzt{
+	position: relative;
+	bottom: 0;
+	width: 0.933333rem;
+	height: 7.2rem;
+}
+.pro{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.pro span,.zzt span{
+	position: absolute;
+    left: 50%;
+    margin-left: -0.8rem;
+	display: inline-block;
+	font-size: 0.32rem;
+	color: #666666;
+	height: 0.346666rem;
+	width: 1.6rem;
+}
+.zzt .ding{
+	text-align: center;
+}
+.zzt .nian{
+	position: absolute;
+	bottom: -0.4rem;
+	text-align: center;
+}
+.cynx,.gsgm{
+	padding-left: 0.4rem;
+	font-size: 0.293333rem;
+	color: #666666;
+	font-weight: bold;
+}
+.gsgm{
+	margin-top: 0.533333rem;
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/lib/app_config.js" ></script>
+		<script type="text/javascript" src="../js/lib/flexible.js" ></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js" ></script>
+		<script src="../js/lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/acreage_mj.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav public_h1">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">面积</h1>
+		</header>
+		<!--主体-->
+		<div class="mui-content public_con">
+			<div class="gjkj">
+				<p class="gjkj_t">幼狮空间<br />在北京各大核心商圈已构建<i>26万m²</i>办公空间</p>
+				<div class="fwt">
+					<img src="../img/fwt.png" alt="" />
+				</div>
+			</div>
+			<!--横向条形图-->
+			<div class="txt_box">
+				<p class="txt_tt">满足企业对不同面积的需求</p>
+				<div class="hxtxt">
+					<div class="gj_tjt">
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">18616.97m²</span>
+							</div>
+							<span class="le_ft">0-100m²</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">616.97m²</span>
+							</div>
+							<span class="le_ft">101-200m²</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">32.97m²</span>
+							</div>
+							<span class="le_ft">201-300m²</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">18m²</span>
+							</div>
+							<span class="le_ft">301-400m²</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">16.7m²</span>
+							</div>
+							<span class="le_ft">401-500m²</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">6.97m²</span>
+							</div>
+							<span class="le_ft">501-600m²</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="con_t">16.97m²</span>
+							</div>
+							<span class="le_ft">601-1000m²</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			mui.init()
+			//柱状图
+			//颜色值
+			var bg_color = ['#f4c05a','#bdd75c','#0aa1b4','#769fcd','#f4c05a','#bdd75c','#0aa1b4'];
+			for(var i = 0; i < $(".pro").length; i++) { 
+			    $(".pro").eq(i).css('background',bg_color[i]);
+			}
+			//动画
+			var h = ["60%","80%","50%","70%","20%","40%","90%"];
+			$(function(){
+				for (var j=0;j<h.length; j++) {
+					$(".pro").eq(j).animate({
+					    width:h[j]
+					},2000);					
+				}
+		    });
+		</script>
+	</body>
+
+</html>
