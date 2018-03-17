@@ -302,7 +302,8 @@
 				"refer": [
 					"jxfy.html",
 					"page/saleFuWu.html",
-					"page/loupan_detail.html"
+					"page/loupan_detail.html",
+					"page/broker.html"
 				],
 				"priority": 0
 			},
@@ -664,6 +665,24 @@
 				"resources": [
 					"css/liJiShenQ.css",
 					"css/fast_zc.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/broker.html": {
+				"resources": [
+					"img/hzqy.png",
+					"img/his_cs.png",
+					"img/his_js.png",
+					"img/his_pm.png",
+					"css/broker.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
