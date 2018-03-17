@@ -502,7 +502,14 @@
 			"img/his_cs.png",
 			"img/his_js.png",
 			"img/his_pm.png",
-			"css/broker.css"
+			"css/broker.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		]
 	}
 }
