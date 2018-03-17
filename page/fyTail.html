@@ -141,12 +141,14 @@
 		</div>
 	<body>
 		<script src="../js/mui.min.js"></script>
+		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
 		<script type="text/javascript">
-		(function(){
 			var collectId="";
 			var le=0;
 			var fyid="";
+			var cookieId=JSON.parse(localStorage.getItem('cookxs_yh'));
+		(function(){
 			detailData();
 			jugeHouse();
 		})();
@@ -160,7 +162,7 @@
 				mui.init();
 			/*房源数据*/
 			function   detailData(){
-			mui.ajax('http://116.62.68.26:8080//yhcms/web/lpjbxx/getWxFyxx.do',{
+			mui.ajax(url+'/yhcms/web/lpjbxx/getWxFyxx.do',{
 				data:{
 							"parameters":{"hourse_id":"65372"},
 							"foreEndType":2,
@@ -266,11 +268,9 @@
 			});
 			}
 			//获取前端登陆时的cookie,如果有则判断  房源是否已被收藏  改变收藏的样式
-			
-			var cookieId=JSON.parse(localStorage.getItem('cookxs_yh'));
 			function jugeHouse(){
 			alert("cookieId"+cookieId);
-			if(cookieId!=""&&cookieId!=undefined){
+			if(cookieId){
 				//判断房源是否被收藏  
 				mui.ajax(url+'/yskjApp/appYskj/V1/judgeCollection.do',{
 				data:{
@@ -282,17 +282,27 @@
 				timeout:10000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
+					alert(data.message);
 					if(data.success){
-						//已被收藏   收藏Id
-						collectId=data.collectId;
-						//图标转换
+						//房源未被此用户收藏
+						$(".choucdeweziwidth").html("收藏");
+					}else{
+						
+						if(data.message=="无此用户登陆信息"){
+							//未登录
+							$(".choucdeweziwidth").html("未收藏");
+						}else if(data.message=="此房源已被此用户收藏")){
+							//房源已被收藏
+							collectId=data.collectId;
+							//图标转换
+						//.xindebgimg{background:url(../img/fav2.png) no-repeat;background-size: 100% 100%;}
+					    $(".xindebgimg").css("background","url(../img/fav.png)")
 						mui.alert("已被收藏   收藏Id"+data.collectId);
 						$(".choucdeweziwidth").html("已收藏");
-						
-					}else{
-						mui.alert("房源未被收藏"+data.message);
-						$(".choucdeweziwidth").html("收藏");
-						
+						}else{
+							//错误提示信息
+							mui.alert(data.message);
+						}
 					}
 				},
 				error:function(xhr,type,errorThrown){
@@ -304,12 +314,16 @@
 			}
 			//如果没有获取到登录时的cookie，
 			//点击收藏的时候 跳转到登录页面 进行登陆
-			
 			function  logonJudge(){
 				var hl=	$(".choucdeweziwidth").html();
 				if(hl=="未收藏"){
 					//跳转到登录页面
-					alert("跳转到登录页面")
+					mui.alert("用户未登录，请先登录")
+					mui.openWindow({
+								url: 'login.html', 
+								id:"login"
+							});
+					
 				}else if(hl=="已收藏"){
 					//取消收藏
 					cancleCollect();
@@ -317,9 +331,6 @@
 					//收藏房源
 					collectHouse();
 				}
-				
-				
-				
 			}
 			//取消收藏 收藏房源Id
 			function cancleCollect(){
@@ -363,8 +374,6 @@
 						mui.alert("收藏成功");
 						//判断收藏的状态 改变图标
 						$(".choucdeweziwidth").html("已收藏");
-						
-						
 					}else{
 						mui.alert("收藏失败："+data.message);
 					}

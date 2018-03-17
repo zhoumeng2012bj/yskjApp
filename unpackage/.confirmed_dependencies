@@ -268,7 +268,10 @@
 			"css/mui.min.css",
 			"js/lib/flexible.js",
 			"img/fav2.png",
-			"img/shoucdianhuobg.png"
+			"img/shoucdianhuobg.png",
+			"js/lib/castapp.js",
+			"img/fav.png",
+			"js/lib/app_config.js"
 		],
 		"refer": []
 	},
@@ -408,7 +411,11 @@
 			"css/loupan_detail.css",
 			"css/jxfyList.css",
 			"css/sy.css",
-			"img/fypic.png"
+			"img/fypic.png",
+			"img/images/4.png",
+			"img/images/1.png",
+			"img/images/3.png",
+			"img/images/2.png"
 		],
 		"refer": []
 	},
