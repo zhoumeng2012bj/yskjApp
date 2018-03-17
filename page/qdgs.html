@@ -33,7 +33,7 @@
 		   <ul class="per_news">
 		    	<li>
 		    		<div class="mui-input-row" style="width: 100%;">
-				        <input type="text" class="mui-input-clear add_n add_gsname" placeholder="请输入渠道公司名称">
+				        <input type="text" class="mui-input-clear add_n add_gsname" oninput="checkGsname()" placeholder="请输入渠道公司名称">
 				    </div>
 		    	</li>
 		    	<li>
@@ -119,7 +119,12 @@
 			}
 			//模糊搜索   渠道公司信息
 			function checkGsname(){
+				gsid="";
+				gsname="";
+				xmname="";
+				$(".add_xmname").val("");
 				var gs=$(".add_gsname").val();
+				if(gs!=""){
 				mui.ajax(url + '/yhcms/web/qduser/getQdCompany.do',{
 						data:{
 							"companyName":gs
@@ -132,6 +137,17 @@
 							if(data.success){
 								//获取模糊搜索得到的   公司列表
 								var gsData = data.data;
+								var op="";
+								if(gsData.length>0){
+									for(var i=0;i<gsData.length;i++){
+										var did=gsData[i].id;
+										var dname=gsData[i].gsname;
+										var dxmname=gsData[i].xmname;
+										op+=did+","+dname+","+dxmname;
+										
+									}
+									alert(op);
+								}
 								//[{"id": "string","xmname": "string","gsname": "string"}]
 								
 								
@@ -143,6 +159,7 @@
 							console.log(type);
 						}
 					});
+				}
 			}
 			//如果没有搜索到公司   则新增渠道公司
 			function saveGsname(){
@@ -163,6 +180,8 @@
 								//新增公司的ID
 								var gsData = data.companyId;
 								gsid=gsData;
+								gsname=gs;
+								xmname=xm;
 							}else{
 								mui.alert(data.message);
 							}
@@ -176,7 +195,7 @@
 					
 				}
 			}
-			//所有数据加载处理完之后   保存数据
+			//所有数据加载处理完之后   保存数据   保存数据之前  要确定 渠道公司的ID ，如果没有则新增渠道公司
 			function save(){
 				var add_name=$(".add_gsname").val();
 				var a_xmname=$(".add_xmname").val();

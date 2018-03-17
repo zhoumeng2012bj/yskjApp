@@ -24,13 +24,13 @@
 		    <!--合作企业-->
 		    <div class="hzqy">
 		    	<p class="miaoshu">幼狮空间合作经济公司超过<i>100家</i>，合作经纪人超过<i>2万</i>人，同时利用空间内的强大数据资源，输出商业地产数据分析营销策略。</p>
-			    <div class="hzqy_list"></div>
+			    <div class="hzqy_list" ></div>
 		    </div>
 		    <!--历史成交信息-->
 		    <div class="his_news">
 		    	<p class="his_tit">历史佣金成交金额超过<i>1000万</i></p>
 		    	<div class="his_tab">
-		    		<table border="0" cellspacing="0" cellpadding="0" align="center" class="his_tabs"> 
+		    		<table border="0" cellspacing="0" cellpadding="0" align="center" class="his_tabs price_class"> 
 		    			<tr>
 		    				<th>
 		    					<span>
@@ -51,62 +51,62 @@
 		    					<i>金额</i>
 		    				</th>
 		    			</tr>
-		    			<tr>
-		    				<td>1</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>2</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>3</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>4</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>5</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>6</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>7</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>8</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>9</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
-		    			<tr>
-		    				<td>10</td>
-		    				<td>Data</td>
-		    				<td>Data</td>
-		    			</tr>
+		    		
+		    			
 		    		</table>
 		    	</div>
 		    </div>
 		</div>
+		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			(function(){
+			checkSubmit();
+			})();
+			mui.init();
+				function checkSubmit(){
+						mui.ajax(url + '/yskjApp/webApp/dataInfo/getBrokerData',{
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								var content=data.content;
+								$(".miaoshu").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+content);
+								var data=data.data2;
+								var js="";
+								if(data.length>0){
+									for(var i=0;i<data.length;i++){
+										var num=data[i].orderNum;
+										var name=data[i].name;
+										var value=data[i].value;
+										js+="<tr>";
+										//<td>9</td>
+										js+="<td>";
+										js+=num;
+										js+="</td>";
+										js+="<td>";
+										js+=name;
+										js+="</td>";
+										js+="<td>";
+										js+=value;
+										js+="</td>";
+										js+="</tr>"
+									}
+								}
+								$(".price_class").append(js);
+								
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});
+					
+				
+			}
 		</script>
 	</body>
 
