@@ -305,7 +305,8 @@
 					"page/loupan_detail.html",
 					"page/topNewsInfo.html",
 					"page/fyTail.html",
-					"page/steward.html"
+					"page/steward.html",
+					"page/broker.html"
 				],
 				"priority": 0
 			},
@@ -740,6 +741,17 @@
 					"js/mui.min.js",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/broker.html": {
+				"resources": [
+					"img/hzqy.png",
+					"img/his_cs.png",
+					"img/his_js.png",
+					"img/his_pm.png",
+					"css/broker.css"
 				],
 				"refer": [],
 				"priority": 0
