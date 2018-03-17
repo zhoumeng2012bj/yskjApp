@@ -273,7 +273,9 @@
 			"img/fav.png",
 			"js/lib/app_config.js"
 		],
-		"refer": []
+		"refer": [
+			"page/login.html"
+		]
 	},
 	"page/mycollection.html": {
 		"resources": [

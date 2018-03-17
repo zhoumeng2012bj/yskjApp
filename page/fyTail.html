@@ -146,7 +146,7 @@
 		<script type="text/javascript">
 			var collectId="";
 			var le=0;
-			var fyid="";
+			var fyid="65372";
 			var cookieId=JSON.parse(localStorage.getItem('cookxs_yh'));
 		(function(){
 			detailData();
@@ -282,22 +282,21 @@
 				timeout:10000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
-					alert(data.message);
+					
 					if(data.success){
 						//房源未被此用户收藏
 						$(".choucdeweziwidth").html("收藏");
 					}else{
-						
 						if(data.message=="无此用户登陆信息"){
 							//未登录
 							$(".choucdeweziwidth").html("未收藏");
-						}else if(data.message=="此房源已被此用户收藏")){
+						}else if(data.message=="此房源已被此用户收藏"){
 							//房源已被收藏
-							collectId=data.collectId;
+							collectId=data.collectId.toString();
 							//图标转换
 						//.xindebgimg{background:url(../img/fav2.png) no-repeat;background-size: 100% 100%;}
-					    $(".xindebgimg").css("background","url(../img/fav.png)")
-						mui.alert("已被收藏   收藏Id"+data.collectId);
+					    $(".xindebgimg").css("background","url(../img/fav.png)");
+						alert("已被收藏   收藏Id"+data.collectId);
 						$(".choucdeweziwidth").html("已收藏");
 						}else{
 							//错误提示信息
