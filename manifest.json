@@ -304,7 +304,10 @@
 					"page/saleFuWu.html",
 					"page/loupan_detail.html",
 					"page/broker.html",
-					"page/enterprise.html"
+					"page/enterprise.html",
+					"page/steward.html",
+					"page/enterprise_qy.html",
+					"page/acreage_mj.html"
 				],
 				"priority": 0
 			},
@@ -699,6 +702,48 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/steward.html": {
+				"resources": [
+					"img/gj_h.png",
+					"img/ldd.png",
+					"css/steward.css",
+					"img/qfw.png",
+					"img/qth.png",
+					"img/yzs.png",
+					"js/mui.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/enterprise_qy.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"css/enterprise.css",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/acreage_mj.html": {
+				"resources": [
+					"css/acreage_mj.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js",
+					"img/fwt.png"
 				],
 				"refer": [],
 				"priority": 0

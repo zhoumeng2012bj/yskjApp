@@ -28,9 +28,45 @@
 				<div id="main1" style="width:100%;height:9.0rem;"></div>
 			</div>
 			<p class="qy">满足了不同规模企业对办公空间的需求</p>
-			<div class="tb_box" style="min-height: 10.8rem;">
+			<div class="tb_box" style="min-height: 10rem;">
 				<div class="tb_h">入驻企业规模统计图</div>
-				<div id="main" style="width:100%;height:9.0rem;"></div>
+				<!--数据统计柱状图-->
+				<div class="gj_tjt_box">
+					<p class="cynx">入驻企<br />业数量</p>
+					<div class="gj_tjt">
+						<div class="zzt">
+							<div class="pro">
+								<span class="ding">182人</span>
+							</div>
+							<span class="nian">0-19</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="ding">58人</span>
+							</div>
+							<span class="nian">20-49</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="ding">26人</span>
+							</div>
+							<span class="nian">50-99</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="ding">17人</span>
+							</div>
+							<span class="nian">100-199</span>
+						</div>
+						<div class="zzt">
+							<div class="pro">
+								<span class="ding">17人</span>
+							</div>
+							<span class="nian">200以上</span>
+						</div>
+					</div>
+					<p class="gsgm">公司规模</p>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -86,6 +122,21 @@
 			    myChart.setOption(option);
 			}
 			shanx();
+			//柱状图
+			//颜色值
+			var bg_color = ['#bdd75c','#f4c05a','#769fcd','#0aa1b4','#bd65c0'];
+			for(var i = 0; i < $(".pro").length; i++) { 
+			    $(".pro").eq(i).css('background',bg_color[i]);
+			}
+			//动画
+			var h = ["60%","80%","50%","70%","20%"];
+			$(function(){
+				for (var j=0;j<h.length; j++) {
+					$(".pro").eq(j).animate({
+					    height:h[j]
+					},2000);					
+				}
+		    });
 		</script>
 	</body>
 
