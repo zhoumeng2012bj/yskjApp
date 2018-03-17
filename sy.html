@@ -272,7 +272,22 @@
 				mui.openWindow({
 					url:'page/topNewsInfo.html', 
 					id:'topNewsInfo',
-					extras:{topNewsUrl:url}
+					extras:{topNewsUrl:url},
+					show:{ //控制打开页面的类型
+							autoShow:true,
+		//					//页面loaded事件发生后自动显示，默认为true 
+							aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；  页面出现的方式 左右上下
+							duration:'300'//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒； 
+						},
+					 waiting:{ // 控制 弹出转圈框的信息
+						autoShow:true,//自动显示等待框，默认为true 
+						title:'加载中...',//等待对话框上显示的提示内容 
+						options:{ 
+							align:'center',
+							width:'100px',//等待框背景区域宽度，默认根据内容自动计算合适宽度 
+							height:'100px',//等待框背景区域高度，默认根据内容自动计算合适高度 ...... 
+						} 
+					}
 				});
 			}
 			
@@ -538,33 +553,41 @@
 			setTimeout(startScroll,delay)  
 			//售后服务的详情页
 			$('.shouhou').click(function(){
-				mui.openWindow({ 
-					url:'page/saleFuWu.html', //需要打开页面的url地址 
-					id:'saleFuWu',  //需要打开页面的url页面id
-					styles:{ 
-						top:'0px',//新页面顶部位置 
-						bottom:'0px',//新页面底部位置 
-	//					width:newpage-width,//新页面宽度，默认为100% 
-	//					height:newpage-height,//新页面高度，默认为100% ...... 
-					}, 
-					extras:{ 
-						name:'aries',
-						age:'18',
-	//					.....//自定义扩展参数，可以用来处理页面间传值 
-					},show:{ //控制打开页面的类型
-						autoShow:true,
-	//					//页面loaded事件发生后自动显示，默认为true 
-						aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；  页面出现的方式 左右上下
-						duration:'300'//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒； 
-					}, waiting:{ // 控制 弹出转圈框的信息
-						autoShow:true,//自动显示等待框，默认为true 
-						title:'加载中...',//等待对话框上显示的提示内容 
-						options:{ 
-							width:'100px',//等待框背景区域宽度，默认根据内容自动计算合适宽度 
-							height:'100px',//等待框背景区域高度，默认根据内容自动计算合适高度 ...... 
-						} 
-					}
-				});
+				//判断是否登录
+			    if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+					mui.openWindow({ 
+						url:'page/saleFuWu.html', //需要打开页面的url地址 
+						id:'saleFuWu',  //需要打开页面的url页面id
+						styles:{ 
+							top:'0px',//新页面顶部位置 
+							bottom:'0px',//新页面底部位置 
+		//					width:newpage-width,//新页面宽度，默认为100% 
+		//					height:newpage-height,//新页面高度，默认为100% ...... 
+						}, 
+						extras:{ 
+							name:'aries',
+							age:'18',
+		//					.....//自定义扩展参数，可以用来处理页面间传值 
+						},show:{ //控制打开页面的类型
+							autoShow:true,
+		//					//页面loaded事件发生后自动显示，默认为true 
+							aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；  页面出现的方式 左右上下
+							duration:'300'//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒； 
+						}, waiting:{ // 控制 弹出转圈框的信息
+							autoShow:true,//自动显示等待框，默认为true 
+							title:'加载中...',//等待对话框上显示的提示内容 
+							options:{ 
+								width:'100px',//等待框背景区域宽度，默认根据内容自动计算合适宽度 
+								height:'100px',//等待框背景区域高度，默认根据内容自动计算合适高度 ...... 
+							} 
+						}
+					});
+				}else{
+					mui.openWindow({
+						url: 'page/login.html', 
+						id:'login'
+					});
+				}
 			});
 			
 			// post测试请求地址 http://test.dongyixueyuan.com/link_app/post
