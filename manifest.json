@@ -413,7 +413,9 @@
 					"js/lib/flexible.js",
 					"css/person.css"
 				],
-				"refer": [],
+				"refer": [
+					"page/person.html"
+				],
 				"priority": 0
 			},
 			"page/gh_tel.html": {
