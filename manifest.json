@@ -307,7 +307,8 @@
 					"page/enterprise.html",
 					"page/steward.html",
 					"page/enterprise_qy.html",
-					"page/acreage_mj.html"
+					"page/acreage_mj.html",
+					"page/fyTail.html"
 				],
 				"priority": 0
 			},
