@@ -1,0 +1,100 @@
+{
+	"index.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"sy.html",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"qyhl.html",
+			"sy.html",
+			"wd.html",
+			"jxfy.html",
+			"fwsc.html"
+		]
+	},
+	"qyhl.html": {
+		"resources": [
+			"img/qiyefuwutitle.png",
+			"img/xindonga.png",
+			"img/huityuanicon.png",
+			"img/lijicx.png",
+			"css/qiYeHuLian.css",
+			"img/beijignicon.png",
+			"img/qiyehulian.png"
+		]
+	},
+	"jxfyList.html": {
+		"resources": [
+			"css/jxfyList.css"
+		]
+	},
+	"sy.html": {
+		"resources": [
+			"img/2.png",
+			"img/tab_bg1.png",
+			"js/lib/castapp.js",
+			"img/yzwt.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/qy_icon.png",
+			"img/mj_icon.png",
+			"css/sy.css",
+			"img/sjfw.png",
+			"img/jjr_icon.png",
+			"img/gj_icon.png",
+			"img/tt_icon.png",
+			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/acreage_mj.html",
+			"page/enterprise_qy.html"
+		]
+	},
+	"wd.html": {
+		"resources": [
+			"img/sz.png",
+			"img/fav.png",
+			"img/per.png",
+			"img/head_img.png",
+			"img/wd_bg.png",
+			"css/wd.css"
+		]
+	},
+	"jxfy.html": {
+		"resources": [
+			"jxfyList.html",
+			"fonts/mui.ttf",
+			"css/jxfy.css"
+		],
+		"refer": [
+			"jxfyList.html"
+		]
+	},
+	"fwsc.html": {
+		"resources": [
+			"css/fwsc.css"
+		]
+	},
+	"page/acreage_mj.html": {
+		"resources": [
+			"css/acreage_mj.css",
+			"img/fwt.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/enterprise_qy.html": {
+		"resources": [
+			"css/enterprise.css"
+		]
+	}
+}
