@@ -347,7 +347,9 @@
 					"js/seturl.js"
 				],
 				"refer": [
-					"page/financial.html"
+					"page/financial.html",
+					"page/tax.html",
+					"page/added.html"
 				],
 				"priority": 0
 			},
@@ -358,7 +360,16 @@
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"img/tab_bg1.png",
+					"js/lib/jquery-1.10.2.min.js",
+					"img/qiyefuwutitle.png",
+					"img/xindonga.png",
+					"img/huityuanicon.png",
+					"img/lijicx.png",
+					"css/qiYeHuLian.css",
+					"img/beijignicon.png",
+					"img/qiyehulian.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -747,6 +758,22 @@
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
 					"img/fwt.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/tax.html": {
+				"resources": [
+					"css/gongShangShuiWu.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/added.html": {
+				"resources": [
+					"css/addZhiFuWu.css",
+					"js/mui.min.js",
+					"img/addyewuimg.png"
 				],
 				"refer": [],
 				"priority": 0
