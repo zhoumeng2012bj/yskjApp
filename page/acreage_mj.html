@@ -22,7 +22,7 @@
 		<!--主体-->
 		<div class="mui-content public_con">
 			<div class="gjkj">
-				<p class="gjkj_t">幼狮空间<br />在北京各大核心商圈已构建<i>26万m²</i>办公空间</p>
+				<p class="gjkj_t" >幼狮空间<br />在北京各大核心商圈已构建<i id="mj_content">26万m²</i>办公空间</p>
 				<div class="fwt">
 					<img src="../img/fwt.png" alt="" />
 				</div>
@@ -31,49 +31,7 @@
 			<div class="txt_box">
 				<p class="txt_tt">满足企业对不同面积的需求</p>
 				<div class="hxtxt">
-					<div class="gj_tjt">
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">18616.97m²</span>
-							</div>
-							<span class="le_ft">0-100m²</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">616.97m²</span>
-							</div>
-							<span class="le_ft">101-200m²</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">32.97m²</span>
-							</div>
-							<span class="le_ft">201-300m²</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">18m²</span>
-							</div>
-							<span class="le_ft">301-400m²</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">16.7m²</span>
-							</div>
-							<span class="le_ft">401-500m²</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">6.97m²</span>
-							</div>
-							<span class="le_ft">501-600m²</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="con_t">16.97m²</span>
-							</div>
-							<span class="le_ft">601-1000m²</span>
-						</div>
+					<div class="gj_tjt" id="practLife">
 					</div>
 				</div>
 			</div>
@@ -81,20 +39,50 @@
 		<script type="text/javascript">
 			mui.init()
 			//柱状图
-			//颜色值
-			var bg_color = ['#f4c05a','#bdd75c','#0aa1b4','#769fcd','#f4c05a','#bdd75c','#0aa1b4'];
-			for(var i = 0; i < $(".pro").length; i++) { 
-			    $(".pro").eq(i).css('background',bg_color[i]);
-			}
-			//动画
-			var h = ["60%","80%","50%","70%","20%","40%","90%"];
-			$(function(){
-				for (var j=0;j<h.length; j++) {
-					$(".pro").eq(j).animate({
-					    width:h[j]
-					},2000);					
+		 
+		   
+		   	/*面积*/
+			mui.ajax(url+'/yskjApp/webApp/dataInfo/getAreaData.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+				    var xdata= data.data2;  //面积柱图
+					var content= data.content;  //内容 
+					//颜色值
+		          	var bg_color = ['#f4c05a','#bdd75c','#0aa1b4','#769fcd','#f4c05a','#bdd75c','#0aa1b4','#769fcd'];
+					if(data.success){
+						var string = '';
+						if(xdata.length>0){ 
+							console.log(xdata)
+							for(var i=0;i<xdata.length;i++){
+								string +='<div class="zzt">';
+								string +='<div class="pro"><span class="con_t">'+xdata[i].value+'m²</span></div>';
+								string +='<span class="le_ft">'+xdata[i].name+'</span>';
+								string +='</div>';
+						   }
+							$('#practLife').html(string);
+							$('#mj_content').html(content);
+							//渲染颜色
+							for(var j=0;j<xdata.length;j++){
+								//自定义比例高度
+								$(".pro").eq(j).animate({
+								    width:xdata[j].widthNum
+								},2000);
+								//渲染不同颜色
+								$(".pro").eq(j).css('background',bg_color[j]);
+							}
+						}
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
 				}
-		   });
+			});	
+			
 		</script>
 	</body>
 
