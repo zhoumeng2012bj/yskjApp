@@ -349,7 +349,8 @@
 				"refer": [
 					"page/financial.html",
 					"page/tax.html",
-					"page/added.html"
+					"page/added.html",
+					"page/fitup.html"
 				],
 				"priority": 0
 			},
@@ -402,7 +403,8 @@
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
-					"img/head_img.png"
+					"img/head_img.png",
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/add_name.html",
@@ -728,7 +730,8 @@
 					"img/qfw.png",
 					"img/qth.png",
 					"img/yzs.png",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -764,7 +767,11 @@
 			},
 			"page/tax.html": {
 				"resources": [
-					"css/gongShangShuiWu.css"
+					"css/gongShangShuiWu.css",
+					"js/lib/flexible_css.js",
+					"js/mui.min.js",
+					"js/lib/flexible.js",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -773,7 +780,42 @@
 				"resources": [
 					"css/addZhiFuWu.css",
 					"js/mui.min.js",
-					"img/addyewuimg.png"
+					"img/addyewuimg.png",
+					"js/lib/flexible_css.js",
+					"js/lib/flexible.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/fitup.html": {
+				"resources": [
+					"img/main_list_img2.png",
+					"img/main_list_img3.png",
+					"img/zx_bt.png",
+					"img/ul_img5.png",
+					"img/ul_img1.png",
+					"img/nav_img.png",
+					"img/main_list_img1.png",
+					"img/ul_img6.png",
+					"img/zxlc_pic.png",
+					"img/ul_img7.png",
+					"img/nav_img2.png",
+					"img/ul_img.png",
+					"img/nav_img1.png",
+					"img/main_list_img5.png",
+					"img/ul_img2.png",
+					"img/zx_bt2.png",
+					"img/main_list_img4.png",
+					"img/nav_img3.png",
+					"img/ul_img3.png",
+					"img/zx_h.png",
+					"css/fitup_dz.css",
+					"img/main_bot_pic.png",
+					"img/zx_center.png",
+					"img/zx_bt1.png",
+					"img/ul_img4.png",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
