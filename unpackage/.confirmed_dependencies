@@ -1,0 +1,19 @@
+{
+	"sy.html": {
+		"refer": [
+			"page/acreage_mj.html",
+			"page/enterprise_qy.html"
+		]
+	},
+	"page/acreage_mj.html": {
+		"resources": [
+			"css/acreage_mj.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/fwt.png",
+			"js/lib/app_config.js"
+		]
+	}
+}
