@@ -1,13 +1,24 @@
-.public_h{
-	box-shadow: none;
+.public_h1{
+	height: 1.733333rem;
+	box-shadow: initial;
+	border-bottom: 1px solid #e5e5e5;
 }
-.public_h h1,.public_h a{
+.public_h1{
 	padding-top: 0.666666rem;
-	font-size: 0.453333rem!important;
-	color: #333333!important;
 }
-.public_h a{
-	margin-top: 0.666666rem!important;
+.public_h1 h1,.public_h1 a{
+	font-size: 0.453333rem;
+	color: #333333;
+}
+.public_con{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 1.733333rem;
+	padding-top: 0px!important;
+	overflow: auto;
+	background: #fff;
 }
 .jr_head{
 	width: 10rem;
@@ -145,10 +156,7 @@
 	height: auto;
 }
 .bot_nav{
-	position: fixed;
-	bottom: 0;
 	display: flex;
-	align-items: center;
 	width: 10rem;
 	height: 1.44rem;
 	line-height: 1.44rem;
@@ -166,11 +174,25 @@
 .bot_nav p:last-child{
 	background: #ffba26;
 }
-.public_con{
-	bottom: 1.44rem!important;
-}
 .bot_nav p a{
 	display: block;
 	text-decoration: none;
 	color: #fefefe;
+}
+.box{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 1.44rem;
+	width: 10rem;
+	overflow: auto;
+}
+.bottom{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 10rem;
+	height: 1.44rem;
 }

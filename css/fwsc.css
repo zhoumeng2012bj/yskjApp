@@ -86,19 +86,25 @@ html{
 	box-shadow:0px 0px 6px #DEDEDE;
 }
 .whysel{
+	width: 9.2rem;
+	margin: 0 auto;
 	display: flex;
+	justify-content: space-between;
 }
 .whysel li{
-	width: 33.333%;
+	width: 2.946666rem;
+	height: 3.826666rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	-webkit-box-shadow:0px 0px 8px #E3E3E3; 
+	box-shadow:0px 0px 8px #E3E3E3;
 }
 .sel_ion{
 	width: 1.133333rem;
 	height: 1.133333rem;
 }
-.sel_ion img{
+.sel_ion img,.whysel li img{
 	width: 100%;
 	height: auto;
 }
