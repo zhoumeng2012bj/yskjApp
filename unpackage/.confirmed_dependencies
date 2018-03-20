@@ -1,0 +1,84 @@
+{
+	"sy.html": {
+		"refer": [
+			"page/acreage_mj.html",
+			"page/enterprise_qy.html",
+			"page/loupan_detail.html",
+			"page/broker.html",
+			"page/steward.html",
+			"page/login.html"
+		]
+	},
+	"page/acreage_mj.html": {
+		"resources": [
+			"css/acreage_mj.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/fwt.png",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"qyhl.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"img/tab_bg1.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/huityuanicon.png",
+			"js/lib/flexible.js",
+			"css/qiYeHuLian.css",
+			"img/qiyehulian.png",
+			"js/lib/app_config.js",
+			"img/tab_bg.png"
+		]
+	},
+	"page/loupan_detail.html": {
+		"resources": [
+			"img/images/4.png",
+			"css/fyxq.css",
+			"js/lib/castapp.js",
+			"img/images/1.png",
+			"img/images/3.png",
+			"img/fypic.png",
+			"css/loupan_detail.css",
+			"img/images/2.png"
+		]
+	},
+	"page/broker.html": {
+		"resources": [
+			"img/his_cs.png",
+			"img/his_js.png",
+			"img/his_pm.png",
+			"css/broker.css"
+		]
+	},
+	"page/steward.html": {
+		"resources": [
+			"img/gj_h.png",
+			"img/ldd.png",
+			"css/steward.css",
+			"img/qfw.png",
+			"img/qth.png",
+			"img/yzs.png"
+		]
+	},
+	"page/login.html": {
+		"resources": [
+			"js/lib/form_yz.js",
+			"js/lib/sha1.js",
+			"css/login.css",
+			"js/lib/md5.js",
+			"img/login_pic.png"
+		]
+	},
+	"page/enterprise_qy.html": {
+		"resources": [
+			"js/mui.min.js"
+		]
+	}
+}
