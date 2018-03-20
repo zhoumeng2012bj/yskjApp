@@ -27,7 +27,7 @@
             <div class="mui-icon mui-action-back mui-icon-arrowleft mui-icon-back  mui-badge-inverted"></div>
             <h1 class="mui-title" style="color: #333!important;">头条详情</h1>
         </header>
-        <div class="mui-content public_con">
+        <div class="mui-content public_con"  id="refLoad" style="display: none;">
 	        <div style="width: 2.666666rem;height: 2.666666rem;background-size: 60% auto;margin: 6.666666rem auto 0;">
 		       <p onclick="refreshInfo()" style="width: 2.666666rem;height: 1.888888rem;background: url(../img/refresh.png) no-repeat center;background-size: 60% auto;margin: 6.666666rem auto 0;"></p> 
 		       <p onclick="refreshInfo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重新加载</p>
@@ -45,6 +45,7 @@
 	                function wainshow() {
 						if (plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE) {
 							mui.toast("网络异常，请检查网络设置！");
+							$('#refLoad').css('display','block');
 						}else{
 							//执行加载
 							var self=plus.webview.currentWebview();
