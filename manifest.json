@@ -308,7 +308,8 @@
 					"page/steward.html",
 					"page/enterprise_qy.html",
 					"page/acreage_mj.html",
-					"page/fyTail.html"
+					"page/fyTail.html",
+					"page/topNewsInfo.html"
 				],
 				"priority": 0
 			},
@@ -731,7 +732,11 @@
 					"img/qth.png",
 					"img/yzs.png",
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -815,7 +820,21 @@
 					"img/zx_center.png",
 					"img/zx_bt1.png",
 					"img/ul_img4.png",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/lib/app_config.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/topNewsInfo.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"img/refresh.png",
+					"css/person.css",
+					"js/mui.min.js",
+					"js/lib/flexible.js"
 				],
 				"refer": [],
 				"priority": 0
