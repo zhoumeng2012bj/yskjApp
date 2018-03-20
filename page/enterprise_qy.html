@@ -6,13 +6,13 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.min.css" rel="stylesheet" />
-		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.min.js"></script> 
 		<script type="text/javascript" src="../js/lib/app_config.js" ></script>
 		<script type="text/javascript" src="../js/lib/flexible.js" ></script>
-		<script type="text/javascript" src="../js/lib/flexible_css.js" ></script>
+		<script type="text/javascript" src="../js/lib/flexible.js" ></script>
+		<script type="text/javascript" src="http://47.92.145.21:81/yskjapp/js/echarts.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/enterprise.css"/>
-		<script src="http://47.92.145.21:81/yskjapp/js/echarts.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -22,7 +22,8 @@
 		</header>
 		<!--主体-->
 		<div class="mui-content public_con">
-			<p class="qy">幼狮空间入驻企业<i>1500</i>家，涵盖了各类行业</p>
+			<p class="qy" id="enterpData"></p>
+			<!--<p class="qy" id="enterpData">幼狮空间入驻企业<i>1500</i>家，涵盖了各类行业</p>-->
 			<div class="tb_box">
 				<div class="tb_h">入驻企业行业占比</div>
 				<div id="main1" style="width:100%;height:9.0rem;"></div>
@@ -30,40 +31,10 @@
 			<p class="qy">满足了不同规模企业对办公空间的需求</p>
 			<div class="tb_box" style="min-height: 10rem;">
 				<div class="tb_h">入驻企业规模统计图</div>
-				<!--数据统计柱状图-->
+				<!--数据统计柱状图123-->
 				<div class="gj_tjt_box">
 					<p class="cynx">入驻企<br />业数量</p>
-					<div class="gj_tjt">
-						<div class="zzt">
-							<div class="pro">
-								<span class="ding">182人</span>
-							</div>
-							<span class="nian">0-19</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="ding">58人</span>
-							</div>
-							<span class="nian">20-49</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="ding">26人</span>
-							</div>
-							<span class="nian">50-99</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="ding">17人</span>
-							</div>
-							<span class="nian">100-199</span>
-						</div>
-						<div class="zzt">
-							<div class="pro">
-								<span class="ding">17人</span>
-							</div>
-							<span class="nian">200以上</span>
-						</div>
+					<div class="gj_tjt" id="practLife">
 					</div>
 					<p class="gsgm">公司规模</p>
 				</div>
@@ -71,17 +42,46 @@
 		</div>
 		<script type="text/javascript">
 			mui.init()
-			var sxys = ['#9fc6ff','#169399','#faee00','#86d1d6','#ec4a24','#f8a720'];
-			var qy_data = [
-                {value:10, name: '金融'},
-                {value:20, name: '教育'},
-                {value:30, name: '互联网'},
-                {value:50, name: '休闲'},
-                {value:60, name: '文化'},
-                {value:70, name: '房地产'}
-            ];
+
+			//默认设置占比颜色
+			var sxys = ['#9fc6ff','#169399','#faee00','#86d1d6','#ec4a24','#f8a720','#68a10','#67563f','#f64342'];
+			/*入住企业行业占比*/
+			mui.ajax(url+'/yskjApp/webApp/dataInfo/getEnterpriseData.do',{ 
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					var dtb= data.data;
+					var content=data.content;
+                    //企业描述
+                    $('#enterpData').append(content); 
+                    var qy_data='';
+					if(data.success){
+						if(dtb.length>0){ 
+							for(var i=0;i<dtb.length;i++){
+								var name= "'"+ dtb[i].name+"'";
+								var val= eval('('+ dtb[i].value+')');
+								var dd='{"value":'+val+', "name": '+name+'}'; 								
+								qy_data +=dd;
+								if(i!=dtb.length-1){  
+									qy_data +=',';
+								}  
+						  }
+						}
+                       var jsonStr = eval("(["+qy_data+"])");
+					   shanxs(sxys,jsonStr);       
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				} 
+			});
+            
 			//扇形图
-			function shanx(){
+			function shanxs(sxys,qy_data){
 			    // 基于准备好的dom，初始化echarts实例
 			    var myChart = echarts.init(document.getElementById('main1'));
 			    // 指定图表的配置项和数据
@@ -93,7 +93,7 @@
 			        legend: {
 			            bottom: 10,
 			            y:'80%',
-			            data: ['金融','教育','互联网','休闲','文化','房地产']
+			            data: qy_data
 			        },
 			        color:sxys,//设置扇形图固定的颜色
 			        series : [
@@ -107,7 +107,7 @@
 			                        formatter: '\n{b}:\n{c}\n{d}%\n',
 			                    }
 			                },
-			                data:qy_data,
+			                data: qy_data,
 			                itemStyle: {
 			                    emphasis: {
 			                        shadowBlur: 10,
@@ -121,10 +121,51 @@
 			    // 使用刚指定的配置项和数据显示图表。
 			    myChart.setOption(option);
 			}
-			shanx();
+
+             /*入住企业规模统计图*/
+			mui.ajax(url+'/yskjApp/webApp/dataInfo/getEnterpriseScaleData.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+				    var xdata= data.xdata;  //公司规模
+					var wdata= data.wdata;  //自定义比例高度（人数）
+					var ydata= data.ydata;  //公司人数
+					var bg_color = ['#bdd75c','#f4c05a','#769fcd','#0aa1b4','#bd65c0'];
+					if(data.success){
+						var string = '';
+						if(xdata.length>0){ 
+							for(var i=0;i<xdata.length;i++){
+								string +='<div class="zzt">';
+								string +='<div class="pro"><span class="ding">'+ydata[i]+'</span></div>';
+								string +='<span class="nian">'+xdata[i]+'</span>';
+								string +='</div>';
+						   }
+							$('#practLife').html(string);
+							
+							//渲染颜色
+							for(var j=0;j<xdata.length;j++){
+								//自定义比例高度
+								$(".pro").eq(j).animate({
+								    height:wdata[j]
+								},2000);
+								//渲染不同颜色
+								$(".pro").eq(j).css('background',bg_color[j]);
+							}
+						}
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});	
+			
 			//柱状图
 			//颜色值
-			var bg_color = ['#bdd75c','#f4c05a','#769fcd','#0aa1b4','#bd65c0'];
+			/*var bg_color = ['#bdd75c','#f4c05a','#769fcd','#0aa1b4','#bd65c0'];
 			for(var i = 0; i < $(".pro").length; i++) { 
 			    $(".pro").eq(i).css('background',bg_color[i]);
 			}
@@ -136,7 +177,7 @@
 					    height:h[j]
 					},2000);					
 				}
-		    });
+		    });*/
 		</script>
 	</body>
 
