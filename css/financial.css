@@ -39,12 +39,34 @@
 	left: 0.4rem;
 	height: 1.04rem;
 	line-height: 1.04rem;
-	background: url(../img/jt_titbg.png) center;
-	background-size: 100% 100%;
+	/*background: url(../img/jt_titbg.png) center;
+	background-size: 100% 100%;*/
 	font-size: 0.453333rem;
-	color: #ffffff;
+	color: #3828a3;
 	text-align: center;
 	padding: 0 0.266666rem;
+}
+.jr_tit:before{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -0.213333rem;
+	content: '';
+	display: block;
+	height: 0.426666rem;
+	width: 0.08rem;
+	background: #3828a2;
+}
+.jr_tit1:before{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -0.213333rem;
+	content: '';
+	display: block;
+	height: 0.426666rem;
+	width: 0.08rem;
+	background: #3828a2;
 }
 .jr_one,.jr_two,.jr_three{
 	display: flex;
@@ -117,13 +139,14 @@
 	background: #fff;
 }
 .jr_tit1{
+	position: relative;
 	display: inline-block;
 	height: 1.04rem;
 	line-height: 1.04rem;
-	background: url(../img/jt_titbg.png) center;
-	background-size: 100% 100%;
+	/*background: url(../img/jt_titbg.png) center;
+	background-size: 100% 100%;*/
 	font-size: 0.453333rem;
-	color: #ffffff;
+	color: #3828a3;
 	text-align: center;
 	padding: 0 0.266666rem;
 	margin:0 0 0.266666rem 0.4rem;
@@ -169,7 +192,7 @@
 	color: #fefefe;
 }
 .bot_nav p:first-child{
-	background: #2b70d8;
+	background: #333333;
 }
 .bot_nav p:last-child{
 	background: #ffba26;
