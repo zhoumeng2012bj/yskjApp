@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/liJiShenQ.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/fast_zc.css"/>
+		<script src="../js/lib/sy.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav fufanhui">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">我要注册</h1>
+		</header>
+	<div class="mui-content">
+	    <div class="qlxnide">请留下您的基本信息与联系方式，我们会及时与您联系，为 您提供专属服务。</div>
+		<div class="zhuaxff"></div>
+		<div class="forminp">
+			<div class="box_i1">
+				<div class="mui-input-row inp shfuimput">
+		    		<span class="shurpnone">姓名</span>
+	    		    <input type="text" class="mui-input-clear fwscName" placeholder="请输入真实姓名">
+	    		</div>
+		    	<!--<div class="mui-input-row inp shfuimput">
+		    		<span class="shurpnone">手机号</span>
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号">
+	    		    <span class="hqyzm">获取验证码</span>
+	    		</div>-->
+		    	<div class="mui-input-row inp shfuimput">
+		    		<span class="shurpnone">手机号</span>
+	    		    <input type="text" class="mui-input-clear fwscPhone" placeholder="请输入手机号" maxlength="11" 
+	    		    	onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+    		    	<span class="hqyzm" onclick="huoqvyanzm()">获取验证码</span>
+	    		</div>
+	    		<div class="mui-input-row inp shfuimput">
+	    			<span class="shurpnone">验证码</span>
+	    		    <input type="text" class="mui-input-clear fwscCode" placeholder="请输入验证码">
+	    		</div>
+	    		<!--<div class="fangwutop"></div>
+	    		<div class="fangwuxinix">
+	    			<div class="mui-input-row inp shfuimput">
+			    		<span class="shurpnone">房屋信息</span>
+		    		    <input type="text" class="mui-input-clear" placeholder="请输入楼盘、座栋、房间号">
+	    			</div>
+	    		</div>-->
+	    		<div class="baoxiuxx"></div>
+		    </div>
+		    <div class="baxiuxxx">其他信息</div>
+		    <div class="baoxiudebeizhu">
+		    	<textarea class="texta" maxlength="200" placeholder="请输入详细内容" id="memo"></textarea>
+		    	<span class='two textwenadeshuz'><span id="textNum">0</span>/200</span>
+		    </div>
+		</div>
+		<div class="tijiaomax">
+			<div class="button" onclick="tijiao()">提交</div>
+			<div class="tijiaodewenzi">如有任何疑问请拨打咨询电话<sapn class="wd_tel"><a href="tel:400-078-8800">400-078-8800</a></span></div>
+		</div>
+	</div>
+
+	
+		<script src="../js/mui.min.js"></script>
+	    <script src="../js/lib/app_config.js"></script>
+		<script type="text/javascript">
+			mui.init();
+
+		</script>
+	</body>
+
+</html>
