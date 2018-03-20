@@ -371,7 +371,8 @@
 					"img/lijicx.png",
 					"css/qiYeHuLian.css",
 					"img/beijignicon.png",
-					"img/qiyehulian.png"
+					"img/qiyehulian.png",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -837,6 +838,13 @@
 					"js/lib/flexible.js"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"page/qdgs.html": {
+				"resources": [],
+				"refer": [
+					"page/person.html"
+				],
 				"priority": 0
 			}
 		},
