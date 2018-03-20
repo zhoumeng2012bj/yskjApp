@@ -24,7 +24,7 @@
 			<!--名片正面-->
 		   <div class="card_zm">
 		   		<p class="card_t">名片正面</p>
-		   		<p class="mp">
+		   		<p class="mp mp_z">
 		   			<img src=""/>
 		   		</p>
 		   		<p class="pz_btn"></p>
@@ -32,14 +32,168 @@
 		   <!--名片背面-->
 		   <div class="card_bm">
 		   		<p class="card_t">名片背面</p>
-		   		<p class="mp">
+		   		<p class="mp mp_f">
 		   			<img src=""/>
 		   		</p>
 		   		<p class="pz_btn"></p>
 		   </div>
 		</div>
+		 <script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
+			(function(){
+				
+			   checkSubmit();
+			})();
+			   var name="";
+				var card="";
+				var gsid="";
+				var gsname="";
+				var xmname="";
+				var phone="";
+				var mptp1=[];
+				var mptp2=[];
 			mui.init()
+			function checkSubmit(){
+				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+						mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
+						data:{
+							"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
+						},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								var userData = data.data;
+								//将手机号中间加密
+								 name=userData.name;
+								 if(name!=null&&name!=""&&name!="null"){
+								 	$(".add_n").val(name);
+								 	$(".mui-title").html("修改姓名");
+								 }
+								 phone=userData.phone;
+								 gsid=userData.gsid;
+								 gsname=userData.gsname;
+								 xmname=userData.xmname;
+								 card=userData.card;
+								 var p1=userData.mp1data;
+								 var p1Html="";
+								 if(p1!=null&&p1.length>0){
+								 	for(var i=0;i<p1.length;i++){
+								 		mptp1[i].id=p1[i].ID;
+								 		mptp1[i].url=p1[i].URL;
+								 		mptp1[i].isdelete=p1[i].ISDELETE;
+								 		p1Html+='<img src="http://47.92.145.21:81/"';
+								 		p1Html+=p1[i].URL;
+								 		p1Html+="/>";
+								 	}
+								 }
+								 $(".mp_z").html(p1Html);
+								  var p2Html="";
+								  var p2=userData.mp2data;
+								 if(p2!=null&&p2.length>0){
+								 	for(var i=0;i<p2.length;i++){
+								 		mptp2[i].id=p2[i].ID;
+								 		mptp2[i].url=p2[i].URL;
+								 		mptp2[i].isdelete=p2[i].ISDELETE;
+								 		p2Html+='<img src="http://47.92.145.21:81/"';
+								 		p2Html+=p2[i].URL;
+								 		p2Html+="/>";
+								 	}
+								 }
+								  $(".mp_f").html(p2Html);
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});     
+					
+				}else{
+					mui.openWindow({
+						url: 'login.html', 
+						id:'login'
+					});
+				}
+			}
+			//图片上传
+			function  saveImg(){
+				mui.ajax(url + '/yhcms/web/jcsj/uploadPic.do',{
+						data:{
+							"parameters":
+							{
+								"smallPic":,
+								"suffix":".jpeg"
+								},
+								"foreEndType":2,
+								"code":"300000084"
+							},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.alert(data.data);
+							//图片的路径
+							
+							
+						}else{
+							mui.alert(data.message);
+						}
+							
+							},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});     
+				
+			}
+			function save(){
+				
+				mui.ajax(url+'/yhcms/web/qduser/updateAppUser.do',{
+					data:{
+						"parameters":
+						{"card":card,
+						"gsid":gsid,
+						"gsname":gsname,
+						"xmname":xmname,
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
+						"name":name,
+						"phone":phone,
+						"mptp1":mptp1,
+						"mptp2":mptp2},
+						"foreEndType":2,
+						"code":"2"
+						},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.alert(data.message);
+							//成功后返回至服务商城页面
+							mui.openWindow({
+								url: 'person.html', 
+								id:"person"
+							});
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});
+				
+			}
 		</script>
 	</body>
 
