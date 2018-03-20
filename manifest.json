@@ -308,7 +308,8 @@
 					"page/steward.html",
 					"page/enterprise_qy.html",
 					"page/acreage_mj.html",
-					"page/fyTail.html"
+					"page/fyTail.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -370,7 +371,9 @@
 					"img/lijicx.png",
 					"css/qiYeHuLian.css",
 					"img/beijignicon.png",
-					"img/qiyehulian.png"
+					"img/qiyehulian.png",
+					"js/lib/app_config.js",
+					"img/tab_bg.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -657,7 +660,11 @@
 					"css/loupan_detail.css",
 					"css/jxfyList.css",
 					"css/sy.css",
-					"img/fypic.png"
+					"img/fypic.png",
+					"img/images/4.png",
+					"img/images/1.png",
+					"img/images/3.png",
+					"img/images/2.png"
 				],
 				"refer": [],
 				"priority": 0
