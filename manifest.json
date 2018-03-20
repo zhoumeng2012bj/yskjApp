@@ -525,9 +525,12 @@
 					"js/lib/flexible.js",
 					"img/fav2.png",
 					"img/shoucdianhuobg.png",
-					"js/lib/castapp.js"
+					"js/lib/castapp.js",
+					"js/lib/app_config.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/login.html"
+				],
 				"priority": 0
 			},
 			"page/mycollection.html": {
@@ -559,7 +562,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"css/jxfyList.css",
 					"img/fypic.png",
-					"css/sy.css"
+					"css/sy.css",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
