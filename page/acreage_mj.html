@@ -59,7 +59,7 @@
 							console.log(xdata)
 							for(var i=0;i<xdata.length;i++){
 								string +='<div class="zzt">';
-								string +='<div class="pro"><span class="con_t">'+xdata[i].value+'m²</span></div>';
+								string +='<div class="pro"><span class="con_t">'+xdata[i].value+'套</span></div>';
 								string +='<span class="le_ft">'+xdata[i].name+'</span>';
 								string +='</div>';
 						   }
@@ -69,7 +69,7 @@
 							for(var j=0;j<xdata.length;j++){
 								//自定义比例高度
 								$(".pro").eq(j).animate({
-								    width:xdata[j].widthNum
+								    width:xdata[j].widthNum+'%'
 								},2000);
 								//渲染不同颜色
 								$(".pro").eq(j).css('background',bg_color[j]);

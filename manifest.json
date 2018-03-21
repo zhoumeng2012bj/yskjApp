@@ -297,7 +297,8 @@
 					"fonts/mui.ttf",
 					"img/fypic.png",
 					"img/sjfw.png",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					null
 				],
 				"refer": [
 					"jxfy.html",
@@ -530,9 +531,12 @@
 					"js/lib/flexible.js",
 					"img/fav2.png",
 					"img/shoucdianhuobg.png",
-					"js/lib/castapp.js"
+					"js/lib/castapp.js",
+					"js/lib/app_config.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/login.html"
+				],
 				"priority": 0
 			},
 			"page/mycollection.html": {
@@ -564,7 +568,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"css/jxfyList.css",
 					"img/fypic.png",
-					"css/sy.css"
+					"css/sy.css",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -796,7 +801,17 @@
 					"img/addyewuimg.png",
 					"js/lib/flexible_css.js",
 					"js/lib/flexible.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"img/addfwuxiao1.png",
+					"img/addfwuxiao5.png",
+					"img/addzhifwu4.png",
+					"img/addfwuxiao6.png",
+					"img/addzhifwu3.png",
+					"img/addfwuxiao4.png",
+					"img/addfwuxiao2.png",
+					"img/addzhifwu2.png",
+					"img/addzhifwu.png",
+					"img/addfwuxiao3.png"
 				],
 				"refer": [],
 				"priority": 0
