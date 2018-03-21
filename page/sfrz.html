@@ -20,38 +20,50 @@
 		    <h1 class="mui-title">上传名片</h1>
 		    <span class="save" onclick="save()">保存</span>
 		</header>
-		<!--<div class="mui-content per_zt">
-		   <div class="card_zm">
-		   		<p class="card_t">名片正面</p>
-		   		<p class="mp mp_z">
+		<!--
+		   
+		   		
+		   		
 		   			<img src=""/>
 		   		</p>
 		   		<p class="pz_btn"></p>
-		   </div>
-		   <div class="card_bm">
-		   		<p class="card_t">名片背面</p>
-		   		<p class="mp mp_f">
+		  
+		 
+		   		
+		   		
 		   			<img src=""/>
-		   		</p>
+		   		
 		   		<p class="pz_btn"></p>
-		   </div>-->
+		   -->
+		   <div class="mui-content per_zt">
 		     <ul class="list">
             <li class='mui-table-view-cell mui-media'>
+            	<div class="card_zm">
+            	<p class="card_t">名片正面</p>
+            	<p class="mp mp_z">
             	<a  class="imageup 1">
                  <img id="headimg" class="headimg" src=''  height="150"  width="150">
                  </a>
+                </p>
+                </div>
                <!-- <p>名片正面 </p>-->
                <!-- <p><button onclick="upload();" class='button'> 提交</button></p>-->
             </li>
             <li class='mui-table-view-cell mui-media'>
+            	<div class="card_bm">
+            	<p class="card_t">名片背面</p>
+            	<p class="mp mp_f">
             	<a  class="imageup 2">
                  <img id="headimgf" class="headimg" src=''  height="150"  width="150">
                  </a>
+                </p>
+               </div>
                 <!--<p>名片反面 </p>-->
                <!-- <p><button onclick="uploadf();" class='button'> 提交</button></p>-->
             </li>
            
         </ul>
+        </div>
 		</div>
 		 <script src="../js/lib/app_config.js"></script>
 		<script> 
@@ -63,6 +75,8 @@
 				var phone="";
 				var mptp1=[];
 				var mptp2=[];
+				var ys1=1;
+				var ys2=1;
 				var ys=1;
         	(function(){
 			   checkSubmit();
@@ -72,7 +86,7 @@
 			//查看个人信息
 			function checkSubmit(){
 				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
-						mui.ajax('http://yhpic.tunnel.qydev.com/yskjApp/appYskj/V1/getCookieInfo1.do',{
+						mui.ajax(url+'/yskjApp/appYskj/V1/getCookieInfo1.do',{
 						data:{
 							"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
 						},
@@ -91,21 +105,23 @@
 								 xmname=userData.xmname;
 								 card=userData.card;
 								 var p1=userData.mp1;
+								 
 								 if(p1!=null&&p1.length>0){
-								 	 mptp1=p1;
 								 	for(var i=0;i<p1.length;i++){
 								 		var tp=img_url;
 								 		tp+=p1[i].url;
 								 		$('#headimg').attr('src',tp);
+								 		mptp1.push(p1[i]);
 								 	}
 								 }
 								  var p2=userData.mp2;
 								 if(p2!=null&&p2.length>0){
-								 	 mptp2=p2;
+								 	 //mptp2=p2;
 								 	for(var i=0;i<p2.length;i++){
 								 		var tp=img_url;
 								 		tp+=p2[i].url;
 								 		$('#headimgf').attr('src',tp);
+								 		mptp2.push(p2[i]);
 								 	}
 								 }
 							}else{
@@ -158,13 +174,16 @@
                
             // 拍照添加文件
              function appendByCamera(){
-            	ys=2;
                 plus.camera.getCamera().captureImage(function(e){
                     console.log("e is" +  e);
                     plus.io.resolveLocalFileSystemURL(e, function(entry) {
                         var path =  entry.toLocalURL();
-                        var indexa = liIndex()
-                        console.log(indexa);
+                        var indexa = liIndex();
+                       if(indexa==0){
+                       	ys1=2;
+                       }else{
+                       	ys2=2;
+                       }
                         $(".headimg")[indexa].src = path;                
                     }, function(e) {
                         mui.toast("读取拍照文件错误：" + e.message);
@@ -174,15 +193,20 @@
             }
             // 从相册添加文件
             function appendByGallery(){
-            	ys=3;
                 plus.gallery.pick(function(path){
                     var indexa = liIndex();
-                    console.log(indexa);
+                    console.log(""+indexa);
+                    if(indexa==0){
+                    	ys1=2;
+                    }else{
+                    	ys2=2;
+                    }
                     $(".headimg")[indexa].src = path;
                 });
             }
              
-           var  imgArray=[];   
+          
+         
             //服务端接口路径
             var server =url+"/yhcms/web/jcsj/uploadPic.do";
             //获取图片元素
@@ -195,7 +219,8 @@
                 var wt=plus.nativeUI.showWaiting();
                 //添加其他参数
                var data = getBase64Image(files);
-                var newImgbase = data.split(",")[1];  //通过逗号分割到新的编码
+                var newImgbase = data.split(",")[1]; 
+                 var  imgArray=[];   //通过逗号分割到新的编码
                 imgArray.push(newImgbase);            //放到imgArray数组里面
                 img(imgArray,1);
                 wt.close();
@@ -209,10 +234,11 @@
               	if(f1!=""){
                 var wt=plus.nativeUI.showWaiting();
                 //添加其他参数
-               var data = getBase64Image(filesf);
+                var data = getBase64Image(filesf);
                 var newImgbase = data.split(",")[1];  //通过逗号分割到新的编码
-                imgArray.push(newImgbase);            //放到imgArray数组里面
-                img(imgArray,2);
+                var  imgArrayf=[];   
+                imgArrayf.push(newImgbase);            //放到imgArray数组里面
+                img(imgArrayf,2);
                 wt.close();
                }else{
                	alert("请上传名片反面");
@@ -263,40 +289,41 @@
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
-					if(data.success){  
+					if(data.success){
 						if(state==1){
 							var l1=mptp1.length;
+							var h={"id":"","isdelete":"","url":""};
+								h.url=data.data;
+								h.isdelete=0;
+								h.id="";
 							if(l1>0){
 								for(var i=0;i<l1;i++){
 									mptp1[i].isdelete=1;
-									alert("bbbb");
 								}
-								mptp1[l1].url=data.data;
-								mptp1[l1].isdelete=0;
-								mptp1[l1].id="";
-							}else if(l1==0){
-								mptp1[0].url=data.data;
-								mptp1[0].isdelete=0;
-								mptp1[0].id="";
 							}
-							
+							mptp1.push(h);
+							ys=2;
 						}else if(state==2){
 							var l1=mptp2.length;
-							alert(l1)
+							var h={"id":"","isdelete":"","url":""};
+								h.url=data.data;
+								h.isdelete=0;
+								h.id="";
 							if(l1>0){
 								for(var i=0;i<l1;i++){
-									alert(mptp2[i].isdelete);
 									mptp2[i].isdelete=1;
 								}
-								mptp2[l1].url=data.data;
-								mptp2[l1].isdelete=0;
-								mptp2[l1].id="";
-							}else if(l1==0){
-								mptp2[0].url=data.data;
-								mptp2[0].isdelete=0;
-								mptp2[0].id="";
 							}
+							mptp2.push(h);
 						}
+						if(ys1==1&&ys2!=1){
+							saveUserImg();
+						}else if(ys1!=1&&ys2==1){
+							saveUserImg();
+						}else if(ys1!=1&&ys2!=1&&state==2){
+							saveUserImg();
+						}
+						
 					}else{
 						alert("提示信息："+data.message);
 					}
@@ -313,15 +340,32 @@
             
             //保存用户信息
             function save(){
-            	alert(mptp2[0].isdelete);
-            	if(ys!=1){
-            	upload();
-            	uploadf();
-            	}
-				var f1=$("#headimgf").attr("src");
+            	
+            	var f1=$("#headimgf").attr("src");
 				var f2=$("#headimg").attr("src");
-			/*	if(f1!=""&&f2!=""){
-				mui.ajax(url+'/yhcms/web/qduser/updateAppUser.do',{
+				if(f1!=""&&f2!=""){
+						if(ys1!=1&&ys2==1){
+		            	     upload();
+		            	}
+		            	if(ys2!=1&&ys1==1){
+		            	 uploadf();
+		            	
+		            	}
+		            	if(ys1==1&&ys2==1){
+		            		saveUserImg();
+		            	}
+		            	if(ys1!=1&&ys2!=1){
+		            		upload();
+		            		uploadf();
+		            	}
+				}else{
+					alert("图片不能为空");
+				}
+			}
+            
+            
+            function saveUserImg(){
+            	mui.ajax('http://192.168.0.124:8081/yhcms/web/qduser/updateAppUser.do',{
 					data:{
 						"parameters":
 						{"card":card,
@@ -358,10 +402,7 @@
 						console.log(type);
 					}
 				});
-				}else{
-					alert("图片不能为空");
-				}*/
-			}
+            }
           
         </script> 
 	</body>
