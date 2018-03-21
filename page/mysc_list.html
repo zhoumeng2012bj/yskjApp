@@ -145,22 +145,18 @@
 					$('.selc').css('display','block');
 				}else{
 					$('.selc').css('display','none');
+					for (var j=0; j<$('#list1 input').length; j++) {
+						$('#list1 input').eq(j).attr('checked',false);
+					}
 				}
 			});
-			
 			
 			
 //			mui.plusReady(function() {  
 //	            var self = plus.webview.currentWebview();  
 //	            var txt = self.asd;
 //	        })  
-//			function getUrlParam(name) {
-//				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-//				var r = window.location.search.substr(1).match(reg);
-//				if (r != null) return unescape(r[2]); return null;
-//			}
-//			alert(getUrlParam('tabid'));
-			
+
 			mui.init({ 
 				pullRefresh : { 
 					container:"#pullrefresh",	
@@ -275,6 +271,28 @@
 				var fyid = t.value;//房源id
 				alert(t.checked);
 			}
+			//全选
+			window.addEventListener("all_cek", function (e) {
+			    //获得事件参数
+				var cek = e.detail.cek;
+				alert(cek);//
+				if(cek==2){
+					alert('全选1')
+					for (var i=0; i<$('#list1 input').length; i++) {
+						alert(123)
+						$('#list1 input').eq(i).attr('checked',true);
+					}
+				}
+				if(cek==3){
+					alert('取消全选')
+					for (var j=0; j<$('#list1 input').length; j++) {
+						alert(456)
+						$('#list1 input').eq(j).attr('checked',false);
+					}
+				}
+			});
+			
+			
 		</script>
 		
 	</body>
