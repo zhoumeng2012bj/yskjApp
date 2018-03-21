@@ -84,9 +84,20 @@
 					}
 				});
 			});
+
+			var jiage = 1;
+			var area = 1;
+			var wz = 1;//位置
+			var sx = 1;//筛选
 			
 			/*筛选点击事件*/
 			function siaxuansy(){
+				chushiweizhi2();
+				chushiweizhi3();
+				chushiweizhi1();
+				$('.shuxinshux span').removeClass('mui-icon-arrowdown');
+				$('.shuxinshux span').addClass('mui-icon-arrowup muiJiage');
+				$('.shuxinshux').addClass('jiage');
 				var main = plus.webview.getWebviewById('jxfyList');
 				mui.fire(main, "weizhi",{
 				    idx:3//1位置
@@ -95,24 +106,58 @@
 				mui.fire(index, "weizhi1",{
 				    idxid:3//1位置
 				})
+				var main = plus.webview.getWebviewById('jxfyList');
+				mui.fire(main, "jiagekzqt",{
+				    idxjiage:1//1
+				})
 			}
-			var jiage = 1;
-			var area = 1;
+			window.addEventListener("saixuanfh", function (e) {
+			    //获得事件参数
+			    var idxsxfh = e.detail.idxsxfh;
+				chushiweizhi4();
+			});
+
 /*			位置的点击出现遮罩层*/
 			function weizjihanshu(){
+				chushiweizhi2();
+				chushiweizhi3();
+				chushiweizhi4();
+				$('.shuixuanweizhi span').removeClass('mui-icon-arrowdown');
+				$('.shuixuanweizhi span').addClass('mui-icon-arrowup muiJiage');
+				$('.shuixuanweizhi').addClass('jiage');
 				var main = plus.webview.getWebviewById('jxfyList');
 				mui.fire(main, "weizhi",{
 				    idx:1//1位置
+				})
+				mui.fire(main, "saixuankzqt",{
+				    idxsaixuan:1//1位置
 				})
 				var index = plus.webview.getLaunchWebview();
 				mui.fire(index, "weizhi1",{
 				    idxid:1//1位置
 				})
 			}
+			//恢复位置的样式
+			window.addEventListener("weizhifh", function (e) {
+			    //获得事件参数
+			    var idxfh = e.detail.idxfh;
+				chushiweizhi1();
+			});
+			//恢复筛选的样式
+			window.addEventListener("saixuanfh", function (e) {
+			    //获得事件参数
+			    var idxsxfh = e.detail.idxsxfh;
+				chushiweizhi4();
+			});
+			
 			$('.shaxuandejiage').click(function(){
 				chushiweizhi1();
 				chushiweizhi3();
 				chushiweizhi4();
+				var main = plus.webview.getWebviewById('jxfyList');
+				mui.fire(main, "jagggkzqt",{
+				    idxjiaggge:1//1
+				})
 				if(jiage == 1){
 					$('.shaxuandejiage span').removeClass('mui-icon-arrowdown');
 					$('.shaxuandejiage span').addClass('mui-icon-arrowup muiJiage');
@@ -129,6 +174,10 @@
 				chushiweizhi1();
 				chushiweizhi2();
 				chushiweizhi4();
+				var main = plus.webview.getWebviewById('jxfyList');
+				mui.fire(main, "jagggkzqt",{
+				    idxjiaggge:1//1
+				})
 				if(area == 1){
 					$('.shiaxuanarea span').removeClass('mui-icon-arrowdown');
 					$('.shiaxuanarea span').addClass('mui-icon-arrowup muiJiage');
@@ -148,6 +197,7 @@
 				$('.shuixuanweizhi span').addClass('mui-icon-arrowdown');
 				$('.shuixuanweizhi span').removeClass('mui-icon-arrowup muiJiage');
 				$('.shuixuanweizhi').removeClass('jiage');
+				wz = 1;
 			}
 			//价格条件
 			function chushiweizhi2(){
@@ -168,6 +218,7 @@
 				$('.shuxinshux span').addClass('mui-icon-arrowdown');
 				$('.shuxinshux span').removeClass('mui-icon-arrowup muiJiage');
 				$('.shuxinshux').removeClass('jiage');
+				sx = 1;
 			}
 			
 /*			价格的点击*/
