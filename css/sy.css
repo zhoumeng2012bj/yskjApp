@@ -179,7 +179,7 @@
 	position: relative;
 	z-index: 1;
 	height: 1.333333rem;
-	background: #fff;
+	background: #f0f0f0;
 }
 .tab_nav{
 	height: 0.133333rem;
@@ -242,6 +242,7 @@
 	height: 0.666666rem;
 	border-radius: 0.666666rem;
 	margin: 0.666666rem 0.4rem 0.466666rem 0;
+	padding: 0px 0px 0px 0px;
 }
 .box_q .hqyzm{
 	position: absolute;
