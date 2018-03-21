@@ -144,9 +144,12 @@
 		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
 		<script type="text/javascript">
-			var collectId="";
-			var le=0;
-			var fyid="65372";
+			window.addEventListener("fyyuadeqx", function (e) {
+			    //获得事件参数
+				var collectId="";
+				var le=0;
+				var fyid="";
+				fyid = e.detail.fyid;
 			var cookieId=JSON.parse(localStorage.getItem('cookxs_yh'));
 		(function(){
 			detailData();
@@ -161,10 +164,10 @@
 			gallery.slider();
 				mui.init();
 			/*房源数据*/
-			function   detailData(){
+			function detailData(){
 			mui.ajax(url+'/yhcms/web/lpjbxx/getWxFyxx.do',{
 				data:{
-							"parameters":{"hourse_id":"65372"},
+							"parameters":{"hourse_id":fyid},
 							"foreEndType":2,
 							"code":"30000004"
 						},
@@ -313,7 +316,7 @@
 			}
 			//如果没有获取到登录时的cookie，
 			//点击收藏的时候 跳转到登录页面 进行登陆
-			function  logonJudge(){
+			$('.choucdewezi').click(function(){
 				var hl=	$(".choucdeweziwidth").html();
 				if(hl=="未收藏"){
 					//跳转到登录页面
@@ -330,7 +333,8 @@
 					//收藏房源
 					collectHouse();
 				}
-			}
+			})
+			
 			//取消收藏 收藏房源Id
 			function cancleCollect(){
 				mui.ajax(url+'/yskjApp/appYskj/V1/cancelCollect.do',{
@@ -388,6 +392,8 @@
 			  $('.imglunbo').html(event.detail.slideNumber+1+'/'+le);
 			  /*alert("你正在看第"+(event.detail.slideNumber+1)+"张图片");*/
 			});
+			});
+            
 			
 		</script>
 	</body>
