@@ -25,53 +25,7 @@
 			    <div class="mui-scroll">
 			        <!--数据列表1-->
 				    <ul class="mui-table-view fy_list listUl" id="list1">
-					 	<li class="listtail">
-					 		<div class="selc">
-					 			<div class="mui-input-row mui-checkbox selc_ch">
-					 			    <label></label>
-					 			    <input name="Checkbox" type="checkbox">
-					 			</div>
-					 		</div>
-					 		<div class="fy_pic">
-					 			<img src="../img/fypic.png" alt="" />
-					 		</div>
-					 		<div class="fy_xx">
-					 			<p class="lp">建外SOHO</p>
-					 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-					 			<p class="jfList">
-					 				<span class="jzjf">精装交付</span>
-					 				<span class="jzdj">定金</span>
-					 			</p>
-					 			<p class="dj">
-					 				<!--<s>7.5<i>元/m2/天</i></s>-->
-					 				<span>5.5<i>元/m2/天</i></span>
-					 			</p>
-					 		</div>
-					 	</li>
-					 	<li class="zx"></li>
-					 	<li class="listtail">
-					 		<div class="selc">
-					 			<div class="mui-input-row mui-checkbox selc_ch">
-					 			    <label></label>
-					 			    <input name="Checkbox" type="checkbox">
-					 			</div>
-					 		</div>
-					 		<div class="fy_pic">
-					 			<img src="../img/fypic.png" alt="" />
-					 		</div>
-					 		<div class="fy_xx">
-					 			<p class="lp">建外SOHO</p>
-					 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-					 			<p class="jfList">
-					 				<span class="jzjf">精装交付</span>
-					 				<span class="jzdj">定金</span>
-					 			</p>
-					 			<p class="dj">
-					 				<!--<s>7.5<i>元/m2/天</i></s>-->
-					 				<span>7.5<i>元/m2/天</i></span>
-					 			</p>
-					 		</div>
-					 	</li>
+					 	
 				   </ul>
 			    </div>
 			</div> 
@@ -168,17 +122,21 @@
 		</div>
 		<script src="../js/lib/app_config.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			var idx = 0;
+			var page = 1;//页数
+			if(idx==0){
+				my_shouc(idx);
+			}
 			window.addEventListener("tabqc", function (e) {
 			    //获得事件参数
-			    var idx = e.detail.idx;
+			    idx = e.detail.idx;
 				//子页面tab切换功能
 				for (var i=0; i<$('.list_xs').length; i++) {
 					$('.list_xs').eq(i).css('display','none');
 				}
 				$('.list_xs').eq(idx).css('display','block');
 				mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
-//				mui('#pullrefresh1').pullRefresh().endPulldownToRefresh();
-//				mui('#pullrefresh2').pullRefresh().endPulldownToRefresh();
+				my_shouc(idx);
 			});
 			window.addEventListener("bianji", function (e) {
 			    //获得事件参数
@@ -187,22 +145,18 @@
 					$('.selc').css('display','block');
 				}else{
 					$('.selc').css('display','none');
+					for (var j=0; j<$('#list1 input').length; j++) {
+						$('#list1 input').eq(j).attr('checked',false);
+					}
 				}
 			});
 			
 			
-			
-			mui.plusReady(function() {  
-	            var self = plus.webview.currentWebview();  
-	            var txt = self.asd;
-	        })  
-//			function getUrlParam(name) {
-//				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-//				var r = window.location.search.substr(1).match(reg);
-//				if (r != null) return unescape(r[2]); return null;
-//			}
-//			alert(getUrlParam('tabid'));
-			
+//			mui.plusReady(function() {  
+//	            var self = plus.webview.currentWebview();  
+//	            var txt = self.asd;
+//	        })  
+
 			mui.init({ 
 				pullRefresh : { 
 					container:"#pullrefresh",	
@@ -214,9 +168,12 @@
 					 } } 
 			});
 			function fndown(){
+				page = 1;
 				setTimeout(function(){
+					$('#list1').html('');
+					my_shouc(idx);			
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
-				},10000)
+				},1000)
 			}
 			mui.init({ 
 			    pullRefresh : { 
@@ -231,22 +188,29 @@
 			function fnup(){
 				var _this = this;
 				setTimeout(function(){
+					my_shouc(idx);
     				_this.endPullupToRefresh(true|false); 
-				},3000)
+				},1000)
 			}
 			//我的收藏接口
 			var sc_str = '';
-			function my_shouc(){
-				var sc_data = [];
+			function my_shouc(dx){
+				if(dx == 2){
+					dx = dx + 1;//3下架
+				}
+				alert(dx)
+//				var sc_data = [];//全部房源
+//				var sc_data1 = [];//下架房源
+//				var sc_data2 = [];//在租房源
 				mui.ajax(url + '/yhcms/web/collecthouse/getAppCollect.do',{
 					data:{
 							"parameters":
 							{
 								"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
 								"search_keywork":"",
-								"curr_page":1,
+								"curr_page":page,
 								"items_perpage":10,
-								"sid":"",
+								"sid":dx,//0所有，1上架，3下架
 							},
 							"foreEndType":2,
 							"code":"16"
@@ -257,25 +221,41 @@
 					headers:{'Content-Type':'application/json'},	              
 					success:function(data){
 						if(data.success){
-							var datas = data.data;
-							sc_data = sc_data.concat(datas);
-							console.log(sc_data);
-							for (var i=0; i<sc_data.length; i++) {
-								if(sc_data[i].decoration_level == ''){
-									if(sc_data[i].cid == 1){
-										sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
+							page++;
+							if(dx == 0){
+								var sc_data = data.data;//全部							
+								console.log(sc_data);
+								for (var i=0; i<sc_data.length; i++) {
+									if(sc_data[i].decoration_level == ''){
+										if(sc_data[i].cid == 1){
+											sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].fyid+'" onclick="sel(this)"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
+										}else{
+											sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].fyid+'" onclick="sel(this)"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
+										}
 									}else{
-										sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
+										if(sc_data[i].cid == 1){
+											sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].fyid+'" onclick="sel(this)"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> <span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
+										}else{
+											sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].fyid+'" onclick="sel(this)"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
+										}
 									}
-								}else{
-									if(sc_data[i].cid == 1){
-										sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> <span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
-									}else{
-										sc_str = '<li class="listtail"><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox"></div></div><div class="fy_pic"><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
+									if(dx == 0){//全部
+										$('#list1').append(sc_str);							
+									}else if(dx == 3){//下架
+										$('#list2').append(sc_str);
+									}else{//再租房源
+										$('#list3').append(sc_str);
 									}
 								}
-								$('#list1').append(sc_str);
+								mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+							}else if(dx == 3){
+								var datas1 = datas1.concat(data.data);//下架房源	
+								console.log(datas1);
+							}else{
+								var datas2 = datas1.concat(data.data);//在租房源
+								console.log(datas2);
 							}
+							
 						}else{
 							//数据获取不成功
 						}
@@ -285,8 +265,34 @@
 					}
 				});
 			}
-//			denglu_zt();
-			my_shouc();
+			//判断登陆状态
+//			denglu_zt(JSON.parse(localStorage.getItem('cookxs_yh')));
+			function sel(t){
+				var fyid = t.value;//房源id
+				alert(t.checked);
+			}
+			//全选
+			window.addEventListener("all_cek", function (e) {
+			    //获得事件参数
+				var cek = e.detail.cek;
+				alert(cek);//
+				if(cek==2){
+					alert('全选1')
+					for (var i=0; i<$('#list1 input').length; i++) {
+						alert(123)
+						$('#list1 input').eq(i).attr('checked',true);
+					}
+				}
+				if(cek==3){
+					alert('取消全选')
+					for (var j=0; j<$('#list1 input').length; j++) {
+						alert(456)
+						$('#list1 input').eq(j).attr('checked',false);
+					}
+				}
+			});
+			
+			
 		</script>
 		
 	</body>
