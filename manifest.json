@@ -863,7 +863,16 @@
 				"priority": 0
 			},
 			"page/qdgs.html": {
-				"resources": [],
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/person.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
+				],
 				"refer": [
 					"page/person.html"
 				],
