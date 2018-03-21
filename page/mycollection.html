@@ -31,7 +31,7 @@
 		    <div class="dibu" style="visibility: hidden;">
 		    	<div class="mui-input-row mui-checkbox mui-left del">
 		    	  <label>全选</label>
-		    	  <input name="checkbox1" type="checkbox" style="position: absolute;top:18px;">
+		    	  <input name="checkbox1" type="checkbox" style="position: absolute;top:18px;" onclick="all_sel(this)">
 		    	</div>
 		    	<div class="del">
 		    		<span class="del_ion"><img src="../img/del_ion.png"/></span>
@@ -73,6 +73,7 @@
 		  });
 		  var tags = 0;
 		  $('.bj').click(function(){
+		  	$('.del input').attr('checked',false);
 		  	tags ++;
 		  	if(tags == 1){
 		  		$('.bj').css({
@@ -93,6 +94,20 @@
 			    bjshow: tags
 			})
 		  })
+		function all_sel(th){
+			var cek = 3;
+			if(th.checked){
+				cek = 2
+			}else{
+				cek = 3
+			}
+			var mains = plus.webview.getWebviewById('mysc_list');
+			mui.fire(mains, "all_cek",{
+			    cek:cek
+			})
+		}
+		
+		
 		
 		//控制子页面刷新(ceshi)
 //		document.getElementById('sss').addEventListener('tap',function(){
