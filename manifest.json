@@ -297,7 +297,8 @@
 					"fonts/mui.ttf",
 					"img/fypic.png",
 					"img/sjfw.png",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					null
 				],
 				"refer": [
 					"jxfy.html",
