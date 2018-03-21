@@ -79,22 +79,7 @@
 								 	$(".add_n").val(card);
 								 	$(".mui-title").html("修改身份证号");
 								 }
-								 var p1=userData.mp1data;
-								 if(p1!=null&&p1.length>0){
-								 	for(var i=0;i<p1.length;i++){
-								 		mptp1[i].id=p1[i].ID;
-								 		mptp1[i].url=p1[i].URL;
-								 		mptp1[i].isdelete=p1[i].ISDELETE;
-								 	}
-								 }
-								  var p2=userData.mp2data;
-								 if(p2!=null&&p2.length>0){
-								 	for(var i=0;i<p2.length;i++){
-								 		mptp2[i].id=p2[i].ID;
-								 		mptp2[i].url=p2[i].URL;
-								 		mptp2[i].isdelete=p2[i].ISDELETE;
-								 	}
-								 }
+								 
 							}else{
 								mui.alert(data.message);
 							}
@@ -122,7 +107,7 @@
                     return  false;
                 }
 					card=add_name;
-				mui.ajax(url+'/yhcms/web/qduser/updateAppUser.do',{
+				mui.ajax(url+'/yhcms/web/qduser/updateAppUserName.do',{
 					data:{
 						"parameters":
 						{"card":card,
@@ -131,9 +116,8 @@
 						"xmname":xmname,
 						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
 						"name":name,
-						"phone":phone,
-						"mptp1":mptp1,
-						"mptp2":mptp2},
+						"phone":phone
+						},
 						"foreEndType":2,
 						"code":"2"
 						},
