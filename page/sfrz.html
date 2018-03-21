@@ -346,6 +346,7 @@
 				if(f1!=""&&f2!=""){
 						if(ys1!=1&&ys2==1){
 		            	     upload();
+		            	
 		            	}
 		            	if(ys2!=1&&ys1==1){
 		            	 uploadf();
@@ -365,7 +366,7 @@
             
             
             function saveUserImg(){
-            	mui.ajax('http://192.168.0.124:8081/yhcms/web/qduser/updateAppUser.do',{
+            	mui.ajax(url+'/yhcms/web/qduser/updateAppUser.do',{
 					data:{
 						"parameters":
 						{"card":card,
