@@ -671,7 +671,14 @@
 					"css/loupan_detail.css",
 					"css/jxfyList.css",
 					"css/sy.css",
-					"img/fypic.png"
+					"img/fypic.png",
+					"img/images/4.png",
+					"img/images/1.png",
+					"img/images/3.png",
+					"img/images/2.png",
+					"img/wz_ion.png",
+					"js/lib/app_config.js",
+					"img/1.jpg"
 				],
 				"refer": [],
 				"priority": 0

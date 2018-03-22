@@ -129,6 +129,9 @@
 			"js/lib/flexible.js",
 			"css/style.css",
 			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/fyTail.html"
 		]
 	},
 	"jxfy.html": {
@@ -144,7 +147,8 @@
 			"jxfyList.html"
 		],
 		"refer": [
-			"jxfyList.html"
+			"jxfyList.html",
+			"page/search.html"
 		]
 >>>>>>> a9fefa13e236bfd9ed1e144b9b5a6c1449536f77
 	},
@@ -202,6 +206,9 @@
 			"img/gj_icon.png",
 			"img/tt_icon.png",
 			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/loupan_detail.html"
 		]
 	},
 	"wd.html": {
@@ -372,6 +379,47 @@
 		"resources": [
 			"css/fwsc.css"
 		]
+<<<<<<< HEAD
 >>>>>>> a9fefa13e236bfd9ed1e144b9b5a6c1449536f77
+=======
+	},
+	"page/loupan_detail.html": {
+		"resources": [
+			"css/fyxq.css",
+			"img/fypic.png",
+			"css/loupan_detail.css",
+			"img/images/4.png",
+			"img/images/1.png",
+			"img/images/3.png",
+			"img/images/2.png"
+		]
+	},
+	"page/search.html": {
+		"resources": [
+			"css/search.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"page/fyTail.html": {
+		"resources": [
+			"img/fav2.png",
+			"css/fyxq.css",
+			"fonts/mui.ttf",
+			"img/shoucdianhuobg.png"
+		],
+		"refer": [
+			"page/login.html"
+		]
+	},
+	"page/login.html": {
+		"resources": [
+			"js/lib/form_yz.js",
+			"js/lib/sha1.js",
+			"css/login.css",
+			"js/lib/md5.js",
+			"img/login_pic.png",
+			"img/ycmm.png"
+		]
+>>>>>>> ad94538c25a638f950991f5e0eb11061bf4ab501
 	}
 }
