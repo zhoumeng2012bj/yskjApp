@@ -48,14 +48,14 @@
 							</div>
 							<div class="xuanxing">
 								<div class="xuanxingshuzi">
-									<div class="xiaokuai">0-2.9</div>
-									<div class="xiaokuai">3-4.9</div>
-									<div class="xiaokuai">5-7.9</div>
-									<div class="xiaokuai">8-9.9</div>
+									<div class="xiaokzujin">0-2.9</div>
+									<div class="xiaokzujin">3-4.9</div>
+									<div class="xiaokzujin">5-7.9</div>
+									<div class="xiaokzujin">8-9.9</div>
 								</div>
 								<div class="xuanxingshuzi">
-									<div class="xiaokuai">10-14.9</div>
-									<div class="xiaokuai">15以上</div>
+									<div class="xiaokzujin">10-14.9</div>
+									<div class="xiaokzujin">15以上</div>
 								</div>
 								<div class="xuanxingshuzi">
 									<div class="xiaokuai pingangm">元</div>
@@ -67,10 +67,10 @@
 							</div>
 							<div class="xuanxing chanqxz">
 								<div class="xuanxingshuzi">
-									<div class="xiaokuai">写字楼</div>
-									<div class="xiaokuai">公寓</div>
-									<div class="xiaokuai">商务楼</div>
-									<div class="xiaokuai">商业</div>
+									<div class="xiaokchuaq">写字楼</div>
+									<div class="xiaokchuaq">公寓</div>
+									<div class="xiaokchuaq">商务楼</div>
+									<div class="xiaokchuaq">商业</div>
 								</div>
 							</div>
 						</div>
@@ -144,6 +144,10 @@
 				}
 			});
 			var xial = 1;//上拉加载的次数
+			var area = '';
+			var price_dj = '';
+			var chqxz = '';
+			var jiangejt = "D";
 			/**
 			 * 下拉刷新具体业务实现
 			 */
@@ -151,7 +155,7 @@
 				setTimeout(function() {
 					xial = 1;
 					$('.listUl').html('');
-					dthqdata();
+					dthqdata(area,price_dj,chqxz,jiangejt);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					//这块是下拉刷新添加数据
@@ -172,7 +176,7 @@
 			
 			function pullupRefresh() {
 				setTimeout(function() {
-					dthqdata();
+					dthqdata(area,price_dj,chqxz,jiangejt);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					/*for (var i = cells.length, len = i + 20; i < len; i++) {
@@ -206,12 +210,65 @@
 							lirm[j].className = 'xiaokuai';
 						}
 						lirm[index].className = "xiaokuaisss xiaokuai";
+						var strs = lirm[index].innerText.split("-");
+						area = [parseInt(strs[0]),parseInt(strs[1])];
+					}
+				})(i)
+			}
+			var zujin = $('.xiaokzujin');
+			for(var i=0;i<zujin.length;i++){
+				(function(index){
+					zujin[i].onclick = function(){
+						for(var j=0;j<zujin.length;j++){
+							zujin[j].className = 'xiaokzujin';
+						}
+						zujin[index].className = "xiaokuaisss xiaokzujin";
+						var strs = zujin[index].innerText.split("-");
+						price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+					}
+				})(i)
+			}
+			var cq = $('.xiaokchuaq');
+			for(var i=0;i<cq.length;i++){
+				(function(index){
+					cq[i].onclick = function(){
+						for(var j=0;j<cq.length;j++){
+							cq[j].className = 'xiaokchuaq';
+						}
+						cq[index].className = "xiaokuaisss xiaokchuaq";
+						
+						var strs = cq[index].innerText;
+						chqxz = strs;
 					}
 				})(i)
 			}
 			
-	/*		动态数据*/
-			function dthqdata(){
+			//确定事件
+			$('.quding').click(function(){
+				xial = 1;
+				jiangejt = 'D';
+				$('.listUl').html('');
+				dthqdata(area,price_dj,chqxz,jiangejt);
+			});
+			//重置事件
+			$('.czsyhk').click(function(){
+				xial = 1;
+				jiangejt = 'D';
+				qcqitades();
+				chushishij();
+				$('.listUl').html('');
+				dthqdata(area,price_dj,chqxz,jiangejt);
+			});
+			
+			//筛选的重置条件
+			function chushishij(){
+				area = '';
+				price_dj = '';
+				chqxz = '';
+			}
+			//筛选的动态数据
+			/*function saixuandata(area,price_dj,chqxz){
+				$('.listUl').html('');
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				data:{
 					"parameters":
@@ -223,10 +280,10 @@
 							"business1":"",
 							"line_id":"",
 							"station_id":"",
-							"area":"",
-							"price_dj":"",
+							"area":area,
+							"price_dj":price_dj,
 							"label":"",
-							"chqxz":"",
+							"chqxz":'',
 							"orderby":"D",
 							"curr_page":xial,
 							"items_perpage":10
@@ -238,10 +295,104 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
+						$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
+						$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
+						mui('#pullrefresh').pullRefresh().setStopped(false);
+						var index = plus.webview.getLaunchWebview();
+						zhezhaoxiaoshi();
+						mui.fire(index, "weizhi1",{
+						    idxid:4//1位置
+						})
+						//点击位置遮罩层取消遮罩层要改变样式
+						var main = plus.webview.getWebviewById('jxfy.html');
+						mui.fire(main, "saixuanfh",{
+						    idxsxfh:1//1位置
+						})
 						xial++;
 						var data = data.data;
-						console.log('-----------------------------接口内--------------------------------------');
 						console.log(data);
+						var string = '';
+						for(var i=0;i<data.length;i++){
+							if(data[i].decoration_level == ''){
+								if(data[i].djbsh == 1){
+									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}else{
+									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}
+
+							}else{
+								if(data[i].djbsh == 1){
+									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}else{
+									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								}
+
+							}
+							*/
+							/*document.querySelector('.fypics').innerHTML=string;*/
+							/*$('.listUl').append(string);
+						}
+						mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
+					}else{
+						mui.alert(data.msg);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+				});
+			}*/
+			
+			
+	/*		动态数据*/
+			function dthqdata(area,price_dj,chqxz,jiagesanshu){
+				console.log(area);
+				console.log(price_dj);
+				console.log(chqxz);
+				console.log(jiagesanshu);
+				console.log(xial);
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
+				data:{
+					"parameters":
+						{
+							"search_keywork":"",
+							"district":"",
+							"business":"",
+							"district1":"",
+							"business1":"",
+							"line_id":"",
+							"station_id":"",
+							"area":area,
+							"price_dj":price_dj,
+							"label":"",
+							"chqxz":chqxz,
+							"orderby":jiagesanshu,
+							"curr_page":xial,
+							"items_perpage":10
+						},"foreEndType":2,"code":"30000001"},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					if(data.success){
+						$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
+						$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
+						mui('#pullrefresh').pullRefresh().setStopped(false);
+						var index = plus.webview.getLaunchWebview();
+						zhezhaoxiaoshi();
+						mui.fire(index, "weizhi1",{
+						    idxid:4//1位置
+						})
+						//点击位置遮罩层取消遮罩层要改变样式
+						var main = plus.webview.getWebviewById('jxfy.html');
+						mui.fire(main, "saixuanfh",{
+						    idxsxfh:1//1位置
+						})
+						xial++;
+						var data = data.data;
 						var string = '';
 						for(var i=0;i<data.length;i++){
 							if(data[i].decoration_level == ''){
@@ -274,24 +425,42 @@
 				}
 				});
 			}
+			
+			//清除筛选选中的样式
+			function qcqitades(){
+				var xk = $('.xiaokuai');
+				var zj = $('.xiaokzujin');
+				var cq = $('.xiaokchuaq');
+				for(var i=0;i<xk.length;i++){
+					xk[i].className = 'xiaokzujin';
+				}
+				for(var i=0;i<zj.length;i++){
+					zj[i].className = 'xiaokzujin';
+				}
+				for(var i=0;i<cq.length;i++){
+					cq[i].className = 'xiaokzujin';
+				}
+			}
+			/*for(var i=0;i<zujin.length;i++){
+				(function(index){
+					//color: #2a72d8;background-color: #d9effd;
+					zujin[i].onclick = function(){
+						for(var j=0;j<zujin.length;j++){
+							zujin[j].className = 'xiaokzujin';
+						}
+						zujin[index].className = "xiaokuaisss xiaokzujin";
+						var strs = zujin[index].innerText.split("-");
+						price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+					}
+				})(i)
+			}*/
 
-			/*点击位置出现遮罩层*/
+			/*点击出现遮罩层*/
 			window.addEventListener("weizhi", function (e) {
 			    //获得事件参数
 			    var idx = e.detail.idx;
 				var hegh = window.screen.availHeight - 160;
-				$('html').css({
-		            'overflow':'hidden',
-		            'height': '100%',
-		        });
-		        $('body').css({
-		            'overflow':'hidden',
-		            'height': '100%',
-		        });
-		        $(".mui-content").css({
-		            'overflow':'hidden',
-		            'height': hegh+'px',
-		        });
+				
 				if(idx == 1){
 					$(".zhezhaoce").removeClass("zhezhaocdisplay");
 					$(".zhezhaoce").addClass("zhezhaocdisbalo");
@@ -306,13 +475,24 @@
 					$(".zhezhaoceshx").removeClass("zhezhaocdisplayshx");
 					$(".zhezhaoceshx").addClass("zhezhaocdisbaloshx");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
-					
 					$(".zhezhaoceshx").on('touchmove',function(e){
 	                    /*e.preventDefault();  //阻止默认行为
 						return false;*/
 	                })
 					
 				}
+				$('html').css({
+		            'overflow':'hidden',
+		            'height': '100%',
+		        });
+		        $('body').css({
+		            'overflow':'hidden',
+		            'height': '100%',
+		        });
+		        $(".mui-content").css({
+		            'overflow':'hidden',
+		            'height': hegh+'px',
+		        });
 				
 			});
 
@@ -326,7 +506,22 @@
 		            'overflow':'visible',
 		            'height': '100%',
 		        });
+		        $(".mui-content").css({
+		            'overflow':'visible',
+		        });
 			}
+			//遮罩层消失恢复滚动
+			function zhezhaoxiaoshiww(){
+				$('html').css({
+		            'overflow':'visible',
+		            'height': '100%',
+		        });
+		        $('body').css({
+		            'overflow':'visible',
+		            'height': '100%',
+		        });
+			}
+			
 /*			点击位置遮罩层取消遮罩层*/
 			$('.zhezhaoce').click(function(){
 				$(".zhezhaoce").addClass("zhezhaocdisplay");
@@ -348,7 +543,7 @@
 			function qxzzcdff(){
 				$(".zhezhaoce").addClass("zhezhaocdisplay");
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
-				zhezhaoxiaoshi();
+				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
 				var main = plus.webview.getWebviewById('jxfy.html');
 				mui.fire(main, "weizhifh",{
@@ -360,7 +555,7 @@
 			function qxsuxzzcdff(){
 				$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 				$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
-				zhezhaoxiaoshi();
+				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
 				var main = plus.webview.getWebviewById('jxfy.html');
 				mui.fire(main, "saixuanfh",{
@@ -390,8 +585,10 @@
 				mui.fire(index, "weizhi1",{
 				    idxid:2//1位置
 				})
+				mui('#pullrefresh').pullRefresh().setStopped(false);
 				qxsuxzzcdff();
 				qxzzcdff();
+				zhezhaoxiaoshi();
 			});
 			
 /*			点击筛选遮罩层取消遮罩层*/
@@ -448,7 +645,6 @@
 					}
 				});
 
-
 				var main = plus.webview.getWebviewById('fyTail');
 				mui.fire(main, "fyyuadeqx",{
 				    fyid:this.id
@@ -460,12 +656,17 @@
 			    //获得事件参数
 			    var idx = e.detail.idx;
 				xial = 1;
+				area = '';
+				price_dj = '';
+				chqxz = '';
+				$('.listUl').html('');
+				qcqitades();
 				if(idx == 5){
-					var jiangejt = 'P1';
-					jiangefangfa(jiangejt);
+					jiangejt = 'P1';
+					dthqdata(area,price_dj,chqxz,jiangejt);
 				}else{
-					var jiangejt = 'P2';
-					jiangefangfa(jiangejt);
+					jiangejt = 'P2';
+					dthqdata(area,price_dj,chqxz,jiangejt);
 				}
 			});
 			
@@ -474,16 +675,21 @@
 			    //获得事件参数
 			    var idx = e.detail.idx;
 				xial = 1;
+				area = '';
+				price_dj = '';
+				chqxz = '';
+				$('.listUl').html('');
+				qcqitades();
 				if(idx == 7){
-					var jiangejt = 'A1';
-					jiangefangfa(jiangejt);
+					jiangejt = 'A1';
+					dthqdata(area,price_dj,chqxz,jiangejt);
 				}else{
-					var jiangejt = 'A2';
-					jiangefangfa(jiangejt);
+					jiangejt = 'A2';
+					dthqdata(area,price_dj,chqxz,jiangejt);
 				}
 			});
 			
-			function jiangefangfa(jiagesanshu){
+			/*function jiangefangfa(jiagesanshu){
 				$('.listUl').html('');
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 					data:{
@@ -513,8 +719,6 @@
 						if(data.success){
 							xial++;
 							var data = data.data;
-							console.log('-----------------------------接口内--------------------------------------');
-							console.log(data);
 							var string = '';
 							for(var i=0;i<data.length;i++){
 								if(data[i].decoration_level == ''){
@@ -532,9 +736,9 @@
 									}
 	
 								}
-								
+								*/
 								/*document.querySelector('.fypics').innerHTML=string;*/
-								$('.listUl').append(string);
+								/*$('.listUl').append(string);
 							}
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
 						}else{
@@ -546,7 +750,7 @@
 						console.log(type);
 					}
 				});
-			}
+			}*/
 		</script>
 	</body>
 
