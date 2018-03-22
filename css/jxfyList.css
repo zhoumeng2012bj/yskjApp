@@ -9,7 +9,7 @@
 .zzcner{background-color: #FFFFFF;height: 8.013333rem;display: flex;}
 .zzcqy li{width: 3.333333rem;height: 1.32rem;line-height: 1.32rem;padding-left: 0.533333rem;color: #666666;font-size: 0.346666rem;}
 .zzcqy{width: 3.333333rem;height: 100%;background-color: #e5e5e5;}
-.zzcdcq{width: 3.333333rem;height: 100%;border-right: 1px solid #e5e5e5;}
+.zzcdcq{width: 3.333333rem;height: 100%;border-right: 1px solid #e5e5e5;overflow-y: auto;overflow-x: hidden;}
 .zzcdcq li{width: 3.333333rem;height: 1.32rem;line-height: 1.32rem;padding-left: 0.533333rem;color: #666666;font-size: 0.346666rem;}
 .zhezhaocdisplay{display: none;}
 .zhezhaocdisbalo{display: block;}

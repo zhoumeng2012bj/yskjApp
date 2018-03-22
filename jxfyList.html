@@ -15,7 +15,9 @@
 		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
 		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
 	</head>
-
+	<style type="text/css">
+		#sel1 li{border: 1px solid red;}
+	</style>
 	<body>
 		<!--下拉刷新容器-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
@@ -85,16 +87,16 @@
 				</div>
 				<div class="zhezhaoce zhezhaocdisplay">
 					<div class="zzcner">
-						<ul class="zzcqy">
-							<li>不限</li>
-							<li>区域</li>
-							<li>地铁</li>
+						<ul class="zzcqy" id="sel1">
+							<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>
+							<li onclick="selsx(1)">区域</li>
+							<li onclick="selsx(2)">地铁</li>
 						</ul>
-						<ul class="zzcdcq">
-							<li>不限</li>
+						<ul class="zzcdcq" id="sel2" style="border: 1px solid red;">
+							<li onclick="clk_qy(0,-1)">不限</li>
 						</ul>
-						<ul class="zzcdcq">
-							<li>不限</li>
+						<ul class="zzcdcq" id="sel3">
+							<li onclick="subway2(0,-1)">不限</li>
 						</ul>
 					</div>
 				</div>
@@ -527,8 +529,8 @@
 					$(".zhezhaoce").addClass("zhezhaocdisbalo");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
 					$(".zhezhaoce").on('touchmove',function(e){
-	                    e.preventDefault();  //阻止默认行为
-						return false;
+//	                    e.preventDefault();  //阻止默认行为
+//						return false;
 	                })
 				}
 				/*出现筛选遮罩层*/
@@ -812,6 +814,170 @@
 					}
 				});
 			}*/
+			//
+			function selsx(sel){
+				$('#sel1 li').css({
+					'background':'none',
+					'color':'#666666'
+				});
+				if(sel == 0){
+					$('#sel1 li').eq(0).css({
+						'background':'#fff',
+						'color':'#2c71d8'
+					});
+					$('#sel2').html('');
+					$('#sel3').html('');
+				}
+				if(sel == 1){
+					$('#sel1 li').eq(1).css({
+						'background':'#fff',
+						'color':'#2c71d8'
+					});
+					sel_qy();
+				}
+				if(sel == 2){
+					$('#sel1 li').eq(2).css({
+						'background':'#fff',
+						'color':'#2c71d8'
+					});
+					subway();
+				}
+			}
+			//区域接口
+			var quyu = '';
+			function sel_qy(){
+				$('#sel2').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				mui.ajax(url + '/yhcms/web/lpjbxx/getLpcity.do',{
+					data:{},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						if(data.success){
+							var xzqyData = data.data.xzqy;
+							for (var i=0; i<xzqyData.length; i++) {
+								quyu = '<li onclick="clk_qy('+xzqyData[i].fdcode+','+i+')">'+xzqyData[i].fdname+'</li>';
+								$('#sel2').append(quyu);
+							}
+						}else{
+							
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
+			function clk_qy(district,q){
+				$('#sel2 li').css({'color':'#666666'});
+				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
+				xzqy_erji(district);
+			}
+			//行政区域二级接口
+			var xzqy_str = '';
+			function xzqy_erji(id){
+				$('#sel3').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				mui.ajax(url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
+					data:{
+						"parameters":{
+							"district":id
+						},
+						"foreEndType":2,
+						"code":"300000010"
+					},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},       
+					success:function(data){
+						if(data.success){
+							var xzqy_Data = data.data.xzfq;
+							for (var i=0; i<xzqy_Data.length; i++) {
+								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+xzqy_Data[i].id+','+i+')">'+xzqy_Data[i].fdname+'</li>';
+								$('#sel3').append(xzqy_str);
+							}
+						}else{
+							
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
+			function clk_xz2(fcode,id,q){
+				$('#sel3 li').css({'color':'#666666'});
+				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
+			}
+
+			//地铁接口
+			var subway_str = '';
+			function subway(){
+				$('#sel2').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				mui.ajax(url + '/yhcms/web/lpjbxx/lpsubway.do',{
+					data:{},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},       
+					success:function(data){
+						if(data.success){
+							var subway_Data = data.data.subway;
+							for (var i=0; i<subway_Data.length; i++) {
+								subway_str = '<li onclick="subway1('+subway_Data[i].id+','+i+')">'+subway_Data[i].fdname+'</li>';
+								$('#sel2').append(subway_str);
+							}
+						}else{
+							
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
+			function subway1(id,q){
+				$('#sel2 li').css({'color':'#666666'});
+				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
+				subway_erji(id);
+			}
+			//地铁二级接口
+			var subway_str2 = '';
+			function subway_erji(id){
+				$('#sel3').html('<li onclick="subway2(0,-1)">不限</li>');
+				mui.ajax(url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
+					data:{
+						"parameters":{
+							"line_id":id
+						},
+						"foreEndType":2,
+						"code":"30000008"
+					},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},       
+					success:function(data){
+						if(data.success){
+							var subway_Data2 = data.data.subway_station;
+							for (var i=0; i<subway_Data2.length; i++) {
+								subway_str2 = '<li onclick="subway2('+subway_Data2[i].id+','+i+')">'+subway_Data2[i].fdname+'</li>';
+								$('#sel3').append(subway_str2);
+							}
+						}else{
+							
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
+			function subway2(id,q){
+				$('#sel3 li').css({'color':'#666666'});
+				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
+			}
 		</script>
 	</body>
 
