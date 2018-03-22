@@ -20,20 +20,20 @@
 		    	<span class="tit">我的收藏</span>
 		    </h1>
 		    <span class="bj"></span>
-		    <span class="serach"></span>
+		    <!--<span class="serach"></span>-->
 		</header>
 		<div class="mui-content mysc_content">
-		    <ul class="scmenu">
+		    <!--<ul class="scmenu">
 		    	<li><span class="active">全部</span></li>
 		    	<li><span>下架房源</span></li>
 		    	<li><span>再租房源</span></li>
-		    </ul>
+		    </ul>-->
 		    <div class="dibu" style="visibility: hidden;">
 		    	<div class="mui-input-row mui-checkbox mui-left del">
 		    	  <label>全选</label>
 		    	  <input name="checkbox1" type="checkbox" style="position: absolute;top:18px;" onclick="all_sel(this)">
 		    	</div>
-		    	<div class="del">
+		    	<div class="del" id="del_sc">
 		    		<span class="del_ion"><img src="../img/del_ion.png"/></span>
 		    		删除
 		    	</div>
@@ -65,7 +65,7 @@
 			      url:'mysc_list.html',//子页面HTML地址，支持本地地址和网络地址
 			      id:'mysc_list',//子页面标志
 			      styles:{
-			        top:'110px',//子页面顶部位置
+			        top:'65px',//子页面顶部位置
 			        bottom:'60px',//子页面底部位置 
 			      },
 			      extras:{}//额外扩展参数
@@ -73,7 +73,7 @@
 		  });
 		  var tags = 0;
 		  $('.bj').click(function(){
-		  	$('.del input').attr('checked',false);
+		  	$('.del input').prop('checked',false);
 		  	tags ++;
 		  	if(tags == 1){
 		  		$('.bj').css({
@@ -106,7 +106,16 @@
 			    cek:cek
 			})
 		}
-		
+		window.addEventListener("all_dsel", function (e) {//单项选实现全选
+		    //获得事件参数
+			var dsel = e.detail.dsel;
+			if(dsel){
+				$('.del input').prop('checked',true);
+			}
+			if(!dsel){
+				$('.del input').prop('checked',false);
+			}
+		});
 		
 		
 		//控制子页面刷新(ceshi)
@@ -116,7 +125,12 @@
 //				wobj.reload(true);
 //			})
 //		})
-		
+		$("#del_sc").click(function(){
+			var main = plus.webview.getWebviewById('mysc_list');
+			mui.fire(main, "del_selsc",{
+			    selsc:8
+			})
+		});
 		
 		
 	</script>
