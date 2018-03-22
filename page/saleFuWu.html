@@ -138,6 +138,11 @@
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
 							mui.alert('提交成功，我们将会与您联系。');
+							$("input[name='radio']:checked").removeAttr("checked");
+				            $('.shfwPhone').val('');
+				            $('.shfwName').val('');
+				            $('#repairHouse').val('');
+				            $('#memo').val('');
 							//成功后返回至服务商城页面
 							mui.openWindow({
 								url: '../sy.html', 
@@ -167,7 +172,7 @@
 			    }  
 			    return sex;
 			}
-    
+   
 		</script>
 	</body>
 

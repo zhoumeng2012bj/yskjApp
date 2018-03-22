@@ -173,7 +173,7 @@
 						},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
-				timeout:10000,//超时时间设置为10秒；
+				timeout:100000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					if(data.success){
@@ -282,7 +282,7 @@
 						},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
-				timeout:10000,//超时时间设置为10秒；
+				timeout:100000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					
@@ -299,7 +299,7 @@
 							//图标转换
 						//.xindebgimg{background:url(../img/fav2.png) no-repeat;background-size: 100% 100%;}
 					    $(".xindebgimg").css("background","url(../img/fav.png)");
-						alert("已被收藏   收藏Id"+data.collectId);
+						//alert("已被收藏   收藏Id"+data.collectId);
 						$(".choucdeweziwidth").html("已收藏");
 						}else{
 							//错误提示信息
@@ -347,9 +347,10 @@
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					if(data.success){
-						mui.alert("取消成功");
+						mui.alert("取消收藏房源");
 						//判断收藏的状态 改变图标
 						$(".choucdeweziwidth").html("收藏");
+						$(".xindebgimg").css("background","url(../img/fav2.png)");
 					}else{
 						mui.alert("取消失败："+data.message);
 					}
@@ -374,9 +375,10 @@
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					if(data.success){
-						mui.alert("收藏成功");
+						mui.alert("收藏房源成功"); 
 						//判断收藏的状态 改变图标
 						$(".choucdeweziwidth").html("已收藏");
+						 $(".xindebgimg").css("background","url(../img/fav.png)");
 					}else{
 						mui.alert("收藏失败："+data.message);
 					}
