@@ -1,0 +1,91 @@
+{
+	"jxfyList.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/jxfyList.css",
+			"js/mui.min.js",
+			"css/sy.css",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"js/lib/app_config.js"
+		]
+	},
+	"jxfy.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"css/jxfy.css",
+			"jxfyList.html"
+		],
+		"refer": [
+			"jxfyList.html"
+		]
+	},
+	"index.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"sy.html",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"qyhl.html",
+			"sy.html",
+			"wd.html",
+			"jxfy.html",
+			"fwsc.html"
+		]
+	},
+	"qyhl.html": {
+		"resources": [
+			"img/qiyefuwutitle.png",
+			"img/huityuanicon.png",
+			"css/qiYeHuLian.css",
+			"img/beijignicon.png",
+			"img/qiyehulian.png"
+		]
+	},
+	"sy.html": {
+		"resources": [
+			"img/2.png",
+			"img/tab_bg1.png",
+			"js/lib/castapp.js",
+			"img/yzwt.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/qy_icon.png",
+			"img/mj_icon.png",
+			"css/sy.css",
+			"img/sjfw.png",
+			"img/jjr_icon.png",
+			"img/gj_icon.png",
+			"img/tt_icon.png",
+			"js/lib/app_config.js"
+		]
+	},
+	"wd.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"img/sz.png",
+			"img/fav.png",
+			"img/per.png",
+			"img/head_img.png",
+			"img/wd_bg.png",
+			"css/wd.css"
+		]
+	},
+	"fwsc.html": {
+		"resources": [
+			"css/fwsc.css"
+		]
+	}
+}
