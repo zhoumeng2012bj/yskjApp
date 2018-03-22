@@ -272,7 +272,7 @@
 			}
 			//获取前端登陆时的cookie,如果有则判断  房源是否已被收藏  改变收藏的样式
 			function jugeHouse(){
-			alert("cookieId"+cookieId);
+			//alert("cookieId"+cookieId);
 			if(cookieId){
 				//判断房源是否被收藏  
 				mui.ajax(url+'/yskjApp/appYskj/V1/judgeCollection.do',{
@@ -376,6 +376,7 @@
 				success:function(data){
 					if(data.success){
 						mui.alert("收藏房源成功"); 
+						jugeHouse();
 						//判断收藏的状态 改变图标
 						$(".choucdeweziwidth").html("已收藏");
 						 $(".xindebgimg").css("background","url(../img/fav.png)");
