@@ -570,7 +570,8 @@
 					"css/jxfyList.css",
 					"img/fypic.png",
 					"css/sy.css",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					null
 				],
 				"refer": [],
 				"priority": 0
