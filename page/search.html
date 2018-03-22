@@ -20,32 +20,26 @@
 			
 			<div class="sousu sousuodeerji mui-input-row">
 				<span class="mui-icon mui-icon-search sousudubiao"></span>
-				<span class="sousuwenzi"><input type="text" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
+				<span class="sousuwenzi"><input type="text" oninput="soushuo()" onfocus="chxian()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
 			</div>
 			<a class="mui-action-back mui-pull-left qvxiao">取消</a>
 		</header>
 		<div class="mui-content">
 			<!--暂无搜索历史-->
-			<!--<div class="suouskongb" id="suosukongbaiye">
+			<div class="suouskongb suosukongbaiye" id="">
 				<p class="sskbg"></p>
 				<p class="zwsfls">暂无搜索历史</p>
-			</div>-->
+			</div>
 			<!--模糊搜索的页面-->
-			<!--<div class="muhusuosuggg" id="muhusousous">
+			<div class="muhusuosuggg muhusousous" id="">
 				<ul class="muhusslipa">
-				        <li class="">
+				        <!--<li class="">
 				            <a class="">苹果</a>
-				        </li>
-				        <li class="">
-				            <a class="">三鑫</a>
-				        </li>
-				        <li class="">
-				            <a class="">华为</a>
-				        </li>
+				        </li>-->
 				    </ul>
-			</div>-->
+			</div>
 			<!--历史搜索列表-->
-			<div class="muhusuosuggg" id="lslist">
+			<div class="muhusuosuggg lslist" id="">
 				<div class="lishissdewezi">
 					<p class="lishisuosudiyi">
 						<span class="lishisuosudiyier">历史搜索</span>
@@ -68,9 +62,60 @@
 			</div>
 		</div>
 		
-		
+		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			//搜索框的获取焦点事件
+			function chxian(){
+				$('.suosukongbaiye').css("display","none");
+				$('.muhusousous').css("display","block");
+			}
+			//搜索的列表数据
+			function soushuo(){
+				var lpname = $('.suosinput').val();
+				mui.ajax(Interface_url+'/yhcms/web/jcsj/getLp.do',{
+					data:{
+						'lpname':lpname
+					},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							$('.muhusslipa').html('');
+							var data = data.data;
+							var string = '';
+							for(var i=0;i<data.length;i++){
+								console.log(data[i].topic);
+								string = '<li class=""><a>'+data[i].topic+'</a></li>';
+								$('.muhusslipa').append(string);
+							}
+							//搜索列表的跳转
+							$('.muhusslipa li').click(function(){
+								mui.back();
+								//搜索列表的跳转并传递参数
+								var main = plus.webview.getWebviewById('jxfy.html');
+								mui.fire(main, "sousuochuac",{
+								    lpname:$(this).text()
+								})
+							});
+						}else{
+							mui.alert(data.msg);
+						}
+						
+						
+
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});
+			}
+			
+			
 		</script>
 	</body>
 
