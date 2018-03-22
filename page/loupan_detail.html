@@ -14,6 +14,15 @@
 		<link rel="stylesheet" type="text/css" href="../css/jxfyList.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/sy.css"/>
 	</head>
+	<style>
+		.ss_bt .zx:last-child{display: none;}
+		.fy_xx .zdh,.fy_xx .md_price,.fy_xx .qt{font-size: 0.32rem!important;color: #333333!important;}
+		.listtail li{height: 2.5rem!important;}
+		.listtail .fy_pic{width: 2.8rem;height: 1.866666rem;}
+		.listtail .fy_pic img{width: 100%;}
+		.listtail .fy_xx{display: flex;flex-direction: column;justify-content: space-between;width: 5.8rem;height: 1.866666rem;margin-left: 0.266666rem;overflow: hidden;padding: 0.026666rem 0;}
+		.listtail .fy_xx span{margin-right: 0.133333rem;}
+	</style>
 		<header class="mui-bar mui-bar-nav fytail">
 		    <div class="">
 		    	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left fyxqfh"></a>
@@ -110,75 +119,8 @@
 		    <div class="qh_q" style="display: block;">
 		    <!--先租房-->
 		    	<ul class="fy_list listUl ss_bt">
-				 	<li class="listtail">
-				 		<div class="fy_pic">
-				 			<img src="../img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jfList">
-				 				<span class="jzjf">精装交付</span>
-				 				<span class="jzdj">定金</span>
-				 			</p>
-				 			<p class="dj">
-				 				<!--<s>7.5<i>元/m2/天</i></s>-->
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
-				 	<li class="zx"></li>
-				 	<li class="listtail">
-				 		<div class="fy_pic">
-				 			<img src="../img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jfList">
-				 				<span class="jzjf">精装交付</span>
-				 				<span class="jzdj">定金</span>
-				 			</p>
-				 			<p class="dj">
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
-				 	<li class="zx"></li>
-				 	<li class="listtail">
-				 		<div class="fy_pic">
-				 			<img src="../img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jfList">
-				 				<span class="jzjf">精装交付</span>
-				 				<span class="jzdj">定金</span>
-				 			</p>
-				 			<p class="dj">
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
-				 	<li class="zx"></li>
-				 	<li class="listtail">
-				 		<div class="fy_pic">
-				 			<img src="../img/fypic.png" alt="" />
-				 		</div>
-				 		<div class="fy_xx">
-				 			<p class="lp">建外SOHO</p>
-				 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-				 			<p class="jfList">
-				 				<span class="jzjf">精装交付</span>
-				 				<span class="jzdj">定金</span>
-				 			</p>
-				 			<p class="dj">
-				 				<span>6.5<i>元/m2/天</i></span>
-				 			</p>
-				 		</div>
-				 	</li>
-				 </ul>
+				 	
+				</ul>
 		    </div>
 		    <h1 style="text-align: center;font-size: 18px;">查看更多</h1>
 		    
@@ -214,6 +156,7 @@
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?ak=pTHixzeMKbBbtNwycGsv47DuGjqEOgQw&v=2.0"></script>
+		<script src="../js/lib/app_config.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 		(function(){
 			var le=0;
@@ -246,92 +189,64 @@
 					tabSp[i].onclick = function(){
 						for(var j=0; j<tabSp.length; j++){
 							tabSps[j].className = '';
-							$('.qh_q').eq(j).css('display','none');
+//							$('.qh_q').eq(j).css('display','none');
 						}
 						tabSps[index].className = 'active';	
-						$('.qh_q').eq(index).css('display','block');
+//						$('.qh_q').eq(index).css('display','block');
 					}
 				})(i)
+			}
+			//楼盘详情切换菜单
+			function lxqh(){//类型切换
+				
 			}
 			
 			mui.init();
 			var data=[];
-			
+			var lp_str = '';//模板字符
+			detailDataHouse();
 			/*楼盘数据*/
 			function  detailDataHouse(){
-			mui.ajax('http://116.62.68.26:8080/yhcms/web/lpjbxx/getZdLpxq.do',{
-				data:{
-					"parameters":{"building_id":"3089","curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
-					"foreEndType":2,
-					"code":"30000002"
-					},
-				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
-				timeout:10000,//超时时间设置为10秒；
-				headers:{'Content-Type':'application/json'},	              
-				success:function(data){
-					if(data.success){
-						//判断页数   1和其他
-						//筛选条件不同   选择的数组也不一样
-						//房源数据   数组
-						if(data.length==0){
-							data=data.data.houses;
-						}else{
-							var dataDe=	data.data.houses;
-							for(var i=0;i<dataDe.length;i++){
-								data[data.length+1]=dataDe[i];
-							}
-						}
-						 
-						//遍历数组
-						var htmlJson="";
-							for(var i=0;i<data.length;i++){
-								//拼接html 判断是  现租房  还是预租房
-								if(!"".equals(htmlJson)){
-									htmlJson+="<li class='zx'></li>";
+				mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
+					data:{
+						"parameters":{
+							"building_id":"3089",
+							"curr_page":1,
+							"items_perpage":"5",
+							"area":"写字楼",
+							"real":1
+						},
+						"foreEndType":2,
+						"code":"30000002"
+						},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						if(data.success){
+							var lp_data = data.data.houses;
+							console.log(lp_data);
+							for (var i=0; i<lp_data.length; i++) {
+								if(lp_data[i].fjzt == ''){
+									lp_str = '<li class="listtail"><div class="fy_pic"><img src="../img/1.jpg" alt="" /></div><div class="fy_xx"><p class="zdh">A-0806</p><p class="md_price"><span class="d_price">8.0&nbsp;&nbsp;元/m²/天</span><span class="m_price">81845&nbsp;&nbsp;元/m²/月</span></p><p class="qt"><span>336.35m²</span><span>37~100个工位</span><span>空房装修中</span></p></div></li><li class="zx"></li>';
+								}else{
+									lp_str = '<li class="listtail"><div class="fy_pic"><img src="../img/1.jpg" alt="" /></div><div class="fy_xx"><p class="zdh">A-0806</p><p class="md_price"><span class="d_price">8.0&nbsp;&nbsp;元/m²/天</span><span class="m_price">81845&nbsp;&nbsp;元/m²/月</span></p><p class="qt"><span>336.35m²</span><span>37~100个工位</span><span>空房装修中</span></p></div></li><li class="zx"></li>';
 								}
-								htmlJson+='<li class="listtail">';
-				 		             htmlJson  +='<div class="fy_pic">'
-				 			          htmlJson  +='<img src="http://47.92.145.21:81/'+data[i].housing_icon+'" alt="" />'
-				 		              htmlJson  +='</div>'
-				 		              htmlJson  +='<div class="fy_xx">'
-				 			           htmlJson  +='<p class="lp">'
-				 			          htmlJson  +=data[i].zdh+" "+data[i].fybh
-				 			          htmlJson  +='</p>'
-							 		  htmlJson  +='<p class="mjwz">'
-							 		   htmlJson  +=data[i].housing_area
-							 		   htmlJson  +='m2</p>'
-							 		  htmlJson  +='<p class="jfList">'
-				 		    
-						 			   htmlJson  +='<span class="jzjf">'
-						 			   htmlJson  +=data[i].fjzt
-						 			   htmlJson  +='</span>'
-						 			   htmlJson  +='<span class="jzdj">'
-						 			   htmlJson  +=data[i].workstation
-						 			   htmlJson  +='</span>'
-				 			           htmlJson  +='</p>'
-				 			           htmlJson  +='<p class="dj">'
-				 			          htmlJson  +='<span>'
-				 			           htmlJson  +=data[i].daily_price
-				 			           htmlJson  +='<i>元/m2/天</i></span>'
-				 			          htmlJson  +='</p>'
-				 		               htmlJson  +='</div>'
-				 	                   htmlJson  +='</li>';
-							}						
-						
-					}else{
-						mui.alert(data.message);
+							}
+							$('.ss_bt').append(lp_str);
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
 					}
-					
-				},
-				error:function(xhr,type,errorThrown){
-					//异常处理；
-					console.log(type);
-				}
-			});
+				});
 			}
 			function  detailData(){
-			mui.ajax('http://116.62.68.26:8080/yhcms/web/lpjbxx/getZdLpxq.do',{
+			mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
 				data:{
 					"parameters":{"building_id":"3003","curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
 					"foreEndType":2,
@@ -467,17 +382,17 @@
         });
           }
       
-     function   getPoi(keyword, bind){
-          const that = this;
-          var options = {
-              pageCapacity: 100,
-              onSearchComplete: (results)=>{
-                  that[bind] = results.getNumPois();
-              }
-          };
-          var local = new BMap.LocalSearch(this.allmap, options);
-          local.search(keyword);
-      }
+//   function   getPoi(keyword, bind){
+//        const that = this;
+//        var options = {
+//            pageCapacity: 100,
+//            onSearchComplete: (results)=>{
+//                that[bind] = results.getNumPois();
+//            }
+//        };
+//        var local = new BMap.LocalSearch(this.allmap, options);
+//        local.search(keyword);
+//    }
 		</script>
 	</body>
 
