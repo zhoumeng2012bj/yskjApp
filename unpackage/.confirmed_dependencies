@@ -1,0 +1,304 @@
+{
+	"sy.html": {
+		"refer": [
+			"page/acreage_mj.html",
+			"page/enterprise_qy.html",
+			"page/loupan_detail.html",
+			"page/broker.html",
+			"page/steward.html",
+			"page/login.html",
+			"page/fyTail.html"
+		],
+		"resources": [
+			"img/2.png",
+			"img/tab_bg1.png",
+			"js/lib/castapp.js",
+			"img/yzwt.png",
+			"img/qy_icon.png",
+			"img/mj_icon.png",
+			"css/sy.css",
+			"img/sjfw.png",
+			"img/jjr_icon.png",
+			"img/gj_icon.png",
+			"img/tt_icon.png",
+			"img/tab_bg.png",
+			"js/lib/flexible_css.js",
+			"css/style.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf"
+		]
+	},
+	"page/acreage_mj.html": {
+		"resources": [
+			"css/acreage_mj.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/fwt.png",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"qyhl.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"img/tab_bg1.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/huityuanicon.png",
+			"js/lib/flexible.js",
+			"css/qiYeHuLian.css",
+			"img/qiyehulian.png",
+			"js/lib/app_config.js",
+			"img/tab_bg.png",
+			"img/qiyefuwutitle.png",
+			"img/beijignicon.png",
+			"img/dacheghezuo.png"
+		],
+		"refer": []
+	},
+	"page/loupan_detail.html": {
+		"resources": [
+			"img/images/4.png",
+			"css/fyxq.css",
+			"js/lib/castapp.js",
+			"img/images/1.png",
+			"img/images/3.png",
+			"img/fypic.png",
+			"css/loupan_detail.css",
+			"img/images/2.png"
+		],
+		"refer": []
+	},
+	"page/broker.html": {
+		"resources": [
+			"img/his_cs.png",
+			"img/his_js.png",
+			"img/his_pm.png",
+			"css/broker.css"
+		],
+		"refer": []
+	},
+	"page/steward.html": {
+		"resources": [
+			"img/gj_h.png",
+			"img/ldd.png",
+			"css/steward.css",
+			"img/qfw.png",
+			"img/qth.png",
+			"img/yzs.png"
+		],
+		"refer": []
+	},
+	"page/login.html": {
+		"resources": [
+			"js/lib/form_yz.js",
+			"js/lib/sha1.js",
+			"css/login.css",
+			"js/lib/md5.js",
+			"img/login_pic.png"
+		],
+		"refer": []
+	},
+	"page/enterprise_qy.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/enterprise.css",
+			"css/mui.min.css",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"index.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"sy.html",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"qyhl.html",
+			"sy.html",
+			"wd.html",
+			"jxfy.html",
+			"fwsc.html"
+		]
+	},
+	"jxfyList.html": {
+		"resources": [
+			"css/jxfyList.css",
+			"css/sy.css",
+			"js/lib/app_config.js"
+		],
+		"refer": []
+	},
+	"wd.html": {
+		"resources": [
+			"img/sz.png",
+			"img/fav.png",
+			"img/per.png",
+			"img/head_img.png",
+			"img/wd_bg.png",
+			"css/wd.css",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
+		],
+		"refer": []
+	},
+	"jxfy.html": {
+		"resources": [
+			"jxfyList.html",
+			"fonts/mui.ttf",
+			"css/jxfy.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"jxfyList.html"
+		]
+	},
+	"page/fyTail.html": {
+		"resources": [
+			"img/fav2.png",
+			"css/fyxq.css",
+			"js/lib/castapp.js",
+			"img/shoucdianhuobg.png",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"fwsc.html": {
+		"resources": [
+			"js/lib/jquery-1.10.2.min.js",
+			"css/fwsc.css"
+		],
+		"refer": [
+			"page/fitup.html",
+			"page/tax.html",
+			"page/added.html",
+			"page/financial.html"
+		]
+	},
+	"page/fitup.html": {
+		"resources": [
+			"img/main_list_img2.png",
+			"img/main_list_img3.png",
+			"img/zx_bt.png",
+			"img/ul_img5.png",
+			"img/ul_img1.png",
+			"img/nav_img.png",
+			"img/main_list_img1.png",
+			"img/ul_img6.png",
+			"img/zxlc_pic.png",
+			"img/ul_img7.png",
+			"img/nav_img2.png",
+			"img/ul_img.png",
+			"img/nav_img1.png",
+			"img/main_list_img5.png",
+			"img/ul_img2.png",
+			"img/zx_bt2.png",
+			"img/main_list_img4.png",
+			"img/nav_img3.png",
+			"css/mui.min.css",
+			"img/ul_img3.png",
+			"img/zx_h.png",
+			"css/fitup_dz.css",
+			"img/main_bot_pic.png",
+			"img/zx_center.png",
+			"img/zx_bt1.png",
+			"img/ul_img4.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		],
+		"refer": []
+	},
+	"page/tax.html": {
+		"resources": [
+			"css/mui.min.css",
+			"css/gongShangShuiWu.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
+		],
+		"refer": []
+	},
+	"page/added.html": {
+		"resources": [
+			"css/addZhiFuWu.css",
+			"img/addfwuxiao1.png",
+			"img/addfwuxiao5.png",
+			"img/addzhifwu4.png",
+			"img/addfwuxiao6.png",
+			"img/addzhifwu3.png",
+			"img/addfwuxiao4.png",
+			"img/addfwuxiao2.png",
+			"img/addzhifwu2.png",
+			"css/mui.min.css",
+			"img/addzhifwu.png",
+			"img/addyewuimg.png",
+			"img/addfwuxiao3.png",
+			"fonts/mui.ttf",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"page/liJiShenQing.html"
+		]
+	},
+	"page/financial.html": {
+		"resources": [
+			"img/xq_2.png",
+			"css/mui.min.css",
+			"img/xq_3.png",
+			"css/financial.css",
+			"img/jt_titbg.png",
+			"img/xq_1.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"page/liJiShenQing.html"
+		]
+	},
+	"page/liJiShenQing.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/liJiShenQ.css",
+			"js/mui.min.js",
+			"js/lib/sy.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css"
+		],
+		"refer": []
+	}
+}

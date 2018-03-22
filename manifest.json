@@ -374,7 +374,8 @@
 					"img/beijignicon.png",
 					"img/qiyehulian.png",
 					"js/lib/app_config.js",
-					"img/tab_bg.png"
+					"img/tab_bg.png",
+					"img/dacheghezuo.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -699,7 +700,11 @@
 					"css/liJiShenQ.css",
 					"css/fast_zc.css",
 					"js/mui.min.js",
-					"js/lib/sy.js"
+					"js/lib/sy.js",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -811,9 +816,13 @@
 					"img/addfwuxiao2.png",
 					"img/addzhifwu2.png",
 					"img/addzhifwu.png",
-					"img/addfwuxiao3.png"
+					"img/addfwuxiao3.png",
+					"fonts/mui.ttf",
+					"js/lib/jquery-1.10.2.min.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/liJiShenQing.html"
+				],
 				"priority": 0
 			},
 			"page/fitup.html": {
@@ -845,7 +854,10 @@
 					"img/ul_img4.png",
 					"css/mui.min.css",
 					"js/lib/jquery-1.10.2.min.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"js/lib/flexible_css.js",
+					"js/mui.min.js",
+					"js/lib/flexible.js"
 				],
 				"refer": [],
 				"priority": 0
