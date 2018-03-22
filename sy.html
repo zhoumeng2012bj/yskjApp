@@ -139,14 +139,14 @@
 					<p class="yzwt_tip">请留下您的联系方式，我们会及时与您联系，为您提供专属服务</p>
 					<form class="mui-input-group">
 					    <div class="mui-input-row">
-					        <input type="text" class="mui-input-clear yzwtPhone" placeholder="请输入手机号" onchange="checknull()">
+					        <input type="text" class="mui-input-clear yzwtPhone" maxlength="11"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号" onchange="checknull()">
 					    </div>
 					    <div class="mui-input-row">
 					        <input type="text" class="mui-input-clear yazmcode" placeholder="请输入验证码" onchange="checknull()">
 					    </div>
 					    <div class="btn_box">
 					    	<div class="hqyzm" onclick="huoqvyanzm()">获取验证码</div>
-						    <button type="button" onclick="tijiao()" class="mui-btn mui-btn-primary mui-btn-outlined btn"disabled="disabled" id="tijiao">立即委托</button>
+						    <button type="button" onclick="tijiao()" class="mui-btn mui-btn-primary mui-btn-outlined btn"disabled="disabled" id="tijiaobtn">立即委托</button>
 					    </div>
 					</form>
 					
@@ -435,9 +435,9 @@
 				var phone = $('.yzwtPhone').val();
 				if(phone!=""&&code!="")
 				{
-					$('#tijiao').attr("disabled",false);  
+					$('#tijiaobtn').attr("disabled",false);  
 				}else{
-					$('#tijiao').attr("disabled",true);  
+					$('#tijiaobtn').attr("disabled",true);  
 				}
 			}
 			
@@ -490,6 +490,7 @@
 					mui.alert("手机号或验证码为空");
 					return false;
 				}
+				
 				mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 					data:{
 						'code':code,
