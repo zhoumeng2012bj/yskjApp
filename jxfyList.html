@@ -202,6 +202,7 @@
 			
 			//筛选下面的改变时的样式(闭包)
 			var lirm = $('.xiaokuai');
+			var tag = "mianjiqv";
 			for(var i=0;i<lirm.length;i++){
 				(function(index){
 					//color: #2a72d8;background-color: #d9effd;
@@ -209,26 +210,61 @@
 						for(var j=0;j<lirm.length;j++){
 							lirm[j].className = 'xiaokuai';
 						}
-						lirm[index].className = "xiaokuaisss xiaokuai";
-						var strs = lirm[index].innerText.split("-");
-						area = [parseInt(strs[0]),parseInt(strs[1])];
+						if(tag == "mianjiqv"){
+							lirm[index].className = "xiaokuaisss xiaokuai";
+							var strs = lirm[index].innerText.split("-");
+							area = [parseInt(strs[0]),parseInt(strs[1])];
+							tag = index;
+						}else{
+							if(tag == index){
+								lirm[index].className = "xiaokuai";
+								area = '';
+								tag = "mianjiqv";
+							}else{
+								lirm[index].className = "xiaokuaisss xiaokuai";
+								var strs = lirm[index].innerText.split("-");
+								area = [parseInt(strs[0]),parseInt(strs[1])];
+								tag = index;
+							}
+						
+						}
 					}
 				})(i)
 			}
 			var zujin = $('.xiaokzujin');
+			var tagzj = 'zujinxx';
 			for(var i=0;i<zujin.length;i++){
 				(function(index){
 					zujin[i].onclick = function(){
 						for(var j=0;j<zujin.length;j++){
 							zujin[j].className = 'xiaokzujin';
 						}
-						zujin[index].className = "xiaokuaisss xiaokzujin";
-						var strs = zujin[index].innerText.split("-");
-						price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+						
+						if(tagzj == "zujinxx"){
+							zujin[index].className = "xiaokuaisss xiaokzujin";
+							var strs = zujin[index].innerText.split("-");
+							price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+							tagzj = index;
+						}else{
+							if(tagzj == index){
+								zujin[index].className = "xiaokuai";
+								price_dj = '';
+								tagzj = "zujinxx";
+							}else{
+								zujin[index].className = "xiaokuaisss xiaokzujin";
+								var strs = zujin[index].innerText.split("-");
+								price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+								tagzj = index;
+							}
+						
+						}
 					}
 				})(i)
 			}
 			var cq = $('.xiaokchuaq');
+			var tagcq = "cqss";
+			var chaqshuz = [];
+			var chanqvdsuz = [];
 			for(var i=0;i<cq.length;i++){
 				(function(index){
 					cq[i].onclick = function(){
@@ -236,9 +272,33 @@
 							cq[j].className = 'xiaokchuaq';
 						}
 						cq[index].className = "xiaokuaisss xiaokchuaq";
-						
 						var strs = cq[index].innerText;
 						chqxz = strs;
+						/*chanqvdsuz.push(index);
+						
+						if(index == 0){
+							chaqshuz.push('写字楼');
+						}
+						if(index == 1){
+							chaqshuz.push('公寓');
+						}
+						if(index == 2){
+							chaqshuz.push('商务楼');
+						}
+						if(index == 3){
+							chaqshuz.push('商业');
+						}
+						for(var k=0;k<chanqvdsuz.length;k++){
+							cq[chanqvdsuz[k]].className = "xiaokuaisss xiaokchuaq";
+						}
+						console.log(chaqshuz);
+						for(var i=0;i<chaqshuz.length;i++){
+							if(i == chaqshuz.length-1){
+								chqxz += 'chaqshuz[i]';
+							}else{
+								chqxz += 'chaqshuz[i],';
+							}
+						}*/
 					}
 				})(i)
 			}
@@ -254,6 +314,7 @@
 			$('.czsyhk').click(function(){
 				xial = 1;
 				jiangejt = 'D';
+				chanqvdsuz = [];
 				qcqitades();
 				chushishij();
 				$('.listUl').html('');
