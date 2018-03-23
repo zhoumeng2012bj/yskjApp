@@ -151,6 +151,11 @@
 			var chqxz = '';
 			var jiangejt = "D";
 			var search = '';
+			var district = '';
+			var fdcode = '';
+			var lineid = '';
+			var station = '';
+
 			/**
 			 * 下拉刷新具体业务实现
 			 */
@@ -158,7 +163,7 @@
 				setTimeout(function() {
 					xial = 1;
 					$('.listUl').html('');
-					dthqdata(area,price_dj,chqxz,jiangejt,search);
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					//这块是下拉刷新添加数据
@@ -179,7 +184,7 @@
 			
 			function pullupRefresh() {
 				setTimeout(function() {
-					dthqdata(area,price_dj,chqxz,jiangejt,search);
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					/*for (var i = cells.length, len = i + 20; i < len; i++) {
@@ -311,7 +316,7 @@
 				xial = 1;
 				jiangejt = 'D';
 				$('.listUl').html('');
-				dthqdata(area,price_dj,chqxz,jiangejt,search);
+				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 			});
 			//重置事件
 			$('.czsyhk').click(function(){
@@ -321,7 +326,7 @@
 				qcqitades();
 				chushishij();
 				$('.listUl').html('');
-				dthqdata(area,price_dj,chqxz,jiangejt,search);
+				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 			});
 			
 			//筛选的重置条件
@@ -410,13 +415,16 @@
 			
 			
 	/*		动态数据*/
-			function dthqdata(area,price_dj,chqxz,jiagesanshu,search){
+			function dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiagesanshu,search){
+				console.log(district);
+				console.log(fdcode);
+				console.log(lineid);
+				console.log(station);
 				console.log(area);
 				console.log(price_dj);
 				console.log(chqxz);
 				console.log(jiagesanshu);
 				console.log(search);
-				alert(123456);
 				console.log(xial);
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				data:{
@@ -425,10 +433,10 @@
 							"search_keywork":search,
 							"district":"",
 							"business":"",
-							"district1":"",
-							"business1":"",
-							"line_id":"",
-							"station_id":"",
+							"district1":district,
+							"business1":fdcode,
+							"line_id":lineid,
+							"station_id":station,
 							"area":area,
 							"price_dj":price_dj,
 							"label":"",
@@ -444,44 +452,48 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
-						alert(123);
-						$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
-						$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
-						mui('#pullrefresh').pullRefresh().setStopped(false);
-						var index = plus.webview.getLaunchWebview();
-						zhezhaoxiaoshi();
-						mui.fire(index, "weizhi1",{
-						    idxid:4//1位置
-						})
-						//点击位置遮罩层取消遮罩层要改变样式
-						var main = plus.webview.getWebviewById('jxfy.html');
-						mui.fire(main, "saixuanfh",{
-						    idxsxfh:1//1位置
-						})
-						xial++;
-						var data = data.data;
-						var string = '';
-						for(var i=0;i<data.length;i++){
-							if(data[i].decoration_level == ''){
-								if(data[i].djbsh == 1){
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+						if(data.data.length == 0){
+							mui.alert('抱歉，暂无符合条件的房源！');
+						}else{
+							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
+							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
+							mui('#pullrefresh').pullRefresh().setStopped(false);
+							var index = plus.webview.getLaunchWebview();
+							zhezhaoxiaoshi();
+							mui.fire(index, "weizhi1",{
+							    idxid:4//1位置
+							})
+							//点击位置遮罩层取消遮罩层要改变样式
+							var main = plus.webview.getWebviewById('jxfy.html');
+							mui.fire(main, "saixuanfh",{
+							    idxsxfh:1//1位置
+							})
+							xial++;
+							var data = data.data;
+							var string = '';
+							for(var i=0;i<data.length;i++){
+								if(data[i].decoration_level == ''){
+									if(data[i].djbsh == 1){
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}
+	
 								}else{
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									if(data[i].djbsh == 1){
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+									}
+	
 								}
-
-							}else{
-								if(data[i].djbsh == 1){
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-								}else{
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-								}
-
+								
+								/*document.querySelector('.fypics').innerHTML=string;*/
+								$('.listUl').append(string);
 							}
-							
-							/*document.querySelector('.fypics').innerHTML=string;*/
-							$('.listUl').append(string);
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
 						}
-						mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
+						
 					}else{
 						mui.alert(data.msg);
 					}
@@ -730,10 +742,10 @@
 				qcqitades();
 				if(idx == 5){
 					jiangejt = 'P1';
-					dthqdata(area,price_dj,chqxz,jiangejt,search);
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
 					jiangejt = 'P2';
-					dthqdata(area,price_dj,chqxz,jiangejt,search);
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 			});
 			
@@ -749,10 +761,10 @@
 				qcqitades();
 				if(idx == 7){
 					jiangejt = 'A1';
-					dthqdata(area,price_dj,chqxz,jiangejt,search);
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
 					jiangejt = 'A2';
-					dthqdata(area,price_dj,chqxz,jiangejt,search);
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 			});
 			
@@ -763,7 +775,17 @@
 				search = lpname;
 				$('.listUl').html('');
 				xial = 1;
-				dthqdata(area,price_dj,chqxz,jiangejt,search);
+				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+			});
+			
+			//监听搜索页面的取消事件
+			window.addEventListener("ssqvxiaofanhui", function (e) {
+			    //获得事件参数
+			    var qvx = e.detail.qvx;
+				search = '';
+				xial = 1;
+				$('.listUl').html('');
+				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 			});
 			/*function jiangefangfa(jiagesanshu){
 				$('.listUl').html('');
@@ -910,7 +932,7 @@
 						if(data.success){
 							var xzqy_Data = data.data.xzfq;
 							for (var i=0; i<xzqy_Data.length; i++) {
-								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].id+','+i+')">'+xzqy_Data[i].fdname+'</li>';
+								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+i+')">'+xzqy_Data[i].fdname+'</li>';
 								$('#sel3').append(xzqy_str);
 							}
 						}else{
@@ -923,6 +945,17 @@
 				});
 			}
 			function clk_xz2(id,q){
+				xial = 1;
+				$('.listUl').html('');
+				if(q == -1){
+					fdcode = '';
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				}else{
+					district = '';
+					fdcode = id;
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				}
+				qxzzcdff();
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
@@ -954,6 +987,7 @@
 				});
 			}
 			function subway1(id,q){
+				lineid = id;
 				$('#sel2 li').css({'color':'#666666'});
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
 				subway_erji(id);
@@ -994,9 +1028,22 @@
 				});
 			}
 			function subway2(id,q){//控制最后一级变色及参数传递
+				xial = 1;
+				$('.listUl').html('');
+				if(q == -1){
+					station = '';
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				}else{
+					lineid = '';
+					station = id;
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				}
+				qxzzcdff();
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
+			
+			
 		</script>
 	</body>
 

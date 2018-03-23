@@ -22,7 +22,7 @@
 				<span class="mui-icon mui-icon-search sousudubiao"></span>
 				<span class="sousuwenzi"><input type="text" oninput="soushuo()" onfocus="chxian()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
 			</div>
-			<a class="mui-action-back mui-pull-left qvxiao">取消</a>
+			<a class="qvxiao" onclick="qvxiaoss()">取消</a>
 		</header>
 		<div class="mui-content">
 			<!--暂无搜索历史-->
@@ -47,15 +47,7 @@
 					</p>
 					<p id="">
 						<ul class="muhusslipa">
-					        <li class="">
-					            <a class="">苹果</a>
-					        </li>
-					        <li class="">
-					            <a class="">三鑫</a>
-					        </li>
-					        <li class="">
-					            <a class="">华为</a>
-					        </li>
+					        
 					    </ul>
 					</p>
 				</div>
@@ -65,6 +57,22 @@
 		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			var stat = 1;
+			if(localStorage.getItem("sousuolsh")){
+				$('.suosukongbaiye').css("display","none");
+				$('.muhusousous').css("display","none");
+				$('.lslist').css("display","block");
+				stat = 2;
+				$('.muhusslipa').html('');
+				var string = '';
+				var arraylis = JSON.parse(localStorage.getItem('sousuolsh')).reverse();
+				for(var i=0;i<arraylis.length;i++){
+					console.log(arraylis[i].name);
+					string = '<li class=""><a>'+arraylis[i].name+'</a></li>';
+					$('.muhusslipa').append(string);
+				}
+				lishilist();
+			}
 			//
 			window.addEventListener("jxfychudezhiwed", function (e) {
 			    //获得事件参数
@@ -75,56 +83,157 @@
 			});
 			//搜索框的获取焦点事件
 			function chxian(){
-				$('.suosukongbaiye').css("display","none");
-				$('.muhusousous').css("display","block");
+				if(stat == 1){
+					$('.suosukongbaiye').css("display","none");
+					$('.muhusousous').css("display","block");
+				}else{
+					$('.suosukongbaiye').css("display","none");
+					$('.muhusousous').css("display","none");
+					$('.lslist').css("display","block");
+					if(localStorage.getItem("sousuolsh")){
+						$('.suosukongbaiye').css("display","none");
+						$('.muhusousous').css("display","none");
+						$('.lslist').css("display","block");
+						stat = 2;
+						$('.muhusslipa').html('');
+						var string = '';
+						var arraylis = JSON.parse(localStorage.getItem('sousuolsh')).reverse();
+						for(var i=0;i<arraylis.length;i++){
+							console.log(arraylis[i].name);
+							string = '<li class=""><a>'+arraylis[i].name+'</a></li>';
+							$('.muhusslipa').append(string);
+						}
+						lishilist();
+					}
+				}
+				
 			}
 			//搜索的列表数据
 			function soushuo(){
 				var lpname = $('.suosinput').val();
-				mui.ajax(Interface_url+'/yhcms/web/jcsj/getLp.do',{
-					data:{
-						'lpname':lpname
-					},
-					dataType:'json',//服务器返回json格式数据
-					type:'post',//HTTP请求类型
-					timeout:10000,//超时时间设置为10秒；
-					headers:{'Content-Type':'application/json'},	              
-					success:function(data){
-						//服务器返回响应，根据响应结果，分析是否登录成功；
-						if(data.success){
-							alert(22222);
-							$('.muhusslipa').html('');
-							var data = data.data;
-							var string = '';
-							for(var i=0;i<data.length;i++){
-								console.log(data[i].topic);
-								string = '<li class=""><a>'+data[i].topic+'</a></li>';
-								$('.muhusslipa').append(string);
+				if(lpname == ''){
+					$('.muhusslipa').html('');
+					chxian();
+				}else{
+					$('.suosukongbaiye').css("display","none");
+					$('.muhusousous').css("display","block");
+					$('.lslist').css("display","none");
+					mui.ajax(Interface_url+'/yhcms/web/jcsj/getLp.do',{
+						data:{
+							'lpname':lpname
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.success){
+								$('.muhusslipa').html('');
+								var data = data.data;
+								var string = '';
+								for(var i=0;i<data.length;i++){
+									console.log(data[i].topic);
+									string = '<li class=""><a>'+data[i].topic+'</a></li>';
+									$('.muhusslipa').append(string);
+								}
+								//搜索列表的跳转
+								$('.muhusslipa li').click(function(){
+									var array = [];
+									var obj = {name:$(this).text(),time:Date.parse(new Date())};
+									if(localStorage.getItem("sousuolsh")){
+										array = JSON.parse(localStorage.getItem('sousuolsh'));
+										for(var i=0;i<array.length;i++){
+											if(array[i].name == $(this).text()){
+												array.splice(i,1) 
+											}
+										}
+										array.push(obj);
+										if(array.length>15){
+											array = array.slice(1);
+											localStorage.setItem('sousuolsh',JSON.stringify(array));
+										}else{
+											localStorage.setItem('sousuolsh',JSON.stringify(array));
+										}
+										
+									}else{
+										array.push(obj);
+										localStorage.setItem('sousuolsh',JSON.stringify(array));
+									}
+									mui.back();
+									//搜索列表的跳转并传递参数
+									var main = plus.webview.getWebviewById('jxfy.html');
+									mui.fire(main, "sousuochuac",{
+									    lpname:$(this).text()
+									})
+									var main1 = plus.webview.getWebviewById('jxfyList');
+									mui.fire(main1, "sousuochuac",{
+									    lpname:$(this).text()
+									})
+								});
+							}else{
+								mui.alert(data.msg);
 							}
-							//搜索列表的跳转
-							$('.muhusslipa li').click(function(){
-								mui.back();
-								//搜索列表的跳转并传递参数
-								var main = plus.webview.getWebviewById('jxfy.html');
-								mui.fire(main, "sousuochuac",{
-								    lpname:$(this).text()
-								})
-								var main1 = plus.webview.getWebviewById('jxfyList');
-								mui.fire(main1, "sousuochuac",{
-								    lpname:$(this).text()
-								})
-							});
-						}else{
-							mui.alert(data.msg);
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
 						}
-					},
-					error:function(xhr,type,errorThrown){
-						//异常处理；
-						console.log(type);
-					}
-				});
+					});
+				}
+				
 			}
 			
+			//取消的点击事件
+			function qvxiaoss(){
+				$('.suosinput').val('');
+				mui.back();
+				var main = plus.webview.getWebviewById('jxfy.html');
+				mui.fire(main, "ssqvxiaofanhui",{
+				    qvx:1
+				})
+				var main = plus.webview.getWebviewById('jxfyList');
+				mui.fire(main, "ssqvxiaofanhui",{
+				    qvx:1
+				})
+			}
+			
+			//给历史搜索的数据添加点击事件
+			function lishilist(){
+				$('.muhusslipa li').click(function(){
+				var array = [];
+				var obj = {name:$(this).text(),time:Date.parse(new Date())};
+				if(localStorage.getItem("sousuolsh")){
+					array = JSON.parse(localStorage.getItem('sousuolsh'));
+					for(var i=0;i<array.length;i++){
+						if(array[i].name == $(this).text()){
+							array.splice(i,1) 
+						}
+					}
+					array.push(obj);
+					if(array.length>15){
+						array = array.slice(1);
+						localStorage.setItem('sousuolsh',JSON.stringify(array));
+					}else{
+						localStorage.setItem('sousuolsh',JSON.stringify(array));
+					}
+					
+				}else{
+					array.push(obj);
+					localStorage.setItem('sousuolsh',JSON.stringify(array));
+				}
+				mui.back();
+				//搜索列表的跳转并传递参数
+				var main = plus.webview.getWebviewById('jxfy.html');
+				mui.fire(main, "sousuochuac",{
+				    lpname:$(this).text()
+				})
+				var main1 = plus.webview.getWebviewById('jxfyList');
+				mui.fire(main1, "sousuochuac",{
+				    lpname:$(this).text()
+				})
+			});
+			}
 			
 			
 			
