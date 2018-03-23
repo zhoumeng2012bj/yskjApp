@@ -22,12 +22,12 @@
 		<div class="mui-content content" style="padding-top: 0!important;">
 			<div class="box_i">
 		    	<div class="mui-input-row inp tip_b">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" maxlength="11" id="tel">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11" id="tel">
 			    	<span class="hqyzm">获取验证码</span>
 			    	<p class="err_tip tip1"></p>
 	    		</div>
 	    		<div class="mui-input-row inp tip_b">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" maxlength="6" id="hqyzm">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="6" id="hqyzm">
 	    		    <p class="err_tip tip2"></p>
 	    		</div>
 		    </div>

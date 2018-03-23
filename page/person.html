@@ -45,11 +45,11 @@
 		    		<span class="p_tip gsname">添加渠道公司</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
-		    	<li id="ssxm" class="tolink">
+		    	<!--<li id="ssxm" class="tolink">
 		    		<span class="p_nane">所属项目</span>
 		    		<span class="p_tip xmname">添加所属项目</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
-		    	</li>
+		    	</li>-->
 		    </ul>
 		    <ul class="per_news">
 		    	<li id="sfrz" class="tolink">
@@ -66,7 +66,7 @@
 			checkSubmit();
 			})();
 			mui.init()
-			var toUrl = ['../page/add_name.html','../page/gh_tel.html','../page/add_sfz.html','../page/qdgs.html','../page/qdgs.html','../page/sfrz.html']
+			var toUrl = ['../page/add_name.html','../page/gh_tel.html','../page/add_sfz.html','../page/qdgs.html','../page/sfrz.html']
 			for (var i=0; i<$('.tolink').length; i++) {
 				(function(index){
 					$('.tolink').eq(index).click(function(){
@@ -102,6 +102,7 @@
 			
 			function checkSubmit(){
 				if(JSON.parse(localStorage.getItem('cookxs_yh'))){
+					console.log(JSON.parse(localStorage.getItem('cookxs_yh')));
 						mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
 						data:{
 							"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
@@ -128,9 +129,9 @@
 								if(gsname!=null&&gsname!=""){
 									$(".gsname").html(gsname);	
 								}
-								if(xmname!=null&&xmname!=""){
+								/*if(xmname!=null&&xmname!=""){
 								    $(".xmname").html(xmname);	
-								}
+								}*/
 								if(card!=null&&card!=""){
 									$(".card").html(card);	
 								}

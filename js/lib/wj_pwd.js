@@ -225,7 +225,19 @@ function checkoutyzm(code){
 //提交
 $('#btn1').click(function(){
 	if(telnumber !='' && yzm !='' && pwd != '' && pwd1 != ''){
-		checkoutyzm(yzm);
+		if(pwd.length<6||pwd1.length<6){
+						mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+						return;
+			}else{
+					if(pwd == pwd1){
+						checkoutyzm(yzm);
+					}else{
+						mui.toast('两次输入密码不一致',{ duration:'3000', type:'div' });
+						return;
+			        }
+		}
+		
+		
 	}else{
 		mui.toast('请将信息填写完整',{ duration:'3000', type:'div' });
 	}
@@ -271,7 +283,6 @@ function hqyh_id(){
 		success:function(data){
 			if(data.success){
 				user_new = data.data;
-				alert(user_new.id)
 			}else{
 				return;
 			}
