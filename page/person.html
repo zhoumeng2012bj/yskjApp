@@ -120,19 +120,19 @@
 								var gsname=userData.gsname;
 								var xmname=userData.xmname;
 								var card=userData.card;
-								if(name!=null&&name!=""){
+								if(name!=null&&name!=""&&name!="null"){
 									$(".name").html(name);
 								}
 								if(phone!=null){
 									$(".phone").html(phone);	
 								}
-								if(gsname!=null&&gsname!=""){
+								if(gsname!=null&&gsname!=""&&gsname!="null"){
 									$(".gsname").html(gsname);	
 								}
 								/*if(xmname!=null&&xmname!=""){
 								    $(".xmname").html(xmname);	
 								}*/
-								if(card!=null&&card!=""){
+								if(card!=null&&card!=""&&card!="null"){
 									$(".card").html(card);	
 								}
 							}else{
