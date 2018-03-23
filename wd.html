@@ -24,6 +24,7 @@
 					<span class="dlcz">登录后可进行更多操作</span>
 					<span class="wrz" style="display: none;">未认证</span>
 					<span class="yrz" style="display: none;">已认证</span>
+					<span class="sh" style="display: none;">认证审核中</span>
 		    	</p>
 		    </h1>
 		</header>
@@ -80,7 +81,7 @@
 								//已登录
 							}else{
 								//未登录
-								$(".loClass").css("display","none");
+								
 							}
 						},
 						error:function(xhr,type,errorThrown){
@@ -89,7 +90,7 @@
 					});     
 					
 				}else{
-					$(".loClass").css("display","none");
+					
 				}
 			}
 			window.addEventListener('customEvent', function(event) {
@@ -220,6 +221,12 @@
 								$('.wrz').css('display','block');
 							}
 							if(userData.status2 == 1){
+								$('.dlcz').css('display','none');
+								$('.wrz').css('display','none');
+								$('.yrz').css('display','none');
+								$('.sh').css('display','block');
+							}
+							if(userData.status2 == 2){
 								$('.dlcz').css('display','none');
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','block');
