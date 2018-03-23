@@ -139,14 +139,14 @@
 					<p class="yzwt_tip">请留下您的联系方式，我们会及时与您联系，为您提供专属服务</p>
 					<form class="mui-input-group">
 					    <div class="mui-input-row">
-					        <input type="text" class="mui-input-clear yzwtPhone" maxlength="11"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号" onchange="checknull()">
+					        <input type="text" class="mui-input-clear yzwtPhone" maxlength="11"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号"  >
 					    </div>
 					    <div class="mui-input-row">
-					        <input type="text" class="mui-input-clear yazmcode" placeholder="请输入验证码" onchange="checknull()">
+					        <input type="text" class="mui-input-clear yazmcode" placeholder="请输入验证码"  >
 					    </div>
 					    <div class="btn_box">
 					    	<div class="hqyzm" onclick="huoqvyanzm()">获取验证码</div>
-						    <button type="button" onclick="tijiao()" class="mui-btn mui-btn-primary mui-btn-outlined btn"disabled="disabled" id="tijiaobtn">立即委托</button>
+						    <button type="button" onclick="tijiao()" class="mui-btn mui-btn-primary mui-btn-outlined btn" id="tijiaobtn">立即委托</button>
 					    </div>
 					</form>
 					
@@ -408,8 +408,9 @@
 			//获取验证密码倒计时
 			var tag = true;
 			var countdown=60; 
+			var isclosed=false;
 			function settime(obj) {
-			    if (countdown == 0) { 
+			    if (countdown == 0||isclosed) { 
 			    	tag = true;
 			        obj.html("获取验证码");
 			        countdown = 60; 
@@ -467,6 +468,7 @@
 							if(data.success){
 								mui.toast('验证码已发送',{ duration:'2000', type:'div' }) 
 								tag = false;
+								isclosed=false;
 								var obg = $('.hqyzm');
 								settime(obg);
 							}else{
@@ -485,12 +487,16 @@
 			function tijiao(){
 				var code = $('.yazmcode').val();
 				var phone = $('.yzwtPhone').val();
-				if(phone==""&&code=="")
+				if(phone=="")
 				{
-					mui.alert("手机号或验证码为空");
+					mui.alert("请输入手机号");
 					return false;
 				}
-				
+				if(code=="")
+				{
+					mui.alert("请输入验证码");
+					return false;
+				}
 				mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 					data:{
 						'code':code,
@@ -517,6 +523,7 @@
 										$('.yzwtPhone').val('');
 										$('.yazmcode').val('');
 										mui.alert('委托成功，我们将会与您联系');
+										isclosed=true;
 									}else{
 										mui.alert(data.message);
 									}
