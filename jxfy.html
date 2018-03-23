@@ -53,7 +53,6 @@
 				swipeBack:true //启用右滑关闭功能
 			});
 		  	$('.sousu').click(function(){
-				alert(6666);
 				mui.openWindow({ 
 					url:'page/search.html', //需要打开页面的url地址 
 					id:'search',  //需要打开页面的url页面id
@@ -265,6 +264,13 @@
 			    //获得事件参数
 			    var lpname = e.detail.lpname;
 				$('.sousuwenzi').html(lpname);
+			});
+			
+			//监听搜索页面的取消事件
+			window.addEventListener("ssqvxiaofanhui", function (e) {
+			    //获得事件参数
+			    var qvx = e.detail.qvx;
+				$('.sousuwenzi').html('请输入楼盘关键字搜索');
 			});
 		  	
 		</script>

@@ -1,4 +1,4 @@
-.listUl{padding-top: 0.533333rem;}
+.listUl{padding-top: 0.533333rem;min-height: 10rem;}
 .jzjf{display: inline-block;}
 .jzdj{color: #fcae18;background-color: #fff5df;padding: 0.04rem 0.266666rem;border-radius: 0.066666rem;font-size: 0.32rem;}
 .selc{position: relative;top: 50%;margin-top: -0.4rem;width: 0.48rem;height: 0.48rem;margin-right: 0.4rem;display: none;}
