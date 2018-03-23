@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
 	</head>
 	<style type="text/css">
-		#sel1 li{border: 1px solid red;}
+		/*#sel1 li{border: 1px solid red;}*/
 	</style>
 	<body>
 		<!--下拉刷新容器-->
@@ -92,8 +92,8 @@
 							<li onclick="selsx(1)">区域</li>
 							<li onclick="selsx(2)">地铁</li>
 						</ul>
-						<ul class="zzcdcq" id="sel2" style="border: 1px solid red;">
-							<li onclick="clk_qy(0,-1)">不限</li>
+						<ul class="zzcdcq" id="sel2">
+							<li onclick="subway1(0,-1)">不限</li>
 						</ul>
 						<ul class="zzcdcq" id="sel3">
 							<li onclick="subway2(0,-1)">不限</li>
@@ -150,6 +150,7 @@
 			var price_dj = '';
 			var chqxz = '';
 			var jiangejt = "D";
+			var search = '';
 			/**
 			 * 下拉刷新具体业务实现
 			 */
@@ -157,7 +158,7 @@
 				setTimeout(function() {
 					xial = 1;
 					$('.listUl').html('');
-					dthqdata(area,price_dj,chqxz,jiangejt);
+					dthqdata(area,price_dj,chqxz,jiangejt,search);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					//这块是下拉刷新添加数据
@@ -178,7 +179,7 @@
 			
 			function pullupRefresh() {
 				setTimeout(function() {
-					dthqdata(area,price_dj,chqxz,jiangejt);
+					dthqdata(area,price_dj,chqxz,jiangejt,search);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					/*for (var i = cells.length, len = i + 20; i < len; i++) {
@@ -310,7 +311,7 @@
 				xial = 1;
 				jiangejt = 'D';
 				$('.listUl').html('');
-				dthqdata(area,price_dj,chqxz,jiangejt);
+				dthqdata(area,price_dj,chqxz,jiangejt,search);
 			});
 			//重置事件
 			$('.czsyhk').click(function(){
@@ -320,7 +321,7 @@
 				qcqitades();
 				chushishij();
 				$('.listUl').html('');
-				dthqdata(area,price_dj,chqxz,jiangejt);
+				dthqdata(area,price_dj,chqxz,jiangejt,search);
 			});
 			
 			//筛选的重置条件
@@ -409,17 +410,19 @@
 			
 			
 	/*		动态数据*/
-			function dthqdata(area,price_dj,chqxz,jiagesanshu){
+			function dthqdata(area,price_dj,chqxz,jiagesanshu,search){
 				console.log(area);
 				console.log(price_dj);
 				console.log(chqxz);
 				console.log(jiagesanshu);
+				console.log(search);
+				alert(123456);
 				console.log(xial);
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				data:{
 					"parameters":
 						{
-							"search_keywork":"",
+							"search_keywork":search,
 							"district":"",
 							"business":"",
 							"district1":"",
@@ -441,6 +444,7 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
+						alert(123);
 						$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 						$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 						mui('#pullrefresh').pullRefresh().setStopped(false);
@@ -726,10 +730,10 @@
 				qcqitades();
 				if(idx == 5){
 					jiangejt = 'P1';
-					dthqdata(area,price_dj,chqxz,jiangejt);
+					dthqdata(area,price_dj,chqxz,jiangejt,search);
 				}else{
 					jiangejt = 'P2';
-					dthqdata(area,price_dj,chqxz,jiangejt);
+					dthqdata(area,price_dj,chqxz,jiangejt,search);
 				}
 			});
 			
@@ -745,13 +749,22 @@
 				qcqitades();
 				if(idx == 7){
 					jiangejt = 'A1';
-					dthqdata(area,price_dj,chqxz,jiangejt);
+					dthqdata(area,price_dj,chqxz,jiangejt,search);
 				}else{
 					jiangejt = 'A2';
-					dthqdata(area,price_dj,chqxz,jiangejt);
+					dthqdata(area,price_dj,chqxz,jiangejt,search);
 				}
 			});
 			
+			//监听搜索页面的返回事件
+			window.addEventListener("sousuochuac", function (e) {
+			    //获得事件参数
+			    var lpname = e.detail.lpname;
+				search = lpname;
+				$('.listUl').html('');
+				xial = 1;
+				dthqdata(area,price_dj,chqxz,jiangejt,search);
+			});
 			/*function jiangefangfa(jiagesanshu){
 				$('.listUl').html('');
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
@@ -877,7 +890,10 @@
 			//行政区域二级接口
 			var xzqy_str = '';
 			function xzqy_erji(id){
-				$('#sel3').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				if(id == 0){
+					id = '';
+				}
+				$('#sel3').html('<li onclick="clk_xz2(0,-1)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
 					data:{
 						"parameters":{
@@ -894,7 +910,7 @@
 						if(data.success){
 							var xzqy_Data = data.data.xzfq;
 							for (var i=0; i<xzqy_Data.length; i++) {
-								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+xzqy_Data[i].id+','+i+')">'+xzqy_Data[i].fdname+'</li>';
+								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].id+','+i+')">'+xzqy_Data[i].fdname+'</li>';
 								$('#sel3').append(xzqy_str);
 							}
 						}else{
@@ -906,15 +922,15 @@
 					}
 				});
 			}
-			function clk_xz2(fcode,id,q){
+			function clk_xz2(id,q){
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
 
-			//地铁接口
+			//地铁接口（一级请求接口数据）
 			var subway_str = '';
 			function subway(){
-				$('#sel2').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				$('#sel2').html('<li onclick="subway1(0,-1)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/lpsubway.do',{
 					data:{},
 					dataType:'json',
@@ -942,9 +958,12 @@
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
 				subway_erji(id);
 			}
-			//地铁二级接口
+			//地铁二级接口（第二级）
 			var subway_str2 = '';
 			function subway_erji(id){
+				if(id == 0){
+					id = '';
+				}
 				$('#sel3').html('<li onclick="subway2(0,-1)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
 					data:{
@@ -974,7 +993,7 @@
 					}
 				});
 			}
-			function subway2(id,q){
+			function subway2(id,q){//控制最后一级变色及参数传递
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
