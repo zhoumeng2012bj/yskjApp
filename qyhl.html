@@ -9,6 +9,12 @@
 		<script type="text/javascript" src="js/lib/flexible.js"></script>
 		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/qiYeHuLian.css"/>
+		<style>
+			a{
+				text-decoration: none;
+			}
+			
+		</style>
 	</head>
 	<body>
 		<div class="mui-content">
@@ -109,7 +115,6 @@
 						var enterpriseName=data[i].enterpriseName
 						var enterpriseDesc=data[i].enterpriseDesc
 						hyhtml+="<li>";
-			   			hyhtml+='<a href="#">';
 			   			hyhtml+='<div class="qiyehuilianyyi">';
 			   			hyhtml+='<div>';
 					    hyhtml+='<img src="';
@@ -124,8 +129,7 @@
 			   			hyhtml+='<span class="qiyehuilianssanicon"></span>';
 			   			hyhtml+='<span class="jiaoyv">';
 			   			hyhtml+=enterpriseDesc;
-			   			hyhtml+='</span></div></a></li>';
-			   					
+			   			hyhtml+='</span></div></li>';
 						}
 					}
 					hyhtml+="</ul>"

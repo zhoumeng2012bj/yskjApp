@@ -22,11 +22,11 @@
 		<div class="mui-content content">
 		    <div class="box_i" style="display: none;">
 		    	<div class="mui-input-row inp">
-	    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）" id="yinc" autocomplete="off">
+	    		    <input type="password" class="mui-input-clear" placeholder="请设置密码（最少6位）"     minlength="6" id="yinc" autocomplete="off">
 	    		    <span class="ycmm" id="ycmm"></span>
 	    		</div>
 	    		<div class="mui-input-row inp">
-	    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1" autocomplete="off">
+	    		    <input type="password" class="mui-input-clear" placeholder="请再次确认密码" id="yinc1"  minlength="6" autocomplete="off">
 	    		    <span class="ycmm" id="ycmm1"></span>
 	    		</div>
 			    <div class="btn_box">
@@ -35,11 +35,11 @@
 		    </div>
 		    <div class="box_i1">
 		    	<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" maxlength="11" id="tel">
-    		    	<span class="hqyzm">获取验证码</span>
+	    		    <input type="text" class="mui-input-clear" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="11" placeholder="请输入手机号" autocomplete="off"  id="tel">
+    		    	<span class="hqyzm">获取验证码</span> 
 	    		</div>
 	    		<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" maxlength="6" id="hqyzm">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码"  onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  autocomplete="off"    maxlength="6" id="hqyzm">
 	    		</div>
 	    		<div class="btn_box">
 			    	<button class="btn" id="btn">下一步</button>

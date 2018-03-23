@@ -65,6 +65,14 @@
 		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			//
+			window.addEventListener("jxfychudezhiwed", function (e) {
+			    //获得事件参数
+			    var lpnamechua = e.detail.lpname;
+				$('.suosinput').val(lpnamechua);
+				chxian();
+				soushuo();
+			});
 			//搜索框的获取焦点事件
 			function chxian(){
 				$('.suosukongbaiye').css("display","none");
@@ -84,6 +92,7 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
+							alert(22222);
 							$('.muhusslipa').html('');
 							var data = data.data;
 							var string = '';
@@ -100,13 +109,14 @@
 								mui.fire(main, "sousuochuac",{
 								    lpname:$(this).text()
 								})
+								var main1 = plus.webview.getWebviewById('jxfyList');
+								mui.fire(main1, "sousuochuac",{
+								    lpname:$(this).text()
+								})
 							});
 						}else{
 							mui.alert(data.msg);
 						}
-						
-						
-
 					},
 					error:function(xhr,type,errorThrown){
 						//异常处理；
@@ -114,6 +124,8 @@
 					}
 				});
 			}
+			
+			
 			
 			
 		</script>
