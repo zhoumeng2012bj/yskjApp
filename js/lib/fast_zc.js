@@ -206,12 +206,17 @@ function clk(){
 //注册并登录
 $('#btn1').click(function(){
 	if(pwd != '' && pwd1 != ''){
+		if(pwd.length<6||pwd1.length<6){
+			mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+			return;
+		}else{
 		if(pwd == pwd1){
 			//注册方法	
 			zhuce();
 		}else{
 			mui.toast('两次密码输入不一致',{ duration:'3000', type:'div' });
 			return;
+		}
 		}
 	}else{
 		mui.toast('请将密码填写完整',{ duration:'3000', type:'div' });
