@@ -34,7 +34,7 @@
 		</header>
 		<div class="mui-content per_zt">
 			<ul class="per_news">
-		    	<li class="tolink">
+		    	<li class="tolink loClass">
 		    		<span class="p_nane">修改密码</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
@@ -46,7 +46,7 @@
 		    		<span class="p_nane">免责声明</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
-		    	<li class="signout">
+		    	<li class="signout loClass">
 		    		<span class="p_nane">退出登录</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
@@ -54,6 +54,11 @@
 		</div>
 		<script type="text/javascript" src="../js/lib/app_config.js" ></script>
 		<script type="text/javascript">
+			var cookie=JSON.parse(localStorage.getItem('cookxs_yh'));
+			(function(){
+				
+			   checkSubmit();
+			})();
 			mui.init();
 			var old_back = mui.back;
 			mui.back = function() {
@@ -66,8 +71,40 @@
 			    // 执行关闭
 			    old_back();
 			};
-			//跳转页面地址
 			var toUrl = ['./setpwd.html','./disclaimer.html','./userexit.html'];
+			//判断用户登录
+			
+				function checkSubmit(){
+				if(cookie){
+						mui.ajax(url + '/yskjApp/appYskj/V1/landState.do',{
+						data:{
+							"cookie":cookie
+						},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							console.log("用户登录状态： "+data.success);
+							if(data.success){
+								//已登录
+							}else{
+								//未登录
+								$(".loClass").css("display","none");
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
+						}
+					});     
+					
+				}else{
+					$(".loClass").css("display","none");
+				}
+			}
+			
+			//跳转页面地址
+			
 			for(var i=0; i<$('.tolink').length; i++){
 				(function(index){
 					$('.tolink').eq(index).click(function(){
