@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
 	</head>
 	<style type="text/css">
-		#sel1 li{border: 1px solid red;}
+		/*#sel1 li{border: 1px solid red;}*/
 	</style>
 	<body>
 		<!--下拉刷新容器-->
@@ -92,8 +92,8 @@
 							<li onclick="selsx(1)">区域</li>
 							<li onclick="selsx(2)">地铁</li>
 						</ul>
-						<ul class="zzcdcq" id="sel2" style="border: 1px solid red;">
-							<li onclick="clk_qy(0,-1)">不限</li>
+						<ul class="zzcdcq" id="sel2">
+							<li onclick="subway1(0,-1)">不限</li>
 						</ul>
 						<ul class="zzcdcq" id="sel3">
 							<li onclick="subway2(0,-1)">不限</li>
@@ -890,7 +890,10 @@
 			//行政区域二级接口
 			var xzqy_str = '';
 			function xzqy_erji(id){
-				$('#sel3').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				if(id == 0){
+					id = '';
+				}
+				$('#sel3').html('<li onclick="clk_xz2(0,-1)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
 					data:{
 						"parameters":{
@@ -907,7 +910,7 @@
 						if(data.success){
 							var xzqy_Data = data.data.xzfq;
 							for (var i=0; i<xzqy_Data.length; i++) {
-								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+xzqy_Data[i].id+','+i+')">'+xzqy_Data[i].fdname+'</li>';
+								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].id+','+i+')">'+xzqy_Data[i].fdname+'</li>';
 								$('#sel3').append(xzqy_str);
 							}
 						}else{
@@ -919,15 +922,15 @@
 					}
 				});
 			}
-			function clk_xz2(fcode,id,q){
+			function clk_xz2(id,q){
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
 
-			//地铁接口
+			//地铁接口（一级请求接口数据）
 			var subway_str = '';
 			function subway(){
-				$('#sel2').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				$('#sel2').html('<li onclick="subway1(0,-1)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/lpsubway.do',{
 					data:{},
 					dataType:'json',
@@ -955,9 +958,12 @@
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
 				subway_erji(id);
 			}
-			//地铁二级接口
+			//地铁二级接口（第二级）
 			var subway_str2 = '';
 			function subway_erji(id){
+				if(id == 0){
+					id = '';
+				}
 				$('#sel3').html('<li onclick="subway2(0,-1)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
 					data:{
@@ -987,7 +993,7 @@
 					}
 				});
 			}
-			function subway2(id,q){
+			function subway2(id,q){//控制最后一级变色及参数传递
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
