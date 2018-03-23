@@ -333,6 +333,12 @@
 										} 
 									}
 								});
+								mui.plusReady(function(){
+									var main = plus.webview.getWebviewById('loupan_detail');
+									mui.fire(main, "loppan_id",{
+									    lp_id:data[idx].id
+									})									
+								});
 							})
 						})(a)
 					}

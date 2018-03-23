@@ -24,7 +24,7 @@
 .kezhuce{width: 1.053333rem;border: 1px solid #daeefd;background-color: #daeefd;border-radius: 5px;line-height: 100%;height: 100%;text-align: center;font-size: 0.266666rem;color: #3db894;}
 .fyxqxxsan ul{margin-top: 0.4rem;}
 .stkrgw{width: 50%;}
-.fyxqxxsan ul li{display: flex;height:0.853333rem;}
+.fyxqxxsan ul li{display: flex;height:0.853333rem;height: auto;padding-bottom: 0.3rem;}
 .fyxqxxsan ul li p span{font-size: 0.373333rem;}
 .kognwrgwei{color: #919191;}
 .kognwrgwei i{font-style: normal;}

@@ -62,13 +62,16 @@
 	font-size: 0.32rem;
 	color: #5f5f5f;
 }
-.scmenu{
+.scmenu,.scmenu1{
 	display: flex;
 	background: #fff;
 	margin-top: 0.266666rem;
 }
-.scmenu li{
-	width: 33.333%;
+.scmenu{width: 33.333%;}
+.scmenu1{width: 66.667%;}
+.scmenu li{width: 50%;}
+.scmenu1 li{width: 25%;}
+.scmenu li,.scmenu1 li{
 	font-size: 0.32rem;
 	height: 0.8rem;
 	line-height: 0.8rem;
