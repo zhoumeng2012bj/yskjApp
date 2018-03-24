@@ -204,9 +204,8 @@
 				"ios": {
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "",
-						"retina47": "img/welcome.png"
+						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": ""
 					},
 					"ipad": {
 						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
@@ -246,7 +245,8 @@
 					"wd.html",
 					"jxfy.html",
 					"fwsc.html",
-					"qyhl.html"
+					"qyhl.html",
+					null
 				],
 				"priority": 0
 			},
@@ -298,7 +298,9 @@
 					"img/fypic.png",
 					"img/sjfw.png",
 					"js/lib/app_config.js",
-					null
+					null,
+					"img/sy_bxion.png",
+					"img/sy_kfion.png"
 				],
 				"refer": [
 					"jxfy.html",
@@ -324,7 +326,8 @@
 					"jxfyList.html",
 					"css/jxfy.css",
 					"fonts/mui.ttf",
-					"js/lib/jquery-1.10.2.min.js"
+					"js/lib/jquery-1.10.2.min.js",
+					null
 				],
 				"refer": [
 					"wd.html",
@@ -375,7 +378,8 @@
 					"img/qiyehulian.png",
 					"js/lib/app_config.js",
 					"img/tab_bg.png",
-					"img/dacheghezuo.png"
+					"img/dacheghezuo.png",
+					null
 				],
 				"refer": [],
 				"priority": 0
@@ -573,7 +577,9 @@
 					"js/lib/app_config.js",
 					null
 				],
-				"refer": [],
+				"refer": [
+					"page/fyTail.html"
+				],
 				"priority": 0
 			},
 			"page/login.html": {
@@ -650,7 +656,13 @@
 				"resources": [
 					"css/saleFuWu.css",
 					"img/shouffwu.png",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"js/lib/sy.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
