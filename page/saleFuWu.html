@@ -14,8 +14,9 @@
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-transparent shoushhead fufanhui">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">售后服务</h1>
+		    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+		   <div class="mui-icon mui-action-back mui-icon-back mui-icon-left-nav mui-pull-left"></div>
+		   <h1 class="mui-title">售后服务</h1>
 		</header>
 	<div class="mui-content">
 	    <div class="shfw"></div>
@@ -68,6 +69,28 @@
 	
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/lib/app_config.js"></script>
+		 <script type="text/javascript">
+	        var old_back = mui.back;
+	    	mui.back = function() {
+	    	 	var sex=$("input[name='radio']:checked").val();;
+				var phone=$('.shfwPhone').val();
+				var name=$('.shfwName').val();
+				var repairHouse=$('#repairHouse').val();
+				var memo=$('#memo').val();
+			    // 弹出确认框
+			     var btnArray = ['放弃','继续编辑'];
+                if (phone !='' || name !='' || (sex !='' && sex !=undefined) || repairHouse !='' || memo !='') {
+				  mui.confirm('您编辑的内容还没有保存？','提示', btnArray,function(e){ 	
+                    // old_back();
+                    if (e.index != 1){
+                    	 mui.doAction('backs');
+                    }
+				  });
+                }else{
+                	old_back();
+                }
+			}
+	    </script>
 		<script type="text/javascript">
 			mui.init();
 			/*售后服务*/
@@ -84,7 +107,7 @@
 						if(data.success){
 							var userData = data.data;
 							//将手机号中间加密
-							var userId= userData.id;
+							var userId= userData.id; //当前登录用户Id
 							//提交信息
 							tijiao(userId);
 						}else{
@@ -104,7 +127,7 @@
 				var name=$('.shfwName').val();
 				var repairHouse=$('#repairHouse').val();
 				var memo=$('#memo').val();
-				var userId=null;  //当前登录用户Id
+                 
 				if(name==''){
 					mui.alert('请填写姓名', '提示', function(){});
 					return false;
@@ -137,12 +160,8 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
+							cleanVal();
 							mui.alert('提交成功，我们将会与您联系。');
-							$("input[name='radio']:checked").removeAttr("checked");
-				            $('.shfwPhone').val('');
-				            $('.shfwName').val('');
-				            $('#repairHouse').val('');
-				            $('#memo').val('');
 							//成功后返回至服务商城页面
 							mui.openWindow({
 								url: '../sy.html', 
@@ -172,8 +191,37 @@
 			    }  
 			    return sex;
 			}
-   
+    
+           //清除input
+			function cleanVal(){
+			    //获得事件参数
+			    $("input[name='radio']").attr("checked",false); 
+				$('.shfwPhone').val("");
+				$('.shfwName').val("");
+				$('#repairHouse').val("");
+				$('#memo').val("");
+			}
+			
+		   mui.plusReady(function() {  
+		        initBind();  
+		   }); 
+		   function initBind(){  
+		   	    //输入限制
+			    $("#memo").blur(function(){ checkMessage();});  
+			    $("#memo").keyup(function() { checkMessage(); });  
+			    $("#memo").keydown(function() { checkMessage(); });  
+		    }
+		    function checkMessage() {  
+		    	var strLength=$('#memo').val().length;
+		    	if(strLength>=200){
+		    		$("#textNum").html(200); 
+		    	}else{
+		    		$("#textNum").html(strLength);  
+		    	}
+			}  
+			
 		</script>
+
 	</body>
 
 </html>

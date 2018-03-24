@@ -17,7 +17,8 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav public_h1">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+		    <div class="mui-icon mui-action-back mui-icon-back mui-icon-left-nav mui-pull-left"></div>
 		    <h1 class="mui-title">企业</h1>
 		</header>
 		<!--主体-->
@@ -26,17 +27,17 @@
 			<!--<p class="qy" id="enterpData">幼狮空间入驻企业<i>1500</i>家，涵盖了各类行业</p>-->
 			<div class="tb_box">
 				<div class="tb_h">入驻企业行业占比</div>
-				<div id="main1" style="width:100%;height:9.0rem;"></div>
+				<div id="main1" style="width:100%;height:13.0rem;"></div>
 			</div>
 			<p class="qy">满足了不同规模企业对办公空间的需求</p>
 			<div class="tb_box" style="min-height: 10rem;">
 				<div class="tb_h">入驻企业规模统计图</div>
 				<!--数据统计柱状图123-->
 				<div class="gj_tjt_box">
-					<p class="cynx">入驻企<br />业数量</p>
+					<p class="cynx">入驻企业数量(单位：家)</p>
 					<div class="gj_tjt" id="practLife">
 					</div>
-					<p class="gsgm">公司规模</p>
+					<p class="gsgm">公司规模(单位：人)</p>
 				</div>
 			</div>
 		</div>
@@ -55,8 +56,10 @@
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					var dtb= data.data;
 					var content=data.content;
+					var reg = /\d+/g;
+					var num = content.match(reg); 
                     //企业描述
-                    $('#enterpData').append(content); 
+                    $('#enterpData').append(content.replace(num,'<i>'+num+'</i>')); 
                     var qy_data='';
 					if(data.success){
 						if(dtb.length>0){ 
@@ -149,7 +152,7 @@
 							for(var j=0;j<xdata.length;j++){
 								//自定义比例高度
 								$(".pro").eq(j).animate({
-								    height:wdata[j]+'%'
+								    height:wdata[j]
 								},2000);
 								//渲染不同颜色
 								$(".pro").eq(j).css('background',bg_color[j]);
