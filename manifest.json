@@ -312,7 +312,8 @@
 					"page/enterprise_qy.html",
 					"page/acreage_mj.html",
 					"page/fyTail.html",
-					"page/topNewsInfo.html"
+					"page/topNewsInfo.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},

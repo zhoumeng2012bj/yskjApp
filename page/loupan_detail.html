@@ -196,8 +196,18 @@
 			    //获得事件参数
 				localStorage.setItem('lp_id',e.detail.lp_id);
 				lp_id = e.detail.lp_id;
+				alert(lp_id);
 				detailDataHouses(lp_id,page,lp_leibie,lp_leib);
 			});
+//			mui.plusReady(function(){
+//              var self = plus.webview.currentWebview();
+//              lp_id = self.lpid;
+//              localStorage.setItem('lp_id',e.detail.lp_id);
+//              alert(lpid + ' 船只')
+//              detailDataHouses(lp_id,page,lp_leibie,lp_leib);
+//          });
+			
+			
 			//tab切换
 			var tabNav = $('.scmenu');
 			var tabSp = $('.scmenu li');
@@ -212,12 +222,14 @@
 						if($('.scmenu li').eq(index).text() == '现租房'){
 							$('.ss_bt').html('');
 							lp_leibie = 1;
+							alert(lp_leibie)
 							page = 1;
 							detailDataHouses(lp_id,page,lp_leibie,lp_leib);
 						}
 						if($('.scmenu li').eq(index).text() == '预租房'){
 							$('.ss_bt').html('');
 							lp_leibie = 0;
+							alert(lp_leibie)
 							page = 1;
 							detailDataHouses(lp_id,page,lp_leibie,lp_leib);
 						}
@@ -259,6 +271,11 @@
 			var lp_str = '';//模板字符//
 			/*楼盘数据*/
 			function  detailDataHouses(id,page,lp_leibie,lp_leib){
+				console.log('-------------------------楼盘详情----------------------------------')
+				console.log(id);
+				console.log(page);
+				console.log(lp_leibie+'前两个菜单');
+				console.log(lp_leib+'后四个菜单');
 				if(id == ''){
 					id = localStorage.getItem('lp_id');
 				}

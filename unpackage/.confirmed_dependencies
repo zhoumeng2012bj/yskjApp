@@ -80,7 +80,8 @@
 			"page/topNewsInfo.html",
 			"page/saleFuWu.html",
 			"page/fyTail.html",
-			"page/steward.html"
+			"page/steward.html",
+			"page/login.html"
 		]
 	},
 	"wd.html": {
@@ -143,7 +144,8 @@
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/mui.min.css"
 		]
 	},
 	"page/mycollection.html": {
@@ -255,7 +257,11 @@
 			"img/images/3.png",
 			"js/lib/flexible.js",
 			"css/loupan_detail.css",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/jxfyList.css",
+			"css/mui.min.css",
+			"css/sy.css",
+			"fonts/mui.ttf"
 		]
 	},
 	"page/topNewsInfo.html": {
