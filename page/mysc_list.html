@@ -245,13 +245,10 @@
 									}
 									if(dx == 0){//全部
 										$('#list1').append(sc_str);							
-									}
-									if(sc_data[i].sid == 3){
-										$('.xj_zz').eq(i).css('display','block');
-										$('.pic_zz').eq(i).css('display','flex');
-									}else{
-										$('.xj_zz').eq(i).css('display','none');
-										$('.pic_zz').eq(i).css('display','none');
+										if(sc_data[i].sid == 3){
+											$('.xj_zz').eq(i).css('display','block');
+											$('.pic_zz').eq(i).css('display','flex');
+										}
 									}
 //									else if(dx == 3){//下架
 //										$('#list2').append(sc_str);
