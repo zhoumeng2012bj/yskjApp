@@ -43,7 +43,7 @@
 				<div class="lishissdewezi">
 					<p class="lishisuosudiyi">
 						<span class="lishisuosudiyier">历史搜索</span>
-						<span class="lishisuosudiyisan mui-icon mui-icon-trash"></span>
+						<span class="lishisuosudiyisan mui-icon mui-icon-trash" onclick="ssshanchu()"></span>
 					</p>
 					<p id="">
 						<ul class="muhusslipa">
@@ -235,6 +235,14 @@
 			});
 			}
 			
+			//搜索页面删除历史纪录的点击事件
+			function ssshanchu(){
+				localStorage.removeItem('sousuolsh');
+				$('.muhusslipa').html('');
+				$('.suosukongbaiye').css("display","block");
+				$('.muhusousous').css("display","none");
+				$('.lslist').css("display","none");
+			}
 			
 			
 		</script>

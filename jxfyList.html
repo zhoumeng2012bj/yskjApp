@@ -93,10 +93,10 @@
 							<li onclick="selsx(2)">地铁</li>
 						</ul>
 						<ul class="zzcdcq" id="sel2">
-							<li onclick="subway1(0,-1)">不限</li>
+							<li onclick="subway1(0,-1)"></li>
 						</ul>
 						<ul class="zzcdcq" id="sel3">
-							<li onclick="subway2(0,-1)">不限</li>
+							<li onclick="subway2(0,-1)"></li>
 						</ul>
 					</div>
 				</div>
@@ -175,6 +175,7 @@
 						table.insertBefore(li, table.firstChild);
 					}*/
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				 	mui('#pullrefresh').pullRefresh().refresh(true);
 				}, 1500);
 			}
 
@@ -468,6 +469,7 @@
 							    idxsxfh:1//1位置
 							})
 							mui.alert('抱歉，暂无符合条件的房源！');
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.data.length < 1)); //参数为true代表没有更多数据了。
 						}else{
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
@@ -554,13 +556,17 @@
 			    var idx = e.detail.idx;
 				var hegh = window.screen.availHeight - 160;
 				
+				/*var scroll = mui('.mui-scroll-wrapper').scroll();
+				document.querySelector('.mui-scroll-wrapper').addEventListener('scroll',function (e) {
+				　　console.log(scroll.y);
+				})*/
 				if(idx == 1){
 					$(".zhezhaoce").removeClass("zhezhaocdisplay");
 					$(".zhezhaoce").addClass("zhezhaocdisbalo");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
 					$(".zhezhaoce").on('touchmove',function(e){
-//	                    e.preventDefault();  //阻止默认行为
-//						return false;
+	                    e.preventDefault();  //阻止默认行为
+						return false;
 	                })
 				}
 				/*出现筛选遮罩层*/
@@ -569,8 +575,8 @@
 					$(".zhezhaoceshx").addClass("zhezhaocdisbaloshx");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
 					$(".zhezhaoceshx").on('touchmove',function(e){
-	                    /*e.preventDefault();  //阻止默认行为
-						return false;*/
+	                    e.preventDefault();  //阻止默认行为
+						return false;
 	                })
 					
 				}
@@ -743,7 +749,8 @@
 						} 
 					}
 				});
-
+				alert(11111);
+				alert(this.id);
 				var main = plus.webview.getWebviewById('fyTail');
 				mui.fire(main, "fyyuadeqx",{
 				    fyid:this.id
