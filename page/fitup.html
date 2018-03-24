@@ -16,7 +16,8 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav public_h1">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+		    <div class="mui-icon mui-action-back mui-icon-back mui-icon-left-nav mui-pull-left"></div>
 		    <h1 class="mui-title">装修定制</h1>
 		</header>
 		<!--主体-->
@@ -127,11 +128,23 @@
 			<div class="bottom bot_nav">
 				<!--底部菜单-->
 		    	<p><a href="tel:400-078-8800">拨打电话</a></p>
-		    	<p class="fast_sq">立即申请</p>
+		    	<p class="fast_sq" id="applyNow">立即申请</p>
 			</div>
 		</div>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			//fwscType 1、工商税务，2、增值服务，3、定制装修，4金融服务
+			$('#applyNow').click(function(){
+				mui.openWindow({ 
+					url:'liJiShenQing.html', //需要打开页面的url地址 
+					id:'liJiShenQing',  //需要打开页面的url页面id
+					extras:{fwscType:3}
+				})
+				var main = plus.webview.getWebviewById('liJiShenQing');
+				mui.fire(main, "applyNow",{
+				    fwscType:3
+				})
+			});
 		</script>
 	</body>
 

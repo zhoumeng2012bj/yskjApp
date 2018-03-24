@@ -13,8 +13,9 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav public_h1" style="background-color: #ffffff;">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">增值业务</h1>
+		    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+		    <div class="mui-icon mui-action-back mui-icon-back mui-icon-left-nav mui-pull-left"></div>
+		   <h1 class="mui-title">增值业务</h1>
 		</header>
 		<div class="mui-content public_con">
 		    <div class="addzhiyewu">
@@ -153,13 +154,19 @@
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			//fwscType 1、工商税务，2、增值服务，3、定制装修，4金融服务
 			$('.woyaochuce').click(function(){
 				mui.openWindow({ 
 					url:'liJiShenQing.html', //需要打开页面的url地址 
 					id:'liJiShenQing',  //需要打开页面的url页面id
+					extras:{fwscType:2}
 				})
-			})
+				var main = plus.webview.getWebviewById('liJiShenQing');
+				mui.fire(main, "applyNow",{
+				    fwscType:2
+				})
+			});
 		</script>
 	</body>
 

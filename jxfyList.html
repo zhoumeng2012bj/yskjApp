@@ -416,6 +416,7 @@
 			
 	/*		动态数据*/
 			function dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiagesanshu,search){
+				console.log('---------------------------------------分割线--------------------------------------');
 				console.log(district);
 				console.log(fdcode);
 				console.log(lineid);
@@ -453,6 +454,19 @@
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
 						if(data.data.length == 0){
+							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
+							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
+							mui('#pullrefresh').pullRefresh().setStopped(false);
+							var index = plus.webview.getLaunchWebview();
+							zhezhaoxiaoshi();
+							mui.fire(index, "weizhi1",{
+							    idxid:4//1位置
+							})
+							//点击位置遮罩层取消遮罩层要改变样式
+							var main = plus.webview.getWebviewById('jxfy.html');
+							mui.fire(main, "saixuanfh",{
+							    idxsxfh:1//1位置
+							})
 							mui.alert('抱歉，暂无符合条件的房源！');
 						}else{
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
@@ -572,6 +586,9 @@
 		            'overflow':'hidden',
 		            'height': hegh+'px',
 		        });
+		        $(".listUl").css({
+		            'height': hegh+'px',
+		        });
 				
 			});
 
@@ -587,6 +604,9 @@
 		        });
 		        $(".mui-content").css({
 		            'overflow':'visible',
+		        });
+		        $(".listUl").css({
+		            'height': 'auto',
 		        });
 			}
 			//遮罩层消失恢复滚动
@@ -856,14 +876,23 @@
 					'color':'#666666'
 				});
 				if(sel == 0){
+					xial = 1;
+					district = '';
+					fdcode = '';
+					lineid = '';
+					station = '';
 					$('#sel1 li').eq(0).css({
 						'background':'#fff',
 						'color':'#2c71d8'
 					});
 					$('#sel2').html('');
 					$('#sel3').html('');
+					qxzzcdff();
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 				if(sel == 1){
+					lineid = '';
+					station = '';
 					$('#sel1 li').eq(1).css({
 						'background':'#fff',
 						'color':'#2c71d8'
@@ -871,6 +900,8 @@
 					sel_qy();
 				}
 				if(sel == 2){
+					lineid = '';
+					station = '';
 					$('#sel1 li').eq(2).css({
 						'background':'#fff',
 						'color':'#2c71d8'
@@ -947,6 +978,8 @@
 			function clk_xz2(id,q){
 				xial = 1;
 				$('.listUl').html('');
+				district = '';
+				fdcode = '';
 				if(q == -1){
 					fdcode = '';
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
@@ -1030,6 +1063,8 @@
 			function subway2(id,q){//控制最后一级变色及参数传递
 				xial = 1;
 				$('.listUl').html('');
+				district = '';
+				fdcode = '';
 				if(q == -1){
 					station = '';
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);

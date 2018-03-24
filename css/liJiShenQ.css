@@ -64,7 +64,7 @@
 .texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;text-indent: 2em;}
 .textwenadeshuz{position: absolute;bottom: 9px;right: 30px;color: #c8c8c8;}
 .baoxoiwenzibot{height:0.373333rem;background-color: #ffffff;}
-.tijiaomax{height: 4.28rem;display: flex;flex-direction: column;/*垂直排列*/justify-content: center;align-items: center;}
+.tijiaomax{height: 3.6rem;display: flex;flex-direction: column;/*垂直排列*/justify-content: center;align-items: center;}
 .button{width: 8.826666rem;background-color: #2b70d8;height: 1.173333rem;border-radius: 0.066666rem;color: #fefefe;display: flex;justify-content: center;align-items: center;font-size: 0.36rem;}
 .tijiaodewenzi{margin-top: 0.493333rem;height:0.4rem;line-height:0.4rem;width: 6.893333rem;font-size: 0.32rem;color: #999999;}
 .tijiaodewenzi a{margin-left: 0.28rem;color: #2b70d8;}

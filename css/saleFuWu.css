@@ -48,12 +48,12 @@
 	top: 0.533333rem!important;
 	right: -0.266666rem!important;
 }
-.xingbei div{width: 2.4rem;}
+.xingbei div{width: 2.9rem;}
 .xianshang{font-size: 0.4rem;color: #c8c8c8;}
 .xingbei input{}
 .xingbei{display: flex; align-items: center;position:relative;height: 1.666666rem;border-bottom: 1px solid #e5e5e5;}
 .mui-checkbox, .mui-radio{left:-1.133333rem;}
-.nvshi{top:0.533333rem !important;}
+.nvshi{top:0.5rem !important;}
 .nan{top:0.16rem !important;}
 .fangwutop{height: 0.106666rem;background-color: #f0f0f0;}
 .fangwuxinix{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;}
