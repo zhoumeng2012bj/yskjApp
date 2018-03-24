@@ -97,8 +97,12 @@
 			    // mui.fire()传过来的额外的参数，在event.detail中；
 			    var detail = event.detail;
 			    var param = detail.ttt;
-//			    alert(param);
+			    if(param == 1){
+			    	var wobj = plus.webview.getWebviewById("wd.html");
+					wobj.reload(true);
+			    }
 			    takeuser();
+//			    alert(param);
 			    // 执行相应的ajax或者操作DOM等操作
 			});
 			//跳转页面地址
@@ -253,7 +257,7 @@
 					$('.yrz').css('display','none');
 				}				
 			}
-//			takeuser();
+			takeuser();
 		</script>
 	</body>
 

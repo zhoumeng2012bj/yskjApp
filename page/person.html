@@ -66,6 +66,18 @@
 			checkSubmit();
 			})();
 			mui.init()
+			var old_back = mui.back;
+			mui.back = function() {
+			    // 获取目标口窗口对象
+			    var target = plus.webview.getWebviewById('wd.html');
+			    // 执行相应的事件
+			    mui.fire(target, 'customEvent', {
+			    	'ttt':1
+			    });
+			    // 执行关闭
+			    old_back();
+			};
+			
 			var toUrl = ['../page/add_name.html','../page/gh_tel.html','../page/add_sfz.html','../page/qdgs.html','../page/sfrz.html']
 			for (var i=0; i<$('.tolink').length; i++) {
 				(function(index){

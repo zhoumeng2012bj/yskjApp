@@ -26,12 +26,19 @@
 			"css/qiYeHuLian.css",
 			"img/beijignicon.png",
 			"img/qiyehulian.png",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
 		]
 	},
 	"jxfyList.html": {
 		"resources": [
-			"css/jxfyList.css"
+			"css/jxfyList.css",
+			"css/sy.css",
+			"css/style.css",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"page/fyTail.html"
@@ -66,7 +73,13 @@
 			"img/head_img.png",
 			"img/wd_bg.png",
 			"css/wd.css",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
 		],
 		"refer": [
 			"page/login.html",
@@ -80,7 +93,12 @@
 			"jxfyList.html",
 			"css/jxfy.css",
 			"js/lib/jquery-1.10.2.min.js",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css"
 		],
 		"refer": [
 			"jxfyList.html"
@@ -88,7 +106,8 @@
 	},
 	"fwsc.html": {
 		"resources": [
-			"css/fwsc.css"
+			"css/fwsc.css",
+			"js/lib/jquery-1.10.2.min.js"
 		]
 	},
 	"page/login.html": {
@@ -99,7 +118,11 @@
 			"js/lib/md5.js",
 			"img/login_pic.png",
 			"js/mui.min.js",
-			"img/ycmm.png"
+			"img/ycmm.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		]
 	},
 	"page/mycollection.html": {
@@ -151,7 +174,11 @@
 	"page/myset.html": {
 		"resources": [
 			"css/person.css",
-			"js/mui.min.js"
+			"js/mui.min.js",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		]
 	},
 	"page/broker.html": {
@@ -165,7 +192,29 @@
 	"page/person.html": {
 		"resources": [
 			"css/person.css",
+			"js/mui.min.js",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/add_name.html",
+			"page/add_sfz.html"
+		]
+	},
+	"page/add_name.html": {
+		"resources": [
 			"js/mui.min.js"
+		]
+	},
+	"page/add_sfz.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		]
 	}
 }
