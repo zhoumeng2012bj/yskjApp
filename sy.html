@@ -354,12 +354,12 @@
 				      lpid:id
 				    },
 				});
-				mui.plusReady(function(){
-					var main2 = plus.webview.getWebviewById('loupan_detail');
-					mui.fire(main2, "loppan_id",{
-					    lp_id:id
-					})								
-				});
+//				mui.plusReady(function(){
+//					var main2 = plus.webview.getWebviewById('loupan_detail');
+//					mui.fire(main2, "loppan_id",{
+//					    lp_id:id
+//					})								
+//				});
 				
 			}
 			
@@ -396,14 +396,17 @@
 			function linktodetail(id){
 				mui.openWindow({ 
 					url:'page/fyTail.html', //需要打开页面的url地址 
-					id:'fyTail'
+					id:'fyTail',
+					extras:{
+				      fyid:id
+				    },
 				});
-				mui.plusReady(function(){
-					var main1 = plus.webview.getWebviewById('fyTail');
-					mui.fire(main1, "fyyuadeqx",{
-					    fyid:id
-					})									
-				});
+//				mui.plusReady(function(){
+//					var main1 = plus.webview.getWebviewById('fyTail');
+//					mui.fire(main1, "fyyuadeqx",{
+//					    fyid:id
+//					})									
+//				});
 			}
 		
 			//获取验证密码倒计时

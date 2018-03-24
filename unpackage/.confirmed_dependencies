@@ -204,7 +204,11 @@
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"page/disclaimer.html"
 		]
 	},
 	"page/broker.html": {
@@ -293,6 +297,16 @@
 			"img/qfw.png",
 			"img/qth.png",
 			"img/yzs.png"
+		]
+	},
+	"page/disclaimer.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/disclaimer.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		]
 	}
 }

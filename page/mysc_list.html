@@ -282,14 +282,17 @@
 				}else{
 					mui.openWindow({ 
 						url:'./fyTail.html', //需要打开页面的url地址 
-						id:'fyTail'
+						id:'fyTail',
+						extras:{
+					      fyid:id
+					    },
 					});
-					mui.plusReady(function(){
-						var main1 = plus.webview.getWebviewById('fyTail');
-						mui.fire(main1, "fyyuadeqx",{
-						    fyid:id
-						})									
-					});					
+//					mui.plusReady(function(){
+//						var main1 = plus.webview.getWebviewById('fyTail');
+//						mui.fire(main1, "fyyuadeqx",{
+//						    fyid:id
+//						})									
+//					});					
 				}
 			}
 			//判断登陆状态
