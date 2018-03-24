@@ -565,8 +565,8 @@
 					$(".zhezhaoce").addClass("zhezhaocdisbalo");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
 					$(".zhezhaoce").on('touchmove',function(e){
-	                    e.preventDefault();  //阻止默认行为
-						return false;
+	                   /* e.preventDefault();  //阻止默认行为
+						return false;*/
 	                })
 				}
 				/*出现筛选遮罩层*/
@@ -575,8 +575,8 @@
 					$(".zhezhaoceshx").addClass("zhezhaocdisbaloshx");
 					mui('#pullrefresh').pullRefresh().setStopped(true);
 					$(".zhezhaoceshx").on('touchmove',function(e){
-	                    e.preventDefault();  //阻止默认行为
-						return false;
+	                   /* e.preventDefault();  //阻止默认行为
+						return false;*/
 	                })
 					
 				}
@@ -749,8 +749,6 @@
 						} 
 					}
 				});
-				alert(11111);
-				alert(this.id);
 				var main = plus.webview.getWebviewById('fyTail');
 				mui.fire(main, "fyyuadeqx",{
 				    fyid:this.id
