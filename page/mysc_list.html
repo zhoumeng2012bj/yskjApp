@@ -232,15 +232,15 @@
 								for (var i=0; i<sc_data.length; i++) {
 									if(sc_data[i].decoration_level == ''){
 										if(sc_data[i].cid == 1){
-											sc_str = '<li class="listtail" onclick="linktodetail('+sc_data[i].fyid+','+sc_data[i].sid+')"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
+											sc_str = '<li id="'+sc_data[i].fyid+'" value="'+sc_data[i].sid+'" class="listtail"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
 										}else{
-											sc_str = '<li class="listtail" onclick="linktodetail('+sc_data[i].fyid+','+sc_data[i].sid+')"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
+											sc_str = '<li id="'+sc_data[i].fyid+'" value="'+sc_data[i].sid+'"  class="listtail"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
 										}
 									}else{
 										if(sc_data[i].cid == 1){
-											sc_str = '<li class="listtail" onclick="linktodetail('+sc_data[i].fyid+','+sc_data[i].sid+')"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> <span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
+											sc_str = '<li id="'+sc_data[i].fyid+'" value="'+sc_data[i].sid+'"  class="listtail"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> <span class="jzdj">定金</span></p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';										
 										}else{
-											sc_str = '<li class="listtail" onclick="linktodetail('+sc_data[i].fyid+','+sc_data[i].sid+')"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
+											sc_str = '<li id="'+sc_data[i].fyid+'" value="'+sc_data[i].sid+'"  class="listtail"><div class="xj_zz"></div><div class="selc"><div class="mui-input-row mui-checkbox selc_ch"><label></label><input name="Checkbox" type="checkbox" value="'+sc_data[i].id+'" onclick="sel(this)"></div></div><div class="fy_pic"><span class="pic_zz">房源已下架</span><img src="'+img_url+sc_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+sc_data[i].topic+'&nbsp;&nbsp;'+sc_data[i].zdh+''+sc_data[i].fybh+'</p><p class="mjwz">'+sc_data[i].district+'&nbsp;'+sc_data[i].housing_area+'m²</p><p class="jfList"><span class="jzjf">'+sc_data[i].decoration_level+'</span> </p><p class="dj"><span>'+sc_data[i].daily_price+'<i>元/m²/天</i></span></p></div></li><li class="zx"></li>';
 										}
 									}
 									if(dx == 0){//全部
@@ -249,6 +249,22 @@
 											$('.xj_zz').eq(i).css('display','block');
 											$('.pic_zz').eq(i).css('display','flex');
 										}
+										mui("#list1").on("tap","li",function(){
+//											alert(this.value+'显示');
+//											alert(this.id+'房源id');
+											if(this.value == 3){
+												return;
+											}else{
+											 	mui.openWindow({ 
+													url:'./fyTail.html',
+													id:'fyTail',
+													extras:{ 
+														fyid:this.id,
+													}
+												});
+											}
+										})
+										
 									}
 //									else if(dx == 3){//下架
 //										$('#list2').append(sc_str);
@@ -276,25 +292,25 @@
 					}
 				});
 			}
-			function linktodetail(id,sid){
-				if(sid == 3){
-					return;
-				}else{
-					mui.openWindow({ 
-						url:'./fyTail.html', //需要打开页面的url地址 
-						id:'fyTail',
-						extras:{
-					      fyid:id
-					    },
-					});
-//					mui.plusReady(function(){
-//						var main1 = plus.webview.getWebviewById('fyTail');
-//						mui.fire(main1, "fyyuadeqx",{
-//						    fyid:id
-//						})									
-//					});					
-				}
-			}
+//			function linktodetail(id,sid){
+//				if(sid == 3){
+//					return;
+//				}else{
+//					mui.openWindow({ 
+//						url:'./fyTail.html', //需要打开页面的url地址 
+//						id:'fyTail',
+//						extras:{
+//					      fyid:id
+//					    },
+//					});
+////					mui.plusReady(function(){
+////						var main1 = plus.webview.getWebviewById('fyTail');
+////						mui.fire(main1, "fyyuadeqx",{
+////						    fyid:id
+////						})									
+////					});					
+//				}
+//			}
 			//判断登陆状态
 //			denglu_zt(JSON.parse(localStorage.getItem('cookxs_yh')));
 			var check_xz = true;
@@ -342,6 +358,11 @@
 			}
 			//删除收藏/yskjApp/appYskj/V1/delCollect.do
 			function del_sc(){
+				 var btnArray = ['取消', '确认'];
+				 mui.confirm('确定删除吗?', '提示', btnArray, function(e) {
+				 	 if (e.index == 0) {
+				 	 	return false;
+				 	 }
 //				alert(str_fyid);
 				mui.ajax(url + '/yskjApp/appYskj/V1/delCollect.do',{
 					data:{
@@ -364,6 +385,7 @@
 						console.log(type);
 					}
 				});
+				})
 			}
 			
 			window.addEventListener("del_selsc", function (e) {

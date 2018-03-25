@@ -185,24 +185,31 @@
 				<div class="tit">升级服务</div>
 				<div>
 					<ul class="grab">
-				    	<li id="as">
-				    		<a href="#">
+				    	<li>
+				    		<a href="javascript:void(0)">
 				    			<div class="img">
-				    				<img src="img/sjfw.png" alt="">
+				    				<img src="http://47.92.145.21:81/yskjapp/indeximg/upgradeservice/register.png" alt="">
 				    			</div>
 				    		</a>
 				    	</li>
 				    	<li>
-				    		<a href="#">
+				    		<a href="javascript:void(0)">
 				    			<div class="img">
-				    				<img src="img/sjfw.png" alt="">
+				    				<img src="http://47.92.145.21:81/yskjapp/indeximg/upgradeservice/renovation.png" alt="">
 				    			</div>
 				    		</a>
 				    	</li>
 				    	<li>
-				    		<a href="#">
+				    		<a href="javascript:void(0)">
 				    			<div class="img">
-				    				<img src="img/sjfw.png" alt="">
+				    				<img src="http://47.92.145.21:81/yskjapp/indeximg/upgradeservice/finance.png" alt="">
+				    			</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="javascript:void(0)">
+				    			<div class="img">
+				    				<img src="http://47.92.145.21:81/yskjapp/indeximg/upgradeservice/add_service.png" alt="">
 				    			</div>
 				    		</a>
 				    	</li>
@@ -346,7 +353,6 @@
 			});
 			
 			function lpdetail(id){
-				alert(id);
 				mui.openWindow({ 
 					url:'page/loupan_detail.html', //需要打开页面的url地址 
 					id:'loupan_detail',  //需要打开页面的url页面id
@@ -548,14 +554,20 @@
 				});	
 			}
 
-
-			document.getElementById('as').addEventListener('tap', function() {
-			  //打开关于页面
-			  mui.openWindow({
-			    url: './jxfy.html', 
-			    id:'jxfy'
-			  });
-			});
+			var toUrl = ['./page/tax.html','./page/fitup.html','./page/financial.html','./page/added.html']
+			var fwli = $('.grab li');
+			for (var i=0; i<fwli.length; i++) {
+				(function(index){
+					fwli[i].addEventListener('tap',function(){
+						//打开关于页面
+						mui.openWindow({
+							url: toUrl[index], 
+							id:'fw'+index
+						});
+					})
+				})(i)
+			}
+		
 		</script>
 		<script type="text/javascript">  
 			var area = document.getElementsByClassName('tt_news')[0];

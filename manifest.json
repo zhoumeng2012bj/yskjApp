@@ -313,7 +313,8 @@
 					"page/acreage_mj.html",
 					"page/fyTail.html",
 					"page/topNewsInfo.html",
-					"page/login.html"
+					"page/login.html",
+					"page/tax.html"
 				],
 				"priority": 0
 			},
@@ -695,7 +696,9 @@
 					"js/lib/app_config.js",
 					"img/1.jpg"
 				],
-				"refer": [],
+				"refer": [
+					"page/fyTail.html"
+				],
 				"priority": 0
 			},
 			"page/financial.html": {
@@ -817,7 +820,9 @@
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/lib/jquery-1.10.2.min.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -880,7 +885,8 @@
 					"js/lib/app_config.js",
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -915,6 +921,8 @@
 			},
 			"page/add_sfz.html": {
 				"resources": [
+					"css/person.css",
+					"css/mui.min.css",
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/mui.min.js",

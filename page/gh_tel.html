@@ -123,12 +123,12 @@
 				if(pl!=""){
 					//验证手机号
 					if(!(/^1[345678]\d{9}$/.test(pl))){
-					    alert("手机号格式错误");	
+					    mui.alert("手机号格式错误");	
 					    return false;
 					}
 					
 				}else{
-					alert("请填写手机号");
+					mui.alert("请填写手机号");
 					return false;
 				}
 				phone=pl;
@@ -221,18 +221,18 @@
 			function compCode(){
 				var pl=$(".add_phone").val();
 				if(pl==""){
-					alert("手机号不能为空");
+					mui.alert("手机号不能为空");
 					return false;
 				}
 				if(pl!=""){
 						if(!(/^1[345678]\d{9}$/.test(pl))){
-					    alert("手机号格式错误");	
+					    mui.alert("手机号格式错误");	
 					    return false;
 					}
 				}
 				var cd=$(".add_code").val();
 				if(cd==""){
-					alert("验证码不能为空");
+					mui.alert("验证码不能为空");
 					return false;
 				}
 					mui.ajax(url + '/yskjApp/appYskj/V1/compCode.do',{

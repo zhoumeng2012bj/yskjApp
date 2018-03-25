@@ -116,7 +116,9 @@
 			    	<li><span class="prerental_house">预租房</span></li>
 			    </ul>
 		    	<ul class="scmenu1">
-			    	<li><span class="office_building active">写字楼</span></li>
+
+			    	<li><span class="office_building">写字楼</span></li>
+
 			    	<li><span class="apartment">公寓</span></li>
 			    	<li><span class="business_building">商务楼</span></li>
 			    	<li><span class="business">商业</span></li>
@@ -133,11 +135,11 @@
 		    
 		    <!--楼盘介绍-->
 		    <div class="jieshao">
-		    	<p class="lp_nm ">楼盘介绍</p>
-		    	<p class="lp_nm desp"></p>
+		    	<p class="lp_nm " style="font-size: 0.373333rem;font-weight: bold;">楼盘介绍</p>
+		    	<p class="lp_nm desp" style="text-align: left;padding: 0 0.4rem;height: auto;"></p>
 		    </div>
 		     <div class="pt20 mb08 border-tb bg-white" id="kuan">
-        <h2 class="sort-title tc fb mb20" style="text-align: center;font-size: 18px;">周边配套</h2>
+        <h2 class="sort-title tc fb mb20" style="text-align: center;font-size: 0.373333rem;font-weight: bold;">周边配套</h2>
         <div  id="allmap" style="width:100%;height:100%;"></div>
         <ul class="text-gray6 clearfix ph15" id="map_item_ul">
           <li class="supporting-item">
@@ -168,7 +170,7 @@
 		(function(){
 			var le=0;
 			var   positionData="";
-			detailData();
+//			detailData();
 			var allmap="";
 		})();
 			/*图片自动轮播*/
@@ -191,7 +193,8 @@
 			var lp_id = '';
 			var page = 1;
 			var lp_leibie = 1;//现租房1；预租房0；
-			var lp_leib = '写字楼';
+
+			var lp_leib = '';
 //			window.addEventListener("loppan_id", function (e) {
 //			    //获得事件参数
 //				localStorage.setItem('lp_id',e.detail.lp_id);
@@ -203,6 +206,7 @@
                 var self = plus.webview.currentWebview();
                 lp_id = self.lpid;
                 localStorage.setItem('lp_id',self.lpid);
+                detailData(lp_id);
                 detailDataHouses(lp_id,page,lp_leibie,lp_leib);
             });
 			
@@ -220,14 +224,12 @@
 						if($('.scmenu li').eq(index).text() == '现租房'){
 							$('.ss_bt').html('');
 							lp_leibie = 1;
-							alert(lp_leibie)
 							page = 1;
 							detailDataHouses(lp_id,page,lp_leibie,lp_leib);
 						}
 						if($('.scmenu li').eq(index).text() == '预租房'){
 							$('.ss_bt').html('');
 							lp_leibie = 0;
-							alert(lp_leibie)
 							page = 1;
 							detailDataHouses(lp_id,page,lp_leibie,lp_leib);
 						}
@@ -274,7 +276,8 @@
 //				console.log(page);
 //				console.log(lp_leibie+'前两个菜单');
 //				console.log(lp_leib+'后四个菜单');
-				if(id == ''){
+
+				if(id == '' || id == undefined){
 					id = localStorage.getItem('lp_id');
 				}
 				mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
@@ -297,11 +300,14 @@
 						if(data.success){
 							var lp_data = data.data.houses;
 							console.log(lp_data);
+							if(lp_data == [] || lp_data == ''){
+								mui.toast("没有更多数据了",{ duration:'2000', type:'div' });
+							}
 							for (var i=0; i<lp_data.length; i++) {
 								if(lp_data[i].fjzt == ''){
-									lp_str = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/m²/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/m²/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
 								}else{
-									lp_str = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/m²/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/m²/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
 								}
 								$('.ss_bt').append(lp_str);
 							}
@@ -315,119 +321,133 @@
 					}
 				});
 			}
-			function  detailData(){
-			mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
-				data:{
-					"parameters":{"building_id":"3003","curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
-					"foreEndType":2,
-					"code":"30000002"
-					},
-				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
-				timeout:10000,//超时时间设置为10秒；
-				headers:{'Content-Type':'application/json'},	              
-				success:function(data){
-					if(data.success){
-						//如果页数 是 1获取楼盘信息     如果页数不是1  则无需赋值
-						var lpdata=data.data1;
-						$(".building_name").html(lpdata.building_name);
-						$(".desp").html(lpdata.desp);
-						$(".gnf").html(lpdata.gnf+"元/㎡/季");
-						$(".kprq").html(lpdata.kprq);
-						$(".kzfyS").html(lpdata.kzfyS);
-						$(".price").html(lpdata.price);
-						$(".tcf").html(lpdata.tcf+"元/月");
-						$(".tcwsl").html(lpdata.tcwsl);
-						$(".wlgs").html(lpdata.wlgs);
-						$(".wyf").html(lpdata.wyf+"元/㎡/月");
-						$(".wygs").html(lpdata.wygs);
-						$(".zc").html(lpdata.zc);
-						var ch1=lpdata.chqxz;
-						if(ch1!=""){
-						var ch2=ch1.split("、");
-						var chs="";
-						for(var i=0;i<ch2.length;i++){
-							var t=ch2[i];
-							if(t==1){
-								chs+="写字楼 ";
-							}else if(t==2){
-								chs+="公寓 ";
-							}else if(t==3){
-								chs+="商务楼 ";
-							}else if(t==5){
-								chs+="商业 ";
-							}
-						}
-						$(".chqxz").html(chs);
-						}
-						$(".address").html(lpdata.district+" "+lpdata.address);
-						//图片轮播信息
-						var housing_icon=lpdata.building_images;
-								if(housing_icon!=""){
-									le=housing_icon.split(";").length;
-									$(".imglunbo").html("1/"+le);
+			
+			function linktodetail(id){
+				mui.openWindow({ 
+					url:'./fyTail.html', //需要打开页面的url地址 
+					id:'fyTail',
+					extras:{
+				      fyid:id
+				    },
+				});				
+			}
+			
+			function  detailData(id){
+				if(id == '' || id == undefined){
+					id = localStorage.getItem('lp_id');
+				}
+				mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
+					data:{
+						"parameters":{"building_id":lp_id,"curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
+						"foreEndType":2,
+						"code":"30000002"
+						},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						if(data.success){
+							//如果页数 是 1获取楼盘信息     如果页数不是1  则无需赋值
+							var lpdata=data.data1;
+							$(".building_name").html(lpdata.building_name);
+							$(".desp").html(lpdata.desp);
+							$(".gnf").html(lpdata.gnf+"元/㎡/季");
+							$(".kprq").html(lpdata.kprq);
+							$(".kzfyS").html(lpdata.kzfyS);
+							$(".price").html(lpdata.price);
+							$(".tcf").html(lpdata.tcf+"元/月");
+							$(".tcwsl").html(lpdata.tcwsl);
+							$(".wlgs").html(lpdata.wlgs);
+							$(".wyf").html(lpdata.wyf+"元/㎡/月");
+							$(".wygs").html(lpdata.wygs);
+							$(".zc").html(lpdata.zc);
+							var ch1=lpdata.chqxz;
+							if(ch1!=""){
+							var ch2=ch1.split("、");
+							var chs="";
+							for(var i=0;i<ch2.length;i++){
+								var t=ch2[i];
+								if(t==1){
+									chs+="写字楼 ";
+								}else if(t==2){
+									chs+="公寓 ";
+								}else if(t==3){
+									chs+="商务楼 ";
+								}else if(t==5){
+									chs+="商业 ";
 								}
-						var h_img="";
-								$(".mui-slider-loop").html(h_img);
-								if(housing_icon!=""){
-									var hous_img=housing_icon.split(";");
-									var v1="";
-									var v2="";
-									for(var i=0;i<hous_img.length;i++){
-										var ims=hous_img[i];
-										if(i==0){
-											v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
-											v1+='<a href="#">';
-											v1+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
-											v1+=' </a> </div>';
-										}else if(i==hous_img.length-1){
-											v2+=' <div class="mui-slider-item mui-slider-item-duplicate">';
-											v2+='<a href="#">';
-											v2+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
-											v2+=' </a> </div>';
-										}
+							}
+							$(".chqxz").html(chs);
+							}
+							$(".address").html(lpdata.district+" "+lpdata.address);
+							//图片轮播信息
+							var housing_icon=lpdata.building_images;
+									if(housing_icon!=""){
+										le=housing_icon.split(";").length;
+										$(".imglunbo").html("1/"+le);
 									}
-									for(var i=0;i<hous_img.length;i++){
+							var h_img="";
+									$(".mui-slider-loop").html(h_img);
+									if(housing_icon!=""){
+										var hous_img=housing_icon.split(";");
+										var v1="";
+										var v2="";
+										for(var i=0;i<hous_img.length;i++){
 											var ims=hous_img[i];
 											if(i==0){
-												h_img+=v2;
-											} 
-											h_img+=' <div class="mui-slider-item">';
-											h_img+='<a href="#">';
-											h_img+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
-											h_img+=' </a> </div>';
-											
-											if(i==hous_img.length-1){
-											h_img+=v1;
+												v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+												v1+='<a href="#">';
+												v1+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+												v1+=' </a> </div>';
+											}else if(i==hous_img.length-1){
+												v2+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+												v2+='<a href="#">';
+												v2+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+												v2+=' </a> </div>';
+											}
 										}
-										
+										for(var i=0;i<hous_img.length;i++){
+												var ims=hous_img[i];
+												if(i==0){
+													h_img+=v2;
+												} 
+												h_img+=' <div class="mui-slider-item">';
+												h_img+='<a href="#">';
+												h_img+='<img src="http://47.92.145.21:81/'+ims+'" alt="" />';
+												h_img+=' </a> </div>';
+												
+												if(i==hous_img.length-1){
+												h_img+=v1;
+											}
+											
+										}
+										$(".mui-slider-loop").html(h_img);
+										/*图片自动轮播*/
+									ca.init();
+									castapp.pictureScroll({
+									    callback:function(pictureNumber){
+						//				    console.log(pictureNumber);
+									    },
+									    isAutoScroll:true,
+									    scrollTime:3
+									});
 									}
-									$(".mui-slider-loop").html(h_img);
-									/*图片自动轮播*/
-								ca.init();
-								castapp.pictureScroll({
-								    callback:function(pictureNumber){
-					//				    console.log(pictureNumber);
-								    },
-								    isAutoScroll:true,
-								    scrollTime:3
-								});
-								}
-						//地图   根据经度 纬度
-						positionData =lpdata.longitude;
-						      positionData+= ',';
-						      positionData+=lpdata.latitude;
-                        bMap(positionData);
-					}else{
-						mui.alert(data.message);
+							//地图   根据经度 纬度
+							positionData =lpdata.longitude;
+							      positionData+= ',';
+							      positionData+=lpdata.latitude;
+	                        bMap(positionData);
+						}else{
+							mui.alert(data.message);
+						}
+						
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
 					}
-					
-				},
-				error:function(xhr,type,errorThrown){
-					//异常处理；
-					console.log(type);
-				}
-			});
+				});
 			}
 			//搜索查询房源数据
 			

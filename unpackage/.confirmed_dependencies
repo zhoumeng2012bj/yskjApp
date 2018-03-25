@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"index.html": {
 		"resources": [
 			"js/lib/flexible_css.js",
@@ -19,106 +20,57 @@
 	},
 	"qyhl.html": {
 		"resources": [
-			"img/tab_bg1.png",
-			"js/lib/jquery-1.10.2.min.js",
 			"img/qiyefuwutitle.png",
 			"img/huityuanicon.png",
 			"css/qiYeHuLian.css",
 			"img/beijignicon.png",
-			"img/qiyehulian.png",
-			"js/lib/app_config.js",
-			"js/lib/flexible_css.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"img/qiyehulian.png"
 		]
 	},
 	"jxfyList.html": {
 		"resources": [
-			"css/jxfyList.css",
-			"css/sy.css",
-			"css/style.css",
-			"js/lib/app_config.js",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/lib/flexible.js"
-		],
-		"refer": [
-			"page/fyTail.html"
+			"css/jxfyList.css"
 		]
 	},
 	"sy.html": {
 		"resources": [
-			"img/2.png",
-			"js/lib/castapp.js",
+			"img/tab_bg1.png",
 			"img/yzwt.png",
+			"js/lib/castapp.js",
 			"img/qy_icon.png",
 			"img/mj_icon.png",
 			"css/sy.css",
-			"img/sjfw.png",
 			"img/jjr_icon.png",
 			"img/gj_icon.png",
 			"img/tt_icon.png",
-			"img/tab_bg1.png",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/app_config.js",
-			"img/tab_bg.png",
-			"js/lib/flexible_css.js",
-			"css/style.css",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
+			"img/sy_kfion.png",
 			"img/sy_bxion.png",
-			"img/sy_kfion.png"
+			"img/tab_bg.png"
 		],
 		"refer": [
-			"page/broker.html",
-			"page/loupan_detail.html",
-			"page/topNewsInfo.html",
-			"page/saleFuWu.html",
-			"page/fyTail.html",
-			"page/steward.html",
-			"page/login.html"
+			"page/tax.html"
 		]
 	},
 	"wd.html": {
 		"resources": [
+			"js/lib/jquery-1.10.2.min.js",
 			"fonts/mui.ttf",
 			"img/sz.png",
 			"img/fav.png",
 			"img/per.png",
 			"img/head_img.png",
 			"img/wd_bg.png",
-			"css/wd.css",
 			"js/lib/app_config.js",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"css/style.css",
-			"js/lib/flexible.js"
+			"css/wd.css"
 		],
 		"refer": [
-			"page/login.html",
-			"page/mycollection.html",
-			"page/myset.html",
-			"page/person.html"
+			"page/mycollection.html"
 		]
 	},
 	"jxfy.html": {
 		"resources": [
 			"jxfyList.html",
-			"css/jxfy.css",
-			"js/lib/jquery-1.10.2.min.js",
-			"fonts/mui.ttf",
-			"js/lib/flexible_css.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
-			"css/style.css"
+			"css/jxfy.css"
 		],
 		"refer": [
 			"jxfyList.html"
@@ -126,6 +78,7 @@
 	},
 	"fwsc.html": {
 		"resources": [
+<<<<<<< HEAD
 			"css/fwsc.css",
 			"js/lib/jquery-1.10.2.min.js",
 			"css/mui.min.css",
@@ -133,59 +86,41 @@
 		],
 		"refer": [
 			"page/financial.html"
+=======
+			"css/fwsc.css"
+>>>>>>> 7212cc272089ca5e2d731ca525a2c1f18d6b26a9
 		]
 	},
-	"page/login.html": {
+	"page/tax.html": {
 		"resources": [
-			"js/lib/form_yz.js",
-			"js/lib/sha1.js",
-			"css/login.css",
-			"js/lib/md5.js",
-			"img/login_pic.png",
-			"js/mui.min.js",
-			"img/ycmm.png",
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
 			"js/lib/flexible.js",
+<<<<<<< HEAD
 			"js/lib/app_config.js",
 			"css/mui.min.css"
 		],
 		"refer": [
 			"page/wj_pwd.html"
+=======
+			"css/gongShangShuiWu.css"
+>>>>>>> 7212cc272089ca5e2d731ca525a2c1f18d6b26a9
 		]
 	},
 	"page/mycollection.html": {
 		"resources": [
-			"img/del_ion.png",
-			"css/mycollection.css",
-			"img/bj.png",
-			"page/mysc_list.html",
-			"fonts/mui.ttf",
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
+			"img/del_ion.png",
 			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"css/mycollection.css",
+			"img/bj.png",
+			"js/lib/flexible.js",
+			"page/mysc_list.html"
 		],
 		"refer": [
 			"page/mysc_list.html"
-		]
-	},
-	"page/mysc_list.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"css/jxfyList.css",
-			"js/lib/jquery-1.10.2.min.js",
-			"css/sy.css",
-			"js/mui.min.js",
-			"css/mycollection.css",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"page/fyTail.html"
 		]
 	},
 	"page/fyTail.html": {
@@ -196,45 +131,21 @@
 			"js/lib/castapp.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"img/shoucdianhuobg.png"
 		]
 	},
-	"page/myset.html": {
+	"page/mysc_list.html": {
 		"resources": [
-			"css/person.css",
-			"js/mui.min.js",
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"page/disclaimer.html"
-		]
-	},
-	"page/broker.html": {
-		"resources": [
-			"img/his_cs.png",
-			"img/his_js.png",
-			"img/his_pm.png",
-			"css/broker.css"
-		]
-	},
-	"page/person.html": {
-		"resources": [
-			"css/person.css",
 			"js/mui.min.js",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js"
 		],
 		"refer": [
+<<<<<<< HEAD
 			"page/add_name.html",
 			"page/add_sfz.html",
 			"page/gh_tel.html"
@@ -365,6 +276,148 @@
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js"
+=======
+			"page/fyTail.html"
+>>>>>>> 7212cc272089ca5e2d731ca525a2c1f18d6b26a9
 		]
 	}
+=======
+  "page/myset.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "css/person.css",
+      "js/mui.min.js",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "index.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "sy.html",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/lib/flexible.js"
+    ],
+    "refer": [
+      "qyhl.html",
+      "sy.html",
+      "wd.html",
+      "jxfy.html",
+      "fwsc.html"
+    ]
+  },
+  "page/broker.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "img/his_cs.png",
+      "js/mui.min.js",
+      "img/his_js.png",
+      "js/lib/flexible.js",
+      "img/his_pm.png",
+      "css/broker.css",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "page/enterprise_qy.html": {
+    "resources": [
+      "css/enterprise.css",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "page/steward.html": {
+    "resources": [
+      "img/gj_h.png",
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "img/ldd.png",
+      "css/steward.css",
+      "js/mui.min.js",
+      "img/qfw.png",
+      "js/lib/flexible.js",
+      "img/qth.png",
+      "img/yzs.png",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "sy.html": {
+    "refer": [
+      "page/broker.html",
+      "page/enterprise_qy.html",
+      "page/steward.html"
+    ],
+    "resources": [
+      "img/tab_bg1.png",
+      "img/yzwt.png",
+      "js/lib/castapp.js",
+      "img/qy_icon.png",
+      "img/mj_icon.png",
+      "css/sy.css",
+      "img/jjr_icon.png",
+      "img/gj_icon.png",
+      "img/tt_icon.png",
+      "img/sy_kfion.png",
+      "img/sy_bxion.png"
+    ]
+  },
+  "wd.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "img/sz.png",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/lib/flexible.js",
+      "img/fav.png",
+      "img/per.png",
+      "img/head_img.png",
+      "img/wd_bg.png",
+      "js/lib/app_config.js",
+      "css/wd.css"
+    ],
+    "refer": [
+      "page/myset.html"
+    ]
+  },
+  "jxfy.html": {
+    "resources": [
+      "css/jxfy.css",
+      "jxfyList.html"
+    ],
+    "refer": []
+  },
+  "fwsc.html": {
+    "resources": [
+      "css/fwsc.css"
+    ],
+    "refer": []
+  },
+  "qyhl.html": {
+    "resources": [
+      "img/qiyefuwutitle.png",
+      "img/huityuanicon.png",
+      "css/qiYeHuLian.css",
+      "img/beijignicon.png",
+      "img/qiyehulian.png"
+    ]
+  },
+  "jxfyList.html": {
+    "resources": [
+      "css/jxfyList.css"
+    ]
+  }
+>>>>>>> 184f0f95ef8b3bf286ffe1b3ae76fcd30192e991
 }
