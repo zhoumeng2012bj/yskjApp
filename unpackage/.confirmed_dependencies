@@ -78,7 +78,17 @@
 	},
 	"fwsc.html": {
 		"resources": [
+<<<<<<< HEAD
+			"css/fwsc.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": [
+			"page/financial.html"
+=======
 			"css/fwsc.css"
+>>>>>>> 7212cc272089ca5e2d731ca525a2c1f18d6b26a9
 		]
 	},
 	"page/tax.html": {
@@ -87,7 +97,15 @@
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
+<<<<<<< HEAD
+			"js/lib/app_config.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"page/wj_pwd.html"
+=======
 			"css/gongShangShuiWu.css"
+>>>>>>> 7212cc272089ca5e2d731ca525a2c1f18d6b26a9
 		]
 	},
 	"page/mycollection.html": {
@@ -127,7 +145,140 @@
 			"js/lib/app_config.js"
 		],
 		"refer": [
+<<<<<<< HEAD
+			"page/add_name.html",
+			"page/add_sfz.html",
+			"page/gh_tel.html"
+		]
+	},
+	"page/add_name.html": {
+		"resources": [
+			"js/mui.min.js"
+		]
+	},
+	"page/add_sfz.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/loupan_detail.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"img/wz_ion.png",
+			"img/images/2.png",
+			"img/images/4.png",
+			"css/fyxq.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/castapp.js",
+			"js/mui.min.js",
+			"img/images/1.png",
+			"img/images/3.png",
+			"js/lib/flexible.js",
+			"css/loupan_detail.css",
+			"js/lib/app_config.js",
+			"css/jxfyList.css",
+			"css/mui.min.css",
+			"css/sy.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"page/topNewsInfo.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
+		]
+	},
+	"page/saleFuWu.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/saleFuWu.css",
+			"js/lib/sy.js",
+			"js/lib/flexible.js",
+			"img/shouffwu.png",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/steward.html": {
+		"resources": [
+			"img/gj_h.png",
+			"img/ldd.png",
+			"css/steward.css",
+			"img/qfw.png",
+			"img/qth.png",
+			"img/yzs.png"
+		]
+	},
+	"page/disclaimer.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/disclaimer.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/wj_pwd.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/sha1.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/wj_pwd.js",
+			"js/lib/md5.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css"
+		]
+	},
+	"page/liJiShenQing.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/liJiShenQ.css",
+			"js/mui.min.js",
+			"js/lib/sy.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css"
+		]
+	},
+	"page/financial.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/xq_2.png",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/xq_3.png",
+			"css/financial.css",
+			"img/xq_1.png"
+		],
+		"refer": [
+			"page/liJiShenQing.html"
+		]
+	},
+	"page/gh_tel.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+=======
 			"page/fyTail.html"
+>>>>>>> 7212cc272089ca5e2d731ca525a2c1f18d6b26a9
 		]
 	}
 =======
