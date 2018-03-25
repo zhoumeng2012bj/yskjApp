@@ -51,10 +51,10 @@
 				<div class="rmtj_pic yiny" id="gssw">
 					<img src="http://116.62.68.26/yskjapp\servicemall\recommend\hotservice1.png"/>
 				</div>
-				<div class="rmtj_pic yiny">
+				<div class="rmtj_pic yiny" id="zxdz">
 					<img src="http://116.62.68.26/yskjapp\servicemall\recommend\hotservice2.png"/>
 				</div>
-				<div class="rmtj_pic yiny" style="margin-top: 0.533333rem;">
+				<div class="rmtj_pic yiny" style="margin-top: 0.533333rem;" id="jrfw">
 					<img src="http://116.62.68.26/yskjapp\servicemall\recommend\hotservice3.png"/>
 				</div>
 			</div>
@@ -98,6 +98,25 @@
 					})
 				})(i)
 			}
+			//
+			$('#gssw').click(function(){
+				mui.openWindow({
+					url: toUrl[0], 
+					id:'fw0'
+				});
+			});
+			$('#zxdz').click(function(){
+				mui.openWindow({
+					url: toUrl[1], 
+					id:'fw1'
+				});
+			});
+			$('#jrfw').click(function(){
+				mui.openWindow({
+					url: toUrl[2], 
+					id:'fw2'
+				});
+			});
 		</script>
 	</body>
 
