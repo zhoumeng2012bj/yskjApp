@@ -130,6 +130,9 @@
 			"js/lib/jquery-1.10.2.min.js",
 			"css/mui.min.css",
 			"css/style.css"
+		],
+		"refer": [
+			"page/financial.html"
 		]
 	},
 	"page/login.html": {
@@ -146,6 +149,9 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"page/wj_pwd.html"
 		]
 	},
 	"page/mycollection.html": {
@@ -230,7 +236,8 @@
 		],
 		"refer": [
 			"page/add_name.html",
-			"page/add_sfz.html"
+			"page/add_sfz.html",
+			"page/gh_tel.html"
 		]
 	},
 	"page/add_name.html": {
@@ -304,6 +311,57 @@
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"css/disclaimer.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/wj_pwd.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/sha1.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/wj_pwd.js",
+			"js/lib/md5.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css"
+		]
+	},
+	"page/liJiShenQing.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/liJiShenQ.css",
+			"js/mui.min.js",
+			"js/lib/sy.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css"
+		]
+	},
+	"page/financial.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/xq_2.png",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/xq_3.png",
+			"css/financial.css",
+			"img/xq_1.png"
+		],
+		"refer": [
+			"page/liJiShenQing.html"
+		]
+	},
+	"page/gh_tel.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js"

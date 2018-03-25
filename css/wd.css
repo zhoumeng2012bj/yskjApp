@@ -57,7 +57,7 @@ body{
 	font-size: 0.346666rem;
 	color: #fff;
 }
-.user_news .wrz,.user_news .yrz{
+.user_news .wrz,.user_news .yrz,.user_news .sh{
 	display: inline-block;
 	width: 1.733333rem;
 	height: 0.506666rem;
@@ -73,6 +73,7 @@ body{
 	border: none;
 	color: #fff;
 }
+
 .wd_list li{
 	position: relative;
 	display: flex;

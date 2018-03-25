@@ -450,7 +450,8 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -930,7 +931,9 @@
 					"css/disclaimer.css",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0

@@ -4,6 +4,8 @@
 	border-bottom: 1px solid #e5e5e5;
 }
 .public_con{
+	padding-left: 20px;
+	padding-right: 20px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -19,4 +21,8 @@
 .public_h1 h1,.public_h1 a{
 	font-size: 0.453333rem;
 	color: #333333;
+}
+.decClass{
+	font-size: 0.32rem;
+	
 }
