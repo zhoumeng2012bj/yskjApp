@@ -116,7 +116,9 @@
 			    	<li><span class="prerental_house">预租房</span></li>
 			    </ul>
 		    	<ul class="scmenu1">
+
 			    	<li><span class="office_building">写字楼</span></li>
+
 			    	<li><span class="apartment">公寓</span></li>
 			    	<li><span class="business_building">商务楼</span></li>
 			    	<li><span class="business">商业</span></li>
@@ -191,6 +193,7 @@
 			var lp_id = '';
 			var page = 1;
 			var lp_leibie = 1;//现租房1；预租房0；
+
 			var lp_leib = '';
 //			window.addEventListener("loppan_id", function (e) {
 //			    //获得事件参数
@@ -273,6 +276,7 @@
 //				console.log(page);
 //				console.log(lp_leibie+'前两个菜单');
 //				console.log(lp_leib+'后四个菜单');
+
 				if(id == '' || id == undefined){
 					id = localStorage.getItem('lp_id');
 				}

@@ -342,6 +342,11 @@
 			}
 			//删除收藏/yskjApp/appYskj/V1/delCollect.do
 			function del_sc(){
+				 var btnArray = ['取消', '确认'];
+				 mui.confirm('确定删除吗?', '提示', btnArray, function(e) {
+				 	 if (e.index == 0) {
+				 	 	return false;
+				 	 }
 //				alert(str_fyid);
 				mui.ajax(url + '/yskjApp/appYskj/V1/delCollect.do',{
 					data:{
@@ -364,6 +369,7 @@
 						console.log(type);
 					}
 				});
+				})
 			}
 			
 			window.addEventListener("del_selsc", function (e) {

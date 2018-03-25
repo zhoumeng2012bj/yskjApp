@@ -22,10 +22,12 @@
 }
 .gjkj{
 	width: 10rem;
-	height: 11.466666rem;
+	min-height: 11.466666rem;
+	height: auto;
 	background: #fff;
 	border-bottom: 1px solid #e5e5e5;
 	padding-top: 0.1px;
+	padding-bottom: 0.4rem;
 }
 .gjkj_t{
 	font-size: 0.4rem;
@@ -39,7 +41,8 @@
 	color: #ff4343;
 }
 .fwt{
-	width: 9.2rem;
+	/*width: 9.2rem;*/
+	width: 8.8rem;
 	margin: 0 auto;
 	height: auto;
 }
