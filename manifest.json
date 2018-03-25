@@ -816,7 +816,9 @@
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/lib/jquery-1.10.2.min.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -879,7 +881,8 @@
 					"js/lib/app_config.js",
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
