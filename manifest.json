@@ -5,7 +5,7 @@
 		"iPad"
 	],
 	"id": "H54DB5283",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "yskjApp",/*应用名称，程序桌面图标名称*/
+	"name": "幼狮空间",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -204,9 +204,8 @@
 				"ios": {
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "",
-						"retina47": "img/welcome.png"
+						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": ""
 					},
 					"ipad": {
 						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
@@ -246,7 +245,8 @@
 					"wd.html",
 					"jxfy.html",
 					"fwsc.html",
-					"qyhl.html"
+					"qyhl.html",
+					null
 				],
 				"priority": 0
 			},
@@ -299,8 +299,8 @@
 					"img/sjfw.png",
 					"js/lib/app_config.js",
 					null,
-					"img/sy_kfion.png",
-					"img/sy_bxion.png"
+					"img/sy_bxion.png",
+					"img/sy_kfion.png"
 				],
 				"refer": [
 					"jxfy.html",
@@ -312,7 +312,8 @@
 					"page/enterprise_qy.html",
 					"page/acreage_mj.html",
 					"page/fyTail.html",
-					"page/topNewsInfo.html"
+					"page/topNewsInfo.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -326,7 +327,8 @@
 					"jxfyList.html",
 					"css/jxfy.css",
 					"fonts/mui.ttf",
-					"js/lib/jquery-1.10.2.min.js"
+					"js/lib/jquery-1.10.2.min.js",
+					null
 				],
 				"refer": [
 					"wd.html",
@@ -377,7 +379,8 @@
 					"img/qiyehulian.png",
 					"js/lib/app_config.js",
 					"img/tab_bg.png",
-					"img/dacheghezuo.png"
+					"img/dacheghezuo.png",
+					null
 				],
 				"refer": [],
 				"priority": 0
@@ -486,7 +489,8 @@
 				],
 				"refer": [
 					"page/setpwd.html",
-					"wd.html"
+					"wd.html",
+					"page/disclaimer.html"
 				],
 				"priority": 0
 			},
@@ -575,7 +579,9 @@
 					"js/lib/app_config.js",
 					null
 				],
-				"refer": [],
+				"refer": [
+					"page/fyTail.html"
+				],
 				"priority": 0
 			},
 			"page/login.html": {
@@ -652,7 +658,13 @@
 				"resources": [
 					"css/saleFuWu.css",
 					"img/shouffwu.png",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"js/lib/sy.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -804,7 +816,9 @@
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/lib/jquery-1.10.2.min.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -867,7 +881,8 @@
 					"js/lib/app_config.js",
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -903,7 +918,24 @@
 			"page/add_sfz.html": {
 				"resources": [
 					"css/person.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/disclaimer.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/disclaimer.css",
+					"js/mui.min.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
