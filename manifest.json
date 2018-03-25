@@ -920,6 +920,8 @@
 			},
 			"page/add_sfz.html": {
 				"resources": [
+					"css/person.css",
+					"css/mui.min.css",
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/mui.min.js",

@@ -96,12 +96,17 @@ document.getElementById("yinc").addEventListener('input',function(){
 document.getElementById("yinc1").addEventListener('input',function(){
 	if(this.value != ''){
 		pwd1 = this.value;
+		if(pwd1.length<6){ 
+			$('.tip4').removeClass('tip_color');
+			$('.tip4').html('密码最少为6位');
+		}else{
 		if(pwd == pwd1){
 			$('.tip4').html('正确');
 			$('.tip4').addClass('tip_color');
 		}else{
 			$('.tip4').removeClass('tip_color');
 			$('.tip4').html('两次输入的密码不一致');
+		}
 		}
 		btnzt();
 	}else{

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"index.html": {
 		"resources": [
 			"js/lib/flexible_css.js",
@@ -129,4 +130,143 @@
 			"page/fyTail.html"
 		]
 	}
+=======
+  "page/myset.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "css/person.css",
+      "js/mui.min.js",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "index.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/mui.min.js",
+      "css/iconfont.css",
+      "sy.html",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/lib/flexible.js"
+    ],
+    "refer": [
+      "qyhl.html",
+      "sy.html",
+      "wd.html",
+      "jxfy.html",
+      "fwsc.html"
+    ]
+  },
+  "page/broker.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "img/his_cs.png",
+      "js/mui.min.js",
+      "img/his_js.png",
+      "js/lib/flexible.js",
+      "img/his_pm.png",
+      "css/broker.css",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "page/enterprise_qy.html": {
+    "resources": [
+      "css/enterprise.css",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "page/steward.html": {
+    "resources": [
+      "img/gj_h.png",
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "img/ldd.png",
+      "css/steward.css",
+      "js/mui.min.js",
+      "img/qfw.png",
+      "js/lib/flexible.js",
+      "img/qth.png",
+      "img/yzs.png",
+      "js/lib/app_config.js"
+    ],
+    "refer": []
+  },
+  "sy.html": {
+    "refer": [
+      "page/broker.html",
+      "page/enterprise_qy.html",
+      "page/steward.html"
+    ],
+    "resources": [
+      "img/tab_bg1.png",
+      "img/yzwt.png",
+      "js/lib/castapp.js",
+      "img/qy_icon.png",
+      "img/mj_icon.png",
+      "css/sy.css",
+      "img/jjr_icon.png",
+      "img/gj_icon.png",
+      "img/tt_icon.png",
+      "img/sy_kfion.png",
+      "img/sy_bxion.png"
+    ]
+  },
+  "wd.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "img/sz.png",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/lib/flexible.js",
+      "img/fav.png",
+      "img/per.png",
+      "img/head_img.png",
+      "img/wd_bg.png",
+      "js/lib/app_config.js",
+      "css/wd.css"
+    ],
+    "refer": [
+      "page/myset.html"
+    ]
+  },
+  "jxfy.html": {
+    "resources": [
+      "css/jxfy.css",
+      "jxfyList.html"
+    ],
+    "refer": []
+  },
+  "fwsc.html": {
+    "resources": [
+      "css/fwsc.css"
+    ],
+    "refer": []
+  },
+  "qyhl.html": {
+    "resources": [
+      "img/qiyefuwutitle.png",
+      "img/huityuanicon.png",
+      "css/qiYeHuLian.css",
+      "img/beijignicon.png",
+      "img/qiyehulian.png"
+    ]
+  },
+  "jxfyList.html": {
+    "resources": [
+      "css/jxfyList.css"
+    ]
+  }
+>>>>>>> 184f0f95ef8b3bf286ffe1b3ae76fcd30192e991
 }
