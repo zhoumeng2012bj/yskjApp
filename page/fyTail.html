@@ -144,12 +144,16 @@
 		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript" src="../js/lib/castapp.js" ></script>
 		<script type="text/javascript">
-			window.addEventListener("fyyuadeqx", function (e) {
-			    //获得事件参数
+			mui.plusReady(function(){
 				var collectId="";
 				var le=0;
 				var fyid="";
-				fyid = e.detail.fyid;
+				var self = plus.webview.currentWebview();
+                fyid = self.fyid;
+                localStorage.setItem('fyid',self.fyid);
+                if(fyid == ''){
+                	fyid = localStorage.getItem('fyid');
+                }
 			var cookieId=JSON.parse(localStorage.getItem('cookxs_yh'));
 		(function(){
 			detailData();
@@ -395,7 +399,11 @@
 			  $('.imglunbo').html(event.detail.slideNumber+1+'/'+le);
 			  /*alert("你正在看第"+(event.detail.slideNumber+1)+"张图片");*/
 			});
-			});
+            });
+			/*window.addEventListener("fyyuadeqx", function (e) {
+			    //获得事件参数
+			
+			});*/
             
 			
 		</script>

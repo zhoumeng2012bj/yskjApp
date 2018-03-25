@@ -14,17 +14,17 @@
 .fyxqxxer ul{border-bottom: 1px solid #e5e5e5;height: 100%;margin-left: 0.506666rem;width: 8.92rem;display: flex;align-items: center;}
 .fyxqxxer ul li{width: 33.33%;position: relative;padding-left: 0.36rem;}
 .fyxqxxer ul li:after{content: "";display: block;width: 1px;height: 0.906666rem;background-color: #e5e5e5;position: absolute;top: 50%;right: 0px;margin-top: -0.453333rem;}
-.fyxqxxer ul li:first-child{padding-left: 0;}
+.fyxqxxer ul li:last-child:after{display: none;}
 .danjia{font-size: 0.346666rem;color: #919191;}
 .danyuan{font-size: 0.4rem;margin-top: 0.12rem;color: #f4513e;}
 .fyxqxxsan{margin-top: 0.386666rem;padding-left: 0.506666rem;}
 .zhognxiu{height: 0.373333rem;display: flex;text-align: center;align-items: center;}
-.zhognxiuyi{width: 1.186666rem;display: flex;height: 100%;}
-.zhognxiuyi i{font-style: normal;width: 1.053333rem;border: 1px solid #daeefd;background-color: #daeefd;border-radius: 5px;line-height: 100%;height: 100%;text-align: center;font-size: 0.266666rem;color: #20a0ff;}
-.kezhuce{width: 1.053333rem;border: 1px solid #daeefd;background-color: #daeefd;border-radius: 5px;line-height: 100%;height: 100%;text-align: center;font-size: 0.266666rem;color: #3db894;}
+.zhognxiuyi{ display: flex;height: 100%;}
+.zhognxiuyi i{font-style: normal;border: 1px solid #daeefd;background-color: #daeefd;border-radius: 5px;line-height: 100%;height: 100%;text-align: center;font-size: 0.266666rem;color: #20a0ff;padding-left: 0.12rem;padding-right: 0.12rem;padding-top:0.04rem;}
+.kezhuce{ border: 1px solid #e8f2eb;background-color: #e8f2eb;border-radius: 5px;line-height: 100%;height: 100%;text-align: center;font-size: 0.266666rem;color: #3db894;margin-left:0.186666rem;padding-left: 0.12rem;padding-right: 0.12rem;padding-top:0.04rem;}
 .fyxqxxsan ul{margin-top: 0.4rem;}
 .stkrgw{width: 50%;}
-.fyxqxxsan ul li{display: flex;height:0.853333rem;}
+.fyxqxxsan ul li{display: flex;height:0.853333rem;height: auto;padding-bottom: 0.3rem;}
 .fyxqxxsan ul li p span{font-size: 0.373333rem;}
 .kognwrgwei{color: #919191;}
 .kognwrgwei i{font-style: normal;}

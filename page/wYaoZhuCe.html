@@ -15,8 +15,9 @@
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav fufanhui">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">我要注册</h1>
+		    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+		    <div class="mui-icon mui-action-back mui-icon-back mui-icon-left-nav mui-pull-left"></div>
+		    <h1 class="mui-title">立即申请</h1>
 		</header>
 	<div class="mui-content">
 	    <div class="qlxnide">请留下您的基本信息与联系方式，我们会及时与您联系，为 您提供专属服务。</div>
@@ -38,7 +39,7 @@
 	    		    	onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
     		    	<span class="hqyzm" onclick="huoqvyanzm()">获取验证码</span>
 	    		</div>
-	    		<div class="mui-input-row inp shfuimput">
+	    		<div class="mui-input-row inp shfuimput inpTex">
 	    			<span class="shurpnone">验证码</span>
 	    		    <input type="text" class="mui-input-clear fwscCode" placeholder="请输入验证码">
 	    		</div>
@@ -66,8 +67,217 @@
 	
 		<script src="../js/mui.min.js"></script>
 	    <script src="../js/lib/app_config.js"></script>
+	    <script type="text/javascript">
+	        var old_back = mui.back;
+	    	mui.back = function() {
+	    	 	var code=$('.fwscCode').val();
+				var phone=$('.fwscPhone').val();
+				var name=$('.fwscName').val();
+				var memo=$('#memo').val();
+			    // 弹出确认框
+			     var btnArray = ['放弃','继续编辑'];
+                if (code !='' || phone !='' || name !='' || memo!='') {
+				  mui.confirm('您编辑的内容还没有保存？','提示', btnArray,function(e){ 	
+                    // old_back();
+                    if (e.index != 1){
+                    	 mui.doAction('backs');
+                    }
+				  });
+                }else{
+                	old_back();
+                }
+			}
+	    </script>
 		<script type="text/javascript">
 			mui.init();
+            var fwscType="";
+			 window.onload = function(){
+	            //业务数据获取完毕，并已插入当前页面DOM；
+	            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+	            mui.plusReady(function(){
+	                var self = plus.webview.currentWebview();
+	                fwscType = self.fwscType;
+	                //关闭等待框
+	                plus.nativeUI.closeWaiting();
+	                //显示当前页面
+	                mui.currentWebview.show();
+	                //输入限制
+	                initBind();
+	            });
+	       }
+			//获取验证密码倒计时
+			var tag = true;
+			var countdown=60; 
+			function settime(obj) {
+			    if (countdown == 0) { 
+			    	tag = true;
+			        obj.html("获取验证码");
+			        countdown = 60; 
+			        return;
+			    } else { 
+			    	tag = false;
+			        obj.html("重新发送(" + countdown + ")"); 
+			        countdown--;
+			    } 
+				setTimeout(function() { 
+			    	settime(obj) 
+				},1000)
+			}
+			//生成cookie
+			function createcookie(){
+				var cookyezhi = new Date;
+				localStorage.setItem('cookyezhi', JSON.stringify(cookyezhi));
+				return cookyezhi;
+			}
+			
+			var cookyezhi = createcookie();
+			/*服务商城*/
+			function huoqvyanzm(){
+				/*			发送手机验证码*/
+				if($('.fwscPhone').val()==''){
+					mui.alert('请填写手机号码', '提示', function(){});
+					return false;
+				}else if(!(/^1[34578]\d{9}$/.test($('.fwscPhone').val()))){
+					mui.alert('请确认填写手机号是否正确', '提示', function(){});
+   		           return false;
+				}
+				if(tag){
+					var phone = $('.fwscPhone').val();
+					mui.ajax(url+'/yskjApp/appYskj/V1/getServiceCode.do',{
+						data:{
+							'phone':phone,
+							'cookie':cookyezhi
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.success){
+								mui.toast('验证码已发送',{ duration:'2000', type:'div' }) 
+								tag = false;
+								var obg = $('.hqyzm');
+								settime(obg);
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
+							networkLink();
+						}
+					});
+				}else{
+					
+				}
+			}
+			//type 1、工商税务，2、增值服务，3、定制装修，4金融服务
+			function tijiao(){
+				var code=$('.fwscCode').val();
+				var phone=$('.fwscPhone').val();
+				var name=$('.fwscName').val();
+				var memo=$('#memo').val();
+				var type=fwscType;
+				if(name==''){
+					mui.alert('请填写姓名', '提示', function(){});
+					return false;
+				}else if(phone==''){
+					mui.alert('请填写手机号', '提示', function(){});
+					return false;
+				}else if(code==''){
+					mui.alert('请填写验证码', '提示', function(){});
+					return false;
+				}else if(type==''){
+					mui.alert('提交参数有误', '提示', function(){});
+					return false;
+				}
+				
+				mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
+					data:{
+						'code':code,
+						'cookie':cookyezhi
+					},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							mui.ajax(url+'/yskjApp/webApp/dataInfo/mallService.do',{
+								data:{
+									'name':name,
+									'phone':phone,
+									'type':type,
+									'memo':memo
+								},
+								dataType:'json',//服务器返回json格式数据
+								type:'post',//HTTP请求类型
+								timeout:10000,//超时时间设置为10秒；
+								headers:{'Content-Type':'application/json'},	              
+								success:function(data){
+									//服务器返回响应，根据响应结果，分析是否登录成功；
+									if(data.success){
+										cleanVal();
+										mui.alert('提交成功，我们将会与您联系。');
+										//成功后返回至服务商城页面
+										mui.openWindow({
+											url: '../fwsc.html', 
+											id:'fwsc'
+										});
+								return;
+									}else{
+										mui.alert(data.message);
+									}
+								},
+								error:function(xhr,type,errorThrown){
+									//异常处理；
+									console.log(type);
+									networkLink();
+								}
+							});	
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+						networkLink();
+					}
+				});	
+			}
+			//输入限制
+		   function initBind(){  
+		   	    //输入限制
+			    $("#memo").blur(function(){ checkMessage();});  
+			    $("#memo").keyup(function() { checkMessage(); });  
+			    $("#memo").keydown(function() { checkMessage(); });  
+		    }
+		    function checkMessage(){  
+		    	var strLength=$('#memo').val().length;
+		    	if(strLength>=200){
+		    		$("#textNum").html(200); 
+		    	}else{
+		    		$("#textNum").html(strLength);  
+		    	}
+			}  
+			
+			//清除input
+			function cleanVal(){
+				countdown == 0;
+			    //获得事件参数
+				$('.fwscCode').val("");
+				$('.fwscCode').blur();
+			    $('.fwscPhone').val("");
+			    $('.fwscPhone').blur();
+			    $('.fwscName').val("");
+			    $('.fwscName').blur();
+			    $('#memo').val("");
+			    $('#memo').blur();
+			}
 
 		</script>
 	</body>

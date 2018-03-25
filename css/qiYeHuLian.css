@@ -26,22 +26,22 @@
 .qyfwul li{margin-left: 0.4rem;margin-bottom:0.386666rem;width: 9.2rem;height: 3.333333rem;position: relative;box-shadow:0px 0px 8px #dedede;background-color:#ffffff;}
 .beijmggj{height: 1.24rem;display:flex;align-items:center;}
 .guojilxgs{margin-left: 0.266666rem;width: 0.746666rem;display: flex;height: 0.4rem;background: url(../img/qiyefuwutitle.png) no-repeat;background-size: 100% 100%;}
-.lvyouxaigsfont{margin-left: 0.226666rem;width: 4.96rem;font-size: 0.346666rem;color: #333333;}
+.lvyouxaigsfont{margin-left: 0.226666rem;width: 4.96rem;font-size: 0.346666rem;color: #333333; -webkit-text-stroke: 0.2px #333333;  }
 .xitongruanjian{width:2.613333rem;margin-left: 0.226666rem;font-size: 0.346666rem;color: #333333;}
 .ycsahan{display: flex;width:2.4rem;font-size: 0.306666rem;color: #fc6365;justify-content: flex-end;}
-.gnlyyw{margin-left: 0.333333rem;height: 0.84rem;width: 5.92rem;font-size: 0.226666rem;color: #666666;}
+.gnlyyw{margin-left: 0.333333rem;height: 0.84rem;width: 5.92rem;font-size: 0.32rem;color: #666666;}
 .lijicx{height: 1.253333rem;width: 5.92rem;margin-left: 0.333333rem;display: flex;align-items: center;}
 .lijiztti{border: 1px solid #2b70d8;width: 2.093333rem;display: flex;height: 0.666666rem;line-height: 0.666666rem;justify-content: center;border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;border-top-left-radius: 15px;border-top-right-radius: 15px;font-size: 0.32rem;color: #2b70d8;}
-.shijanrq{display:flex;margin-left: 2.186666rem;font-size: 0.226666rem;color: #999999;}
+.shijanrq{display:flex;margin-left: 2.186666rem;font-size: 0.293333rem;color: #999999;}
 .lijicximg{width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background: url(../img/lijicx.png) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;}
 .boottms{height: 0.893333rem;background-color: #ffffff;}
 .kognjde{height: 0.386666rem;background-color: #ffffff;}
 .qyfwul li:last-child{margin-bottom:0px;}
 .hechhez{background-color:#f6f6f6 !important;}
 .guojilxgshuise{margin-left: 0.266666rem;width: 0.746666rem;display: flex;height: 0.4rem;background: url(../img/qiyefuwutitle.png) no-repeat;background-size: 100% 100%;}
-.xitongruanjianhuise{width:2.613333rem;margin-left: 0.226666rem;font-size: 0.346666rem;color: #808080;}
-.gnlyywhise{margin-left: 0.333333rem;height: 0.84rem;width: 5.92rem;font-size: 0.226666rem;color: #a0a0a0;}
-.shijanrqhise{display:flex;margin-left: 4.266666rem;font-size: 0.226666rem;color: #cbcbcb;}
+.xitongruanjianhuise{width:2.613333rem;margin-left: 0.226666rem;font-size: 0.346666rem;color: #333333; -webkit-text-stroke: 0.2px #333333;}
+.gnlyywhise{margin-left: 0.333333rem;height: 0.84rem;width: 5.92rem;font-size: 0.32rem;color: #666666;}
+.shijanrqhise{display:flex;margin-left: 4.266666rem;font-size:0.293333rem;color: #999999;}
 .lijicximghuise{width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background: url(../img/fajdsfk.png) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;}
 .dacheghezuo{width: 1.946666rem;height: 1.946666rem;position: absolute;top: 0.146666rem;left: 5.333333rem;background: url(../img/dacheghezuo.png) no-repeat;background-size: 100% 100%;}
 .qyfwulxuqiuy{display: none;}

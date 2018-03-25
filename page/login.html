@@ -34,11 +34,11 @@
 	    	<!--切换1-->
 	    	<div class="box_q" style="display: block;">
 	    		<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" maxlength="11" id="tel">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11" id="tel">
     		    	<span class="hqyzm">获取验证码</span>
 	    		</div>
 	    		<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" maxlength="6" id="hqyzm">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6" id="hqyzm">
 	    		</div>
 	    		<p class="wj_pwd"></p>
 	    		<div class="btn_box">
@@ -48,7 +48,7 @@
 	    	<!--切换2-->
 	    	<div class="box_q">
 	    		<div class="mui-input-row inp">
-	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" id="phone">
+	    		    <input type="text" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"  id="phone"  maxlength="11" >
 	    		</div>
 	    		<div class="mui-input-row inp">
 	    		    <input type="password" class="mui-input-clear" placeholder="请输入密码" autocomplete="off" id="yinc">

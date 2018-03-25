@@ -298,7 +298,9 @@
 					"img/fypic.png",
 					"img/sjfw.png",
 					"js/lib/app_config.js",
-					null
+					null,
+					"img/sy_kfion.png",
+					"img/sy_bxion.png"
 				],
 				"refer": [
 					"jxfy.html",
@@ -896,6 +898,14 @@
 				"refer": [
 					"page/person.html"
 				],
+				"priority": 0
+			},
+			"page/add_sfz.html": {
+				"resources": [
+					"css/person.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

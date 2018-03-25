@@ -1,0 +1,22 @@
+.public_h1{
+	height: 1.733333rem;
+	box-shadow: initial;
+	border-bottom: 1px solid #e5e5e5;
+}
+.public_con{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 1.733333rem;
+	padding-top: 0px!important;
+	overflow: auto;
+	background: #fff;
+}
+.public_h1{
+	padding-top: 0.666666rem;
+}
+.public_h1 h1,.public_h1 a{
+	font-size: 0.453333rem;
+	color: #333333;
+}

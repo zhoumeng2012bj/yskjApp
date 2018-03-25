@@ -129,9 +129,24 @@
 			var main = plus.webview.getWebviewById('mysc_list');
 			mui.fire(main, "del_selsc",{
 			    selsc:8
-			})
+			});
+			$('.bj').css('background','url(../img/bj.png) no-repeat center');
+	  		$('.bj').css('background-size','auto 90%');
+	  		$('.bj').html('');
+	  		$('.dibu').css('visibility','hidden');
+	  		tags = 0;
 		});
-		
+		window.addEventListener("dsel_hid", function (e) {//单项选实现全选
+		    //获得事件参数
+			var delhid = e.detail.delhid;
+			if(delhid == 4){
+				$('.bj').css('background','url(../img/bj.png) no-repeat center');
+		  		$('.bj').css('background-size','auto 90%');
+		  		$('.bj').html('');
+		  		$('.dibu').css('visibility','hidden');
+		  		tags = 0;
+			}
+		});
 		
 	</script>
 	</body>
