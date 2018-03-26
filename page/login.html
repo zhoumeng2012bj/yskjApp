@@ -118,6 +118,14 @@
 			    id:'wj_pwd'
 			  });
 			});
+			window.addEventListener('login_back', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.login_b;
+			    if(param == 1){
+			    	mui.back();
+			    }
+			});
 		</script>
 		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/lib/md5.js" type="text/javascript" charset="utf-8"></script>

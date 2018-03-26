@@ -39,7 +39,10 @@
 			"img/gj_icon.png",
 			"img/tt_icon.png",
 			"img/sy_kfion.png",
-			"img/sy_bxion.png"
+			"img/sy_bxion.png",
+			"img/tab_bg1.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/app_config.js"
 		],
 		"refer": [
 			"page/fyTail.html",
@@ -56,16 +59,31 @@
 			"img/head_img.png",
 			"img/wd_bg.png",
 			"js/lib/app_config.js",
-			"css/wd.css"
+			"css/wd.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
 		],
-		"refer": []
+		"refer": [
+			"page/myset.html",
+			"page/login.html",
+			"page/person.html",
+			"page/mycollection.html",
+			"page/sfrz.html"
+		]
 	},
 	"jxfy.html": {
 		"resources": [
 			"css/jxfy.css",
-			"jxfyList.html"
+			"jxfyList.html",
+			"js/lib/jquery-1.10.2.min.js",
+			"fonts/mui.ttf"
 		],
-		"refer": []
+		"refer": [
+			"jxfyList.html"
+		]
 	},
 	"fwsc.html": {
 		"resources": [
@@ -109,6 +127,104 @@
 			"fonts/mui.ttf",
 			"css/fyxq.css",
 			"css/jxfyList.css",
+			"css/mui.min.css"
+		]
+	},
+	"page/myset.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/login.html": {
+		"resources": [
+			"js/lib/form_yz.js",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/sha1.js",
+			"css/login.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/md5.js",
+			"img/login_pic.png",
+			"js/lib/app_config.js",
+			"img/ycmm.png",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": [
+			"page/wj_pwd.html"
+		]
+	},
+	"page/wj_pwd.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/sha1.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/wj_pwd.js",
+			"js/lib/md5.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css",
+			"fonts/mui.ttf",
+			"img/ycmm.png",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"wd.html"
+		]
+	},
+	"page/person.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/mycollection.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/del_ion.png",
+			"js/mui.min.js",
+			"css/mycollection.css",
+			"img/bj.png",
+			"js/lib/flexible.js",
+			"page/mysc_list.html"
+		],
+		"refer": [
+			"page/mysc_list.html"
+		]
+	},
+	"page/mysc_list.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/sfrz.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"css/sfrz.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/mp_bm.png",
+			"css/person.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"img/mp_zm.png",
 			"css/mui.min.css"
 		]
 	}

@@ -271,7 +271,8 @@
 					"page/person.html",
 					"page/myset.html",
 					"page/mycollection.html",
-					"page/login.html"
+					"page/login.html",
+					"page/sfrz.html"
 				],
 				"priority": 0
 			},
