@@ -23,7 +23,7 @@
 .zx_h{
 	height: 4.733333rem;
 	width: 10rem;
-	background: url(../img/zx_h.png) no-repeat center;
+	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_h.png) no-repeat center;				
 	background-size: 100% auto;
 }
 .box{
@@ -69,7 +69,7 @@
 .zx_bt,.zx_bt1,.zx_bt2{
 	width: 10rem;
 	height: 1.6rem;
-	background: url(../img/zx_bt.png)no-repeat 0.4rem center;
+	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_bt.png)no-repeat 0.4rem center;
 	background-size: auto 0.8rem;
 }
 .zx_wb{
@@ -103,7 +103,7 @@
 .zx_center{
 	width: 10rem;
 	height: 15.533333rem;
-	background: url(../img/zx_center.png) no-repeat center;
+	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_center.png) no-repeat center;
 	background-size: 100% auto;
 }
 .ul_list{
@@ -137,7 +137,7 @@
 	background: #f0f0f0;
 }
 .zx_bt1{
-	background: url(../img/zx_bt1.png)no-repeat 0.4rem center;
+	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_bt1.png)no-repeat 0.4rem center;
 	background-size: auto 0.8rem;
 }
 .main_list{
@@ -165,7 +165,7 @@
 	color: #333;
 }
 .zx_bt2{
-	background: url(../img/zx_bt2.png) no-repeat 0.4rem center;
+	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_bt2.png) no-repeat 0.4rem center;
 	background-size: auto 0.8rem;
 	margin-top: 0.4rem;
 }
@@ -188,6 +188,6 @@
 	height: 15.906666rem;
 	width: 9.2rem;
 	margin: 0 auto 0.8rem;
-	background: url(../img/main_bot_pic.png)center;
+	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/main_bot_pic.png)center;
 	background-size: auto 100%;
 }
