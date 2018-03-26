@@ -181,7 +181,7 @@
 				})(i)		
 			}
 			//立即登陆
-			document.getElementById('login').addEventListener('tap', function() {
+			document.getElementsByClassName('ljdl')[0].addEventListener('tap', function() {
 				if(lostate==1){
 					//跳转登陆页面
 					mui.openWindow({
@@ -258,6 +258,13 @@
 				}				
 			}
 			takeuser();
+			$('.wrz').click(function(){
+				//跳转认证页面
+				mui.openWindow({
+				  url: './page/sfrz.html', 
+				  id:'add_name4'
+				});
+			});
 		</script>
 	</body>
 
