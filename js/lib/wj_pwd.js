@@ -267,11 +267,19 @@ function zhmm(){
 		headers:{'Content-Type':'application/json'},	              
 		success:function(data){
 			if(data.success){
-				mui.toast('找回成功，已登录',{ duration:'3000', type:'div' }) 
-				mui.openWindow({
-					url: '../wd.html', 
-					id:'wd_yh'
-				});
+				mui.toast('找回成功，已登录',{ duration:'3000', type:'div' });
+				
+				var target = plus.webview.getWebviewById('login');
+			    // 执行相应的事件
+			    mui.fire(target, 'login_back', {
+			    	'login_b':1
+			    });
+			    
+				mui.back();
+//				mui.openWindow({
+//					url: '../wd.html', 
+//					id:'wd_yh'
+//				});
 			}else{
 //				mui.alert(data.message+'请先进行注册', '提示', function(){});
 				return;
