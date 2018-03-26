@@ -452,7 +452,8 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"img/warming.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -929,7 +930,9 @@
 					"js/lib/flexible.js",
 					"js/lib/app_config.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/person.html"
+				],
 				"priority": 0
 			},
 			"page/disclaimer.html": {
