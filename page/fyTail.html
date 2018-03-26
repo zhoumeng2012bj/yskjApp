@@ -133,8 +133,10 @@
 						<span class="choucdewezi choucdeweziwidth" onclick="logonJudge()">未收藏</span>
 					</p>
 					<p class="xmjx">
-						<span class="lainxixingmql">联系项目经理</span>
-						<span class="xmjxlx"></span>
+						<a href="tel:400-078-8800">
+							<span class="lainxixingmql">联系项目经理</span>
+							<span class="xmjxlx"></span>
+						</a>
 					</p>
 				</div>
 		    </div>
@@ -167,6 +169,14 @@
 			/*注意:如果ajax获得图片后，需要在写入图片以后，需要从新调用一下*/
 			gallery.slider();
 				mui.init();
+				
+				//监听从登陆返回会来的事件
+				window.addEventListener("fanhuidaofxqq", function (e) {
+				    //获得事件参数
+				    var ttt = e.detail.ttt;
+			    	var wobj = plus.webview.getWebviewById("fyTail");
+					wobj.reload(true);
+				});
 			/*房源数据*/
 			function detailData(){
 			mui.ajax(url+'/yhcms/web/lpjbxx/getWxFyxx.do',{
@@ -214,8 +224,8 @@
 								$(".fybh").html(data[i].zdh+"-"+data[i].fybh);
 								$(".name").html(data[i].name==""?"暂无数据":data[i].name);
 								$(".phone").html(data[i].phone==""?"暂无数据":data[i].phone);
+								$('.xmjx a').attr('href','tel:'+data[i].phone);
 								//图片轮播信息
-								
 								var h_img="";
 								$(".mui-slider-loop").html(h_img);
 								if(housing_icon!=""){
@@ -250,8 +260,9 @@
 											h_img+=v1;
 										}
 										
-									}
+									}									
 									$(".mui-slider-loop").html(h_img);
+									
 									/*图片自动轮播*/
 								ca.init();
 								castapp.pictureScroll({
