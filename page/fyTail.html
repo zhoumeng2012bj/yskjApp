@@ -292,6 +292,7 @@
 					
 					if(data.success){
 						//房源未被此用户收藏
+						$(".xindebgimg").css({"background":"url(../img/fav2.png) no-repeat","background-size":"100% 100%"});
 						$(".choucdeweziwidth").html("收藏");
 					}else{
 						if(data.message=="无此用户登陆信息"){
@@ -302,7 +303,7 @@
 							collectId=data.collectId.toString();
 							//图标转换
 						//.xindebgimg{background:url(../img/fav2.png) no-repeat;background-size: 100% 100%;}
-					    $(".xindebgimg").css("background","url(../img/fav.png)");
+					    $(".xindebgimg").css({"background":"url(../img/fav.png) no-repeat","background-size":"100% 100%"});
 						//alert("已被收藏   收藏Id"+data.collectId);
 						$(".choucdeweziwidth").html("已收藏");
 						}else{
@@ -354,7 +355,7 @@
 						mui.alert("取消收藏房源");
 						//判断收藏的状态 改变图标
 						$(".choucdeweziwidth").html("收藏");
-						$(".xindebgimg").css("background","url(../img/fav2.png)");
+						$(".xindebgimg").css({"background":"url(../img/fav2.png) no-repeat","background-size":"100% 100%"});
 					}else{
 						mui.alert("取消失败："+data.message);
 					}
@@ -383,7 +384,7 @@
 						jugeHouse();
 						//判断收藏的状态 改变图标
 						$(".choucdeweziwidth").html("已收藏");
-						 $(".xindebgimg").css("background","url(../img/fav.png)");
+						 $(".xindebgimg").css({"background":"url(../img/fav.png) no-repeat","background-size":"100% 100%"});
 					}else{
 						mui.alert("收藏失败："+data.message);
 					}

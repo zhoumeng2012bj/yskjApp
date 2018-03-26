@@ -21,85 +21,87 @@
 	<body>
 		<!--下拉刷新容器-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="zhezhaoceshx zhezhaocdisplayshx">
+				<div class="zzcnershx">
+					<div class="mianjilag">
+						<div class="mjqyfm">
+							面积区域（㎡）
+						</div>
+						<div class="xuanxing">
+							<div class="xuanxingshuzi">
+								<div class="xiaokuai">0-99</div>
+								<div class="xiaokuai">100-299</div>
+								<div class="xiaokuai">399-499</div>
+								<div class="xiaokuai">500-999</div>
+							</div>
+							<div class="xuanxingshuzi">
+								<div class="xiaokuai">1000-1499</div>
+								<div class="xiaokuai">1500以上</div>
+							</div>
+							<!--<div class="xuanxingshuzi">
+								<div class="xiaokuaiyishang pingangm">㎡</div>
+								<div class="xiaokuaiyishang pingangm">㎡</div>
+							</div>-->
+						</div>
+						<div class="mjqyfm zjqy">
+							租金区域（元）
+						</div>
+						<div class="xuanxing">
+							<div class="xuanxingshuzi">
+								<div class="xiaokzujin">0-2.9</div>
+								<div class="xiaokzujin">3-4.9</div>
+								<div class="xiaokzujin">5-7.9</div>
+								<div class="xiaokzujin">8-9.9</div>
+							</div>
+							<div class="xuanxingshuzi">
+								<div class="xiaokzujin">10-14.9</div>
+								<div class="xiaokzujin">15以上</div>
+							</div>
+							<!--<div class="xuanxingshuzi">
+								<div class="xiaokuaiyishang pingangm">元</div>
+								<div class="xiaokuaiyishang pingangm">元</div>
+							</div>-->
+						</div>
+						<div class="mjqyfm">
+							产权性质
+						</div>
+						<div class="xuanxing chanqxz">
+							<div class="xuanxingshuzi">
+								<div class="xiaokchuaq">写字楼</div>
+								<div class="xiaokchuaq">公寓</div>
+								<div class="xiaokchuaq">商务楼</div>
+								<div class="xiaokchuaq">商业</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="czqddig">
+						<div class="dibuceng">
+							<span class="chuongzhi czsyhk">重置</span>
+							<span class="chuongzhi quding">确定</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="zhezhaoce zhezhaocdisplay">
+				<div class="zzcner">
+					<ul class="zzcqy" id="sel1">
+						<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>
+						<li onclick="selsx(1)">区域</li>
+						<li onclick="selsx(2)">地铁</li>
+					</ul>
+					<ul class="zzcdcq" id="sel2">
+						<li onclick="subway1(0,-1,this)"></li>
+					</ul>
+					<ul class="zzcdcq" id="sel3">
+						<li onclick="subway2(0,-1,this)"></li>
+					</ul>
+				</div>
+			</div>
+			
 			
 			<div class="mui-scroll">
-				<div class="zhezhaoceshx zhezhaocdisplayshx">
-					<div class="zzcnershx">
-						<div class="mianjilag">
-							<div class="mjqyfm">
-								面积区域（㎡）
-							</div>
-							<div class="xuanxing">
-								<div class="xuanxingshuzi">
-									<div class="xiaokuai">0-99</div>
-									<div class="xiaokuai">100-299</div>
-									<div class="xiaokuai">399-499</div>
-									<div class="xiaokuai">500-999</div>
-								</div>
-								<div class="xuanxingshuzi">
-									<div class="xiaokuai">1000-1499</div>
-									<div class="xiaokuai">1500以上</div>
-								</div>
-								<div class="xuanxingshuzi">
-									<div class="xiaokuai pingangm">㎡</div>
-									<div class="xiaokuai pingangm">㎡</div>
-								</div>
-							</div>
-							<div class="mjqyfm zjqy">
-								租金区域（元）
-							</div>
-							<div class="xuanxing">
-								<div class="xuanxingshuzi">
-									<div class="xiaokzujin">0-2.9</div>
-									<div class="xiaokzujin">3-4.9</div>
-									<div class="xiaokzujin">5-7.9</div>
-									<div class="xiaokzujin">8-9.9</div>
-								</div>
-								<div class="xuanxingshuzi">
-									<div class="xiaokzujin">10-14.9</div>
-									<div class="xiaokzujin">15以上</div>
-								</div>
-								<div class="xuanxingshuzi">
-									<div class="xiaokuai pingangm">元</div>
-									<div class="xiaokuai pingangm">元</div>
-								</div>
-							</div>
-							<div class="mjqyfm">
-								产权性质
-							</div>
-							<div class="xuanxing chanqxz">
-								<div class="xuanxingshuzi">
-									<div class="xiaokchuaq">写字楼</div>
-									<div class="xiaokchuaq">公寓</div>
-									<div class="xiaokchuaq">商务楼</div>
-									<div class="xiaokchuaq">商业</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="czqddig">
-							<div class="dibuceng">
-								<span class="chuongzhi czsyhk">重置</span>
-								<span class="chuongzhi quding">确定</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="zhezhaoce zhezhaocdisplay">
-					<div class="zzcner">
-						<ul class="zzcqy" id="sel1">
-							<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>
-							<li onclick="selsx(1)">区域</li>
-							<li onclick="selsx(2)">地铁</li>
-						</ul>
-						<ul class="zzcdcq" id="sel2">
-							<li onclick="subway1(0,-1)"></li>
-						</ul>
-						<ul class="zzcdcq" id="sel3">
-							<li onclick="subway2(0,-1)"></li>
-						</ul>
-					</div>
-				</div>
+				
 				<!--数据列表-->
 				<!--<ul class="mui-table-view mui-table-view-chevron">-->
 					<!--特价房源-->
@@ -127,6 +129,9 @@
 				<!--</ul>-->
 			</div>
 		</div> 
+		<div class="sy_kfion">
+			<p><a href="tel:400-078-8800"></a></p>
+		</div>
 		
 		<script src="js/lib/app_config.js"></script>
 		<script src="js/mui.min.js"></script>
@@ -146,15 +151,18 @@
 				}
 			});
 			var xial = 1;//上拉加载的次数
-			var area = '';
-			var price_dj = '';
-			var chqxz = '';
-			var jiangejt = "D";
-			var search = '';
-			var district = '';
-			var fdcode = '';
-			var lineid = '';
-			var station = '';
+			var area = '';//面积条件参数
+			var price_dj = '';//价格条件参数
+			var chqxz = '';//产权性质条件参数
+			var jiangejt = "D";//价格/面积条件参数
+			var search = '';//关键字搜索条件参数
+			var district = '';//行政区域条件参数
+			var fdcode = '';//行政区域下的商圈条件参数
+			var lineid = '';//地铁下的线路条件参数
+			var station = '';//站点条件参数
+			var text1 = '';//位置条件显示的文字
+			var text2 = '';//位置条件显示的文字
+			var text3 = '';//位置条件显示的文字
 
 			/**
 			 * 下拉刷新具体业务实现
@@ -216,13 +224,18 @@
 				(function(index){
 					//color: #2a72d8;background-color: #d9effd;
 					lirm[i].onclick = function(){
+						
 						for(var j=0;j<lirm.length;j++){
 							lirm[j].className = 'xiaokuai';
 						}
 						if(tag == "mianjiqv"){
 							lirm[index].className = "xiaokuaisss xiaokuai";
-							var strs = lirm[index].innerText.split("-");
-							area = [parseInt(strs[0]),parseInt(strs[1])];
+							if(index == 5){
+								area = [1500,10000];
+							}else{
+								var strs = lirm[index].innerText.split("-");
+								area = [parseInt(strs[0]),parseInt(strs[1])];
+							}
 							tag = index;
 						}else{
 							if(tag == index){
@@ -231,8 +244,12 @@
 								tag = "mianjiqv";
 							}else{
 								lirm[index].className = "xiaokuaisss xiaokuai";
-								var strs = lirm[index].innerText.split("-");
-								area = [parseInt(strs[0]),parseInt(strs[1])];
+								if(index == 5){
+									area = [1500,10000];
+								}else{
+									var strs = lirm[index].innerText.split("-");
+									area = [parseInt(strs[0]),parseInt(strs[1])];
+								}
 								tag = index;
 							}
 						
@@ -251,8 +268,12 @@
 						
 						if(tagzj == "zujinxx"){
 							zujin[index].className = "xiaokuaisss xiaokzujin";
-							var strs = zujin[index].innerText.split("-");
-							price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+							if(index == 5){
+								price_dj = [15,10000];
+							}else{
+								var strs = zujin[index].innerText.split("-");
+								price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+							}
 							tagzj = index;
 						}else{
 							if(tagzj == index){
@@ -261,8 +282,12 @@
 								tagzj = "zujinxx";
 							}else{
 								zujin[index].className = "xiaokuaisss xiaokzujin";
-								var strs = zujin[index].innerText.split("-");
-								price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+								if(index == 5){
+									price_dj = [15,10000];
+								}else{
+									var strs = zujin[index].innerText.split("-");
+									price_dj = [parseInt(strs[0]),parseFloat(strs[1])];
+								}
 								tagzj = index;
 							}
 						
@@ -270,6 +295,7 @@
 					}
 				})(i)
 			}
+			//产权性质的多选和取消选中状态
 			var cq = $('.xiaokchuaq');
 			var tagcq = "cqss";
 			var chaqshuz = [];
@@ -277,37 +303,82 @@
 			for(var i=0;i<cq.length;i++){
 				(function(index){
 					cq[i].onclick = function(){
-						for(var j=0;j<cq.length;j++){
+						/*for(var j=0;j<cq.length;j++){
 							cq[j].className = 'xiaokchuaq';
-						}
-						cq[index].className = "xiaokuaisss xiaokchuaq";
-						var strs = cq[index].innerText;
-						chqxz = strs;
-						/*chanqvdsuz.push(index);
-						
-						if(index == 0){
-							chaqshuz.push('写字楼');
-						}
-						if(index == 1){
-							chaqshuz.push('公寓');
-						}
-						if(index == 2){
-							chaqshuz.push('商务楼');
-						}
-						if(index == 3){
-							chaqshuz.push('商业');
-						}
-						for(var k=0;k<chanqvdsuz.length;k++){
-							cq[chanqvdsuz[k]].className = "xiaokuaisss xiaokchuaq";
-						}
-						console.log(chaqshuz);
-						for(var i=0;i<chaqshuz.length;i++){
-							if(i == chaqshuz.length-1){
-								chqxz += 'chaqshuz[i]';
-							}else{
-								chqxz += 'chaqshuz[i],';
-							}
 						}*/
+						if(tagcq == 'cqss'){
+							cq[index].className = "xiaokuaisss xiaokchuaq";
+							var strs = cq[index].innerText;
+							chqxz = strs;
+							tagcq = index;
+							chaqshuz.push(strs);
+						}else{
+							if(tagcq == index){
+								cq[index].className = "xiaokchuaq";
+								if(chaqshuz.length<1){
+									tagcq = 'cqss';
+									chqxz = '';
+								}else{
+									tagcq = index;
+									for(var i=0;i<chaqshuz.length;i++){
+										if(chaqshuz[i] == cq[index].innerText){
+											cq[index].className = "xiaokchuaq";
+											var strs = cq[index].innerText;
+											chaqshuz.splice(i,1);
+											chqxz = '';
+											for(var i=0;i<chaqshuz.length;i++){
+												if(i == chaqshuz.length-1){
+													chqxz += chaqshuz[i];
+												}else{
+													chqxz += chaqshuz[i]+'、';
+												}
+											}
+										}
+									}
+								}
+								/*chqxz = '';
+								for(var i=0;i<chaqshuz.length;i++){
+									if(i == chaqshuz.length-1){
+										chqxz += chaqshuz[i];
+									}else{
+										chqxz += chaqshuz[i]+'、';
+									}
+								}*/
+							}else{
+								var ss = 1;
+								for(var i=0;i<chaqshuz.length;i++){
+									if(chaqshuz[i] == cq[index].innerText){
+										ss = 2;
+										tagcq = index;
+										cq[index].className = "xiaokchuaq";
+										var strs = cq[index].innerText;
+										chqxz = '';
+										chaqshuz.splice(i,1);
+										for(var i=0;i<chaqshuz.length;i++){
+											if(i == chaqshuz.length-1){
+												chqxz += chaqshuz[i];
+											}else{
+												chqxz += chaqshuz[i]+'、';
+											}
+										}
+									}
+								}
+								if(ss == 1){
+									chqxz = '';
+									tagcq = index;
+									cq[index].className = "xiaokuaisss xiaokchuaq";
+									var strs = cq[index].innerText;
+									chaqshuz.push(strs);
+									for(var i=0;i<chaqshuz.length;i++){
+										if(i == chaqshuz.length-1){
+											chqxz += chaqshuz[i];
+										}else{
+											chqxz += chaqshuz[i]+'、';
+										}
+									}
+								}
+							}
+						}
 					}
 				})(i)
 			}
@@ -507,7 +578,7 @@
 								/*document.querySelector('.fypics').innerHTML=string;*/
 								$('.listUl').append(string);
 							}
-							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 10)); //参数为true代表没有更多数据了。
 						}
 						
 					}else{
@@ -760,9 +831,9 @@
 			    //获得事件参数
 			    var idx = e.detail.idx;
 				xial = 1;
-				area = '';
-				price_dj = '';
-				chqxz = '';
+				/*area = '';*/
+				/*price_dj = '';*/
+				/*chqxz = '';*/
 				$('.listUl').html('');
 				qcqitades();
 				if(idx == 5){
@@ -779,9 +850,9 @@
 			    //获得事件参数
 			    var idx = e.detail.idx;
 				xial = 1;
-				area = '';
-				price_dj = '';
-				chqxz = '';
+				/*area = '';*/
+				/*price_dj = '';*/
+				/*chqxz = '';*/
 				$('.listUl').html('');
 				qcqitades();
 				if(idx == 7){
@@ -807,7 +878,7 @@
 			window.addEventListener("ssqvxiaofanhui", function (e) {
 			    //获得事件参数
 			    var qvx = e.detail.qvx;
-				search = '';
+				/*search = '';*/
 				xial = 1;
 				$('.listUl').html('');
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
@@ -881,6 +952,7 @@
 					'color':'#666666'
 				});
 				if(sel == 0){
+					text1 = '不限';
 					xial = 1;
 					district = '';
 					fdcode = '';
@@ -896,6 +968,7 @@
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 				if(sel == 1){
+					text1 = '区域';
 					lineid = '';
 					station = '';
 					$('#sel1 li').eq(1).css({
@@ -905,6 +978,7 @@
 					sel_qy();
 				}
 				if(sel == 2){
+					text1 = '地铁';
 					lineid = '';
 					station = '';
 					$('#sel1 li').eq(2).css({
@@ -914,10 +988,11 @@
 					subway();
 				}
 			}
-			//区域接口
+			//区域的一级接口
 			var quyu = '';
 			function sel_qy(){
-				$('#sel2').html('<li onclick="clk_qy(0,-1)">不限</li>');
+				$('#sel3').html('');
+				$('#sel2').html('<li onclick="clk_qy(0,-1,this)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/getLpcity.do',{
 					data:{},
 					dataType:'json',
@@ -928,7 +1003,7 @@
 						if(data.success){
 							var xzqyData = data.data.xzqy;
 							for (var i=0; i<xzqyData.length; i++) {
-								quyu = '<li onclick="clk_qy('+xzqyData[i].fdcode+','+i+')">'+xzqyData[i].fdname+'</li>';
+								quyu = '<li onclick="clk_qy('+xzqyData[i].fdcode+','+i+',this)">'+xzqyData[i].fdname+'</li>';
 								$('#sel2').append(quyu);
 							}
 						}else{
@@ -940,57 +1015,77 @@
 					}
 				});
 			}
-			function clk_qy(district,q){
+			function clk_qy(district,q,e){
 				$('#sel2 li').css({'color':'#666666'});
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
-				xzqy_erji(district);
+				xzqy_erji(district,e);
 			}
 			//行政区域二级接口
 			var xzqy_str = '';
-			function xzqy_erji(id){
+			function xzqy_erji(id,e){
+				$('#sel3').html('');
+				text2 = e.innerText;
 				if(id == 0){
 					id = '';
-				}
-				$('#sel3').html('<li onclick="clk_xz2(0,-1)">不限</li>');
-				mui.ajax(url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
-					data:{
-						"parameters":{
-							"district":id
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text1
+					})
+					qxzzcdff();
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				}else{
+					$('#sel3').html('<li onclick="clk_xz2(0,-1,this)">不限</li>');
+					mui.ajax(url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
+						data:{
+							"parameters":{
+								"district":id
+							},
+							"foreEndType":2,
+							"code":"300000010"
 						},
-						"foreEndType":2,
-						"code":"300000010"
-					},
-					dataType:'json',
-					type:'post',
-					timeout:10000,
-					headers:{'Content-Type':'application/json'},       
-					success:function(data){
-						if(data.success){
-							var xzqy_Data = data.data.xzfq;
-							for (var i=0; i<xzqy_Data.length; i++) {
-								xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+i+')">'+xzqy_Data[i].fdname+'</li>';
-								$('#sel3').append(xzqy_str);
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},       
+						success:function(data){
+							if(data.success){
+								var xzqy_Data = data.data.xzfq;
+								for (var i=0; i<xzqy_Data.length; i++) {
+									xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+i+',this)">'+xzqy_Data[i].fdname+'</li>';
+									$('#sel3').append(xzqy_str);
+								}
+							}else{
+								
 							}
-						}else{
-							
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
 						}
-					},
-					error:function(xhr,type,errorThrown){
-						console.log(type);
-					}
-				});
+					});
+				}
+				
 			}
-			function clk_xz2(id,q){
+			//行政区域三级
+			function clk_xz2(id,q,e){
 				xial = 1;
 				$('.listUl').html('');
 				district = '';
 				fdcode = '';
+				text3 = e.innerText;
 				if(q == -1){
 					fdcode = '';
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text2
+					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
 					district = '';
 					fdcode = id;
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text3
+					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 				qxzzcdff();
@@ -1001,7 +1096,8 @@
 			//地铁接口（一级请求接口数据）
 			var subway_str = '';
 			function subway(){
-				$('#sel2').html('<li onclick="subway1(0,-1)">不限</li>');
+				$('#sel3').html('');
+				$('#sel2').html('<li onclick="subway1(0,-1,this)">不限</li>');
 				mui.ajax(url + '/yhcms/web/lpjbxx/lpsubway.do',{
 					data:{},
 					dataType:'json',
@@ -1012,7 +1108,7 @@
 						if(data.success){
 							var subway_Data = data.data.subway;
 							for (var i=0; i<subway_Data.length; i++) {
-								subway_str = '<li onclick="subway1('+subway_Data[i].id+','+i+')">'+subway_Data[i].fdname+'</li>';
+								subway_str = '<li onclick="subway1('+subway_Data[i].id+','+i+',this)">'+subway_Data[i].fdname+'</li>';
 								$('#sel2').append(subway_str);
 							}
 						}else{
@@ -1024,8 +1120,11 @@
 					}
 				});
 			}
-			function subway1(id,q){
+			//位置中地铁的二级点击事件
+			function subway1(id,q,e){
 				lineid = id;
+				text2 = e.innerText;
+				$('#sel3').html('');
 				$('#sel2 li').css({'color':'#666666'});
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
 				subway_erji(id);
@@ -1035,47 +1134,65 @@
 			function subway_erji(id){
 				if(id == 0){
 					id = '';
-				}
-				$('#sel3').html('<li onclick="subway2(0,-1)">不限</li>');
-				mui.ajax(url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
-					data:{
-						"parameters":{
-							"line_id":id
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text1
+					})
+					qxzzcdff();
+					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				}else{
+					$('#sel3').html('<li onclick="subway2(0,-1,this)">不限</li>');
+					mui.ajax(url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
+						data:{
+							"parameters":{
+								"line_id":id
+							},
+							"foreEndType":2,
+							"code":"30000008"
 						},
-						"foreEndType":2,
-						"code":"30000008"
-					},
-					dataType:'json',
-					type:'post',
-					timeout:10000,
-					headers:{'Content-Type':'application/json'},       
-					success:function(data){
-						if(data.success){
-							var subway_Data2 = data.data.subway_station;
-							for (var i=0; i<subway_Data2.length; i++) {
-								subway_str2 = '<li onclick="subway2('+subway_Data2[i].id+','+i+')">'+subway_Data2[i].fdname+'</li>';
-								$('#sel3').append(subway_str2);
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},       
+						success:function(data){
+							if(data.success){
+								var subway_Data2 = data.data.subway_station;
+								for (var i=0; i<subway_Data2.length; i++) {
+									subway_str2 = '<li onclick="subway2('+subway_Data2[i].id+','+i+',this)">'+subway_Data2[i].fdname+'</li>';
+									$('#sel3').append(subway_str2);
+								}
+							}else{
+								
 							}
-						}else{
-							
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
 						}
-					},
-					error:function(xhr,type,errorThrown){
-						console.log(type);
-					}
-				});
+					});
+				}
+				
 			}
-			function subway2(id,q){//控制最后一级变色及参数传递
+			//地铁的三级
+			function subway2(id,q,e){//控制最后一级变色及参数传递
 				xial = 1;
 				$('.listUl').html('');
+				text3 = e.innerText;
 				district = '';
 				fdcode = '';
 				if(q == -1){
 					station = '';
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text2
+					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
 					lineid = '';
 					station = id;
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text3
+					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 				qxzzcdff();

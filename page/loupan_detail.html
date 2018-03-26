@@ -135,11 +135,11 @@
 		    
 		    <!--楼盘介绍-->
 		    <div class="jieshao">
-		    	<p class="lp_nm ">楼盘介绍</p>
-		    	<p class="lp_nm desp"></p>
+		    	<p class="lp_nm " style="font-size: 0.373333rem;font-weight: bold;">楼盘介绍</p>
+		    	<p class="lp_nm desp" style="text-align: left;padding: 0 0.4rem;height: auto;"></p>
 		    </div>
 		     <div class="pt20 mb08 border-tb bg-white" id="kuan">
-        <h2 class="sort-title tc fb mb20" style="text-align: center;font-size: 18px;">周边配套</h2>
+        <h2 class="sort-title tc fb mb20" style="text-align: center;font-size: 0.373333rem;font-weight: bold;">周边配套</h2>
         <div  id="allmap" style="width:100%;height:100%;"></div>
         <ul class="text-gray6 clearfix ph15" id="map_item_ul">
           <li class="supporting-item">
@@ -300,11 +300,14 @@
 						if(data.success){
 							var lp_data = data.data.houses;
 							console.log(lp_data);
+							if(lp_data == [] || lp_data == ''){
+								mui.toast("没有更多数据了",{ duration:'2000', type:'div' });
+							}
 							for (var i=0; i<lp_data.length; i++) {
 								if(lp_data[i].fjzt == ''){
-									lp_str = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/m²/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
 								}else{
-									lp_str = '<li class="listtail"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/m²/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
 								}
 								$('.ss_bt').append(lp_str);
 							}
@@ -318,6 +321,17 @@
 					}
 				});
 			}
+			
+			function linktodetail(id){
+				mui.openWindow({ 
+					url:'./fyTail.html', //需要打开页面的url地址 
+					id:'fyTail',
+					extras:{
+				      fyid:id
+				    },
+				});				
+			}
+			
 			function  detailData(id){
 				if(id == '' || id == undefined){
 					id = localStorage.getItem('lp_id');

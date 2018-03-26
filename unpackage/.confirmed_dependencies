@@ -1,17 +1,4 @@
 {
-	"page/myset.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"css/person.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		],
-		"refer": [
-			"page/setpwd.html"
-		]
-	},
 	"index.html": {
 		"resources": [
 			"js/lib/flexible_css.js",
@@ -30,57 +17,21 @@
 			"fwsc.html"
 		]
 	},
-	"page/broker.html": {
+	"qyhl.html": {
 		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"img/his_cs.png",
-			"js/mui.min.js",
-			"img/his_js.png",
-			"js/lib/flexible.js",
-			"img/his_pm.png",
-			"css/broker.css",
-			"js/lib/app_config.js"
-		],
-		"refer": []
-	},
-	"page/enterprise_qy.html": {
-		"resources": [
-			"css/enterprise.css",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		],
-		"refer": []
-	},
-	"page/steward.html": {
-		"resources": [
-			"img/gj_h.png",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"img/ldd.png",
-			"css/steward.css",
-			"js/mui.min.js",
-			"img/qfw.png",
-			"js/lib/flexible.js",
-			"img/qth.png",
-			"img/yzs.png",
-			"js/lib/app_config.js"
+			"img/tab_bg1.png",
+			"img/qiyefuwutitle.png",
+			"img/huityuanicon.png",
+			"css/qiYeHuLian.css",
+			"img/qiyehulian.png",
+			"img/beijignicon.png"
 		],
 		"refer": []
 	},
 	"sy.html": {
-		"refer": [
-			"page/broker.html",
-			"page/enterprise_qy.html",
-			"page/steward.html",
-			"page/saleFuWu.html"
-		],
 		"resources": [
-			"img/tab_bg1.png",
-			"img/yzwt.png",
 			"js/lib/castapp.js",
+			"img/yzwt.png",
 			"img/qy_icon.png",
 			"img/mj_icon.png",
 			"css/sy.css",
@@ -88,20 +39,18 @@
 			"img/gj_icon.png",
 			"img/tt_icon.png",
 			"img/sy_kfion.png",
-			"img/sy_bxion.png",
-			"js/lib/app_config.js"
+			"img/sy_bxion.png"
+		],
+		"refer": [
+			"page/fyTail.html",
+			"page/loupan_detail.html"
 		]
 	},
 	"wd.html": {
 		"resources": [
-			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"img/sz.png",
-			"css/mui.min.css",
-			"css/style.css",
-			"js/lib/flexible.js",
 			"img/fav.png",
 			"img/per.png",
 			"img/head_img.png",
@@ -109,140 +58,58 @@
 			"js/lib/app_config.js",
 			"css/wd.css"
 		],
-		"refer": [
-			"page/myset.html",
-			"page/login.html",
-			"page/person.html"
-		]
+		"refer": []
 	},
 	"jxfy.html": {
 		"resources": [
 			"css/jxfy.css",
 			"jxfyList.html"
 		],
-		"refer": [
-			"jxfyList.html"
-		]
+		"refer": []
 	},
 	"fwsc.html": {
 		"resources": [
-			"css/fwsc.css",
-			"js/lib/jquery-1.10.2.min.js"
+			"css/fwsc.css"
 		],
 		"refer": []
-	},
-	"qyhl.html": {
-		"resources": [
-			"img/qiyefuwutitle.png",
-			"img/huityuanicon.png",
-			"css/qiYeHuLian.css",
-			"img/beijignicon.png",
-			"img/qiyehulian.png"
-		]
 	},
 	"jxfyList.html": {
 		"resources": [
 			"css/jxfyList.css"
 		]
 	},
-	"page/login.html": {
-		"resources": [
-			"js/lib/form_yz.js",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/sha1.js",
-			"css/login.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/md5.js",
-			"img/login_pic.png",
-			"js/lib/app_config.js",
-			"img/ycmm.png"
-		],
-		"refer": [
-			"wd.html"
-		]
-	},
-	"page/setpwd.html": {
+	"page/fyTail.html": {
 		"resources": [
 			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/sha1.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/md5.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/gh_tel.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
+			"css/fyxq.css",
+			"js/lib/castapp.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
-			"css/person.css",
+			"img/fav2.png",
+			"img/shoucdianhuobg.png"
+		]
+	},
+	"page/loupan_detail.html": {
+		"resources": [
+			"img/images/4.png",
+			"js/lib/flexible_css.js",
+			"js/lib/castapp.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/images/1.png",
+			"js/mui.min.js",
+			"img/images/3.png",
+			"js/lib/flexible.js",
+			"css/loupan_detail.css",
+			"js/lib/app_config.js",
+			"img/images/2.png",
+			"img/wz_ion.png",
+			"css/sy.css",
 			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"img/warming.png"
-		]
-	},
-	"page/person.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"css/person.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		],
-		"refer": [
-			"page/gh_tel.html",
-			"page/add_sfz.html",
-			"page/qdgs.html",
-			"page/add_name.html"
-		]
-	},
-	"page/add_sfz.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		],
-		"refer": [
-			"page/person.html"
-		]
-	},
-	"page/qdgs.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/add_name.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/saleFuWu.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/saleFuWu.css",
-			"js/lib/sy.js",
-			"js/lib/flexible.js",
-			"img/shouffwu.png",
-			"js/lib/app_config.js"
+			"css/fyxq.css",
+			"css/jxfyList.css",
+			"css/mui.min.css"
 		]
 	}
 }

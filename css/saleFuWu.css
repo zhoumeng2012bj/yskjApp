@@ -24,7 +24,7 @@
 }
 .inp span{
 	display: inline-block;
-	height: 0.666666rem;
+	/*height: 0.666666rem;*/
 	line-height: 0.666666rem;
 }
 .inp input{
@@ -58,12 +58,13 @@
 	top: 0.533333rem!important;
 	right: -0.266666rem!important;
 }
-.xingbei div{width: 2.9rem;}
-.xianshang{font-size: 0.4rem;color: #c8c8c8;}
+.xingbei div{width: 2.9rem;vertical-align: middle;}
+.xianshang{font-size: 0.4rem;color: #c8c8c8;vertical-align: middle;}
+.mui-radio input[type=radio],.xianshang,.xingbei div{vertical-align: middle;}
 .xingbei input{transform:scale(.8);}
 .xingbei{display: flex; align-items: center;position:relative;height: 1.666666rem;border-bottom: 1px solid #e5e5e5;}
 .mui-checkbox, .mui-radio{left:-1.133333rem;}
-.nvshi{top:0.41rem !important;}
+/*.nvshi{top:0.41rem !important;}*/
 .nan{top:0.10rem !important;}
 .fangwutop{height: 0.106666rem;background-color: #f0f0f0;}
 .fangwuxinix{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;}

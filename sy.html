@@ -259,6 +259,15 @@
 		<script src="js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			
+			var area = document.getElementsByClassName('tt_news')[0];
+			console.log($('.tt_news li').height());
+			var iliHeight = $('.tt_news li').height();//单行滚动的高度  
+			var speed = 50;//滚动的速度  
+			var time;  
+			var delay= 2000;  
+			area.scrollTop=0;  
+			
 			/*幼狮头条的动态数据*/
 			mui.ajax(url+'/yskjApp/webApp/dataInfo/topNews.do',{
 				dataType:'json',//服务器返回json格式数据
@@ -266,21 +275,43 @@
 				timeout:10000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
-					//服务器返回响应，根据响应结果，分析是否登录成功；
-					var data = data.data;
-					console.log(data);
-					var string = '';
-					for(var i=0;i<data.length;i++){
-						string = '<li onclick=topNewsInfo(\''+data[i].url+'\')><p>'+data[i].title+'</p><p>'+data[i].content+'</p></li>';
-						$('.tt_news').append(string);
+					if(data.success){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						var data = data.data;
+						console.log(data);
+						var string = '';
+						for(var i=0;i<data.length;i++){
+							string = '<li onclick=topNewsInfo(\''+data[i].url+'\')><p>'+data[i].title+'</p><p>'+data[i].content+'</p></li>';
+							$('.tt_news').append(string);
+						}
+						iliHeight = $('.tt_news li').height();
+						area.innerHTML+=area.innerHTML;//克隆一份一样的内容  
 					}
-					
 				},
 				error:function(xhr,type,errorThrown){
 					//异常处理；
 					console.log(type);
 				}
 			});	
+			
+			
+			function startScroll(){  
+			    time=setInterval("scrollUp()",speed);  
+			    area.scrollTop++;  
+			}  
+			function scrollUp(){  
+			    if(area.scrollTop % iliHeight==0){  
+			        clearInterval(time);  
+			        setTimeout(startScroll,delay);  
+			    }else{  
+			        area.scrollTop++;  
+			        if(area.scrollTop >= area.scrollHeight/2){  
+			            area.scrollTop =0;  
+			        }  
+			    }  
+			}  
+			setTimeout(startScroll,delay);
+
 			
 			//头条详情
 			function topNewsInfo(url){
@@ -567,33 +598,7 @@
 					})
 				})(i)
 			}
-		
-		</script>
-		<script type="text/javascript">  
-			var area = document.getElementsByClassName('tt_news')[0];
-			console.log($('.tt_news li').height());
-			var iliHeight = $('.tt_news li').height();//单行滚动的高度  
-			var speed = 50;//滚动的速度  
-			var time;  
-			var delay= 2000;  
-			area.scrollTop=0;  
-			area.innerHTML+=area.innerHTML;//克隆一份一样的内容  
-			function startScroll(){  
-			    time=setInterval("scrollUp()",speed);  
-			    area.scrollTop++;  
-			}  
-			function scrollUp(){  
-			    if(area.scrollTop % iliHeight==0){  
-			        clearInterval(time);  
-			        setTimeout(startScroll,delay);  
-			    }else{  
-			        area.scrollTop++;  
-			        if(area.scrollTop >= area.scrollHeight/2){  
-			            area.scrollTop =0;  
-			        }  
-			    }  
-			}  
-			setTimeout(startScroll,delay)  
+
 			//售后服务的详情页
 			$('.shouhou').click(function(){
 				//判断是否登录

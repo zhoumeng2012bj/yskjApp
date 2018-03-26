@@ -30,6 +30,8 @@
 					<li class="shuxinshux" onclick="siaxuansy()">筛选<span class="mui-icon mui-icon-arrowdown jxfyzxtubiao"></span></li>
 				</ul>
 			</div>
+			
+			
 		</div>
 
 		<script type="text/javascript">
@@ -271,6 +273,15 @@
 			    //获得事件参数
 			    var qvx = e.detail.qvx;
 				$('.sousuwenzi').html('请输入楼盘关键字搜索');
+			});
+			
+			//位置内容的改变
+			window.addEventListener("weizhineirong", function (e) {
+			    //获得事件参数
+			    var text3 = e.detail.text3;
+				var leng = $('.shuixuanweizhi').text().length;
+				var wez = $('.shuixuanweizhi').html().substring(leng);
+				$('.shuixuanweizhi').html(text3 + wez);
 			});
 		  	
 		</script>

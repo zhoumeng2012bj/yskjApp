@@ -254,7 +254,21 @@
 		    				    }
 		    			        dhtml+='</div><div class="gnlyywhise">';
 		    				    dhtml+=demandDesc;
-		    			        dhtml+='</div><div class="lijicx"><span class="shijanrqhise">';
+		    			        dhtml+='</div><div class="lijicx">';
+		    			        if(status!=2){
+									dhtml+='<span class="lijiztti">';
+			    				    //调用手机通讯录
+			    				    dhtml+='<a href="tel:';
+			    				    dhtml+=butlerPhone;
+			    				    dhtml+='" >';
+			    				    dhtml+='立即咨询';
+			    				    dhtml+="</a>";
+			    				    dhtml+='</span>';
+			    				    dhtml+='<span class="shijanrq">';
+								}else{
+									 dhtml+='<span class="shijanrqhise">';
+								}
+		    			        
 		    				    dhtml+=createTime;
 		    				    dhtml+='</span></div>';
 		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div>';

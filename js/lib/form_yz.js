@@ -200,10 +200,11 @@ function signin(){
 				mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
-				mui.openWindow({
-					url: '../wd.html', 
-					id:'wd1',
-				});
+				mui.back();
+//				mui.openWindow({
+//					url: '../wd.html', 
+//					id:'wd1',
+//				});
 				return;
 			}else{
 				alert(123)

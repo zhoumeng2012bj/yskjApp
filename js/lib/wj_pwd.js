@@ -95,6 +95,7 @@ document.getElementById("yinc").addEventListener('input',function(){
 });
 document.getElementById("yinc1").addEventListener('input',function(){
 	if(this.value != ''){
+		if(this.value.length>=6){
 		pwd1 = this.value;
 		if(pwd1.length<6){ 
 			$('.tip4').removeClass('tip_color');
@@ -109,6 +110,11 @@ document.getElementById("yinc1").addEventListener('input',function(){
 		}
 		}
 		btnzt();
+		}else{
+			$('.tip4').removeClass('tip_color');
+			$('.tip4').html('密码最少为6位');
+			
+		}
 	}else{
 		pwd1 = '';
 		btnzt();

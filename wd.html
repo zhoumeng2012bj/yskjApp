@@ -103,7 +103,7 @@
 			    }
 			    takeuser();
 //			    alert(param);
-			    // 执行相应的ajax或者操作DOM等操作
+			    // 执行相应的ajax或者操作DOM等操作凄凄切切
 			});
 			//跳转页面地址
 			var toUrl = ['page/person.html','page/mycollection.html','page/myset.html'];
@@ -181,7 +181,7 @@
 				})(i)		
 			}
 			//立即登陆
-			document.getElementById('login').addEventListener('tap', function() {
+			document.getElementsByClassName('ljdl')[0].addEventListener('tap', function() {
 				if(lostate==1){
 					//跳转登陆页面
 					mui.openWindow({
@@ -258,6 +258,13 @@
 				}				
 			}
 			takeuser();
+			$('.wrz').click(function(){
+				//跳转认证页面
+				mui.openWindow({
+				  url: './page/sfrz.html', 
+				  id:'add_name4'
+				});
+			});
 		</script>
 	</body>
 
