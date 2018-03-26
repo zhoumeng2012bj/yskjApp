@@ -24,7 +24,10 @@
 			"img/huityuanicon.png",
 			"css/qiYeHuLian.css",
 			"img/qiyehulian.png",
-			"img/beijignicon.png"
+			"img/beijignicon.png",
+			"js/lib/app_config.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -42,11 +45,17 @@
 			"img/sy_bxion.png",
 			"img/tab_bg1.png",
 			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"js/lib/flexible_css.js",
+			"css/style.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js"
 		],
 		"refer": [
 			"page/fyTail.html",
-			"page/loupan_detail.html"
+			"page/loupan_detail.html",
+			"page/acreage_mj.html"
 		]
 	},
 	"wd.html": {
@@ -79,7 +88,9 @@
 			"css/jxfy.css",
 			"jxfyList.html",
 			"js/lib/jquery-1.10.2.min.js",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css"
 		],
 		"refer": [
 			"jxfyList.html"
@@ -87,13 +98,27 @@
 	},
 	"fwsc.html": {
 		"resources": [
-			"css/fwsc.css"
+			"css/fwsc.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/flexible.js"
 		],
-		"refer": []
+		"refer": [
+			"page/tax.html",
+			"page/fitup.html",
+			"page/added.html",
+			"page/financial.html"
+		]
 	},
 	"jxfyList.html": {
 		"resources": [
 			"css/jxfyList.css"
+		],
+		"refer": [
+			"page/fyTail.html"
 		]
 	},
 	"page/fyTail.html": {
@@ -106,7 +131,8 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"img/fav2.png",
-			"img/shoucdianhuobg.png"
+			"img/shoucdianhuobg.png",
+			"css/mui.min.css"
 		]
 	},
 	"page/loupan_detail.html": {
@@ -226,6 +252,99 @@
 			"js/lib/app_config.js",
 			"img/mp_zm.png",
 			"css/mui.min.css"
+		]
+	},
+	"page/tax.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/lib/flexible.js",
+			"css/gongShangShuiWu.css"
+		]
+	},
+	"page/fitup.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"img/main_list_img2.png",
+			"img/main_list_img3.png",
+			"img/zx_bt.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/ul_img5.png",
+			"img/ul_img1.png",
+			"img/nav_img.png",
+			"img/main_list_img1.png",
+			"img/ul_img6.png",
+			"js/mui.min.js",
+			"img/zxlc_pic.png",
+			"js/lib/flexible.js",
+			"img/ul_img7.png",
+			"img/nav_img2.png",
+			"img/ul_img.png",
+			"fonts/mui.ttf",
+			"img/nav_img1.png",
+			"img/main_list_img5.png",
+			"img/ul_img2.png",
+			"img/zx_bt2.png",
+			"img/main_list_img4.png",
+			"img/nav_img3.png",
+			"img/zx_h.png",
+			"img/ul_img3.png",
+			"css/fitup_dz.css",
+			"img/main_bot_pic.png",
+			"img/zx_bt1.png",
+			"img/zx_center.png",
+			"img/ul_img4.png",
+			"js/lib/app_config.js",
+			"css/mui.min.css"
+		]
+	},
+	"page/acreage_mj.html": {
+		"resources": [
+			"css/acreage_mj.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/lib/flexible.js",
+			"img/fwt.png",
+			"js/lib/app_config.js",
+			"css/mui.min.css"
+		]
+	},
+	"page/added.html": {
+		"resources": [
+			"css/addZhiFuWu.css",
+			"js/lib/flexible_css.js",
+			"img/addfwuxiao1.png",
+			"img/addfwuxiao5.png",
+			"img/addzhifwu4.png",
+			"img/addfwuxiao6.png",
+			"img/addzhifwu3.png",
+			"img/addfwuxiao4.png",
+			"img/addfwuxiao2.png",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"img/addzhifwu2.png",
+			"img/addzhifwu.png",
+			"js/lib/flexible.js",
+			"img/addyewuimg.png",
+			"img/addfwuxiao3.png"
+		]
+	},
+	"page/financial.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/xq_2.png",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/xq_3.png",
+			"css/financial.css",
+			"img/xq_1.png",
+			"css/mui.min.css",
+			"fonts/mui.ttf"
 		]
 	}
 }
