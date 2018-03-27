@@ -265,7 +265,8 @@
 					"img/sz.png",
 					"img/fav.png",
 					"js/lib/jquery-1.10.2.min.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"img/addfwuxiao1.png"
 				],
 				"refer": [
 					"page/person.html",
