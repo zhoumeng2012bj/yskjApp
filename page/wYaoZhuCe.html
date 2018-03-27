@@ -223,11 +223,24 @@
 										cleanVal();
 										mui.alert('提交成功，我们将会与您联系。');
 										//成功后返回至服务商城页面
-										mui.openWindow({
-											url: '../fwsc.html', 
-											id:'fwsc'
-										});
-								return;
+//										mui.openWindow({
+//											url: '../fwsc.html', 
+//											id:'fwsc'
+//										});
+										mui.init()
+										var old_back = mui.back;
+										mui.back = function() {
+										    // 获取目标口窗口对象
+										    var target = plus.webview.getWebviewById('fw0');
+										    // 执行相应的事件
+										    mui.fire(target, 'customEvent', {
+										    	'ttt':1
+										    });
+										    // 执行关闭
+										    old_back();
+										};
+										mui.back();
+										return;
 									}else{
 										mui.alert(data.message);
 									}

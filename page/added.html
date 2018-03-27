@@ -167,6 +167,14 @@
 				    fwscType:2
 				})
 			});
+			window.addEventListener('customEvent3', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.ttt3;
+			    if(param == 1){
+			    	mui.back();
+			    }
+			});
 		</script>
 	</body>
 
