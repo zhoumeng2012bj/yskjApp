@@ -697,7 +697,8 @@
 					"img/images/2.png",
 					"img/wz_ion.png",
 					"js/lib/app_config.js",
-					"img/1.jpg"
+					"img/1.jpg",
+					"css/fyxq1.css"
 				],
 				"refer": [
 					"page/fyTail.html"
