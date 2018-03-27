@@ -23,6 +23,12 @@
 		.pic_zz{position: absolute;left: 0;top: 0rem;right: 0;bottom: 0;display: flex;align-items: center;justify-content: center;font-size: 0.4rem;color: #fff;font-weight: bold;display: none;}
 		.listtail a{display: inline-block;width: 100%;}
 		.fy_list li a{display: flex;height: 2.666666rem;text-decoration: none;}
+		.kong p:first-child{width: 3.866666rem;height: 2.933333rem;background: url(../img/my_scion.png)no-repeat center;background-size: 100% auto;}
+		.kong{height:7.16rem;}
+		.kong1{position: absolute;top: 0;bottom: 0;right: 0;left: 0;z-index: 1;background: #fff;}
+		.kong p:last-child{text-align:center;font-size: 0.4rem;color: #999999;margin-top: 0.266666rem;}
+		.kong{display:flex;flex-direction:column;justify-content: flex-end;align-items: center;margin-top: 0.133333rem;}
+		.mui-table-view:after{border: 0;background-color: none!important;}
 	</style>
 	<body>
 		<div class="mui-content">
@@ -31,125 +37,21 @@
 			    <div class="mui-scroll">
 			        <!--数据列表1-->
 				    <ul class="mui-table-view fy_list listUl" id="list1">
-					 	<!--<li class="listtail">
-					 		<div class="xj_zz"></div>
-					 		<div class="selc">
-					 			<div class="mui-input-row mui-checkbox selc_ch">
-					 				<label></label>
-					 				<input name="Checkbox" type="checkbox">
-					 			</div>
-					 		</div>
-					 		
-					 		<a href="javascript:void(0)">
-						 		<div class="fy_pic">
-						 			<span class="pic_zz">房源已下架</span>
-						 			<img src="../img/1.jpg" alt="" />
-						 		</div>
-						 		<div class="fy_xx">
-						 			<p class="lp">士大夫</p>
-						 			<p class="mjwz">123123</p>
-						 			<p class="jfList">
-						 				<span class="jzjf">精装交付</span> 
-						 				<span class="jzdj">定金</span>
-						 			</p>
-						 			<p class="dj">
-						 				<span>12312<i>元/m²/天</i></span>
-						 			</p>
-						 		</div>
-					 		</a>
-					 	</li>
-					 	<li class="zx"></li>-->
+				    	
+
 				   </ul>
 			    </div>
 			</div> 
-			<!--下拉容器结尾-->
-			<!--下拉刷新容器开始-->
-			<!--<div id="pullrefresh" class="mui-content mui-scroll-wrapper list_xs">
-			    <div class="mui-scroll">
-				    <ul class="mui-table-view fy_list listUl" id="list2">
-					 	<li class="listtail">
-					 		<div class="selc">
-					 			<div class="mui-input-row mui-checkbox selc_ch">
-					 			    <label></label>
-					 			    <input name="Checkbox" type="checkbox">
-					 			</div>
-					 		</div>
-					 		<div class="fy_pic">
-					 			<img src="../img/fypic.png" alt="" />
-					 		</div>
-					 		<div class="fy_xx">
-					 			<p class="lp">建外SOHO</p>
-					 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-					 			<p class="jfList">
-					 				<span class="jzjf">精装交付</span>
-					 				<span class="jzdj">定金</span>
-					 			</p>
-					 			<p class="dj">
-					 				<span>6.5<i>元/m2/天</i></span>
-					 			</p>
-					 		</div>
-					 	</li>
-					 	<li class="zx"></li>
-					 	<li class="listtail">
-					 		<div class="selc">
-					 			<div class="mui-input-row mui-checkbox selc_ch">
-					 			    <label></label>
-					 			    <input name="Checkbox" type="checkbox">
-					 			</div>
-					 		</div>
-					 		<div class="fy_pic">
-					 			<img src="../img/fypic.png" alt="" />
-					 		</div>
-					 		<div class="fy_xx">
-					 			<p class="lp">建外SOHO</p>
-					 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-					 			<p class="jfList">
-					 				<span class="jzjf">精装交付</span>
-					 				<span class="jzdj">定金</span>
-					 			</p>
-					 			<p class="dj">
-					 				<span>4.5<i>元/m2/天</i></span>
-					 			</p>
-					 		</div>
-					 	</li>
-				    </ul>
-				    
-			    </div>
-			</div> -->
-			<!--下拉容器结尾-->
-			<!--下拉刷新容器开始-->
-			<!--<div id="pullrefresh" class="mui-content mui-scroll-wrapper list_xs">
-			    <div class="mui-scroll">
-				    <ul class="mui-table-view fy_list listUl" id="list3">
-					 	<li class="listtail">
-					 		<div class="selc">
-					 			<div class="mui-input-row mui-checkbox selc_ch">
-					 			    <label></label>
-					 			    <input name="Checkbox" type="checkbox">
-					 			</div>
-					 		</div>
-					 		<div class="fy_pic">
-					 			<img src="../img/fypic.png" alt="" />
-					 		</div>
-					 		<div class="fy_xx">
-					 			<p class="lp">建外SOHO</p>
-					 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-					 			<p class="jfList">
-					 				<span class="jzjf">精装交付</span>
-					 				<span class="jzdj">定金</span>
-					 			</p>
-					 			<p class="dj">
-					 				<span>10.5<i>元/m2/天</i></span>
-					 			</p>
-					 		</div>
-					 	</li>
-				    </ul>
-			    </div>
-			</div>-->
-			
+			<div class="kong1" id="kong1">
+				<div class="kong">
+					<p></p>
+					<p>您还没有收藏任何房源</p>					
+				</div>
+			</div>
 		</div>
 		<script src="../js/lib/app_config.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			
 			var idx = 0;
 			var page = 1;//页数
 			if(idx==0){
@@ -247,6 +149,17 @@
 					headers:{'Content-Type':'application/json'},	              
 					success:function(data){
 						if(data.success){
+							if(data.data.length == 0){
+								$('#kong1').css('display','block');
+								$('#kong1').on('touchmove',function(e){
+									mui('#pullrefresh').pullRefresh().setStopped(true);
+									e.preventDefault();
+									return false;
+								});
+								return false;
+							}else{
+								$('#kong1').css('display','none');
+							}
 							page++;
 							if(dx == 0){
 								var sc_data = data.data;//全部							

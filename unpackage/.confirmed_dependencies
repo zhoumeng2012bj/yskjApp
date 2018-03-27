@@ -26,7 +26,11 @@
 			"img/qiyehulian.png",
 			"img/beijignicon.png",
 			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/mui.min.css",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
 		],
 		"refer": []
 	},
@@ -82,7 +86,9 @@
 		"refer": [
 			"page/myset.html",
 			"page/sfrz.html",
-			"page/login.html"
+			"page/login.html",
+			"page/mycollection.html",
+			"page/person.html"
 		]
 	},
 	"jxfy.html": {
@@ -98,7 +104,8 @@
 			"css/style.css"
 		],
 		"refer": [
-			"jxfyList.html"
+			"jxfyList.html",
+			"page/search.html"
 		]
 	},
 	"fwsc.html": {
@@ -146,7 +153,8 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"img/fav2.png",
-			"img/shoucdianhuobg.png"
+			"img/shoucdianhuobg.png",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -342,7 +350,12 @@
 			"img/ycmm.png",
 			"css/mui.min.css",
 			"js/lib/md5.js",
-			"img/login_pic.png"
+			"img/login_pic.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
 		],
 		"refer": []
 	},
@@ -361,5 +374,59 @@
 			"js/lib/app_config.js"
 		],
 		"refer": []
+	},
+	"page/mycollection.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/del_ion.png",
+			"js/mui.min.js",
+			"css/mycollection.css",
+			"img/bj.png",
+			"js/lib/flexible.js",
+			"page/mysc_list.html",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"page/mysc_list.html"
+		]
+	},
+	"page/mysc_list.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"css/jxfyList.css",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/sy.css",
+			"js/mui.min.js",
+			"css/mycollection.css",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"img/my_scion.png",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"page/fyTail.html"
+		]
+	},
+	"page/person.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/search.html": {
+		"resources": [
+			"css/search.css",
+			"css/mui.min.css",
+			"css/jxfy.css"
+		]
 	}
 }

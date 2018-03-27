@@ -583,7 +583,8 @@
 					"img/fypic.png",
 					"css/sy.css",
 					"js/lib/app_config.js",
-					null
+					null,
+					"img/my_scion.png"
 				],
 				"refer": [
 					"page/fyTail.html"
