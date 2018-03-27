@@ -85,7 +85,13 @@
 		"resources": [
 			"css/jxfy.css",
 			"jxfyList.html",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css"
 		],
 		"refer": [
 			"jxfyList.html"
