@@ -827,7 +827,9 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"fonts/mui.ttf"
 				],
-				"refer": [],
+				"refer": [
+					"page/wYaoZhuCe.html"
+				],
 				"priority": 0
 			},
 			"page/added.html": {
@@ -891,7 +893,9 @@
 					"js/lib/flexible.js",
 					"fonts/mui.ttf"
 				],
-				"refer": [],
+				"refer": [
+					"page/liJiShenQing.html"
+				],
 				"priority": 0
 			},
 			"page/topNewsInfo.html": {
@@ -947,6 +951,20 @@
 					"js/lib/app_config.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/wYaoZhuCe.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"css/liJiShenQ.css",
+					"js/mui.min.js",
+					"js/lib/sy.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js",
+					"css/fast_zc.css"
 				],
 				"refer": [],
 				"priority": 0
