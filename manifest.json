@@ -111,7 +111,7 @@
 		"splashscreen": {
 			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
 			"waiting": true,
-			"delay": "3"
+			"delay": "3000"
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
@@ -205,25 +205,25 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": ""
+						"retina40": "C:/Users/yuan/Desktop/启动页/start_bg.png","retina55":"C:/Users/yuan/Desktop/启动页/start_bg.png","retina47":"C:/Users/yuan/Desktop/启动页/start_bg.png","retina35":"C:/Users/yuan/Desktop/启动页/start_bg.png","retina55l":"C:/Users/yuan/Desktop/启动页/start_bg.png"
 					},
 					"ipad": {
-						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": ""
+						"portrait": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "C:/Users/yuan/Desktop/启动页/start_bg.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "C:/Users/yuan/Desktop/启动页/start_bg.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "C:/Users/yuan/Desktop/启动页/start_bg.png"
 					}
 				},
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": ""
+					"hdpi": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "C:/Users/yuan/Desktop/启动页/start_bg.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "C:/Users/yuan/Desktop/启动页/start_bg.png"
 				}
 			}
 		}
@@ -399,7 +399,8 @@
 					"js/lib/flexible.js",
 					"css/style.css",
 					"js/lib/jquery-1.10.2.min.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"img/sy_kfion.png"
 				],
 				"refer": [
 					"page/fyTail.html"
