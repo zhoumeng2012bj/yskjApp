@@ -24,10 +24,7 @@
 			"img/huityuanicon.png",
 			"css/qiYeHuLian.css",
 			"img/qiyehulian.png",
-			"img/beijignicon.png",
-			"js/lib/app_config.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"css/mui.min.css"
+			"img/beijignicon.png"
 		],
 		"refer": []
 	},
@@ -43,19 +40,22 @@
 			"img/tt_icon.png",
 			"img/sy_kfion.png",
 			"img/sy_bxion.png",
-			"img/tab_bg1.png",
+			"img/tab_bg.png",
 			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/app_config.js",
-			"js/lib/flexible_css.js",
-			"css/style.css",
-			"js/mui.min.js",
 			"css/mui.min.css",
+			"css/style.css",
+			"js/lib/app_config.js",
+			"img/tab_bg1.png",
+			"js/lib/flexible_css.js",
+			"js/mui.min.js",
 			"js/lib/flexible.js"
 		],
 		"refer": [
 			"page/fyTail.html",
 			"page/loupan_detail.html",
-			"page/acreage_mj.html"
+			"page/enterprise_qy.html",
+			"page/acreage_mj.html",
+			"page/saleFuWu.html"
 		]
 	},
 	"wd.html": {
@@ -76,35 +76,20 @@
 			"js/lib/flexible.js"
 		],
 		"refer": [
-			"page/myset.html",
-			"page/login.html",
-			"page/person.html",
-			"page/mycollection.html",
-			"page/sfrz.html"
+			"page/myset.html"
 		]
 	},
 	"jxfy.html": {
 		"resources": [
 			"css/jxfy.css",
 			"jxfyList.html",
-			"js/lib/jquery-1.10.2.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/style.css"
+			"fonts/mui.ttf"
 		],
-		"refer": [
-			"jxfyList.html"
-		]
+		"refer": []
 	},
 	"fwsc.html": {
 		"resources": [
-			"css/fwsc.css",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"css/style.css",
-			"js/lib/flexible.js"
+			"css/fwsc.css"
 		],
 		"refer": [
 			"page/tax.html",
@@ -131,9 +116,9 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"img/fav2.png",
-			"img/shoucdianhuobg.png",
-			"css/mui.min.css"
-		]
+			"img/shoucdianhuobg.png"
+		],
+		"refer": []
 	},
 	"page/loupan_detail.html": {
 		"resources": [
@@ -154,164 +139,59 @@
 			"css/fyxq.css",
 			"css/jxfyList.css",
 			"css/mui.min.css"
-		]
-	},
-	"page/myset.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"css/person.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/login.html": {
-		"resources": [
-			"js/lib/form_yz.js",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/sha1.js",
-			"css/login.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/md5.js",
-			"img/login_pic.png",
-			"js/lib/app_config.js",
-			"img/ycmm.png",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/style.css"
 		],
-		"refer": [
-			"page/wj_pwd.html"
-		]
-	},
-	"page/wj_pwd.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/sha1.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/wj_pwd.js",
-			"js/lib/md5.js",
-			"js/lib/app_config.js",
-			"css/fast_zc.css",
-			"fonts/mui.ttf",
-			"img/ycmm.png",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"wd.html"
-		]
-	},
-	"page/person.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"css/person.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/mycollection.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"img/del_ion.png",
-			"js/mui.min.js",
-			"css/mycollection.css",
-			"img/bj.png",
-			"js/lib/flexible.js",
-			"page/mysc_list.html"
-		],
-		"refer": [
-			"page/mysc_list.html"
-		]
-	},
-	"page/mysc_list.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/sfrz.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"css/sfrz.css",
-			"js/lib/jquery-1.10.2.min.js",
-			"img/mp_bm.png",
-			"css/person.css",
-			"js/mui.min.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js",
-			"img/mp_zm.png",
-			"css/mui.min.css"
-		]
+		"refer": []
 	},
 	"page/tax.html": {
 		"resources": [
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
-			"fonts/mui.ttf",
 			"js/lib/flexible.js",
 			"css/gongShangShuiWu.css"
+		],
+		"refer": [
+			"page/wYaoZhuCe.html"
 		]
+	},
+	"page/wYaoZhuCe.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/liJiShenQ.css",
+			"js/mui.min.js",
+			"js/lib/sy.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"css/fast_zc.css"
+		],
+		"refer": []
 	},
 	"page/fitup.html": {
 		"resources": [
 			"js/lib/flexible_css.js",
-			"img/main_list_img2.png",
-			"img/main_list_img3.png",
-			"img/zx_bt.png",
 			"js/lib/jquery-1.10.2.min.js",
-			"img/ul_img5.png",
-			"img/ul_img1.png",
-			"img/nav_img.png",
-			"img/main_list_img1.png",
-			"img/ul_img6.png",
 			"js/mui.min.js",
-			"img/zxlc_pic.png",
 			"js/lib/flexible.js",
-			"img/ul_img7.png",
-			"img/nav_img2.png",
-			"img/ul_img.png",
-			"fonts/mui.ttf",
-			"img/nav_img1.png",
-			"img/main_list_img5.png",
-			"img/ul_img2.png",
-			"img/zx_bt2.png",
-			"img/main_list_img4.png",
-			"img/nav_img3.png",
-			"img/zx_h.png",
-			"img/ul_img3.png",
 			"css/fitup_dz.css",
-			"img/main_bot_pic.png",
-			"img/zx_bt1.png",
-			"img/zx_center.png",
-			"img/ul_img4.png",
-			"js/lib/app_config.js",
-			"css/mui.min.css"
+			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/liJiShenQing.html"
 		]
 	},
-	"page/acreage_mj.html": {
+	"page/liJiShenQing.html": {
 		"resources": [
-			"css/acreage_mj.css",
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
+			"css/liJiShenQ.css",
 			"js/mui.min.js",
-			"fonts/mui.ttf",
+			"js/lib/sy.js",
 			"js/lib/flexible.js",
-			"img/fwt.png",
 			"js/lib/app_config.js",
-			"css/mui.min.css"
-		]
+			"css/fast_zc.css"
+		],
+		"refer": []
 	},
 	"page/added.html": {
 		"resources": [
@@ -329,22 +209,82 @@
 			"img/addzhifwu2.png",
 			"img/addzhifwu.png",
 			"js/lib/flexible.js",
-			"img/addyewuimg.png",
-			"img/addfwuxiao3.png"
-		]
+			"img/addfwuxiao3.png",
+			"css/mui.min.css"
+		],
+		"refer": []
 	},
 	"page/financial.html": {
 		"resources": [
+			"css/mui.min.css",
+			"css/financial.css",
 			"js/lib/flexible_css.js",
 			"js/lib/jquery-1.10.2.min.js",
-			"img/xq_2.png",
+			"js/mui.min.js",
+			"js/lib/flexible.js"
+		],
+		"refer": []
+	},
+	"page/enterprise_qy.html": {
+		"resources": [
+			"css/enterprise.css",
+			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
-			"img/xq_3.png",
-			"css/financial.css",
-			"img/xq_1.png",
-			"css/mui.min.css",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"page/acreage_mj.html": {
+		"resources": [
+			"css/acreage_mj.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"img/fwt.png",
+			"js/lib/app_config.js",
 			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"page/myset.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/disclaimer.html"
+		]
+	},
+	"page/disclaimer.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/disclaimer.css",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/saleFuWu.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"css/saleFuWu.css",
+			"js/lib/sy.js",
+			"js/lib/flexible.js",
+			"img/shouffwu.png",
+			"js/lib/app_config.js"
 		]
 	}
 }
