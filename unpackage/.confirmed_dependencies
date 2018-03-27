@@ -93,7 +93,8 @@
 	},
 	"fwsc.html": {
 		"resources": [
-			"css/fwsc.css"
+			"css/fwsc.css",
+			"js/lib/jquery-1.10.2.min.js"
 		],
 		"refer": [
 			"page/tax.html",
