@@ -193,6 +193,7 @@
 			
 			function pullupRefresh() {
 				setTimeout(function() {
+					alert(111111);
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
@@ -580,6 +581,8 @@
 								/*document.querySelector('.fypics').innerHTML=string;*/
 								$('.listUl').append(string);
 							}
+							alert(data.length);
+							alert(xial);
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 10)); //参数为true代表没有更多数据了。
 						}
 						
