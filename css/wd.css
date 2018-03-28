@@ -73,7 +73,12 @@ body{
 	border: none;
 	color: #fff;
 }
-
+.user_news .wrz{padding-left: 0.166666rem;}
+.jt{
+	display: inline-block;
+	font-size: 0.32rem;
+	vertical-align: middle;
+}
 .wd_list li{
 	position: relative;
 	display: flex;

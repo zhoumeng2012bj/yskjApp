@@ -41,6 +41,14 @@
                     extras:{fwscType:1}
 				});
 			});
+			window.addEventListener('customEvent', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.ttt;
+			    if(param == 1){
+			    	mui.back();
+			    }
+			});
 		</script>
 	</body>
 

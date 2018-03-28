@@ -20,7 +20,7 @@
 		    <h1 class="mui-title">立即申请</h1>
 		</header>
 	<div class="mui-content">
-	    <div class="qlxnide">请留下您的基本信息与联系方式，我们会及时与您联系，为 您提供专属服务。</div>
+	    <div class="qlxnide">请留下您的基本信息与联系方式，我们会及时与您联系，为您提供专属服务。</div>
 		<div class="zhuaxff"></div>
 		<div class="forminp">
 			<div class="box_i1">
@@ -236,10 +236,32 @@
 										cleanVal();
 										mui.alert('提交成功，我们将会与您联系。');
 										//成功后返回至服务商城页面
-										mui.openWindow({
-											url: '../fwsc.html', 
-											id:'fwsc'
-										});
+//										mui.openWindow({
+//											url: '../fwsc.html', 
+//											id:'fwsc'
+//										});
+										mui.init()
+										var old_back = mui.back;
+										mui.back = function() {
+										    // 获取目标口窗口对象
+										    var target1 = plus.webview.getWebviewById('fw1');
+										    var target2 = plus.webview.getWebviewById('fw2');
+										    var target3 = plus.webview.getWebviewById('fw3');
+										    // 执行相应的事件
+										    mui.fire(target1, 'customEvent1', {
+										    	'ttt1':1
+										    });
+										    mui.fire(target2, 'customEvent2', {
+										    	'ttt2':1
+										    });
+										    mui.fire(target3, 'customEvent3', {
+										    	'ttt3':1
+										    });
+										    // 执行关闭
+										    old_back();
+										};
+										mui.back();
+
 								return;
 									}else{
 										mui.alert(data.message);

@@ -13,10 +13,13 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/sy.css"/>
 	</head>
+	<style type="text/css">
+		.mui-input-row:nth-child(2) .mui-input-clear~.mui-icon-clear{right: 25%!important;}
+	</style>
 	<body>
-		<!--<header class="mui-bar mui-bar-transparent bg-color-bg">
-		    <h1 class="mui-title">首页</h1>
-		</header>-->
+		<header class="mui-bar mui-bar-transparent bg-color-bg" style="height: 20px;">
+		    <h1 class="mui-title"></h1>
+		</header>
 		<div class="mui-content">
 		    <!--轮播-->
 			<div id="slider" class="mui-slider" >
@@ -82,7 +85,7 @@
 						</p>
 						<p class="meu_txt">
 							<span>面积</span>
-							<span>25万m²</span>
+							<span>30万m²</span>
 						</p>
 					</li>
 					<li>
@@ -91,7 +94,7 @@
 						</p>
 						<p class="meu_txt">
 							<span>企业</span>
-							<span>1500家</span>
+							<span>2000家</span>
 						</p>
 					</li>
 					<li>
@@ -121,7 +124,6 @@
 				</p>
 				<ul class="tt_news">
 					
-					
 				</ul>
 			</div>
 			<!--Tab切换-->
@@ -149,7 +151,7 @@
 					        <input type="text" class="mui-input-clear yzwtPhone" maxlength="11"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号"  >
 					    </div>
 					    <div class="mui-input-row">
-					        <input type="text" class="mui-input-clear yazmcode" placeholder="请输入验证码"  > 
+					        <input type="text" style="width: 60%;"  class="mui-input-clear yazmcode" placeholder="请输入验证码"  > 
 					    </div>
 					    <div class="btn_box">
 					    	<div class="hqyzm" onclick="huoqvyanzm()">获取验证码</div>
@@ -225,7 +227,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
-		<script type="text/javascript">
+		<script type="text/javascript">	
 			ca.init();
 			castapp.pictureScroll({
 			    callback:function(pictureNumber){
@@ -293,8 +295,7 @@
 					console.log(type);
 				}
 			});	
-			
-			
+	 
 			function startScroll(){  
 			    time=setInterval("scrollUp()",speed);  
 			    area.scrollTop++;  

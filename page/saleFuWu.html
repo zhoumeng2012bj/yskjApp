@@ -49,7 +49,7 @@
 	    		    <input type="text" class="mui-input-clear shfwPhone" placeholder="请输入手机号" maxlength="11" 
 	    		    	onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 	    		</div>
-	    		<div class="fangwutop"></div>
+	    		<div class="baoxiuxx"></div>
 	    		<div class="fangwuxinix">
 	    			<div class="mui-input-row inp shfuimput">
 			    		<span class="shurpnone">房屋信息</span>
@@ -168,10 +168,11 @@
 							cleanVal();
 							mui.alert('提交成功，我们将会与您联系。');
 							//成功后返回至服务商城页面
-							mui.openWindow({
-								url: '../sy.html', 
-								id:'sy'
-							});
+//							mui.openWindow({
+//								url: '../sy.html', 
+//								id:'sy'
+//							});
+							mui.back();
 					return;
 						}else{
 							mui.alert(data.message);

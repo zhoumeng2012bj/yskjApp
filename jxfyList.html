@@ -31,7 +31,7 @@
 							<div class="xuanxingshuzi">
 								<div class="xiaokuai">0-99</div>
 								<div class="xiaokuai">100-299</div>
-								<div class="xiaokuai">399-499</div>
+								<div class="xiaokuai">300-499</div>
 								<div class="xiaokuai">500-999</div>
 							</div>
 							<div class="xuanxingshuzi">
@@ -299,7 +299,6 @@
 			var cq = $('.xiaokchuaq');
 			var tagcq = "cqss";
 			var chaqshuz = [];
-			var chanqvdsuz = [];
 			for(var i=0;i<cq.length;i++){
 				(function(index){
 					cq[i].onclick = function(){
@@ -394,11 +393,14 @@
 			$('.czsyhk').click(function(){
 				xial = 1;
 				jiangejt = 'D';
-				chanqvdsuz = [];
+				chaqshuz = [];
+				tag = "mianjiqv";
+				tagzj = 'zujinxx';
+				tagcq = "cqss";
 				qcqitades();
 				chushishij();
-				$('.listUl').html('');
-				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+				/*$('.listUl').html('');
+				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);*/
 			});
 			
 			//筛选的重置条件
@@ -878,7 +880,7 @@
 			window.addEventListener("ssqvxiaofanhui", function (e) {
 			    //获得事件参数
 			    var qvx = e.detail.qvx;
-				/*search = '';*/
+				search = '';
 				xial = 1;
 				$('.listUl').html('');
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
@@ -951,9 +953,10 @@
 					'background':'none',
 					'color':'#666666'
 				});
+				xial = 1;
+				$('.listUl').html('');
 				if(sel == 0){
 					text1 = '不限';
-					xial = 1;
 					district = '';
 					fdcode = '';
 					lineid = '';
@@ -1020,13 +1023,16 @@
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
 				xzqy_erji(district,e);
 			}
-			//行政区域二级接口
+			//行政区域二级
 			var xzqy_str = '';
 			function xzqy_erji(id,e){
 				$('#sel3').html('');
 				text2 = e.innerText;
+				district = id;
 				if(id == 0){
 					id = '';
+					district ='';
+					fdcode = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
@@ -1069,8 +1075,7 @@
 			function clk_xz2(id,q,e){
 				xial = 1;
 				$('.listUl').html('');
-				district = '';
-				fdcode = '';
+				fdcode = id;
 				text3 = e.innerText;
 				if(q == -1){
 					fdcode = '';
