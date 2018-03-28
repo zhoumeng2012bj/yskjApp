@@ -116,7 +116,8 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"css/style.css",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"img/sy_kfion.png"
 		],
 		"refer": [
 			"page/tax.html",
@@ -177,7 +178,8 @@
 			"fonts/mui.ttf",
 			"css/fyxq.css",
 			"css/jxfyList.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/fyxq1.css"
 		],
 		"refer": []
 	},

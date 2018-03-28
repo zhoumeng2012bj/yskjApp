@@ -353,7 +353,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"page/fwsc.css",
 					"css/fwsc.css",
-					"js/seturl.js"
+					"js/seturl.js",
+					"img/sy_kfion.png"
 				],
 				"refer": [
 					"page/financial.html",
