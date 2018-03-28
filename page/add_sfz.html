@@ -131,13 +131,13 @@
 							mui.alert(data.message);
 							var person = plus.webview.getWebviewById('person0');
 						    // 执行相应的事件
-						    mui.fire(person, 'per_lo', {
-						    	'ttt':1
+						    mui.fire(person, 'per_loc', {
+						    	'p_loc':1
 						    });
 							//成功后返回至服务商城页面
 							mui.openWindow({
 								url: 'person.html', 
-								id:"person"
+								id:"person0"
 							});
 						}else{
 							mui.alert(data.message);

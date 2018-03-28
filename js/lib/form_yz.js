@@ -222,11 +222,11 @@ $('.btn').click(function(){
 		checkoutyzm(yzm);//验证码校验方法
 	}else{
 		if(telnumber == ''){
-			mui.toast('手机号不能为空',{ duration:'2000', type:'div' }) 
+//			mui.toast('手机号不能为空',{ duration:'2000', type:'div' }) 
 			return;
 		}
 		if(yzm == ''){
-			mui.toast('请输入手机验证码',{ duration:'2000', type:'div' })	
+//			mui.toast('请输入手机验证码',{ duration:'2000', type:'div' })	
 			return;
 		}		
 	}

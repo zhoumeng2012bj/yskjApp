@@ -266,7 +266,8 @@
 					"img/fav.png",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/app_config.js",
-					"img/addfwuxiao1.png"
+					"img/addfwuxiao1.png",
+					"img/sy_kfion.png"
 				],
 				"refer": [
 					"page/person.html",
@@ -384,7 +385,8 @@
 					"js/lib/app_config.js",
 					"img/tab_bg.png",
 					"img/dacheghezuo.png",
-					null
+					null,
+					"img/sy_kfion.png"
 				],
 				"refer": [],
 				"priority": 0

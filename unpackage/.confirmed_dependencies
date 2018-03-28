@@ -30,7 +30,8 @@
 			"css/mui.min.css",
 			"js/lib/flexible_css.js",
 			"js/mui.min.js",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"img/sy_kfion.png"
 		],
 		"refer": []
 	},
@@ -81,7 +82,8 @@
 			"css/mui.min.css",
 			"css/style.css",
 			"js/lib/flexible.js",
-			"img/addfwuxiao1.png"
+			"img/addfwuxiao1.png",
+			"img/sy_kfion.png"
 		],
 		"refer": [
 			"page/myset.html",
@@ -363,7 +365,9 @@
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/style.css"
 		],
 		"refer": []
 	},
@@ -429,13 +433,15 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"img/head_img.png"
 		],
 		"refer": [
 			"page/add_name.html",
 			"page/qdgs.html",
 			"page/gh_tel.html",
-			"page/add_sfz.html"
+			"page/add_sfz.html",
+			"page/sfrz.html"
 		]
 	},
 	"page/search.html": {
@@ -467,7 +473,10 @@
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/person.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"page/qdgs.html": {

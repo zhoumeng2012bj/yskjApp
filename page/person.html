@@ -61,6 +61,17 @@
 		</div>
 	   <script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
+			
+			window.addEventListener('per_loc', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.p_loc;
+			    if(param == 1){
+			    	var wobj = plus.webview.getWebviewById("person0");
+					wobj.reload(true);
+			    }
+			});
+			
 			(function(){
 			
 			checkSubmit();
