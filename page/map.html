@@ -16,12 +16,12 @@
 		<header class="mui-bar mui-bar-nav fytail">
 		    <div class="">
 		    	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left fyxqfh"></a>
-		    	<span class="titlezi building_name">时间国际中心</span>
+		    	<span class="titlezi building_name">地图</span>
 		    </div>
 		</header>
 		<div class="mui-content fyzhuti" >
 		    <div class="fyxqyi">
-		    <iframe src="http://m.amap.com/around/?locations=116.466206,39.911326&keywords=餐厅,酒店,健身,银行&defaultIndex=2&defaultView=&searchRadius=1000&key=cc238157d6183b1d54404a704bb86171&defaultView=map" style="width:377px;height: 700px;"></iframe>	
+		    <iframe src="" class="mapClass" style="width:100%;height: 100%;"></iframe>	
      		 </div>
 		</div>
 	<body>
@@ -30,6 +30,14 @@
 		<script type="text/javascript" src="http://api.map.baidu.com/api?ak=pTHixzeMKbBbtNwycGsv47DuGjqEOgQw&v=2.0"></script>
 		<script type="text/javascript">
 		//获取参数   地图的标识    坐标点  第几个34
+		mui.plusReady(function(){
+				var self = plus.webview.currentWebview();
+                var pos_data = self.pos_data;
+			    var index=self.index;
+			    var h="http://m.amap.com/around/?locations="+pos_data+"&keywords=餐厅,酒店,健身,银行&defaultIndex="+index+"&defaultView=&searchRadius=1000&key=cc238157d6183b1d54404a704bb86171&defaultView=map";
+			    $(".mapClass").attr("src",h);
+		})
+		
 		</script>
 	</body>
 

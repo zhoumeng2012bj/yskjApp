@@ -467,7 +467,28 @@
         //标签点击
         $('#map_item_ul li').click(function () {
           var index = $(this).index() + 1;
-          location.href = "http://m.amap.com/around/?locations=" + pos_data + "&keywords=餐厅,酒店,健身,银行&defaultIndex=" + index + "&defaultView=&searchRadius=1000&key=cc238157d6183b1d54404a704bb86171&defaultView=map";
+          /*var main = plus.webview.getWebviewById('map');
+				mui.fire(main, "map",{
+				    pos_data:pos_data,
+				    index:index
+				})
+				*/
+				mui.openWindow({ 
+					url:'map.html', //需要打开页面的url地址 
+					id:'map',  //需要打开页面的url页面id
+					extras:{ 
+						pos_data:pos_data,
+				        index:index
+	//					.....//自定义扩展参数，可以用来处理页面间传值 
+					},show:{ //控制打开页面的类型
+						autoShow:true,
+	//					//页面loaded事件发生后自动显示，默认为true 
+						aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；  页面出现的方式 左右上下
+						duration:''//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒； 
+					}
+				});
+          
+         // location.href = "http://m.amap.com/around/?locations=" + pos_data + "&keywords=餐厅,酒店,健身,银行&defaultIndex=" + index + "&defaultView=&searchRadius=1000&key=cc238157d6183b1d54404a704bb86171&defaultView=map";
 
         });
           }
