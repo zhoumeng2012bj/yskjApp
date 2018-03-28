@@ -21,6 +21,16 @@
 			color: #666666;
 			padding-right: 0.4rem;
 		}
+		.per_news li{
+			position: relative;
+		}
+		.gsclass{
+			position: relative;
+			left: -0.4rem;
+			width: 10rem;
+			padding-left: 0.666666rem;
+			background: #fff;
+		}
 	</style>
 
 	<body>
@@ -33,9 +43,10 @@
 		   <ul class="per_news">
 		    	<li>
 		    		<div class="mui-input-row" style="width: 100%;">
-				        <input type="text" class="mui-input-clear add_n add_gsname" oninput="checkGsname()" placeholder="请输入渠道公司名称">
+				        <input type="text" class="mui-input-clear add_n add_gsname" oninput="checkGsname()" placeholder="请输入渠道公司名称" id="gsname">
 				    </div>
 		    	</li>
+		    	<div class="gsclass"></div>
 		    	<li>
 		    		<div class="mui-input-row" style="width: 100%;">
 				        <input type="text" class="mui-input-clear add_n add_xmname" placeholder="请输入项目名称">
@@ -43,10 +54,6 @@
 		    	</li>
 		    	
 		    </ul>
-		    <div class="gsclass">
-			
-			
-		</div>
 		</div>
 		
 		  <script src="../js/lib/app_config.js"></script>
@@ -111,6 +118,11 @@
 			
 			//模糊搜索   渠道公司信息
 			function checkGsname(){
+				if($('#gsname').val()!=''){
+					$('.gsclass').css('display','block');
+				}else{
+					$('.gsclass').css('display','none');
+				}
 				gsid="";
 				gsname="";
 				xmname="";

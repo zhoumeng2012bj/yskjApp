@@ -377,7 +377,9 @@
 			"js/lib/flexible.js",
 			"img/qth.png",
 			"img/yzs.png",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -427,7 +429,12 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js"
 		],
-		"refer": []
+		"refer": [
+			"page/add_name.html",
+			"page/qdgs.html",
+			"page/gh_tel.html",
+			"page/add_sfz.html"
+		]
 	},
 	"page/search.html": {
 		"resources": [
@@ -436,5 +443,69 @@
 			"css/jxfy.css"
 		],
 		"refer": []
+	},
+	"welcome.html": {
+		"resources": [
+			"img/w2.png",
+			"js/lib/castapp.js",
+			"img/w3.png",
+			"js/mui.min.js",
+			"img/w1.png",
+			"css/mui.min.css",
+			"js/lib/flexible_css.js",
+			"js/lib/flexible.js"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"page/add_name.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/qdgs.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js",
+			"css/person.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/gh_tel.html": {
+		"resources": [
+			"img/warming.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		]
+	},
+	"page/add_sfz.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"js/lib/app_config.js"
+		],
+		"refer": [
+			"page/person.html"
+		]
 	}
 }

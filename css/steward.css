@@ -170,6 +170,8 @@
 	width: 0.933333rem;
 }
 .zzt .ding{
+	position: relative;
+	top: -0.533333rem;
 	text-align: center;
 }
 .zzt .nian{
