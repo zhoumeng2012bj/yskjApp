@@ -103,8 +103,12 @@
 .zx_center{
 	width: 10rem;
 	height: 15.533333rem;
-	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_center.png) no-repeat center;
-	background-size: 100% auto;
+	/*background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/zx_center.png) no-repeat center;
+	background-size: 100% auto;*/
+}
+.zx_center img{
+	height: auto;
+	width: 100%;
 }
 .ul_list{
 	display: flex;
@@ -188,6 +192,10 @@
 	height: 15.906666rem;
 	width: 9.2rem;
 	margin: 0 auto 0.8rem;
-	background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/main_bot_pic.png)center;
-	background-size: auto 100%;
+	/*background: url(http://47.92.145.21:81/yskjapp/servicemall/zxdzpic/main_bot_pic.png)center;
+	background-size: auto 100%;*/
+}
+.main_bot img{
+	height: auto;
+	width: 100%;
 }
