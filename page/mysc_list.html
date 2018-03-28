@@ -25,7 +25,7 @@
 		.fy_list li a{display: flex;height: 2.666666rem;text-decoration: none;}
 		.kong p:first-child{width: 3.866666rem;height: 2.933333rem;background: url(../img/my_scion.png)no-repeat center;background-size: 100% auto;}
 		.kong{height:7.16rem;}
-		.kong1{position: absolute;top: 0;bottom: 0;right: 0;left: 0;z-index: 1;background: #fff;}
+		.kong1{display: none;position: absolute;top: 0;bottom: 0;right: 0;left: 0;z-index: 1;background: #fff;}
 		.kong p:last-child{text-align:center;font-size: 0.4rem;color: #999999;margin-top: 0.266666rem;}
 		.kong{display:flex;flex-direction:column;justify-content: flex-end;align-items: center;margin-top: 0.133333rem;}
 		.mui-table-view:after{border: 0;background-color: none!important;}
@@ -149,21 +149,20 @@
 					headers:{'Content-Type':'application/json'},	              
 					success:function(data){
 						if(data.success){
-							if(data.data.length == 0){
-								$('#kong1').css('display','block');
-								$('#kong1').on('touchmove',function(e){
-									mui('#pullrefresh').pullRefresh().setStopped(true);
-									e.preventDefault();
-									return false;
-								});
-								return false;
-							}else{
-								$('#kong1').css('display','none');
-							}
-							page++;
 							if(dx == 0){
 								var sc_data = data.data;//全部							
+								if(data.data.length == 0 && page == 1){
+									$('#kong1').css('display','block');
+										$('#kong1').on('touchmove',function(e){
+											mui('#pullrefresh').pullRefresh().setStopped(true);
+											e.preventDefault();
+											return false;
+										});		
+								}else{
+									$('#kong1').css('display','none');
+								}
 								console.log(sc_data);
+								page++;
 								if($('.selc').css('display') == 'block'){
 									mui.plusReady(function(){
 										var main = plus.webview.getWebviewById('person1');
@@ -221,7 +220,7 @@
 //										$('#list3').append(sc_str);
 //									}
 								}
-								mui('#pullrefresh').pullRefresh().endPulldownToRefresh((sc_data.length<10));
+								mui('#pullrefresh').pullRefresh().endPulldownToRefresh((data.data.length<10));
 								mui('#pullrefresh').pullRefresh().refresh(true);
 							}
 //							else if(dx == 3){
@@ -273,14 +272,12 @@
 					str_fyid = $("#list1 input:checked").map(function(index,elem) {
 			            return $(elem).val();
 			        }).get().join(',');
-					alert(str_fyid);
 				}
 				if($("#list1 input[type='checkbox']:checked").length != $('#list1 input[type="checkbox"]').length){
 					check_xz = false;
 					str_fyid = $("#list1 input:checked").map(function(index,elem) {
 			            return $(elem).val();
 			        }).get().join(',');
-					alert(str_fyid);
 				}
 				console.log(check_xz)
 				var main = plus.webview.getWebviewById('person1');

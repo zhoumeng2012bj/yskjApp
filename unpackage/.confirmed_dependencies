@@ -31,7 +31,8 @@
 			"js/lib/flexible_css.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
-			"img/sy_kfion.png"
+			"img/sy_kfion.png",
+			"css/style.css"
 		],
 		"refer": []
 	},
@@ -63,7 +64,8 @@
 			"page/enterprise_qy.html",
 			"page/acreage_mj.html",
 			"page/saleFuWu.html",
-			"page/steward.html"
+			"page/steward.html",
+			"page/broker.html"
 		]
 	},
 	"wd.html": {
@@ -517,6 +519,19 @@
 		],
 		"refer": [
 			"page/person.html"
+		]
+	},
+	"page/broker.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"img/his_cs.png",
+			"js/mui.min.js",
+			"img/his_js.png",
+			"js/lib/flexible.js",
+			"img/his_pm.png",
+			"css/broker.css",
+			"js/lib/app_config.js"
 		]
 	}
 }
