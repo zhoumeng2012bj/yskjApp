@@ -79,7 +79,7 @@
 			<div class="zxsj_box">
 				<div class="tit">最新数据</div>
 				<ul class="nav_list">
-					<li>
+					<li onclick="mianjiclick()">
 						<p class="mj">
 							<img src="img/mj_icon.png" alt="" />
 						</p>
@@ -88,7 +88,7 @@
 							<span>30万m²</span>
 						</p>
 					</li>
-					<li>
+					<li onclick="qiyeclick()">
 						<p class="mj">
 							<img src="img/qy_icon.png" alt="" />
 						</p>
@@ -97,7 +97,7 @@
 							<span>2000家</span>
 						</p>
 					</li>
-					<li>
+					<li onclick="jingjirenclick()">
 						<p class="mj">
 							<img src="img/jjr_icon.png" alt="" />
 						</p>
@@ -106,7 +106,7 @@
 							<span>25000+</span>
 						</p>
 					</li>
-					<li>
+					<li onclick="guanjiaclick()">
 						<p class="mj">
 							<img src="img/gj_icon.png" alt="" />
 						</p>
@@ -236,6 +236,42 @@
 			    isAutoScroll:true,
 			    scrollTime:3
 			});
+			var toLink = ['page/acreage_mj.html','page/enterprise_qy.html','page/broker.html','page/steward.html'];
+			//最新数据213
+			function mianjiclick(){
+				mui.openWindow({ 
+					url:'page/acreage_mj.html', //需要打开页面的url地址 
+					id:'zxsj0',  //需要打开页面的url页面id
+				})
+			}
+			function qiyeclick(){
+				mui.openWindow({ 
+					url:'page/enterprise_qy.html', //需要打开页面的url地址 
+					id:'zxsj1',  //需要打开页面的url页面id
+				})
+			}
+			function jingjirenclick(){
+				mui.openWindow({ 
+					url:'page/broker.html', //需要打开页面的url地址 
+					id:'zxsj2',  //需要打开页面的url页面id
+				})
+			}
+			function guanjiaclick(){
+				mui.openWindow({ 
+					url:'page/steward.html', //需要打开页面的url地址 
+					id:'zxsj3',  //需要打开页面的url页面id
+				})
+			}
+			/*for (var b=0; b<$('.nav_list li').length; b++) {
+				(function(ix){
+					$('.nav_list li').eq(b).click(function(){
+						mui.openWindow({ 
+							url:toLink[ix], //需要打开页面的url地址 
+							id:'zxsj'+ix,  //需要打开页面的url页面id
+						})
+					})
+				})(b)
+			}*/
 			
 			//tab切换
 			var tabNav = $('.tab_nav');
@@ -649,18 +685,7 @@
 					console.info(123465);
 				},'json'
 			);*/
-			var toLink = ['page/acreage_mj.html','page/enterprise_qy.html','page/broker.html','page/steward.html'];
-			//最新数据213
-			for (var b=0; b<$('.nav_list li').length; b++) {
-				(function(ix){
-					$('.nav_list li').eq(b).click(function(){
-						mui.openWindow({ 
-							url:toLink[ix], //需要打开页面的url地址 
-							id:'zxsj'+ix,  //需要打开页面的url页面id
-						})
-					})
-				})(b)
-			}
+			
 		</script>
 	</body>
 
