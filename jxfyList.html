@@ -19,89 +19,87 @@
 		/*#sel1 li{border: 1px solid red;}*/
 	</style>
 	<body>
+		<!--遮罩层-->
+		<div class="zhezhaoceshx zhezhaocdisplayshx">
+			<div class="zzcnershx">
+				<div class="mianjilag">
+					<div class="mjqyfm">
+						面积区域（㎡）
+					</div>
+					<div class="xuanxing">
+						<div class="xuanxingshuzi">
+							<div class="xiaokuai">0-99</div>
+							<div class="xiaokuai">100-299</div>
+							<div class="xiaokuai">300-499</div>
+							<div class="xiaokuai">500-999</div>
+						</div>
+						<div class="xuanxingshuzi">
+							<div class="xiaokuai">1000-1499</div>
+							<div class="xiaokuai">1500以上</div>
+						</div>
+						<!--<div class="xuanxingshuzi">
+							<div class="xiaokuaiyishang pingangm">㎡</div>
+							<div class="xiaokuaiyishang pingangm">㎡</div>
+						</div>-->
+					</div>
+					<div class="mjqyfm zjqy">
+						租金区域（元）
+					</div>
+					<div class="xuanxing">
+						<div class="xuanxingshuzi">
+							<div class="xiaokzujin">0-2.9</div>
+							<div class="xiaokzujin">3-4.9</div>
+							<div class="xiaokzujin">5-7.9</div>
+							<div class="xiaokzujin">8-9.9</div>
+						</div>
+						<div class="xuanxingshuzi">
+							<div class="xiaokzujin">10-14.9</div>
+							<div class="xiaokzujin">15以上</div>
+						</div>
+						<!--<div class="xuanxingshuzi">
+							<div class="xiaokuaiyishang pingangm">元</div>
+							<div class="xiaokuaiyishang pingangm">元</div>
+						</div>-->
+					</div>
+					<div class="mjqyfm">
+						产权性质
+					</div>
+					<div class="xuanxing chanqxz">
+						<div class="xuanxingshuzi">
+							<div class="xiaokchuaq">写字楼</div>
+							<div class="xiaokchuaq">公寓</div>
+							<div class="xiaokchuaq">商务楼</div>
+							<div class="xiaokchuaq">商业</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="czqddig">
+					<div class="dibuceng">
+						<span class="chuongzhi czsyhk">重置</span>
+						<span class="chuongzhi quding">确定</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="zhezhaoce zhezhaocdisplay">
+			<div class="zzcner">
+				<ul class="zzcqy" id="sel1">
+					<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>
+					<li onclick="selsx(1)">区域</li>
+					<li onclick="selsx(2)">地铁</li>
+				</ul>
+				<ul class="zzcdcq" id="sel2">
+					<li onclick="subway1(0,-1,this)"></li>
+				</ul>
+				<ul class="zzcdcq" id="sel3">
+					<li onclick="subway2(0,-1,this)"></li>
+				</ul>
+			</div>
+		</div>
 		<!--下拉刷新容器-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
-			<div class="zhezhaoceshx zhezhaocdisplayshx">
-				<div class="zzcnershx">
-					<div class="mianjilag">
-						<div class="mjqyfm">
-							面积区域（㎡）
-						</div>
-						<div class="xuanxing">
-							<div class="xuanxingshuzi">
-								<div class="xiaokuai">0-99</div>
-								<div class="xiaokuai">100-299</div>
-								<div class="xiaokuai">300-499</div>
-								<div class="xiaokuai">500-999</div>
-							</div>
-							<div class="xuanxingshuzi">
-								<div class="xiaokuai">1000-1499</div>
-								<div class="xiaokuai">1500以上</div>
-							</div>
-							<!--<div class="xuanxingshuzi">
-								<div class="xiaokuaiyishang pingangm">㎡</div>
-								<div class="xiaokuaiyishang pingangm">㎡</div>
-							</div>-->
-						</div>
-						<div class="mjqyfm zjqy">
-							租金区域（元）
-						</div>
-						<div class="xuanxing">
-							<div class="xuanxingshuzi">
-								<div class="xiaokzujin">0-2.9</div>
-								<div class="xiaokzujin">3-4.9</div>
-								<div class="xiaokzujin">5-7.9</div>
-								<div class="xiaokzujin">8-9.9</div>
-							</div>
-							<div class="xuanxingshuzi">
-								<div class="xiaokzujin">10-14.9</div>
-								<div class="xiaokzujin">15以上</div>
-							</div>
-							<!--<div class="xuanxingshuzi">
-								<div class="xiaokuaiyishang pingangm">元</div>
-								<div class="xiaokuaiyishang pingangm">元</div>
-							</div>-->
-						</div>
-						<div class="mjqyfm">
-							产权性质
-						</div>
-						<div class="xuanxing chanqxz">
-							<div class="xuanxingshuzi">
-								<div class="xiaokchuaq">写字楼</div>
-								<div class="xiaokchuaq">公寓</div>
-								<div class="xiaokchuaq">商务楼</div>
-								<div class="xiaokchuaq">商业</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="czqddig">
-						<div class="dibuceng">
-							<span class="chuongzhi czsyhk">重置</span>
-							<span class="chuongzhi quding">确定</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="zhezhaoce zhezhaocdisplay">
-				<div class="zzcner">
-					<ul class="zzcqy" id="sel1">
-						<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>
-						<li onclick="selsx(1)">区域</li>
-						<li onclick="selsx(2)">地铁</li>
-					</ul>
-					<ul class="zzcdcq" id="sel2">
-						<li onclick="subway1(0,-1,this)"></li>
-					</ul>
-					<ul class="zzcdcq" id="sel3">
-						<li onclick="subway2(0,-1,this)"></li>
-					</ul>
-				</div>
-			</div>
-			
-			
 			<div class="mui-scroll">
-				
 				<!--数据列表-->
 				<!--<ul class="mui-table-view mui-table-view-chevron">-->
 					<!--特价房源-->
@@ -335,14 +333,6 @@
 										}
 									}
 								}
-								/*chqxz = '';
-								for(var i=0;i<chaqshuz.length;i++){
-									if(i == chaqshuz.length-1){
-										chqxz += chaqshuz[i];
-									}else{
-										chqxz += chaqshuz[i]+'、';
-									}
-								}*/
 							}else{
 								var ss = 1;
 								for(var i=0;i<chaqshuz.length;i++){
@@ -387,6 +377,7 @@
 				xial = 1;
 				jiangejt = 'D';
 				$('.listUl').html('');
+				huifuupjiazaidata();
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 			});
 			//重置事件
@@ -409,84 +400,6 @@
 				price_dj = '';
 				chqxz = '';
 			}
-			//筛选的动态数据
-			/*function saixuandata(area,price_dj,chqxz){
-				$('.listUl').html('');
-				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
-				data:{
-					"parameters":
-						{
-							"search_keywork":"",
-							"district":"",
-							"business":"",
-							"district1":"",
-							"business1":"",
-							"line_id":"",
-							"station_id":"",
-							"area":area,
-							"price_dj":price_dj,
-							"label":"",
-							"chqxz":'',
-							"orderby":"D",
-							"curr_page":xial,
-							"items_perpage":10
-						},"foreEndType":2,"code":"30000001"},
-				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
-				timeout:10000,//超时时间设置为10秒；
-				headers:{'Content-Type':'application/json'},	              
-				success:function(data){
-					//服务器返回响应，根据响应结果，分析是否登录成功；
-					if(data.success){
-						$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
-						$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
-						mui('#pullrefresh').pullRefresh().setStopped(false);
-						var index = plus.webview.getLaunchWebview();
-						zhezhaoxiaoshi();
-						mui.fire(index, "weizhi1",{
-						    idxid:4//1位置
-						})
-						//点击位置遮罩层取消遮罩层要改变样式
-						var main = plus.webview.getWebviewById('jxfy.html');
-						mui.fire(main, "saixuanfh",{
-						    idxsxfh:1//1位置
-						})
-						xial++;
-						var data = data.data;
-						console.log(data);
-						var string = '';
-						for(var i=0;i<data.length;i++){
-							if(data[i].decoration_level == ''){
-								if(data[i].djbsh == 1){
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-								}else{
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-								}
-
-							}else{
-								if(data[i].djbsh == 1){
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-								}else{
-									string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-								}
-
-							}
-							*/
-							/*document.querySelector('.fypics').innerHTML=string;*/
-							/*$('.listUl').append(string);
-						}
-						mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
-					}else{
-						mui.alert(data.msg);
-					}
-				},
-				error:function(xhr,type,errorThrown){
-					//异常处理；
-					console.log(type);
-				}
-				});
-			}*/
-			
 			
 	/*		动态数据*/
 			function dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiagesanshu,search){
@@ -837,6 +750,7 @@
 				/*price_dj = '';*/
 				/*chqxz = '';*/
 				$('.listUl').html('');
+				huifuupjiazaidata();
 				qcqitades();
 				if(idx == 5){
 					jiangejt = 'P1';
@@ -856,6 +770,7 @@
 				/*price_dj = '';*/
 				/*chqxz = '';*/
 				$('.listUl').html('');
+				huifuupjiazaidata();
 				qcqitades();
 				if(idx == 7){
 					jiangejt = 'A1';
@@ -872,6 +787,7 @@
 			    var lpname = e.detail.lpname;
 				search = lpname;
 				$('.listUl').html('');
+				huifuupjiazaidata();
 				xial = 1;
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 			});
@@ -887,68 +803,13 @@
 			 	mui('#pullrefresh').pullRefresh().refresh(true);
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 			});
-			/*function jiangefangfa(jiagesanshu){
-				$('.listUl').html('');
-				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
-					data:{
-						"parameters":
-							{
-								"search_keywork":"",
-								"district":"",
-								"business":"",
-								"district1":"",
-								"business1":"",
-								"line_id":"",
-								"station_id":"",
-								"area":"",
-								"price_dj":"",
-								"label":"",
-								"chqxz":"",
-								"orderby":jiagesanshu,
-								"curr_page":xial,
-								"items_perpage":10
-							},"foreEndType":2,"code":"30000001"},
-					dataType:'json',//服务器返回json格式数据
-					type:'post',//HTTP请求类型
-					timeout:10000,//超时时间设置为10秒；
-					headers:{'Content-Type':'application/json'},	              
-					success:function(data){
-						//服务器返回响应，根据响应结果，分析是否登录成功；
-						if(data.success){
-							xial++;
-							var data = data.data;
-							var string = '';
-							for(var i=0;i<data.length;i++){
-								if(data[i].decoration_level == ''){
-									if(data[i].djbsh == 1){
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}else{
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}
-	
-								}else{
-									if(data[i].djbsh == 1){
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}else{
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}
-	
-								}
-								*/
-								/*document.querySelector('.fypics').innerHTML=string;*/
-								/*$('.listUl').append(string);
-							}
-							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 1)); //参数为true代表没有更多数据了。
-						}else{
-							mui.alert(data.msg);
-						}
-					},
-					error:function(xhr,type,errorThrown){
-						//异常处理；
-						console.log(type);
-					}
-				});
-			}*/
+			
+			//恢复上拉加载更多数据的方法
+			function huifuupjiazaidata(){
+				mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+			 	mui('#pullrefresh').pullRefresh().refresh(true);
+			}
+
 			//
 			function selsx(sel){
 				$('#sel1 li').css({
@@ -969,7 +830,12 @@
 					});
 					$('#sel2').html('');
 					$('#sel3').html('');
+					var main = plus.webview.getWebviewById('jxfy.html');
+					mui.fire(main, "weizhineirong",{
+					    text3:this.text1
+					})
 					qxzzcdff();
+					huifuupjiazaidata();
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 				if(sel == 1){
@@ -1029,6 +895,7 @@
 			var xzqy_str = '';
 			function xzqy_erji(id,e){
 				$('#sel3').html('');
+				huifuupjiazaidata();
 				text2 = e.innerText;
 				district = id;
 				if(id == 0){
@@ -1077,6 +944,7 @@
 			function clk_xz2(id,q,e){
 				xial = 1;
 				$('.listUl').html('');
+				huifuupjiazaidata();
 				fdcode = id;
 				text3 = e.innerText;
 				if(q == -1){
@@ -1132,6 +1000,7 @@
 				lineid = id;
 				text2 = e.innerText;
 				$('#sel3').html('');
+				huifuupjiazaidata();
 				$('#sel2 li').css({'color':'#666666'});
 				$('#sel2 li').eq(q+1).css({'color':'#2c71d8'});
 				subway_erji(id);
@@ -1183,6 +1052,7 @@
 			function subway2(id,q,e){//控制最后一级变色及参数传递
 				xial = 1;
 				$('.listUl').html('');
+				huifuupjiazaidata();
 				text3 = e.innerText;
 				district = '';
 				fdcode = '';

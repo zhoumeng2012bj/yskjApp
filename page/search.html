@@ -73,7 +73,14 @@
 				}
 				lishilist();
 			}
-			//
+			//跳转页面的传递的参数(把房源的名称传到搜索页面)
+			mui.plusReady(function(){
+				var self = plus.webview.currentWebview();
+                lpname = self.lpname;
+                $('.suosinput').val(lpname);
+				chxian();
+				soushuo();
+			});
 			window.addEventListener("jxfychudezhiwed", function (e) {
 			    //获得事件参数
 			    var lpnamechua = e.detail.lpname;
