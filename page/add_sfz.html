@@ -129,6 +129,11 @@
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
 							mui.alert(data.message);
+							var person = plus.webview.getWebviewById('person0');
+						    // 执行相应的事件
+						    mui.fire(person, 'per_lo', {
+						    	'ttt':1
+						    });
 							//成功后返回至服务商城页面
 							mui.openWindow({
 								url: 'person.html', 
