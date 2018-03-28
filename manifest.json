@@ -800,7 +800,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"js/lib/echarts.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -894,7 +895,8 @@
 					"js/lib/flexible_css.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"js/lib/jquery.lazyload.min.js"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
