@@ -22,7 +22,7 @@
 }
 .bottomeneir{display: flex;justify-content: space-between;height: 1.426666rem;width:10rem;position: absolute;bottom: 0px;}
 .gongsswer{position: absolute;left: 0;right: 0;top: 0;bottom: 1.426666rem;overflow: auto;}
-.gongsswerbgimg{height:57.5rem;background: url(http://47.92.145.21:81/yskjapp/servicemall/fourservices/gongShangZhuCe.jpg) no-repeat;background-size: 100% auto;}
+.gongsswerbgimg{height:57.5rem;background: url(../img/gongShangZhuCe.png) no-repeat;background-size: 100% auto;}
 .bodadianhua{width: 50%;display: flex;height: 100%;align-items: center;justify-content: center;font-size: 0.4rem;background-color: #333333;}
 .woyaochuce{width: 50%;display: flex;height: 100%;align-items: center;justify-content: center;font-size: 0.4rem;color: #fefefe;background-color: #ffba26;}
 .bodadianhua a{color: #fefefe;}

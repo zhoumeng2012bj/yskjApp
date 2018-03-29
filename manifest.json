@@ -739,7 +739,21 @@
 					"img/jt_titbg.png",
 					"img/xq_1.png",
 					"img/xq_2.png",
-					"img/xq_3.png"
+					"img/xq_3.png",
+					"css/style_a_d.css",
+					"img/financial/jr_bg.png",
+					"img/financial/xq_1.png",
+					"img/financial/xq_2.png",
+					"img/financial/xq_3.png",
+					"img/financial/ksdk_bg2.png",
+					"img/financial/hyyh.png",
+					"img/financial/dydk_bg1.png",
+					"img/financial/dydk_bg2.png",
+					"img/financial/jywyd_bg.png",
+					"img/financial/dklc_bg.png",
+					"img/financial/ksdk_bg1.png",
+					"img/financial/hzjg_bg.png",
+					"img/financial/xyd_bg.png"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
@@ -854,7 +868,8 @@
 					"css/mui.min.css",
 					"js/lib/jquery-1.10.2.min.js",
 					"fonts/mui.ttf",
-					"css/style_a_d.css"
+					"css/style_a_d.css",
+					"img/gongShangZhuCe.png"
 				],
 				"refer": [
 					"page/wYaoZhuCe.html"
@@ -923,7 +938,31 @@
 					"js/lib/flexible.js",
 					"fonts/mui.ttf",
 					"js/lib/jquery.lazyload.min.js",
-					"css/style_a_d.css"
+					"css/style_a_d.css",
+					"img/zxdzpic/zx_h.png",
+					"img/zxdzpic/zx_bt2.png",
+					"img/zxdzpic/zx_bt1.png",
+					"img/zxdzpic/zx_bt.png",
+					"img/zxdzpic/main_list_img2.png",
+					"img/zxdzpic/ul_img5.png",
+					"img/zxdzpic/ul_img4.png",
+					"img/zxdzpic/nav_img1.png",
+					"img/zxdzpic/zx_center.png",
+					"img/zxdzpic/nav_img3.png",
+					"img/zxdzpic/main_list_img3.png",
+					"img/zxdzpic/ul_img.png",
+					"img/zxdzpic/ul_img2.png",
+					"img/zxdzpic/ul_img7.png",
+					"img/zxdzpic/ul_img3.png",
+					"img/zxdzpic/ul_img6.png",
+					"img/zxdzpic/main_list_img5.png",
+					"img/zxdzpic/ul_img1.png",
+					"img/zxdzpic/main_list_img4.png",
+					"img/zxdzpic/zxlc_pic.png",
+					"img/zxdzpic/main_bot_pic.png",
+					"img/zxdzpic/nav_img2.png",
+					"img/zxdzpic/nav_img.png",
+					"img/zxdzpic/main_list_img1.png"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
