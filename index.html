@@ -10,29 +10,30 @@
 	<script type="text/javascript" src="js/lib/flexible_css.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style_a_d.css"/>
 </head>
 <style type="text/css">
 	.mui-bar-tab .mui-tab-item.mui-active{color: #2b70d8;}
 </style>
 <body>
 	<nav class="mui-bar mui-bar-tab">
-	    <a id="defaultTab" class="mui-tab-item mui-active" href="sy.html">
+	    <a id="defaultTab" class="mui-tab-item mui-active a_d" href="sy.html">
 	        <span class="mui-icon iconfont icon-shouye"></span>
 	        <span class="mui-tab-label">首页</span>
 	    </a>
-	    <a class="mui-tab-item" href="jxfy.html">
+	    <a class="mui-tab-item a_d" href="jxfy.html">
 	        <span class="mui-icon iconfont icon-fangyuanshitu"><span style="display: none;" class="mui-badge">1</span></span>
 	        <span class="mui-tab-label">精选房源</span>
 	    </a>
-	    <a class="mui-tab-item" href="fwsc.html">
+	    <a class="mui-tab-item a_d" href="fwsc.html">
 	        <span class="mui-icon iconfont icon-shangcheng"></span>
 	        <span class="mui-tab-label">服务商城</span>
 	    </a>
-	    <a class="mui-tab-item" href="qyhl.html">
+	    <a class="mui-tab-item a_d" href="qyhl.html">
 	        <span class="mui-icon iconfont icon-hezuoguanxi-xianxing"></span>
 	        <span class="mui-tab-label">企业互联</span>
 	    </a>
-	    <a class="mui-tab-item" href="wd.html">
+	    <a class="mui-tab-item a_d" href="wd.html">
 	        <span class="mui-icon iconfont icon-wode"></span>
 	        <span class="mui-tab-label">我的</span>
 	    </a>
@@ -42,6 +43,28 @@
 	</div>
 	<script type="text/javascript" charset="utf-8">
       	mui.init();
+		var back_first = null;
+	    mui.back = function(){
+	        if (!back_first) {
+	            back_first = new Date().getTime();
+	            mui.toast('再按一次退出应用');
+	            setTimeout(function() {
+	                back_first = null;
+	            }, 2000);
+	        } else {
+	            if (new Date().getTime() - back_first < 2000) {
+	                plus.runtime.quit();
+	            }
+	        }
+	        return false;
+	    }
+	    mui.plusReady(function(){
+	        var self = plus.webview.currentWebview();
+	        self.setStyle({'popGesture':'none'});
+	    });
+      	
+      	
+      	
       	var subpages = ['sy.html', 'jxfy.html', 'fwsc.html', 'qyhl.html', 'wd.html'];
 		var subpage_style = {
 			top:'0px',

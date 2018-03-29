@@ -47,6 +47,11 @@
 			</div>	
 		</div>
 		<script type="text/javascript">
+			mui.init();
+			var old_back = mui.back;
+		    mui.back = function(){
+		        return false;
+		    };
 			ca.init();
 			castapp.setStartpage({
 				url:'index.html',

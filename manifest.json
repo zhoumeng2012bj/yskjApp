@@ -239,7 +239,8 @@
 					"fonts/mui.ttf",
 					"sy.html",
 					"css/style.css",
-					"css/iconfont.css"
+					"css/iconfont.css",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"wd.html",
@@ -421,7 +422,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
 					"img/head_img.png",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/add_name.html",
@@ -442,7 +444,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"css/person.css",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/person.html"
@@ -531,7 +534,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"css/style.css",
-					"css/jxfy.css"
+					"css/jxfy.css",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -568,7 +572,8 @@
 					"page/mysc_list.html",
 					"js/lib/jquery-1.10.2.min.js",
 					"page/mysc_list1.html",
-					"img/del_ion.png"
+					"img/del_ion.png",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -944,7 +949,8 @@
 					"js/mui.min.js",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/person.html"
@@ -960,7 +966,8 @@
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
