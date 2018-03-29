@@ -26,7 +26,7 @@ body{
     height: 0.64rem;
     line-height: 44px;
 	font-size: 0.453333rem;
-	color: #666666;
+	color: #FFF;
 	margin-top: 0.16rem;
 }
 .bj{
@@ -35,7 +35,7 @@ body{
     background: url(../img/bj.png) no-repeat center;
     background-size: auto 90%;
     font-size: 0.4rem;
-    color: #666666;
+    color: #FFF;
     width: 0.933333rem;
     line-height: 0.6rem;
 }

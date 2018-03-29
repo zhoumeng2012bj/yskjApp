@@ -33,7 +33,10 @@
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"img/sy_kfion.png",
-			"css/style.css"
+			"css/style.css",
+			"img/qy_ion1.png",
+			"img/qy_ion3.png",
+			"img/qy_ion2.png"
 		],
 		"refer": []
 	},
@@ -66,7 +69,10 @@
 			"page/acreage_mj.html",
 			"page/saleFuWu.html",
 			"page/steward.html",
-			"page/broker.html"
+			"page/broker.html",
+			"page/topNewsInfo.html",
+			"page/tax.html",
+			"page/fitup.html"
 		]
 	},
 	"wd.html": {
@@ -161,7 +167,8 @@
 			"img/fav2.png",
 			"img/shoucdianhuobg.png",
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -184,7 +191,8 @@
 			"css/fyxq.css",
 			"css/jxfyList.css",
 			"css/mui.min.css",
-			"css/fyxq1.css"
+			"css/fyxq1.css",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -194,7 +202,10 @@
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
-			"css/gongShangShuiWu.css"
+			"css/gongShangShuiWu.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style_a_d.css"
 		],
 		"refer": [
 			"page/wYaoZhuCe.html"
@@ -223,7 +234,8 @@
 			"js/lib/app_config.js",
 			"js/lib/jquery.lazyload.min.js",
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/style_a_d.css"
 		],
 		"refer": [
 			"page/liJiShenQing.html"
@@ -260,7 +272,8 @@
 			"js/lib/flexible.js",
 			"img/addfwuxiao3.png",
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -285,7 +298,8 @@
 			"js/lib/app_config.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"js/lib/echarts.js"
+			"js/lib/echarts.js",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -298,7 +312,9 @@
 			"js/lib/flexible.js",
 			"img/fwt.png",
 			"js/lib/app_config.js",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/style_a_d.css",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -310,10 +326,13 @@
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/style_a_d.css",
+			"fonts/mui.ttf"
 		],
 		"refer": [
-			"page/disclaimer.html"
+			"page/disclaimer.html",
+			"page/setpwd.html"
 		]
 	},
 	"page/disclaimer.html": {
@@ -339,7 +358,10 @@
 			"js/lib/sy.js",
 			"js/lib/flexible.js",
 			"img/shouffwu.png",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -373,7 +395,8 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"fonts/mui.ttf",
-			"css/style.css"
+			"css/style.css",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -391,7 +414,8 @@
 			"img/yzs.png",
 			"js/lib/app_config.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -511,7 +535,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/style_a_d.css"
 		]
 	},
 	"page/add_sfz.html": {
@@ -541,7 +566,32 @@
 			"img/his_pm.png",
 			"css/broker.css",
 			"js/lib/app_config.js",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/style_a_d.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"page/topNewsInfo.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/lib/flexible.js",
+			"css/style.css"
+		]
+	},
+	"page/setpwd.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/lib/sha1.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"js/lib/md5.js",
+			"js/lib/app_config.js"
 		]
 	}
 }

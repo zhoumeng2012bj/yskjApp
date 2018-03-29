@@ -318,7 +318,8 @@
 					"page/fyTail.html",
 					"page/topNewsInfo.html",
 					"page/login.html",
-					"page/tax.html"
+					"page/tax.html",
+					"page/fitup.html"
 				],
 				"priority": 0
 			},
@@ -387,7 +388,10 @@
 					"img/tab_bg.png",
 					"img/dacheghezuo.png",
 					null,
-					"img/sy_kfion.png"
+					"img/sy_kfion.png",
+					"img/qy_ion1.png",
+					"img/qy_ion3.png",
+					"img/qy_ion2.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -462,7 +466,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"img/warming.png"
+					"img/warming.png",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -497,7 +502,8 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/setpwd.html",
@@ -552,7 +558,8 @@
 					"img/fav2.png",
 					"img/shoucdianhuobg.png",
 					"js/lib/castapp.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/login.html"
@@ -616,7 +623,8 @@
 					"js/lib/app_config.js",
 					"js/lib/sha1.js",
 					"js/lib/md5.js",
-					"wd.html"
+					"wd.html",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/wj_pwd.html",
@@ -679,7 +687,9 @@
 					"js/mui.min.js",
 					"js/lib/sy.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/mui.min.css",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -708,7 +718,8 @@
 					"img/wz_ion.png",
 					"js/lib/app_config.js",
 					"img/1.jpg",
-					"css/fyxq1.css"
+					"css/fyxq1.css",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/fyTail.html"
@@ -762,7 +773,8 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -795,7 +807,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -810,7 +823,8 @@
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
 					"fonts/mui.ttf",
-					"js/lib/echarts.js"
+					"js/lib/echarts.js",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -825,7 +839,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"img/fwt.png"
+					"img/fwt.png",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -838,7 +853,8 @@
 					"js/lib/flexible.js",
 					"css/mui.min.css",
 					"js/lib/jquery-1.10.2.min.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/wYaoZhuCe.html"
@@ -864,7 +880,8 @@
 					"img/addzhifwu.png",
 					"img/addfwuxiao3.png",
 					"fonts/mui.ttf",
-					"js/lib/jquery-1.10.2.min.js"
+					"js/lib/jquery-1.10.2.min.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
@@ -905,7 +922,8 @@
 					"js/mui.min.js",
 					"js/lib/flexible.js",
 					"fonts/mui.ttf",
-					"js/lib/jquery.lazyload.min.js"
+					"js/lib/jquery.lazyload.min.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
@@ -919,7 +937,10 @@
 					"img/refresh.png",
 					"css/person.css",
 					"js/mui.min.js",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/style.css"
 				],
 				"refer": [],
 				"priority": 0

@@ -5,7 +5,7 @@
 .fufanhui span{height:0.48rem;font-size: 0.426666rem;color: #333331;}
 .qlxnide{border-bottom: 1px solid #e5e5e5;background-color: #ffffff;line-height:0.533333rem;padding:0.493333rem 0.4rem;font-size: 0.32rem;color: #989898;}
 .zhuaxff{border-bottom: 1px solid #e5e5e5;height: 0.293333rem;}
-.forminp{height: 10.573333rem;background-color: #ffffff;overflow: hidden;}
+.forminp{min-height: 10.573333rem;height: auto;background-color: #ffffff;overflow: hidden;}
 .shurpnone{width: 2.733333rem;font-size: 0.386666rem;color: #333333;}
 .shfuimput{margin-left: 0.4rem !important;overflow: initial !important;}
 .shfuimput:after{
@@ -71,8 +71,8 @@
 .fangwuxinix div:after{display: none;}
 .baoxiuxx{height: 0.293333rem;background-color: #f0f0f0;}
 .baxiuxxx{height: 1.08rem;line-height: 1.08rem;padding-left: 0.4rem;font-size: 0.4rem;color: #333333;}
-.baoxiudebeizhu{height:2.586666rem;padding-left: 0.4rem;padding-right: 0.4rem;position: relative;}
-.texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;text-indent: 2em;}
+.baoxiudebeizhu{height:2.8rem;padding-left: 0.4rem;padding-right: 0.4rem;position: relative;}
+.texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;padding: 0.133333rem 0.133333rem;}
 .textwenadeshuz{position: absolute;bottom: 9px;right: 30px;color: #c8c8c8;}
 .baoxoiwenzibot{height:0.373333rem;background-color: #ffffff;}
 .tijiaomax{height: 4.28rem;display: flex;flex-direction: column;/*垂直排列*/justify-content: center;align-items: center;}

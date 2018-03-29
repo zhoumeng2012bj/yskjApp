@@ -18,6 +18,9 @@
 		</style>
 	</head>
 	<body>
+		<header class="mui-bar mui-bar-transparent bg-color-bg" style="height: 20px;">
+		    <h1 class="mui-title"></h1>
+		</header>
 		<div class="mui-content">
 			<div class="qiyehulimg"></div>
 		  	<div class="qiyehuler">
@@ -47,13 +50,13 @@
 		    	</ul>
 		    	<!--企业需求11111-->
 		    	<ul class="qyfwul qydegystyle qyfwulxuqiuy dclass">
-		    		
+
 		    	</ul>
 		    </div>
 		    <div class="boottms"></div>
-		    <div class="sy_kfion">
+		    <!--<div class="sy_kfion">
 				<p><a href="tel:400-078-8800"></a></p>
-			</div>
+			</div>-->
 		</div>
 		 <script src="js/lib/app_config.js"></script>
 		<script src="js/mui.min.js"></script>
@@ -121,9 +124,9 @@
 						hyhtml+="<li>";
 			   			hyhtml+='<div class="qiyehuilianyyi">';
 			   			hyhtml+='<div>';
-					    hyhtml+='<img src="';
-					    hyhtml+=logoImg;
-					    hyhtml+='"/>';
+//					    hyhtml+='<img src="';
+//					    hyhtml+=logoImg;
+//					    hyhtml+='"/>';
 					    hyhtml+='</div>';
 			   			hyhtml+='</div>';
 			   			hyhtml+='<div class="qiyehuilianeer">';
@@ -138,7 +141,18 @@
 					}
 					hyhtml+="</ul>"
 					$(".xindongfang").html(hyhtml);
-					
+						$('.xindongfang li').eq(0).css({
+							'background': 'url(img/qy_ion1.png) no-repeat center',
+							'background-size':'100% auto'
+						});
+						$('.xindongfang li').eq(1).css({
+							'background': 'url(img/qy_ion2.png) no-repeat center',
+							'background-size':'100% auto'
+						});
+						$('.xindongfang li').eq(2).css({
+							'background': 'url(img/qy_ion3.png) no-repeat center',
+							'background-size':'100% auto'
+						});
 					}else{
 						mui.alert(data.message);
 					}

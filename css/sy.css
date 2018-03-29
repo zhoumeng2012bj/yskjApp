@@ -324,26 +324,29 @@
 .shouhou{
 	position: fixed;
 	z-index: 99999;
-	width: 2.4rem;
-	height: 0.8rem;
+	/*width: 2.4rem;*/
+	width: 2.786666rem;
+	/*height: 0.8rem;*/
+	height: 0.906666rem;
 	top: 12.866666rem;
 	margin-top: -0.4rem;
 	right: 0;
 	background: #fc7b1f;
 	display: flex;
 	align-items: center;
-	border-top-left-radius: 0.8rem;
-	border-bottom-left-radius: 0.8rem;
-	font-size: 0.346666rem;
+	border-top-left-radius: 0.906666rem;
+	border-bottom-left-radius: 0.906666rem;
+	font-size: 0.4rem;
 	color: #fff;
 }
 .sy_shion{
 	display: inline-block;
-	width: 0.466666rem;
-	height: 0.466666rem;
-	background: url(../img/sy_bxion.png)no-repeat center;
-	background-size: 100% auto;
-	margin: 0 0.16rem;
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+	background:#fff url(../img/sy_bxion.png)no-repeat center;
+	background-size: 60% auto;
+	margin: 0 0.13rem;
 }
 .sy_kfion p{
 	position: fixed;
