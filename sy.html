@@ -66,13 +66,13 @@
 			      </a>
 			    </div>
 			  </div>
-			  <div class="mui-slider-indicator">
+			  <!--<div class="mui-slider-indicator">
 			    <div class="mui-indicator mui-active"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
-			  </div>
+			  </div>-->
 			</div>
 			<!--最新数据-->
 			<div class="zxsj_box">
@@ -674,12 +674,16 @@
 				}
 			});
 			
-			$('.banner1').click(function(){
-				mui.openWindow({
-					url: 'jxfy.html', 
-					id:'jxfy.html'
-				});
-			});
+//			$('.banner1').click(function(){
+//				var index = plus.webview.getLaunchWebview();
+//				mui.fire(index, "tab_index",{
+//				    tab_idx:1//
+//				})
+//				mui.openWindow({
+//					url: 'jxfy.html', 
+//					id:'jxfy.html'
+//				});
+//			});
 			
 			// post测试请求地址 http://test.dongyixueyuan.com/link_app/post
 			/*mui.post('http://116.62.68.26:8080/yhcms/web/jcsj/getHotBuilding.do',
