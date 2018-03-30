@@ -319,7 +319,9 @@
 					"page/topNewsInfo.html",
 					"page/login.html",
 					"page/tax.html",
-					"page/fitup.html"
+					"page/fitup.html",
+					"page/added.html",
+					"page/financial.html"
 				],
 				"priority": 0
 			},
@@ -542,7 +544,8 @@
 					"js/lib/flexible.js",
 					"css/style.css",
 					"css/jxfy.css",
-					"css/style_a_d.css"
+					"css/style_a_d.css",
+					"img/jxfy_kb.png"
 				],
 				"refer": [],
 				"priority": 0
