@@ -722,7 +722,8 @@
 					"css/style_a_d.css"
 				],
 				"refer": [
-					"page/fyTail.html"
+					"page/fyTail.html",
+					"page/map.html"
 				],
 				"priority": 0
 			},
@@ -769,7 +770,10 @@
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -979,7 +983,8 @@
 					"js/lib/flexible.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"css/style.css"
+					"css/style.css",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1041,7 +1046,9 @@
 					"js/lib/sy.js",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"css/fast_zc.css"
+					"css/fast_zc.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1060,6 +1067,24 @@
 				"refer": [
 					"index.html"
 				],
+				"priority": 0
+			},
+			"page/map.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"css/fyxq.css",
+					"js/lib/castapp.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.min.js",
+					"js/lib/flexible.js",
+					"css/style_a_d.css",
+					"css/jxfyList.css",
+					"css/sy.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/loupan_detail.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

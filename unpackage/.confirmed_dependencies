@@ -194,7 +194,9 @@
 			"css/fyxq1.css",
 			"css/style_a_d.css"
 		],
-		"refer": []
+		"refer": [
+			"page/map.html"
+		]
 	},
 	"page/tax.html": {
 		"resources": [
@@ -221,7 +223,9 @@
 			"js/lib/sy.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
-			"css/fast_zc.css"
+			"css/fast_zc.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -275,7 +279,10 @@
 			"js/lib/sy.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
-			"css/fast_zc.css"
+			"css/fast_zc.css",
+			"css/style_a_d.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -551,7 +558,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"css/style_a_d.css"
-		]
+		],
+		"refer": []
 	},
 	"page/qdgs.html": {
 		"resources": [
@@ -563,7 +571,8 @@
 			"css/person.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
-		]
+		],
+		"refer": []
 	},
 	"page/gh_tel.html": {
 		"resources": [
@@ -577,7 +586,8 @@
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
 			"css/style_a_d.css"
-		]
+		],
+		"refer": []
 	},
 	"page/add_sfz.html": {
 		"resources": [
@@ -609,7 +619,8 @@
 			"css/mui.min.css",
 			"css/style_a_d.css",
 			"fonts/mui.ttf"
-		]
+		],
+		"refer": []
 	},
 	"page/topNewsInfo.html": {
 		"resources": [
@@ -620,8 +631,10 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/lib/flexible.js",
-			"css/style.css"
-		]
+			"css/style.css",
+			"css/style_a_d.css"
+		],
+		"refer": []
 	},
 	"page/setpwd.html": {
 		"resources": [
@@ -632,6 +645,24 @@
 			"js/lib/flexible.js",
 			"js/lib/md5.js",
 			"js/lib/app_config.js"
-		]
+		],
+		"refer": []
+	},
+	"page/map.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"css/fyxq.css",
+			"js/lib/castapp.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"js/mui.min.js",
+			"js/lib/flexible.js",
+			"css/style_a_d.css",
+			"css/jxfyList.css",
+			"css/sy.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/loupan_detail.css"
+		],
+		"refer": []
 	}
 }
