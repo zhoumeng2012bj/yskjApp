@@ -415,7 +415,7 @@
 				console.log(jiagesanshu);
 				console.log(search);
 				console.log(xial);
-				mui.ajax(url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				data:{
 					"parameters":
 						{
@@ -865,7 +865,7 @@
 			function sel_qy(){
 				$('#sel3').html('');
 				$('#sel2').html('<li onclick="clk_qy(0,-1,this)">不限</li>');
-				mui.ajax(url + '/yhcms/web/lpjbxx/getLpcity.do',{
+				mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpcity.do',{
 					data:{},
 					dataType:'json',
 					type:'post',
@@ -911,7 +911,7 @@
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
 					$('#sel3').html('<li onclick="clk_xz2(0,-1,this)">不限</li>');
-					mui.ajax(url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
+					mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
 						data:{
 							"parameters":{
 								"district":id
@@ -974,7 +974,7 @@
 			function subway(){
 				$('#sel3').html('');
 				$('#sel2').html('<li onclick="subway1(0,-1,this)">不限</li>');
-				mui.ajax(url + '/yhcms/web/lpjbxx/lpsubway.do',{
+				mui.ajax(Interface_url + '/yhcms/web/lpjbxx/lpsubway.do',{
 					data:{},
 					dataType:'json',
 					type:'post',
@@ -1019,7 +1019,7 @@
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
 					$('#sel3').html('<li onclick="subway2(0,-1,this)">不限</li>');
-					mui.ajax(url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
+					mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpSubwaystation.do',{
 						data:{
 							"parameters":{
 								"line_id":id

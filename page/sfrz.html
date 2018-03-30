@@ -196,7 +196,7 @@
           
          
             //服务端接口路径
-            var server =url+"/yhcms/web/jcsj/uploadPic.do";
+            var server =Interface_url+"/yhcms/web/jcsj/uploadPic.do";
             //获取图片元素
             var files = document.getElementById('headimg');
             var filesf = document.getElementById('headimgf');
@@ -267,7 +267,7 @@
             }
             
             function img(img_path,state){
-            	mui.ajax(url+"/yhcms/web/jcsj/uploadPic.do",{
+            	mui.ajax(Interface_url+"/yhcms/web/jcsj/uploadPic.do",{
             		data:{"parameters":
             		{"smallPic":JSON.stringify(img_path),"suffix":".jpeg"},
             		"foreEndType":2,"code":"300000084"},
@@ -354,7 +354,7 @@
             
             
             function saveUserImg(){
-            	mui.ajax(url+'/yhcms/web/qduser/updateAppUser.do',{
+            	mui.ajax(Interface_url+'/yhcms/web/qduser/updateAppUser.do',{
 					data:{
 						"parameters":
 						{"card":card,
