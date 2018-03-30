@@ -121,7 +121,7 @@
 						var category=data[i].category
 						var enterpriseName=data[i].enterpriseName
 						var enterpriseDesc=data[i].enterpriseDesc
-						hyhtml+="<li>";
+						hyhtml+='<li style="background:url('+data[i].logoImg+') no-repeat center;background-size:100% auto;">';
 			   			hyhtml+='<div class="qiyehuilianyyi">';
 			   			hyhtml+='<div>';
 //					    hyhtml+='<img src="';
@@ -141,18 +141,6 @@
 					}
 					hyhtml+="</ul>"
 					$(".xindongfang").html(hyhtml);
-						$('.xindongfang li').eq(0).css({
-							'background': 'url(img/qy_ion1.png) no-repeat center',
-							'background-size':'100% auto'
-						});
-						$('.xindongfang li').eq(1).css({
-							'background': 'url(img/qy_ion2.png) no-repeat center',
-							'background-size':'100% auto'
-						});
-						$('.xindongfang li').eq(2).css({
-							'background': 'url(img/qy_ion3.png) no-repeat center',
-							'background-size':'100% auto'
-						});
 					}else{
 						mui.alert(data.message);
 					}

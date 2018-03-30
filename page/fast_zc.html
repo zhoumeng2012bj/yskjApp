@@ -53,6 +53,17 @@
 		<script src="../js/lib/fast_zc.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
+			var old_back = mui.back;
+			mui.back = function() {
+			    // 获取目标口窗口对象
+			    var target = plus.webview.getWebviewById('wd.html');
+			    // 执行相应的事件
+			    mui.fire(target, 'customEvent', {
+			    	'ttt':1
+			    });
+			    // 执行关闭
+			    old_back();
+			};
 			$('#ycmm').click(function(){
 				//显示隐藏密码
 				if($('#yinc').attr('type') == 'password'){

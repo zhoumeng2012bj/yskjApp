@@ -80,7 +80,8 @@
 								 xmname=userData.xmname;
 								 card=userData.card;
 							}else{
-								mui.alert(data.message);
+//								mui.alert(data.message);
+								mui.alert(data.message, '提示',function(){});
 							}
 						},
 						error:function(xhr,type,errorThrown){
@@ -120,7 +121,8 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.alert(data.message);
+//							mui.alert(data.message);
+							mui.alert(data.message, '提示',function(){});
 							var person = plus.webview.getWebviewById('person0');
 						    // 执行相应的事件
 						    mui.fire(person, 'per_loc', {
@@ -132,7 +134,8 @@
 								id:"person0"
 							});
 						}else{
-							mui.alert(data.message);
+//							mui.alert(data.message);
+							mui.alert(data.message, '提示',function(){});
 						}
 					},
 					error:function(xhr,type,errorThrown){
@@ -141,7 +144,8 @@
 					}
 				});
 				}else{
-					alert("姓名不能为空");
+//					alert("姓名不能为空");
+					mui.alert("姓名不能为空", '提示',function(){});
 				}
 			}
 		</script>

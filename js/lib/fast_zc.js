@@ -240,10 +240,16 @@ function zhuce(){
 				mui.toast('注册成功已登陆',{ duration:'2000', type:'div' }) 
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
-				mui.openWindow({
-					url: '../wd.html', 
-					id:'wd'
-				});
+				var target = plus.webview.getWebviewById('login');
+			    // 执行相应的事件
+			    mui.fire(target, 'login_back', {
+			    	'login_b':1
+			    });
+				mui.back();
+//				mui.openWindow({
+//					url: '../wd.html', 
+//					id:'wd'
+//				});
 				return;
 			}else{
 				

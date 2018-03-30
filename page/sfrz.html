@@ -16,6 +16,7 @@
 	</head>
 	<style type="text/css">
 		.save{color: #fff;}
+		.mui-table-view-cell:after{background: none;}
 	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header_p">
@@ -113,7 +114,8 @@
 								 	}
 								 }
 							}else{
-								mui.alert(data.message);
+//								mui.alert(data.message);
+								mui.alert(data.message, '提示',function(){});
 							}
 						},
 						error:function(xhr,type,errorThrown){
@@ -213,7 +215,8 @@
                 img(imgArray,1);
                 wt.close();
                }else{
-               	alert("请上传名片正面");
+//             	alert("请上传名片正面");
+               	mui.alert("请上传名片正面", '提示', function(){});
                }
               
             } 
@@ -229,7 +232,8 @@
                 img(imgArrayf,2);
                 wt.close();
                }else{
-               	alert("请上传名片反面");
+//             	alert("请上传名片反面");
+               	mui.alert("请上传名片反面", '提示', function(){});
                }
               
             } 
@@ -313,7 +317,8 @@
 						}
 						
 					}else{
-						alert("提示信息："+data.message);
+//						alert("提示信息："+data.message);
+						mui.alert("提示信息："+data.message, '提示', function(){});
 					}
 				   
 				},
@@ -348,7 +353,8 @@
 		            		uploadf();
 		            	}
 				}else{
-					alert("图片不能为空");
+//					alert("图片不能为空");
+					mui.alert("图片不能为空", '提示', function(){});
 				}
 			}
             
@@ -376,7 +382,8 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.alert("上传成功！！");
+//							mui.alert("上传成功！！");
+							mui.alert("上传成功！！", '提示', function(){});
 							var person = plus.webview.getWebviewById('person0');
 						    // 执行相应的事件
 						    mui.fire(person, 'per_loc', {

@@ -31,31 +31,31 @@
 			    </div>
 			    <!-- 第一张 -->
 			    <div class="mui-slider-item">
-			      <a href="#">
+			      <a href="#" class="banner1">
 			        <img src="http://47.92.145.21:81/yskjapp/indeximg/banner/banner1.png">
 			      </a>
 			    </div>
 			    <!-- 第二张 -->
 			    <div class="mui-slider-item">
-			      <a href="#">
+			      <a href="#" class="banner2">
 			        <img src="http://47.92.145.21:81/yskjapp/indeximg/banner/banner2.png">
 			      </a>
 			    </div>
 			    <!-- 第三张 -->
 			    <div class="mui-slider-item">
-			      <a href="#">
+			      <a href="#" class="banner3">
 			        <img src="http://47.92.145.21:81/yskjapp/indeximg/banner/banner3.png">
 			      </a>
 			    </div>
 			    <!-- 第四张 -->
 			    <div class="mui-slider-item">
-			      <a href="#">
+			      <a href="#" class="banner4">
 			        <img src="http://47.92.145.21:81/yskjapp/indeximg/banner/banner4.png">
 			      </a>
 			    </div>
 			    <!-- 第五张 -->
 			    <div class="mui-slider-item">
-			      <a href="#">
+			      <a href="#" class="banner5">
 			        <img src="http://47.92.145.21:81/yskjapp/indeximg/banner/banner5.png">
 			      </a>
 			    </div>
@@ -66,13 +66,13 @@
 			      </a>
 			    </div>
 			  </div>
-			  <!--<div class="mui-slider-indicator">
+			  <div class="mui-slider-indicator">
 			    <div class="mui-indicator mui-active"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
 			    <div class="mui-indicator"></div>
-			  </div>-->
+			  </div>
 			</div>
 			<!--最新数据-->
 			<div class="zxsj_box">
@@ -672,6 +672,13 @@
 						id:'login'
 					});
 				}
+			});
+			
+			$('.banner1').click(function(){
+				mui.openWindow({
+					url: 'jxfy.html', 
+					id:'jxfy.html'
+				});
 			});
 			
 			// post测试请求地址 http://test.dongyixueyuan.com/link_app/post

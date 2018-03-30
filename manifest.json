@@ -485,7 +485,8 @@
 					"img/mp_zm.png",
 					"img/mp_bm.png",
 					"img/pz_icon.png",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/person.html"

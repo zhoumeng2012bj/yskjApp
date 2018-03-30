@@ -117,7 +117,8 @@
 				}
 			function checkPhone(){
 				var pl=$(".add_phone").val();
-				alert(pl)
+//				alert(pl);
+//				mui.alert(pl, '提示',function(){});
 				if(pl!=""){
 					//验证手机号
 					if(!(/^1[345678]\d{9}$/.test(pl))){
@@ -293,7 +294,8 @@
 						}
 					});
 					}else{
-						alert("手机号不能为空");
+//						alert("手机号不能为空");
+						mui.alert("手机号不能为空", '提示',function(){});
 					}
 				
 				}
