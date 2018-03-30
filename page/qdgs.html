@@ -130,7 +130,7 @@
 				$(".add_xmname").val("");
 				var gs=$(".add_gsname").val();
 				if(gs!=""){
-				mui.ajax(url + '/yhcms/web/qduser/getQdCompany.do',{
+				mui.ajax(Interface_url + '/yhcms/web/qduser/getQdCompany.do',{
 						data:{
 							"companyName":gs
 							},
@@ -189,7 +189,7 @@
 				var xm=$(".add_xmname").val();
 				if(gs!=""&&xm!=""){
 					$(".gsclass").html("");
-				mui.ajax(url + '/yhcms/web/qduser/addCompany.do',{
+				mui.ajax(Interface_url + '/yhcms/web/qduser/addCompany.do',{
 						data:{
 							"gsname":gs,
 							"xmname":xm
@@ -231,7 +231,7 @@
 				/*}*/
 					gsname=add_name;
 					xmname=a_xmname;
-				mui.ajax(url+'/yhcms/web/qduser/updateAppUserName.do',{
+				mui.ajax(Interface_url+'/yhcms/web/qduser/updateAppUserName.do',{
 					data:{
 						"parameters":
 						{"card":card,
