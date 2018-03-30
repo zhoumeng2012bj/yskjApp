@@ -281,7 +281,7 @@
 				if(id == '' || id == undefined){
 					id = localStorage.getItem('lp_id');
 				}
-				mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
 					data:{
 						"parameters":{
 							"building_id":id,
@@ -337,7 +337,7 @@
 				if(id == '' || id == undefined){
 					id = localStorage.getItem('lp_id');
 				}
-				mui.ajax(url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
 					data:{
 						"parameters":{"building_id":lp_id,"curr_page":1,"items_perpage":"5","area":"写字楼","real":1},
 						"foreEndType":2,
