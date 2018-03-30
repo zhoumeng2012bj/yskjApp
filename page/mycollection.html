@@ -149,6 +149,14 @@
 		  		tags = 0;
 			}
 		});
+		window.addEventListener("yincang", function (e) {//单项选实现全选
+		    //获得事件参数
+			var yinc = e.detail.yinc;
+			if(yinc == 12){
+				$('.bj').css('display','none');
+		  		$('.bj').html('');
+			}
+		});
 		
 	</script>
 	</body>

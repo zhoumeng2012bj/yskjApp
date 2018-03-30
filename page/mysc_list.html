@@ -150,7 +150,15 @@
 					success:function(data){
 						if(data.success){
 							if(dx == 0){
-								var sc_data = data.data;//全部							
+								var sc_data = data.data;//全部
+								if(sc_data.length == 0){
+									mui.plusReady(function(){
+										var main = plus.webview.getWebviewById('person1');
+										mui.fire(main, "yincang",{//隐藏编辑按钮
+										    yinc: 12
+										})									
+									});
+								}
 								if(data.data.length == 0 && page == 1){
 									$('#kong1').css('display','block');
 										$('#kong1').on('touchmove',function(e){
@@ -279,7 +287,6 @@
 			            return $(elem).val();
 			        }).get().join(',');
 				}
-				console.log(check_xz)
 				var main = plus.webview.getWebviewById('person1');
 				mui.fire(main, "all_dsel",{
 				    dsel: check_xz
@@ -312,33 +319,57 @@
 			}
 			//删除收藏/yskjApp/appYskj/V1/delCollect.do
 			function del_sc(){
+				var status = 1;
+				for (var i=0; i<$('#list1 input').length; i++) {
+					if($('#list1 input').eq(i).prop('checked')){
+						status = 2;
+					}
+				}
+				if($('#list1 input').length != 0 && status == 1){
+					mui.alert("您还没有选中任何房源", '提示',function(){
+						var wobj = plus.webview.getWebviewById("mysc_list");
+						wobj.reload(true);
+						return;
+					});
+					return;
+				}
+				if($('#list1 input').length == 0){
+					mui.alert("您还没有收藏任何房源", '提示',function(){});
+					return;
+				}
 				 var btnArray = ['取消', '确认'];
 				 mui.confirm('确定删除吗?', '提示', btnArray, function(e) {
 				 	 if (e.index == 0) {
+				 	 	var wobj = plus.webview.getWebviewById("mysc_list");
+						wobj.reload(true);
 				 	 	return false;
 				 	 }
+				 	 if(e.index == 1){
+//				 	 	var wobj = plus.webview.getWebviewById("mysc_list");
+//						wobj.reload(true);
+				 	 }
 //				alert(str_fyid);
-				mui.ajax(url + '/yskjApp/appYskj/V1/delCollect.do',{
-					data:{
-						"ids":str_fyid
-					},
-					dataType:'json',
-					type:'post',
-					timeout:10000,
-					headers:{'Content-Type':'application/json'},	              
-					success:function(data){
-						if(data.success){
-							mui.toast(data.message,{ duration:'2000', type:'div' });
-							var wobj = plus.webview.getWebviewById("mysc_list");
-							wobj.reload(true);
-						}else{
-							
+					mui.ajax(url + '/yskjApp/appYskj/V1/delCollect.do',{
+						data:{
+							"ids":str_fyid
+						},
+						dataType:'json',
+						type:'post',
+						timeout:10000,
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								mui.toast(data.message,{ duration:'2000', type:'div' });
+								var wobj = plus.webview.getWebviewById("mysc_list");
+								wobj.reload(true);
+							}else{
+								
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							console.log(type);
 						}
-					},
-					error:function(xhr,type,errorThrown){
-						console.log(type);
-					}
-				});
+					});
 				})
 			}
 			

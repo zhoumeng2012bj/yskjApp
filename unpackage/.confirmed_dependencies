@@ -575,7 +575,8 @@
 			"js/lib/app_config.js",
 			"css/person.css",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
