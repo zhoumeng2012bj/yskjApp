@@ -151,15 +151,21 @@
 						if(data.success){
 							if(dx == 0){
 								var sc_data = data.data;//全部
-								if(sc_data.length == 0){
+//								if(sc_data.length == 0){
+//									mui.plusReady(function(){
+//										var main = plus.webview.getWebviewById('person1');
+//										mui.fire(main, "yincang",{//隐藏编辑按钮
+//										    yinc: 12
+//										})									
+//									});
+//								}
+								if(data.data.length == 0 && page == 1){
 									mui.plusReady(function(){
 										var main = plus.webview.getWebviewById('person1');
 										mui.fire(main, "yincang",{//隐藏编辑按钮
 										    yinc: 12
 										})									
 									});
-								}
-								if(data.data.length == 0 && page == 1){
 									$('#kong1').css('display','block');
 										$('#kong1').on('touchmove',function(e){
 											mui('#pullrefresh').pullRefresh().setStopped(true);

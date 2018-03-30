@@ -72,7 +72,8 @@
 			"page/broker.html",
 			"page/topNewsInfo.html",
 			"page/tax.html",
-			"page/fitup.html"
+			"page/fitup.html",
+			"page/login.html"
 		]
 	},
 	"wd.html": {
