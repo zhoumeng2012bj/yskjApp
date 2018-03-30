@@ -86,8 +86,8 @@
 		<div class="zhezhaoce zhezhaocdisplay">
 			<div class="zzcner">
 				<ul class="zzcqy" id="sel1">
-					<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>
-					<li onclick="selsx(1)">区域</li>
+					<!--<li onclick="selsx(0)" style="background: #fff;color:#2c71d8">不限</li>-->
+					<li onclick="selsx(1)" style="background: #fff;color:#2c71d8">区域</li>
 					<li onclick="selsx(2)">地铁</li>
 				</ul>
 				<ul class="zzcdcq" id="sel2">
@@ -620,6 +620,7 @@
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
 				mui('#pullrefresh').pullRefresh().setStopped(false);
 				zhezhaoxiaoshi();
+				alert(333333);
 				var index = plus.webview.getLaunchWebview();
 				mui.fire(index, "weizhi1",{
 				    idxid:2//1位置
@@ -752,7 +753,7 @@
 				/*chqxz = '';*/
 				$('.listUl').html('');
 				huifuupjiazaidata();
-				qcqitades();
+				/*qcqitades();*/
 				if(idx == 5){
 					jiangejt = 'P1';
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
@@ -772,7 +773,7 @@
 				/*chqxz = '';*/
 				$('.listUl').html('');
 				huifuupjiazaidata();
-				qcqitades();
+				/*qcqitades();*/
 				if(idx == 7){
 					jiangejt = 'A1';
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
@@ -810,15 +811,14 @@
 				mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 			 	mui('#pullrefresh').pullRefresh().refresh(true);
 			}
-
-			//
+			
+			sel_qy();
 			function selsx(sel){
 				$('#sel1 li').css({
 					'background':'none',
 					'color':'#666666'
 				});
 				xial = 1;
-				$('.listUl').html('');
 				if(sel == 0){
 					text1 = '不限';
 					district = '';
@@ -840,20 +840,20 @@
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}
 				if(sel == 1){
-					text1 = '区域';
+					text1 = '位置';
 					lineid = '';
 					station = '';
-					$('#sel1 li').eq(1).css({
+					$('#sel1 li').eq(0).css({
 						'background':'#fff',
 						'color':'#2c71d8'
 					});
 					sel_qy();
 				}
 				if(sel == 2){
-					text1 = '地铁';
+					text1 = '位置';
 					lineid = '';
 					station = '';
-					$('#sel1 li').eq(2).css({
+					$('#sel1 li').eq(1).css({
 						'background':'#fff',
 						'color':'#2c71d8'
 					});
@@ -864,7 +864,7 @@
 			var quyu = '';
 			function sel_qy(){
 				$('#sel3').html('');
-				$('#sel2').html('<li onclick="clk_qy(0,-1,this)">不限</li>');
+				$('#sel2').html('<li onclick="clk_qy(0,-1,this)" style="color: #2c71d8;">不限</li>');
 				mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpcity.do',{
 					data:{},
 					dataType:'json',
@@ -878,6 +878,7 @@
 								quyu = '<li onclick="clk_qy('+xzqyData[i].fdcode+','+i+',this)">'+xzqyData[i].fdname+'</li>';
 								$('#sel2').append(quyu);
 							}
+
 						}else{
 							
 						}
@@ -903,6 +904,7 @@
 					id = '';
 					district ='';
 					fdcode = '';
+					text1 = '位置';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
@@ -1011,6 +1013,7 @@
 			function subway_erji(id){
 				if(id == 0){
 					id = '';
+					station = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1

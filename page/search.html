@@ -21,7 +21,7 @@
 			
 			<div class="sousu sousuodeerji mui-input-row">
 				<span class="mui-icon mui-icon-search sousudubiao"></span>
-				<span class="sousuwenzi"><input type="text" oninput="soushuo()" onfocus="chxian()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
+				<span class="sousuwenzi"><input type="text" id="keyword" oninput="soushuo()" autofocus="autofocus" onfocus="chxian()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
 			</div>
 			<a class="qvxiao a_d" onclick="qvxiaoss()">取消</a>
 		</header>
@@ -58,6 +58,27 @@
 		<script src="../js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
+			$("#keyword").on('keypress',function(e) {  
+                var keycode = e.keyCode;  
+                var searchName = $(this).val();  
+                if(keycode=='13') {  
+                    e.preventDefault();    
+                    //请求搜索接口  
+                    
+                }  
+         	});  
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			$('.sousuwenzi input').trigger("click").focus();
 			var stat = 1;
 			if(localStorage.getItem("sousuolsh")){
 				$('.suosukongbaiye').css("display","none");
