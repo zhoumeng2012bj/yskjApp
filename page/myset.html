@@ -175,7 +175,14 @@
 			$('.signout').click(function(){
 				signout();//退出登录方法调用
 			});	
-			
+			window.addEventListener('login_back', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.login_b;
+			    if(param == 1){
+			    	mui.back();
+			    }
+			});
 		</script>
 	</body>
 

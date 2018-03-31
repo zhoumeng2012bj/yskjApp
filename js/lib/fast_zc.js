@@ -204,24 +204,62 @@ function clk(){
 	}		
 }
 //注册并登录
+//var btn = document.getElementById('btn');
+//var clicktag = 0;
+//btn.onclick = function () {
+//	if (clicktag == 0) {
+//     clicktag = 1;
+//     setTimeout(function () { clicktag = 0; }, 5000);
+//     
+//	}else{
+//		mui.toast('点击过于频繁！',{ duration:'2000', type:'div' });
+//		return;
+//	}
+//};
+var clicktag = 0;
 $('#btn1').click(function(){
-	if(pwd != '' && pwd1 != ''){
-		if(pwd.length<6||pwd1.length<6){
-			mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
-			return;
+	if(clicktag == 0){
+		clicktag = 1;
+		if(pwd != '' && pwd1 != ''){
+			if(pwd.length<6||pwd1.length<6){
+				mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+				return;
+			}else{
+			if(pwd == pwd1){
+				//注册方法	
+				zhuce();
+			}else{
+				mui.toast('两次密码输入不一致',{ duration:'3000', type:'div' });
+				return;
+			}
+			}
 		}else{
-		if(pwd == pwd1){
-			//注册方法	
-			zhuce();
-		}else{
-			mui.toast('两次密码输入不一致',{ duration:'3000', type:'div' });
-			return;
+			mui.toast('请将密码填写完整',{ duration:'3000', type:'div' });
 		}
-		}
+    	setTimeout(function () { clicktag = 0; }, 5000);
 	}else{
-		mui.toast('请将密码填写完整',{ duration:'3000', type:'div' });
+		mui.toast('点击过于频繁！',{ duration:'2000', type:'div' });
+		return;
 	}
 })
+//$('#btn1').click(function(){
+//	if(pwd != '' && pwd1 != ''){
+//		if(pwd.length<6||pwd1.length<6){
+//			mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+//			return;
+//		}else{
+//		if(pwd == pwd1){
+//			//注册方法	
+//			zhuce();
+//		}else{
+//			mui.toast('两次密码输入不一致',{ duration:'3000', type:'div' });
+//			return;
+//		}
+//		}
+//	}else{
+//		mui.toast('请将密码填写完整',{ duration:'3000', type:'div' });
+//	}
+//})
 //注册接口调用
 function zhuce(){
 	createcookie_yh();

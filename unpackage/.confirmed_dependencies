@@ -534,7 +534,15 @@
 			"css/search.css",
 			"css/mui.min.css",
 			"css/jxfy.css",
-			"css/style_a_d.css"
+			"css/style_a_d.css",
+			"img/jxfy_kb.png",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"fonts/mui.ttf",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"js/lib/app_config.js",
+			"js/mui.min.js"
 		],
 		"refer": []
 	},
@@ -651,9 +659,15 @@
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/md5.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/style_a_d.css",
+			"css/person.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		],
-		"refer": []
+		"refer": [
+			"wd.html"
+		]
 	},
 	"page/map.html": {
 		"resources": [
@@ -682,7 +696,8 @@
 			"js/lib/sha1.js",
 			"js/lib/flexible.js",
 			"js/lib/md5.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"img/ycmm.png"
 		],
 		"refer": [
 			"wd.html"
