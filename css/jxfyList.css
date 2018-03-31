@@ -28,9 +28,9 @@
 .xuanxingshuzi{display: flex;}
 .pingangm{color: #c7c7c7;}
 .zjqy{height: 1.426666rem;line-height: 1.426666rem;}
-.dibuceng{height: 1.6rem;line-height: 1.6rem;display: flex;align-items: center;justify-content: space-around;}
-.chuongzhi{border: 1px solid #2b70d7;border-radius:5px;width: 3.466666rem;display: flex;height:0.933333rem;line-height:0.933333rem;font-size: 0.4rem;display: flex;align-items: center;justify-content: center;}
-.quding{background-color:#2b70d8;color: #fefefe;}
+.dibuceng{position: absolute;bottom: 0rem;height: 1.6rem;line-height: 1.6rem;margin-left: 1.666666rem;display: flex;align-content: center;align-items: center;}
+.chuongzhi{border: 1px solid #2b70d7;border-radius:5px;width: 2.306666rem;display: flex;height: 0.773333rem;line-height: 0.773333rem;font-size: 0.333333rem;display: flex;align-items: center;justify-content: center;}
+.quding{margin-left: 1.6rem;background-color:#2b70d8;color: #fefefe;}
 .czsyhk{color: #2b70d7;}
 .czqddig{box-shadow:0px 0px 5px #333333;margin-left:-0.56rem;position: absolute;bottom: 0rem;background-color: #ffffff;height: 1.6rem;width: 100%;}
 .mianjilag{height: 8.106666rem;overflow: auto;}
