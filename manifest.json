@@ -526,8 +526,7 @@
 					"js/lib/flexible.js",
 					"js/lib/sha1.js",
 					"js/lib/md5.js",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"wd.html"
@@ -546,8 +545,7 @@
 					"css/style.css",
 					"css/jxfy.css",
 					"css/style_a_d.css",
-					"img/jxfy_kb.png",
-					"js/lib/app_config.js"
+					"img/jxfy_kb.png"
 				],
 				"refer": [],
 				"priority": 0
