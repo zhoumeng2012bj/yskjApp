@@ -71,7 +71,7 @@
 .baoxiuxx{height: 0.293333rem;background-color: #f0f0f0;}
 .baxiuxxx{height: 1.08rem;line-height: 1.08rem;padding-left: 0.4rem;font-size: 0.4rem;color: #333333;}
 .baoxiudebeizhu{height:2.8rem;padding-left: 0.4rem;padding-right: 0.4rem;position: relative;}
-.texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;text-indent: 2em;}
+.texta{height: 91%;background-color: #f0f0f0;font-size: 0.4rem;padding: 0.133333rem;}
 .textwenadeshuz{position: absolute;bottom: 9px;right: 30px;color: #c8c8c8;}
 .baoxoiwenzibot{height:0.373333rem;background-color: #ffffff;}
 .tijiaomax{height: 3.6rem;display: flex;flex-direction: column;/*垂直排列*/justify-content: center;align-items: center;}
