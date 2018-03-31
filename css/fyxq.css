@@ -42,9 +42,9 @@
 .shoucengdianji{background-color: #302f35;}
 .xmjx{background-color: #ff8c00;}
 .xmjx a{width: 100%;height: 100%;line-height: 100%;text-align: center;display: flex;justify-content: center;align-items: center;}
-.xindebg{width: 0.6rem;display: flex;height: 0.56rem;}
+.xindebg{width: 0.693333rem;display: flex;height: 0.56rem;}
 .xindebgimg{background:url(../img/fav2.png) no-repeat;background-size: auto 100%;}
-.choucdewezi{color:#FFFFFF;height: 0.493333rem;margin-left: 0.266666rem;font-size: 0.373333rem;display: flex;align-items: center;}
+.choucdewezi{color:#FFFFFF;height: 0.493333rem;margin-left: 0.133333rem;font-size: 0.373333rem;display: flex;align-items: center;}
 .choucdeweziwidth{width: auto;min-width: 0.8rem;}
 .choucdeweziyiwidth{width: 1.2rem;}
 .shouc p{display: flex;}
